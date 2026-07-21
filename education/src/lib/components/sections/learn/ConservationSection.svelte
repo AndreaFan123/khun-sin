@@ -1,7 +1,7 @@
 <script lang="ts">
 	import SectionHead from '$lib/components/ui/SectionHead.svelte';
 	import KpiCard from '$lib/components/ui/KpiCard.svelte';
-	import MarnNetwork from '$lib/components/ui/MarnNetwork.svelte';
+	// import MarnNetwork from '$lib/components/ui/MarnNetwork.svelte';
 	import {
 		rescueStory,
 		collectiveStranding,
@@ -19,7 +19,7 @@
 			lead="救援不是單一單位能完成的事。海洋委員會海保署扮演整合核心，串聯海巡署、地方政府、學術鯨豚中心、獸醫與民間團體，組成「海保救援網（MARN）」。當通報進來，這些角色會接力到同一個現場。"
 		/>
 
-<MarnNetwork />
+		<!-- <MarnNetwork /> -->
 
 		<div class="story">
 			<div>
@@ -44,7 +44,13 @@
 			<p>{collectiveStranding.body}</p>
 		</div>
 
-		
+		<div class="kpis-head">
+			<SectionHead
+				eyebrow="白海豚保育數據"
+				title="把每一次相遇，記成保育的知識"
+				lead="個體辨識名錄、海上調查、科學採樣與病理分析——這些數字是第一線團隊日復一日的累積，也是保育決策的基礎。"
+			/>
+		</div>
 
 		<div class="kpis">
 			{#each conservationKpis as kpi (kpi.metric)}
@@ -63,14 +69,15 @@
 		grid-template-columns: 1.1fr 0.9fr;
 		gap: 34px;
 		align-items: center;
-		background: var(--bg-card);
-		border: 1px solid var(--border);
-		border-radius: var(--radius);
-		padding: 36px;
+		/* background: var(--bg-card); */
+		/* border: 1px solid var(--border); */
+		/* border-radius: var(--radius); */
+		/* padding: 36px; */
+		margin-top: 100px;
 	}
 	.story-eyebrow {
 		display: block;
-		font-size: 0.82rem;
+		font-size: 0.9rem;
 		font-weight: 700;
 		letter-spacing: 0.14em;
 		color: var(--accent-text);
@@ -87,7 +94,7 @@
 		text-align: center;
 	}
 	.big {
-		font-size: clamp(3rem, 9vw, 5rem);
+		font-size: clamp(5rem, 9vw, 8rem);
 		font-weight: 800;
 		color: var(--accent-text);
 		line-height: 0.95;
@@ -102,9 +109,9 @@
 	}
 	.note {
 		margin-top: 20px;
-		background: var(--bg-card);
+		/* background: var(--bg-card);
 		border: 1px solid var(--border);
-		border-radius: var(--radius);
+		border-radius: var(--radius); */
 		padding: 26px 30px;
 	}
 	.note h3 {
@@ -113,6 +120,9 @@
 	}
 	.note p {
 		color: var(--text-secondary);
+	}
+	.kpis-head {
+		margin-top: 82px;
 	}
 	.kpis {
 		display: grid;
