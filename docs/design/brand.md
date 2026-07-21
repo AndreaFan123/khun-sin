@@ -26,7 +26,7 @@ The brand's **single color gesture**: the tittle (the dot of the "i" in "Sin") i
 |---|---|
 | Text | `Khun-Sin` |
 | Typeface | Noto Sans TC (same stack as the site: `"Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif`) |
-| Weight | 500 (Medium) |
+| Weight | 900 (Black) — updated 2026-07-22 from 500; nav size 1.3rem |
 | Case | As written — no all-caps, no all-lowercase variants |
 | Letter spacing | ~0.005em (near-default) |
 | Tittle color | **Native glyph position, color swapped only.** Light surfaces: `amber-600 #C87F1F` (4.5:1 on paper-200 ✓). Dark surfaces: `amber-400 #FAB95B` (7.2:1 on navy-800/900 ✓) |
@@ -47,7 +47,7 @@ Supplied by Andrea (out of design-doc scope). Format needs: 16×16, 32×32, and 
 
 - Do not add taglines, characters, or graphic devices to the wordmark lockup.
 - Do not recolor the tittle with any color other than the specified amber steps; do not add a second accent anywhere in the identity.
-- Do not set the wordmark in serif, condensed, bold (700+), or display faces.
+- Do not set the wordmark in serif, condensed, or display faces. Weight is fixed at 900 (do not vary it per context).
 - Clear space: minimum half the cap-height of "K" on all sides.
 - The wordmark inherits the site's flat rule: no shadows, gradients, or outlines.
 
