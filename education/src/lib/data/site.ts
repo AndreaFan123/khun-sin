@@ -259,10 +259,10 @@ export const formTeaser = {
 
 export const heroCopy = {
 	badge: '臺灣鯨豚擱淺數據 · 2019–2025 全年度 & 2026 第一季',
-	titleLead: '海的',
-	titleHighlight: '求救訊號',
-	titleTail: '寫在每一次擱淺裡',
-	sub: '每一隻擱淺上岸的鯨豚，都是海洋健康的一則訊息。讓我們用真實數據，讀懂牠們想告訴我們的事。',
+	titleLead: '鯨豚救援是',
+	titleHighlight: '「向死而生」',
+	titleTail: '每一次的救援未必都能夠帶來好的結局',
+	sub: '每一隻擱淺的鯨豚，都代表著牠的生命可能來到盡頭',
 	statDeadLabel: '發現時已死亡，救援與時間賽跑',
 	statTotalLabel: '年全臺鯨豚擱淺通報',
 	statSpeciesLabel: '一年內擱淺的鯨豚物種數'
