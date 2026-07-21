@@ -1,0 +1,144 @@
+/*
+ * Design tokens — single source: docs/design/visual-direction.md
+ * Flat minimal system: no box-shadow anywhere; elevation = surface steps + hairline borders.
+ */
+
+:root {
+	/* ---- Navy ramp — structure: dark bands, headings, depth ---- */
+	--navy-50: #e9edf5;
+	--navy-100: #cbd5e8;
+	--navy-200: #a3b4d4;
+	--navy-300: #7b93bf;
+	--navy-400: #5372a5;
+	--navy-500: #3a548a;
+	--navy-600: #274073;
+	--navy-700: #1a3263; /* brand seed */
+	--navy-800: #142850;
+	--navy-900: #101f3d;
+
+	/* ---- Slate ramp — data: chart series, borders, secondary text ---- */
+	--slate-50: #eef2f5;
+	--slate-100: #d8e1e8;
+	--slate-200: #c9d6e0;
+	--slate-300: #a7bccb;
+	--slate-400: #8fa9bd;
+	--slate-500: #547792; /* brand seed */
+	--slate-600: #476885;
+	--slate-700: #3d5a75;
+	--slate-800: #2f4760;
+	--slate-900: #27415c;
+
+	/* ---- Amber ramp — the single attention channel ---- */
+	--amber-50: #fef4e4;
+	--amber-100: #fde6c2;
+	--amber-200: #fcd79e;
+	--amber-300: #fbc87c;
+	--amber-400: #fab95b; /* brand seed; never text on light surfaces */
+	--amber-500: #e89e36;
+	--amber-600: #c87f1f;
+	--amber-700: #a66618;
+	--amber-800: #8a5a13;
+	--amber-900: #6b4109;
+
+	/* ---- Paper ramp — warm neutrals: surfaces and ink ---- */
+	--paper-50: #fbf9f6;
+	--paper-100: #f6f2ec;
+	--paper-200: #e8e2db; /* brand seed, page bg */
+	--paper-300: #d6cec3;
+	--paper-400: #b8aea1;
+	--paper-500: #948a7c;
+	--paper-600: #6f675c;
+	--paper-700: #4f4a42;
+	--paper-800: #35322c;
+	--paper-900: #211f1b;
+
+	/* ---- Status — functional, small-area only, never brand ---- */
+	--green-100: #dfeae3;
+	--green-600: #3e6b54;
+	--green-800: #274437;
+	--rust-100: #f6e3d3;
+	--rust-600: #b25e1f; /* large text only (3.6:1) */
+	--rust-700: #8f4a15; /* body text on light (5.2:1) */
+	--rust-800: #7a3f13;
+
+	/* ---- Usage mapping (see visual-direction.md) ---- */
+	--bg: var(--paper-200);
+	--bg-card: var(--paper-100);
+	--bg-band-dark: var(--navy-800);
+	--bg-band-darker: var(--navy-900); /* hero, footer */
+	--text-primary: var(--paper-900);
+	--text-secondary: var(--slate-700); /* 5.5:1 on paper-200 */
+	--text-muted: var(--paper-600); /* captions/ticks — large or graphic use */
+	--text-on-dark: var(--paper-50);
+	--text-on-dark-secondary: var(--slate-200);
+	--heading: var(--navy-700);
+	--accent: var(--amber-400); /* emphasis on dark; fills on light */
+	--accent-text: var(--amber-800); /* amber-feel text on light (4.6:1) */
+	--chart-baseline: var(--slate-500);
+	--chart-emphasis: var(--amber-400);
+	--chart-seq-1: var(--slate-200);
+	--chart-seq-2: var(--slate-400);
+	--chart-seq-3: var(--slate-500);
+	--chart-seq-4: var(--slate-700);
+	--chart-seq-5: var(--slate-900);
+	--chart-muted: var(--slate-300);
+	--border: var(--paper-300);
+	--border-on-dark: rgba(251, 249, 246, 0.16);
+
+	/* ---- Layout ---- */
+	--maxw: 1120px;
+	--radius: 14px;
+}
+
+/* ---- Reset ---- */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html,
+	body {
+		scroll-behavior: auto;
+	}
+}
+
+/* ---- Typography — one family site-wide, no webfont (zero font bytes) ---- */
+body {
+	font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
+	font-size: 1rem; /* 16px base; minimums: captions/ticks ≥ 12px, footer ≥ 14px */
+	line-height: 1.75;
+	color: var(--text-primary);
+	background: var(--bg);
+	-webkit-font-smoothing: antialiased;
+	scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	line-height: 1.25;
+	font-weight: 700;
+	color: var(--heading);
+	letter-spacing: 0.01em;
+}
+
+:focus-visible {
+	outline: 2px solid var(--navy-700);
+	outline-offset: 2px;
+}
+
+/* ---- Layout utilities ---- */
+.wrap {
+	max-width: var(--maxw);
+	margin: 0 auto;
+	padding: 0 24px;
+}
