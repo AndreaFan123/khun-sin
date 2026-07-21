@@ -104,7 +104,8 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-	html {
+	html,
+	body {
 		scroll-behavior: auto;
 	}
 }
