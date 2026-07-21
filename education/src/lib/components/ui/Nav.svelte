@@ -10,7 +10,7 @@
 
 <header class:scrolled>
 	<div class="bar">
-		<a class="brand" href={resolve('/')}><Wordmark onDark={!scrolled} /></a>
+		<a class="brand" href={resolve('/')}><Wordmark onDark /></a>
 		<nav aria-label="主導覽">
 			<a href="{resolve('/')}#report">通報</a>
 			<a href="{resolve('/')}#data">數據</a>
@@ -73,26 +73,20 @@
 		color: var(--text-on-dark);
 	}
 
-	/* Scrolled: the full-width bar becomes a floating pill (flat — border, no shadow). */
+	/* Scrolled: the full-width bar becomes a floating pill — hero navy with a
+	   slight backdrop blur (Andrea's call; the one sanctioned blur). */
 	header.scrolled {
 		background: transparent;
 		border-bottom-color: transparent;
 		padding: 10px 16px 0;
 	}
 	header.scrolled .bar {
-		background: var(--paper-50);
-		border-color: var(--border);
+		background: rgba(16, 31, 61, 0.72);
+		-webkit-backdrop-filter: blur(8px);
+		backdrop-filter: blur(8px);
+		border-color: var(--border-on-dark);
 		border-radius: 999px;
 		padding: 10px 26px;
-	}
-	header.scrolled .brand {
-		color: var(--navy-700);
-	}
-	header.scrolled nav a {
-		color: var(--slate-700);
-	}
-	header.scrolled nav a:hover {
-		color: var(--navy-700);
 	}
 
 	/* Mobile: brand-only top bar + fixed bottom navbar with a direct-dial 118 button. */
