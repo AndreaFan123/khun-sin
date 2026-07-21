@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Hero from '$lib/components/sections/home/Hero.svelte';
 	import HowToReport from '$lib/components/sections/home/HowToReport.svelte';
-	import ReportFormTeaser from '$lib/components/sections/home/ReportFormTeaser.svelte';
+	// import ReportFormTeaser from '$lib/components/sections/home/ReportFormTeaser.svelte';
 	import DataDashboard from '$lib/components/sections/home/DataDashboard.svelte';
-	import Cta from '$lib/components/sections/home/Cta.svelte';
+	// import Cta from '$lib/components/sections/home/Cta.svelte';
 	import WaveDivider from '$lib/components/ui/WaveDivider.svelte';
 </script>
 
@@ -20,7 +20,7 @@
 	layers={['var(--navy-700)', 'var(--navy-500)', 'var(--slate-400)', 'var(--slate-200)']}
 />
 <HowToReport />
-<ReportFormTeaser />
+<!-- <ReportFormTeaser /> -->
 <WaveDivider from="var(--paper-200)" to="var(--navy-800)" flip />
 <DataDashboard />
-<Cta />
+<!-- <Cta /> -->

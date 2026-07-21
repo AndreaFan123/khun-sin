@@ -119,6 +119,15 @@ body {
 	background: var(--bg);
 	-webkit-font-smoothing: antialiased;
 	scroll-behavior: smooth;
+	text-wrap: balance;
+}
+
+/* Mobile: raise the root size so every rem-based size scales up together —
+   no small text on phones (Andrea's rule; overrides the 16px desktop base). */
+@media (max-width: 640px) {
+	html {
+		font-size: 18px;
+	}
 }
 
 h1,
@@ -179,6 +188,13 @@ svg .bar-rect {
 		width 0.9s cubic-bezier(0.22, 1, 0.36, 1),
 		height 0.9s cubic-bezier(0.22, 1, 0.36, 1),
 		y 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (max-width: 640px) {
+	svg .tick,
+	svg .barlabel,
+	svg .barvalue {
+		font-size: 14px;
+	}
 }
 @media (prefers-reduced-motion: reduce) {
 	svg .bar-rect {

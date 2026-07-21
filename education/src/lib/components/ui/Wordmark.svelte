@@ -12,7 +12,8 @@
 
 <style>
 	.wordmark {
-		font-weight: 500;
+		font-weight: 900;
+		font-size: 1.3rem;
 		letter-spacing: 0.005em;
 	}
 	.i {

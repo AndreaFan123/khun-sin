@@ -9,8 +9,8 @@
 	<div class="wrap">
 		<SectionHead
 			eyebrow="如何通報與參與"
-			title="發現擱淺，你就是關鍵的第一棒"
-			lead="絕大多數擱淺鯨豚在發現時已經死亡，活體救援是分秒必爭的事。而救援的第一步，往往就從一位路過民眾的一通電話開始。你不需要是專家——你只需要知道該打給誰、以及該做與不該做的事。"
+			title="「通報」是最關鍵的第一步"
+			lead="絕大多數擱淺鯨豚在發現時已經死亡，幸運的話，可能還有一線生機！活體救援是分秒必爭的事。第一步，從一通電話開始。你不需要是專家——只需要知道該打給誰、以及有哪些該做與不該做的事。"
 		/>
 
 		<div class="callbar">
@@ -45,7 +45,7 @@
 	.callbar {
 		display: flex;
 		flex-wrap: wrap;
-		align-items: center;
+		align-items: start;
 		gap: 20px;
 		justify-content: space-between;
 		background: var(--bg-band-dark);
@@ -54,7 +54,7 @@
 		padding: 30px 34px;
 	}
 	.callbar .big {
-		font-size: clamp(2.4rem, 7vw, 3.4rem);
+		font-size: clamp(3rem, 7vw, 5rem);
 		font-weight: 800;
 		letter-spacing: 0.04em;
 		line-height: 1;
@@ -63,7 +63,7 @@
 	}
 	.callbar .big small {
 		display: block;
-		font-size: 0.95rem;
+		font-size: 2rem;
 		font-weight: 600;
 		color: var(--text-on-dark-secondary);
 		letter-spacing: 0.1em;
@@ -76,18 +76,18 @@
 	}
 	.steps {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 		gap: 18px;
-		margin-top: 34px;
+		margin-top: 50px;
 	}
 	.dodont {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 20px;
-		margin-top: 34px;
+		margin-top: 50px;
 	}
 	.dead-note {
-		margin-top: 26px;
+		margin-top: 30px;
 		background: var(--bg-band-dark);
 		color: var(--text-on-dark);
 		border-radius: var(--radius);
@@ -107,6 +107,12 @@
 		}
 		.dodont {
 			grid-template-columns: 1fr;
+		}
+	}
+	@media (max-width: 640px) {
+		.steps {
+			/* min(300px, 100%) so ultra-narrow screens (<324px content) never overflow */
+			grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
 		}
 	}
 </style>

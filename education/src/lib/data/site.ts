@@ -93,11 +93,14 @@ export interface ReportStep {
 }
 
 export const reportSteps: ReportStep[] = [
-	{ title: '撥打 118', description: '向海巡署通報，這是啟動整個救援網絡的開關。' },
+	{
+		title: '撥打 118',
+		description: '向海巡署通報，啟動整個救援。請務必等後單位確認沒有問題後掛電話再掛'
+	},
 	{
 		title: '說清楚「狀態」',
 		description:
-			'提供地點、時間，並描述動物大小、是活體還是死亡、有無外傷——這決定要派多少人、開什麼車、帶什麼裝備。'
+			'提供地點、時間、你的聯繫方式，並描述動物大小(可以展開雙臂，或者用腳掌大小評估)、是活體還是死亡(觀察呼吸孔有無收縮)、有無外傷——這決定要派多少人、開什麼車、帶什麼裝備。'
 	},
 	{
 		title: '保持距離守候',
@@ -105,7 +108,7 @@ export const reportSteps: ReportStep[] = [
 	},
 	{
 		title: '交給專業團隊',
-		description: 'MARN 行動小組到場後接手評估、處置或後送，你已完成最重要的一棒。'
+		description: 'MARN 行動小組到場後接手評估、處置或後送。辛苦了！你已完成最重要的第一步。'
 	}
 ];
 
@@ -113,7 +116,7 @@ export const hotline = {
 	number: '118',
 	label: '海巡署 24 小時救援專線',
 	description:
-		'發現擱淺或受困的鯨豚、海龜，立即撥打 118。海巡署全年無休，會第一時間聯繫海保署與成大鯨豚中心、中華鯨豚協會等專業團隊。'
+		'發現擱淺或受困的鯨豚、海龜，立即撥打 118。海巡署全年無休，會第一時間聯繫海保署、中華鯨豚協會以及合作的學術研究等專業團隊。'
 };
 
 export const doList: string[] = [
@@ -261,8 +264,8 @@ export const heroCopy = {
 	badge: '臺灣鯨豚擱淺數據 · 2019–2025 全年度 & 2026 第一季',
 	titleLead: '鯨豚救援是',
 	titleHighlight: '「向死而生」',
-	titleTail: '每一次的救援未必都能夠帶來好的結局',
-	sub: '每一隻擱淺的鯨豚，都代表著牠的生命可能來到盡頭',
+	titleTail: '',
+	sub: '每一隻擱淺的鯨豚，都代表著牠的生命可能來到盡頭。',
 	statDeadLabel: '發現時已死亡，救援與時間賽跑',
 	statTotalLabel: '年全臺鯨豚擱淺通報',
 	statSpeciesLabel: '一年內擱淺的鯨豚物種數'
@@ -276,12 +279,12 @@ export const ctaCopy = {
 };
 
 export const brandFootnote = {
-	body: '鯤鯓（Khun-Sin），台語裡指浮出海面、狀似鯨背的沙洲——這座島本身，就是一隻鯨。'
+	body: ''
 };
 
 export const dataSources = {
 	intro:
 		'資料來源：海洋委員會海洋保育署「海保救援網（MARN）」2019–2025 歷年全年度擱淺報告及 2026 年第一季擱淺報告',
 	marnUrl: 'https://www.oca.gov.tw/ch/home.jsp?id=379&parentpath=0,296,375',
-	reminder: '提醒：發現擱淺鯨豚或海龜，請撥打海巡署專線 118，切勿自行將動物推回海中。'
+	reminder: ''
 };

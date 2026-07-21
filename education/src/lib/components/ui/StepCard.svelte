@@ -13,7 +13,7 @@
 <style>
 	.step {
 		background: var(--bg-card);
-		border: 1px solid var(--border);
+		/* border: 1px solid var(--border); */
 		border-radius: var(--radius);
 		padding: 24px;
 	}
@@ -30,11 +30,11 @@
 		margin-bottom: 14px;
 	}
 	h4 {
-		font-size: 1.05rem;
-		margin-bottom: 6px;
+		font-size: 1.6rem;
+		margin-bottom: 10px;
 	}
 	p {
-		font-size: 0.9rem;
+		font-size: 1rem;
 		color: var(--text-secondary);
 	}
 </style>
