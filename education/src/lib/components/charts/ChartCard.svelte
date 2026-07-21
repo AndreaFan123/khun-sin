@@ -21,7 +21,10 @@
 			>
 		{/each}
 	</div>
-	<div class="takeaway"><b>看見了什麼：</b>{copy.takeaway}</div>
+	<article class="takeaway">
+		<b>可能的資訊：</b>
+		<p>{copy.takeaway}</p>
+	</article>
 </div>
 
 <style>
@@ -33,11 +36,11 @@
 		color: var(--text-primary);
 	}
 	h3 {
-		font-size: 1.15rem;
+		font-size: 1.3rem;
 		margin-bottom: 4px;
 	}
 	.chart-sub {
-		font-size: 0.9rem;
+		font-size: 1rem;
 		color: var(--text-secondary);
 		margin-bottom: 20px;
 	}

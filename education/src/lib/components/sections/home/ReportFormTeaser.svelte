@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { formTeaser, hotline } from '$lib/data/site';
+	import { formTeaser } from '$lib/data/site';
 </script>
 
 <section>
@@ -8,7 +8,6 @@
 			<span class="badge">{formTeaser.badge}</span>
 			<h3>{formTeaser.title}</h3>
 			<p>{formTeaser.body}</p>
-			<div class="now">現在發現擱淺 → 撥打 <b>{hotline.number}</b></div>
 		</div>
 	</div>
 </section>
@@ -41,15 +40,6 @@
 	p {
 		color: var(--text-secondary);
 		max-width: 62ch;
-	}
-	.now {
-		margin-top: 14px;
-		font-size: 0.95rem;
-		color: var(--text-secondary);
-	}
-	.now b {
-		color: var(--accent-text);
-		font-variant-numeric: tabular-nums;
 	}
 	@media (max-width: 860px) {
 		section {

@@ -16,7 +16,10 @@
 		border-radius: var(--radius);
 		padding: 24px 26px;
 		border: 1px solid var(--border);
-		border-left-width: 3px;
+		border-left-width: 5px;
+		border-top-width: 0;
+		border-right-width: 0;
+		border-bottom-width: 0;
 		border-radius: 0 var(--radius) var(--radius) 0;
 	}
 	.dd.do {
@@ -28,7 +31,7 @@
 		border-left-color: var(--rust-600);
 	}
 	h4 {
-		font-size: 1.1rem;
+		font-size: 1.3rem;
 		margin-bottom: 14px;
 	}
 	.do h4 {
@@ -44,10 +47,10 @@
 		gap: 11px;
 	}
 	li {
-		font-size: 0.95rem;
+		font-size: 1rem;
 		padding-left: 16px;
 		position: relative;
-		color: var(--text-secondary);
+		color: var(--text-primary);
 	}
 	li::before {
 		content: '';

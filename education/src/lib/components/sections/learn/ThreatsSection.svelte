@@ -41,25 +41,24 @@
 	}
 	.threat {
 		background: var(--navy-700);
-		border: 1px solid var(--border-on-dark);
 		border-radius: var(--radius);
 		padding: 22px;
 	}
 	.threat h3 {
 		color: var(--text-on-dark);
-		font-size: 1.08rem;
+		font-size: 1.2rem;
 		margin-bottom: 8px;
 	}
 	.threat p {
-		font-size: 0.9rem;
+		font-size: 1rem;
 		color: var(--text-on-dark-secondary);
 	}
 	.surprise {
 		margin-top: 30px;
 		background: var(--navy-700);
-		border: 1px solid var(--border-on-dark);
-		border-left: 3px solid var(--accent);
-		border-radius: 0 var(--radius) var(--radius) 0;
+		/* border: 1px solid var(--border-on-dark); */
+		border-left: 5px solid var(--accent);
+		/* border-radius: 0 var(--radius) var(--radius) 0; */
 		padding: 26px 28px;
 	}
 	.surprise h3 {

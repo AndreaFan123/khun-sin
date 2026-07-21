@@ -17,10 +17,10 @@ export const speciesCards: SpeciesCard[] = [
 	{
 		tag: '極度瀕危 CR',
 		tagKind: 'critical',
-		name: '臺灣白海豚',
+		name: '台灣白海豚',
 		scientificName: 'Sousa chinensis taiwanensis',
 		description:
-			'只生活在臺灣西部沿海的特有亞種，粉白身影被稱為「媽祖魚」。學者估計現存不到 50 隻，且族群每年約下滑 3–4%，是臺灣最急迫的海洋保育對象。'
+			'只生活在台灣西部沿海的特有亞種，粉白身影被稱為「媽祖魚」。學者估計現存不到 50 隻，且族群每年約下滑 3–4%，是台灣最急迫的海洋保育對象。'
 	},
 	{
 		tag: '離島常見',
@@ -36,7 +36,7 @@ export const speciesCards: SpeciesCard[] = [
 		name: '瓶鼻海豚',
 		scientificName: 'Tursiops truncatus',
 		description:
-			'最為人熟悉的海豚之一，聰明、群居、好奇心強。臺灣海域有瓶鼻海豚與印太瓶鼻海豚兩種，是賞鯨常見的明星。'
+			'最為人熟悉的海豚之一，聰明、群居、好奇心強。台灣海域有瓶鼻海豚與印太瓶鼻海豚兩種，是賞鯨常見的明星。'
 	},
 	{
 		tag: '遠洋物種',
@@ -93,11 +93,14 @@ export interface ReportStep {
 }
 
 export const reportSteps: ReportStep[] = [
-	{ title: '撥打 118', description: '向海巡署通報，這是啟動整個救援網絡的開關。' },
+	{
+		title: '撥打 118',
+		description: '向海巡署通報，啟動整個救援。請務必等後單位確認沒有問題後掛電話再掛'
+	},
 	{
 		title: '說清楚「狀態」',
 		description:
-			'提供地點、時間，並描述動物大小、是活體還是死亡、有無外傷——這決定要派多少人、開什麼車、帶什麼裝備。'
+			'提供地點、時間、你的聯繫方式，並描述動物大小(可以展開雙臂，或者用腳掌大小評估)、是活體還是死亡(觀察呼吸孔有無收縮)、有無外傷——這決定要派多少人、開什麼車、帶什麼裝備。'
 	},
 	{
 		title: '保持距離守候',
@@ -105,7 +108,7 @@ export const reportSteps: ReportStep[] = [
 	},
 	{
 		title: '交給專業團隊',
-		description: 'MARN 行動小組到場後接手評估、處置或後送，你已完成最重要的一棒。'
+		description: 'MARN 行動小組到場後接手評估、處置或後送。辛苦了！你已完成最重要的第一步。'
 	}
 ];
 
@@ -113,7 +116,10 @@ export const hotline = {
 	number: '118',
 	label: '海巡署 24 小時救援專線',
 	description:
-		'發現擱淺或受困的鯨豚、海龜，立即撥打 118。海巡署全年無休，會第一時間聯繫海保署與成大鯨豚中心、中華鯨豚協會等專業團隊。'
+		'發現擱淺或受困的鯨豚、海龜，立即撥打 118。海巡署全年無休，會第一時間聯繫海保署、中華鯨豚協會以及合作的學術研究等專業團隊。',
+	infoTitle: '就算無生命跡象，也請務必通報',
+	infoDescription:
+		'絕大多數擱淺鯨豚被發現時已經死亡——但這絕不代表牠們不重要。每一具遺體都承載著大量資訊：透過解剖、採樣與病理分析，研究人員能解讀死因、健康狀況，以及整片海洋環境的變化。光是 2025 年，就有 62 隻個體完成科學採樣、21 件病理分析。你的一通通報，可能就是解開一個科學謎題的鑰匙。'
 };
 
 export const doList: string[] = [
@@ -178,7 +184,7 @@ export const conservationKpis: ConservationKpi[] = [
 	{
 		metric: 'catalogued',
 		unit: '隻',
-		label: '臺灣白海豚個體辨識名錄累計數，為每隻粉紅精靈建檔追蹤'
+		label: '台灣白海豚個體辨識名錄累計數，為每隻粉紅精靈建檔追蹤'
 	},
 	{ metric: 'sampled', unit: '隻', label: '2025 年完成科學採樣的個體數，用於病理與死因分析' },
 	{ metric: 'sightingGroups', unit: '群次', label: '白海豚海上調查累計目擊紀錄，支撐族群監測' },
@@ -258,13 +264,13 @@ export const formTeaser = {
 };
 
 export const heroCopy = {
-	badge: '臺灣鯨豚擱淺數據 · 2019–2025 全年度 & 2026 第一季',
-	titleLead: '海的',
-	titleHighlight: '求救訊號',
-	titleTail: '寫在每一次擱淺裡',
-	sub: '每一隻擱淺上岸的鯨豚，都是海洋健康的一則訊息。讓我們用真實數據，讀懂牠們想告訴我們的事。',
+	badge: '台灣鯨豚擱淺數據 · 2019–2025 全年度 & 2026 第一季',
+	titleLead: '鯨豚救援是',
+	titleHighlight: '「向死而生」',
+	titleTail: '',
+	sub: '每一隻擱淺的鯨豚，都代表著牠的生命可能來到盡頭。救援未必能翻轉生死，但每一次的盡力，都能讓生命化為科學的養分，指引台灣鯨豚救援繼續前行。',
 	statDeadLabel: '發現時已死亡，救援與時間賽跑',
-	statTotalLabel: '年全臺鯨豚擱淺通報',
+	statTotalLabel: '年全台鯨豚擱淺通報',
 	statSpeciesLabel: '一年內擱淺的鯨豚物種數'
 };
 
@@ -272,16 +278,17 @@ export const ctaCopy = {
 	title: '每一次擱淺，都是海洋交給我們的一封信',
 	body: '你不需要成為科學家，也能成為守護的一環：記住 118、認識這些鄰居、減少對海洋的傷害，並把正確的知識分享出去。當更多人願意在第一時間做對的事，就有更多鯨豚能重新游向大海。',
 	primaryLabel: '記住 118 通報步驟',
-	secondaryLabel: '認識臺灣的鯨豚'
+	secondaryLabel: '認識台灣的鯨豚'
 };
 
 export const brandFootnote = {
-	body: '鯤鯓（Khun-Sin），台語裡指浮出海面、狀似鯨背的沙洲——這座島本身，就是一隻鯨。'
+	body: ''
 };
 
 export const dataSources = {
 	intro:
 		'資料來源：海洋委員會海洋保育署「海保救援網（MARN）」2019–2025 歷年全年度擱淺報告及 2026 年第一季擱淺報告',
 	marnUrl: 'https://www.oca.gov.tw/ch/home.jsp?id=379&parentpath=0,296,375',
-	reminder: '提醒：發現擱淺鯨豚或海龜，請撥打海巡署專線 118，切勿自行將動物推回海中。'
+	reminder: '',
+	mapAttribution: '地圖輪廓：Natural Earth（公有領域）'
 };
