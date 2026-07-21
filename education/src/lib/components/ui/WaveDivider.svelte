@@ -13,7 +13,11 @@
 		layers = []
 	}: { from: string; to: string; height?: number; flip?: boolean; layers?: string[] } = $props();
 
-	const crest = 'M0,64 C240,108 480,12 720,40 C960,68 1200,116 1440,72';
+	// Multi-crest path with sloped tangents at both ends — a single-period
+	// wave goes near-horizontal at the edges, and preserveAspectRatio="none"
+	// flattens it further on wide screens.
+	const crest =
+		'M0,52 C120,20 260,96 420,64 C580,32 700,100 860,72 C1020,44 1160,104 1300,60 C1370,38 1410,42 1440,56';
 	const filled = `${crest} L1440,120 L0,120 Z`;
 	const step = $derived(layers.length ? Math.round(60 / (layers.length + 1)) : 0);
 </script>
