@@ -15,7 +15,7 @@
 			<a href="{resolve('/')}#report">通報</a>
 			<a href="{resolve('/')}#data">數據</a>
 			<a href="{resolve('/')}#map">擱淺地圖</a>
-			<a href={resolve('/learn')}>知識分享</a>
+			<a href={resolve('/learn')}>故事分享</a>
 		</nav>
 	</div>
 </header>

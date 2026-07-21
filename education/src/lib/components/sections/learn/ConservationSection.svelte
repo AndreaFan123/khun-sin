@@ -1,8 +1,8 @@
 <script lang="ts">
 	import SectionHead from '$lib/components/ui/SectionHead.svelte';
 	import KpiCard from '$lib/components/ui/KpiCard.svelte';
+	import MarnNetwork from '$lib/components/ui/MarnNetwork.svelte';
 	import {
-		marnNodes,
 		rescueStory,
 		collectiveStranding,
 		noPerfectSolution,
@@ -18,6 +18,8 @@
 			title="一隻鯨豚的獲救，是一整個網絡的合作"
 			lead="救援不是單一單位能完成的事。海洋委員會海保署扮演整合核心，串聯海巡署、地方政府、學術鯨豚中心、獸醫與民間團體，組成「海保救援網（MARN）」。當通報進來，這些角色會接力到同一個現場。"
 		/>
+
+<MarnNetwork />
 
 		<div class="story">
 			<div>
@@ -42,14 +44,7 @@
 			<p>{collectiveStranding.body}</p>
 		</div>
 
-		<div class="network">
-			{#each marnNodes as node (node.name)}
-				<div class="node">
-					<h4>{node.name}</h4>
-					<p>{node.role}</p>
-				</div>
-			{/each}
-		</div>
+		
 
 		<div class="kpis">
 			{#each conservationKpis as kpi (kpi.metric)}
@@ -118,27 +113,6 @@
 	}
 	.note p {
 		color: var(--text-secondary);
-	}
-	.network {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-		gap: 14px;
-		margin-top: 34px;
-	}
-	.node {
-		background: var(--bg-card);
-		border: 1px solid var(--border);
-		border-radius: var(--radius);
-		padding: 18px;
-		text-align: center;
-	}
-	.node h4 {
-		font-size: 0.98rem;
-		margin: 0 0 4px;
-	}
-	.node p {
-		font-size: 0.8rem;
-		color: var(--text-muted);
 	}
 	.kpis {
 		display: grid;
