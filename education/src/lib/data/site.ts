@@ -185,6 +185,96 @@ export const conservationKpis: ConservationKpi[] = [
 	{ metric: 'pathologyCases', unit: '件', label: '2025 年病理解剖分析，把每次死亡轉化為保育知識' }
 ];
 
+export interface ChartCardCopy {
+	key: 'trend' | 'months' | 'counties' | 'causes' | 'species';
+	title: string;
+	subtitle: string;
+	takeaway: string;
+	legend: { label: string; colorVar: string }[];
+}
+
+export const chartCards: ChartCardCopy[] = [
+	{
+		key: 'trend',
+		title: '近七年擱淺數量趨勢',
+		subtitle: '2019–2025，依死亡與活體區分（單位：隻）',
+		takeaway:
+			'七年來擱淺數大致落在每年 128–161 隻之間，2025 年是相對低點；但更值得注意的是活體比例降到七年最低（僅 7 隻、5.5%）。總數起伏不必然反映族群變化，也可能來自通報涵蓋與環境因素，需長期追蹤才能解讀。',
+		legend: [
+			{ label: '死亡個體', colorVar: '--chart-muted' },
+			{ label: '活體個體', colorVar: '--chart-emphasis' }
+		]
+	},
+	{
+		key: 'months',
+		title: '擱淺的季節性',
+		subtitle: '2025 年各月擱淺數量（單位：隻）',
+		takeaway:
+			'擱淺明顯集中在冬季與初春。東北季風強浪、水溫變化與洄游季節，都可能讓虛弱的個體更容易被沖上岸。',
+		legend: [
+			{ label: '冬季（12–2 月）', colorVar: '--chart-emphasis' },
+			{ label: '其他月份', colorVar: '--chart-baseline' }
+		]
+	},
+	{
+		key: 'counties',
+		title: '擱淺的縣市分布',
+		subtitle: '2025 年各縣市擱淺數量（單位：隻）',
+		takeaway:
+			'連江、金門、澎湖三個離島縣市合計 65 隻，佔了全臺的 51%。離島近岸的江豚族群，是擱淺熱點中的熱點。',
+		legend: [
+			{ label: '離島縣市', colorVar: '--chart-emphasis' },
+			{ label: '本島縣市', colorVar: '--chart-baseline' }
+		]
+	},
+	{
+		key: 'causes',
+		title: '擱淺原因分析',
+		subtitle: '2025 年 128 隻經檢查或解剖後的判定',
+		takeaway:
+			'高達 70% 因大體過度腐敗而無法判定死因，而且這個「無法判定」的比例逐年升高（2020 年約 56% → 2025 年 70%）——越晚被發現，越難查明真相，這正是及時通報與數位化的迫切之處。已確認與人類活動（混獲、撞擊）有關的有 15%，只是能被證實的冰山一角。',
+		legend: [
+			{ label: '疑似人類活動', colorVar: '--chart-emphasis' },
+			{ label: '其他判定', colorVar: '--chart-baseline' }
+		]
+	},
+	{
+		key: 'species',
+		title: '2025 年擱淺鯨豚物種分布',
+		subtitle: '全年 21 種、共 128 隻。露脊鼠海豚一種就佔了近一半，反映離島近岸族群承受的壓力。',
+		takeaway:
+			'擱淺物種高度集中——前五種就佔了四分之三。而露脊鼠海豚的佔比更是逐年攀升：2020 年約 29%、2022 年 39%、2025 年已達 45%，這種近岸江豚的生活範圍與人類活動高度重疊，壓力值得警惕。',
+		legend: [
+			{ label: '重點物種', colorVar: '--chart-emphasis' },
+			{ label: '其他物種', colorVar: '--chart-baseline' }
+		]
+	}
+];
+
+export const formTeaser = {
+	title: '線上通報系統，開發中',
+	body: '我們正在打造手機優先的擱淺通報表單——30 秒完成通報、案件編號可追蹤後續。上線前，發現擱淺請直接撥打 118。',
+	badge: '即將推出'
+};
+
+export const heroCopy = {
+	badge: '臺灣鯨豚擱淺數據 · 2019–2025 全年度 & 2026 第一季',
+	titleLead: '海的',
+	titleHighlight: '求救訊號',
+	titleTail: '寫在每一次擱淺裡',
+	sub: '每一隻擱淺上岸的鯨豚，都是海洋健康的一則訊息。讓我們用真實數據，讀懂牠們想告訴我們的事。',
+	statDeadLabel: '發現時已死亡，救援與時間賽跑',
+	statTotalLabel: '年全臺鯨豚擱淺通報',
+	statSpeciesLabel: '一年內擱淺的鯨豚物種數'
+};
+
+export const ctaCopy = {
+	title: '每一次擱淺，都是海洋交給我們的一封信',
+	body: '你不需要成為科學家，也能成為守護的一環：記住 118、認識這些鄰居、減少對海洋的傷害，並把正確的知識分享出去。當更多人願意在第一時間做對的事，就有更多鯨豚能重新游向大海。',
+	primaryLabel: '記住 118 通報步驟',
+	secondaryLabel: '認識臺灣的鯨豚'
+};
+
 export const brandFootnote = {
 	body: '鯤鯓（Khun-Sin），台語裡指浮出海面、狀似鯨背的沙洲——這座島本身，就是一隻鯨。'
 };
