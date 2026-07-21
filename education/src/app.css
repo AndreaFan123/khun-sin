@@ -142,3 +142,46 @@ h4 {
 	margin: 0 auto;
 	padding: 0 24px;
 }
+
+/* ---- Transitional legacy-chart styles (#6) — removed with charts-legacy.ts in Sprint 2 ---- */
+.chart-tt {
+	position: fixed;
+	z-index: 99;
+	pointer-events: none;
+	background: var(--navy-900);
+	color: var(--paper-50);
+	padding: 8px 11px;
+	border-radius: 9px;
+	font-size: 0.82rem;
+	opacity: 0;
+	transition: opacity 0.12s;
+	white-space: nowrap;
+	max-width: 240px;
+}
+.chart-tt b {
+	color: var(--amber-300);
+}
+svg .tick {
+	fill: var(--text-muted);
+	font-size: 12px;
+}
+svg .barlabel {
+	fill: var(--text-secondary);
+	font-size: 12px;
+}
+svg .barvalue {
+	fill: var(--text-primary);
+	font-size: 12px;
+	font-weight: 700;
+}
+svg .bar-rect {
+	transition:
+		width 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+		height 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+		y 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+	svg .bar-rect {
+		transition: none;
+	}
+}

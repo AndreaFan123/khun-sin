@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import Wordmark from '$lib/components/ui/Wordmark.svelte';
 </script>
 
 <header>
 	<div class="wrap bar">
-		<a class="brand" href={resolve('/')}>Khun-Sin</a>
+		<a class="brand" href={resolve('/')}><Wordmark onDark /></a>
 		<nav aria-label="主導覽">
 			<a href="{resolve('/')}#report">通報</a>
 			<a href="{resolve('/')}#data">數據</a>
