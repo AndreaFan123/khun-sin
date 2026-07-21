@@ -1,9 +1,11 @@
 <script lang="ts">
+	import CountUp from '$lib/components/ui/CountUp.svelte';
+
 	let { value, unit, label }: { value: number; unit: string; label: string } = $props();
 </script>
 
 <div class="kpi">
-	<div class="v">{value}<span class="u">{unit}</span></div>
+	<div class="v"><CountUp {value} whenVisible duration={1300} /><span class="u">{unit}</span></div>
 	<div class="l">{label}</div>
 </div>
 
