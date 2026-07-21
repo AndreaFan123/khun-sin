@@ -1,6 +1,7 @@
 <script lang="ts">
 	import SectionHead from '$lib/components/ui/SectionHead.svelte';
 	import ChartCard from '$lib/components/charts/ChartCard.svelte';
+	import LegacyChartMount from '$lib/components/charts/LegacyChartMount.svelte';
 	import { chartCards } from '$lib/data/site';
 
 	const byKey = (key: string) => chartCards.find((c) => c.key === key)!;
@@ -16,15 +17,15 @@
 		/>
 
 		<div class="grid two">
-			<ChartCard copy={byKey('trend')} />
-			<ChartCard copy={byKey('months')} />
+			<ChartCard copy={byKey('trend')}><LegacyChartMount key="trend" /></ChartCard>
+			<ChartCard copy={byKey('months')}><LegacyChartMount key="months" /></ChartCard>
 		</div>
 		<div class="grid two">
-			<ChartCard copy={byKey('counties')} />
-			<ChartCard copy={byKey('causes')} />
+			<ChartCard copy={byKey('counties')}><LegacyChartMount key="counties" /></ChartCard>
+			<ChartCard copy={byKey('causes')}><LegacyChartMount key="causes" /></ChartCard>
 		</div>
 		<div class="grid">
-			<ChartCard copy={byKey('species')} />
+			<ChartCard copy={byKey('species')}><LegacyChartMount key="species" /></ChartCard>
 		</div>
 	</div>
 </section>

@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { brandFootnote, dataSources } from '$lib/data/site';
+	import Wordmark from '$lib/components/ui/Wordmark.svelte';
 </script>
 
 <footer>
 	<div class="wrap">
-		<div class="brand">Khun-Sin · 臺灣鯨豚擱淺通報與數據</div>
+		<div class="brand"><Wordmark onDark /> · 臺灣鯨豚擱淺通報與數據</div>
 		<p class="footnote">{brandFootnote.body}</p>
 		<p class="src">
 			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL -->
@@ -27,6 +28,7 @@
 	.brand {
 		color: var(--text-on-dark);
 		font-weight: 500;
+		font-size: 1rem;
 	}
 	.footnote {
 		margin-top: 10px;
