@@ -72,7 +72,7 @@
 	.sub {
 		font-size: clamp(1.3rem, 2.2vw, 1.4rem);
 		margin-top: 22px;
-		max-width: 40ch;
+		max-width: 100%;
 		color: var(--text-on-dark-secondary);
 		width: 100%;
 	}

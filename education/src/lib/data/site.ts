@@ -17,10 +17,10 @@ export const speciesCards: SpeciesCard[] = [
 	{
 		tag: '極度瀕危 CR',
 		tagKind: 'critical',
-		name: '臺灣白海豚',
+		name: '台灣白海豚',
 		scientificName: 'Sousa chinensis taiwanensis',
 		description:
-			'只生活在臺灣西部沿海的特有亞種，粉白身影被稱為「媽祖魚」。學者估計現存不到 50 隻，且族群每年約下滑 3–4%，是臺灣最急迫的海洋保育對象。'
+			'只生活在台灣西部沿海的特有亞種，粉白身影被稱為「媽祖魚」。學者估計現存不到 50 隻，且族群每年約下滑 3–4%，是台灣最急迫的海洋保育對象。'
 	},
 	{
 		tag: '離島常見',
@@ -36,7 +36,7 @@ export const speciesCards: SpeciesCard[] = [
 		name: '瓶鼻海豚',
 		scientificName: 'Tursiops truncatus',
 		description:
-			'最為人熟悉的海豚之一，聰明、群居、好奇心強。臺灣海域有瓶鼻海豚與印太瓶鼻海豚兩種，是賞鯨常見的明星。'
+			'最為人熟悉的海豚之一，聰明、群居、好奇心強。台灣海域有瓶鼻海豚與印太瓶鼻海豚兩種，是賞鯨常見的明星。'
 	},
 	{
 		tag: '遠洋物種',
@@ -181,7 +181,7 @@ export const conservationKpis: ConservationKpi[] = [
 	{
 		metric: 'catalogued',
 		unit: '隻',
-		label: '臺灣白海豚個體辨識名錄累計數，為每隻粉紅精靈建檔追蹤'
+		label: '台灣白海豚個體辨識名錄累計數，為每隻粉紅精靈建檔追蹤'
 	},
 	{ metric: 'sampled', unit: '隻', label: '2025 年完成科學採樣的個體數，用於病理與死因分析' },
 	{ metric: 'sightingGroups', unit: '群次', label: '白海豚海上調查累計目擊紀錄，支撐族群監測' },
@@ -261,13 +261,13 @@ export const formTeaser = {
 };
 
 export const heroCopy = {
-	badge: '臺灣鯨豚擱淺數據 · 2019–2025 全年度 & 2026 第一季',
+	badge: '台灣鯨豚擱淺數據 · 2019–2025 全年度 & 2026 第一季',
 	titleLead: '鯨豚救援是',
 	titleHighlight: '「向死而生」',
 	titleTail: '',
-	sub: '每一隻擱淺的鯨豚，都代表著牠的生命可能來到盡頭。',
+	sub: '每一隻擱淺的鯨豚，都代表著牠的生命可能來到盡頭。救援未必能翻轉生死，但每一次的盡力，都能讓生命化為科學的養分，指引台灣鯨豚救援繼續前行。',
 	statDeadLabel: '發現時已死亡，救援與時間賽跑',
-	statTotalLabel: '年全臺鯨豚擱淺通報',
+	statTotalLabel: '年全台鯨豚擱淺通報',
 	statSpeciesLabel: '一年內擱淺的鯨豚物種數'
 };
 
@@ -275,7 +275,7 @@ export const ctaCopy = {
 	title: '每一次擱淺，都是海洋交給我們的一封信',
 	body: '你不需要成為科學家，也能成為守護的一環：記住 118、認識這些鄰居、減少對海洋的傷害，並把正確的知識分享出去。當更多人願意在第一時間做對的事，就有更多鯨豚能重新游向大海。',
 	primaryLabel: '記住 118 通報步驟',
-	secondaryLabel: '認識臺灣的鯨豚'
+	secondaryLabel: '認識台灣的鯨豚'
 };
 
 export const brandFootnote = {
@@ -286,5 +286,6 @@ export const dataSources = {
 	intro:
 		'資料來源：海洋委員會海洋保育署「海保救援網（MARN）」2019–2025 歷年全年度擱淺報告及 2026 年第一季擱淺報告',
 	marnUrl: 'https://www.oca.gov.tw/ch/home.jsp?id=379&parentpath=0,296,375',
-	reminder: ''
+	reminder: '',
+	mapAttribution: '地圖輪廓：Natural Earth（公有領域）'
 };

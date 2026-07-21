@@ -7,7 +7,7 @@
 
 <svelte:head>
 	<title>知識分享 · Khun-Sin</title>
-	<meta name="description" content="認識臺灣的鯨豚、人為威脅與保育行動的成果。" />
+	<meta name="description" content="認識台灣的鯨豚、人為威脅與保育行動的成果。" />
 </svelte:head>
 
 <SpeciesSection />

@@ -5,13 +5,13 @@
 
 <footer>
 	<div class="wrap">
-		<div class="brand"><Wordmark onDark /> · 臺灣鯨豚擱淺通報與數據</div>
+		<div class="brand"><Wordmark onDark /> · 台灣鯨豚擱淺通報與數據</div>
 		<p class="footnote">{brandFootnote.body}</p>
 		<p class="src">
 			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL -->
 			{dataSources.intro}（<a href={dataSources.marnUrl} target="_blank" rel="noopener"
 				>海保署官網</a
-			>）。<br />
+			>）。{dataSources.mapAttribution}。<br />
 			{dataSources.reminder}
 		</p>
 	</div>

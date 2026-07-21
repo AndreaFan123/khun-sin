@@ -14,7 +14,8 @@
 		<nav aria-label="主導覽">
 			<a href="{resolve('/')}#report">通報</a>
 			<a href="{resolve('/')}#data">數據</a>
-			<!-- <a href={resolve('/learn')}>知識分享</a> -->
+			<a href="{resolve('/')}#map">擱淺地圖</a>
+			<a href={resolve('/learn')}>知識分享</a>
 		</nav>
 	</div>
 </header>
@@ -22,6 +23,7 @@
 <nav class="bottom-bar" aria-label="行動版導覽">
 	<a href="{resolve('/')}#report">通報</a>
 	<a href="{resolve('/')}#data">數據</a>
+	<a href="{resolve('/')}#map">地圖</a>
 	<a class="call" href="tel:118" aria-label="撥打 118 海巡署救援專線">撥打 118</a>
 </nav>
 
