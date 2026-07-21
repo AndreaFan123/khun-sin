@@ -24,5 +24,12 @@
 <!-- <ReportFormTeaser /> -->
 <WaveDivider from="var(--paper-200)" to="var(--navy-800)" flip />
 <DataDashboard />
+<WaveDivider
+	from="var(--navy-800)"
+	to="var(--navy-900)"
+	stroke="var(--slate-500)"
+	height={70}
+	flip
+/>
 <MapSection />
 <!-- <Cta /> -->

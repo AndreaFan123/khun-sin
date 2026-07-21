@@ -10,8 +10,18 @@
 		to,
 		height = 80,
 		flip = false,
-		layers = []
-	}: { from: string; to: string; height?: number; flip?: boolean; layers?: string[] } = $props();
+		layers = [],
+		stroke
+	}: {
+		from: string;
+		to: string;
+		height?: number;
+		flip?: boolean;
+		layers?: string[];
+		/** Contour-echo color override — needed when from/to are close in value
+		 *  (e.g. two dark bands) and the default `to`-colored echoes vanish. */
+		stroke?: string;
+	} = $props();
 
 	// Multi-crest path with sloped tangents at both ends — a single-period
 	// wave goes near-horizontal at the edges, and preserveAspectRatio="none"
@@ -40,7 +50,7 @@
 				d={crest}
 				transform="translate(0,-24)"
 				fill="none"
-				stroke={to}
+				stroke={stroke ?? to}
 				stroke-width="1.5"
 				opacity="0.16"
 				vector-effect="non-scaling-stroke"
@@ -49,11 +59,21 @@
 				d={crest}
 				transform="translate(0,-12)"
 				fill="none"
-				stroke={to}
+				stroke={stroke ?? to}
 				stroke-width="1.5"
 				opacity="0.36"
 				vector-effect="non-scaling-stroke"
 			/>
+			{#if stroke}
+				<path
+					d={crest}
+					fill="none"
+					{stroke}
+					stroke-width="1.5"
+					opacity="0.6"
+					vector-effect="non-scaling-stroke"
+				/>
+			{/if}
 			<path d={filled} fill={to} />
 		{/if}
 	</svg>
