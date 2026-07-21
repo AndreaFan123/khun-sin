@@ -118,7 +118,7 @@
 		/* background: var(--bg-card);
 		border: 1px solid var(--border);
 		border-radius: var(--radius); */
-		padding: 26px 30px;
+		padding: 20px 0 26px 0;
 	}
 	.note h3 {
 		font-size: 1.25rem;
@@ -132,7 +132,7 @@
 	}
 	.kpis {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 		gap: 16px;
 		margin-top: 26px;
 	}

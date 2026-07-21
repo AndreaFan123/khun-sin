@@ -2,7 +2,7 @@
 	import SectionHead from '$lib/components/ui/SectionHead.svelte';
 	import StepCard from '$lib/components/ui/StepCard.svelte';
 	import DoDontList from '$lib/components/ui/DoDontList.svelte';
-	import { hotline, reportSteps, doList, dontList, reportEvenIfDead } from '$lib/data/site';
+	import { hotline, reportSteps, doList, dontList } from '$lib/data/site';
 </script>
 
 <section id="report">
@@ -17,7 +17,10 @@
 			<div class="big">
 				{hotline.number}<small>{hotline.label}</small>
 			</div>
-			<p>{hotline.description}</p>
+			<div class="info">
+				<h3>{hotline.infoTitle}</h3>
+				<p>{hotline.infoDescription}</p>
+			</div>
 		</div>
 
 		<div class="steps">
@@ -29,11 +32,6 @@
 		<div class="dodont">
 			<DoDontList kind="do" title="該做的事" items={doList} />
 			<DoDontList kind="dont" title="絕對不要做的事" items={dontList} />
-		</div>
-
-		<div class="dead-note">
-			<h3>{reportEvenIfDead.title}</h3>
-			<p>{reportEvenIfDead.body}</p>
 		</div>
 	</div>
 </section>
@@ -74,6 +72,16 @@
 		color: var(--text-on-dark-secondary);
 		font-size: 0.98rem;
 	}
+
+	.callbar h3 {
+		color: var(--text-on-dark);
+	}
+
+	.info {
+		display: flex;
+		flex-direction: column;
+		gap: 14px;
+	}
 	.steps {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -85,21 +93,6 @@
 		grid-template-columns: 1fr 1fr;
 		gap: 20px;
 		margin-top: 50px;
-	}
-	.dead-note {
-		margin-top: 30px;
-		background: var(--bg-band-dark);
-		color: var(--text-on-dark);
-		border-radius: var(--radius);
-		padding: 28px 32px;
-	}
-	.dead-note h3 {
-		color: var(--text-on-dark);
-		font-size: 1.18rem;
-		margin-bottom: 10px;
-	}
-	.dead-note p {
-		color: var(--text-on-dark-secondary);
 	}
 	@media (max-width: 860px) {
 		section {
