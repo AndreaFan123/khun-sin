@@ -1,5 +1,9 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import Hero from '$lib/components/sections/home/Hero.svelte';
+	import HowToReport from '$lib/components/sections/home/HowToReport.svelte';
+	import ReportFormTeaser from '$lib/components/sections/home/ReportFormTeaser.svelte';
+	import DataDashboard from '$lib/components/sections/home/DataDashboard.svelte';
+	import Cta from '$lib/components/sections/home/Cta.svelte';
 </script>
 
 <svelte:head>
@@ -7,9 +11,8 @@
 	<meta name="description" content="發現鯨豚擱淺請撥 118。臺灣鯨豚擱淺通報資訊與官方數據視覺化。" />
 </svelte:head>
 
-<!-- Home: action + data. Real sections land in Sprint 1 (#5). -->
-<main>
-	<h1>Khun-Sin</h1>
-	<p>發現鯨豚擱淺，請撥海巡署 24 小時專線 <strong>118</strong>。</p>
-	<p><a href={resolve('/learn')}>認識臺灣的鯨豚 →</a></p>
-</main>
+<Hero />
+<HowToReport />
+<ReportFormTeaser />
+<DataDashboard />
+<Cta />
