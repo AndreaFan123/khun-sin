@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-vercel';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
@@ -11,8 +11,9 @@ export default defineConfig({
 					filename.split(/[/\\]/).includes('node_modules') ? undefined : true
 			},
 
-			// Fully static output for GitHub Pages (ADR-001): every route is
-			// prerendered at build time (see src/routes/+layout.ts), no SPA fallback.
+			// Deployed on Vercel (ADR-001 deployment update, 2026-07-21). Every route
+			// is prerendered (src/routes/+layout.ts), so the output is still pure
+			// static HTML served from the CDN — no server-rendered code paths.
 			adapter: adapter()
 		})
 	]
