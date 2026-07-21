@@ -28,6 +28,12 @@
 		role="img"
 		aria-label="海保救援網（MARN）架構：海保署為整合核心，串聯海巡署、學術鯨豚中心、在地民間團體與獸醫團隊"
 	>
+		<!-- perimeter ring: the four partners also link to each other -->
+		<path class="trace outer" d="M250,61 H650" />
+		<path class="trace outer" d="M250,399 H650" />
+		<path class="trace outer" d="M145,126 V334" />
+		<path class="trace outer" d="M755,126 V334" />
+
 		<!-- traces: satellite edge → bend → hub edge -->
 		<path class="trace" d="M250,81 H390 V180" />
 		<path class="trace" d="M650,81 H510 V180" />
@@ -85,6 +91,9 @@
 		fill: none;
 		stroke: var(--slate-600);
 		stroke-width: 1.2;
+	}
+	.trace.outer {
+		stroke: var(--slate-700);
 	}
 	.bend {
 		fill: var(--slate-500);
