@@ -32,4 +32,5 @@
 	flip
 />
 <MapSection />
+<WaveDivider from="var(--navy-900)" to="var(--navy-900)" stroke="var(--slate-500)" height={56} />
 <!-- <Cta /> -->
