@@ -9,25 +9,26 @@
 
 <style>
 	.kpi {
-		background: var(--bg-card);
-		border: 1px solid var(--border);
+		/* background: var(--bg-card); */
+		/* border: 1px solid var(--border); */
 		border-radius: var(--radius);
 		padding: 22px;
 	}
 	.v {
-		font-size: 2rem;
+		font-size: 5rem;
 		font-weight: 800;
-		color: var(--heading);
+		color: var(--text-on-dark);
 		font-variant-numeric: tabular-nums;
 	}
 	.u {
 		font-size: 1rem;
 		font-weight: 600;
 		margin-left: 2px;
+		color: var(--chart-emphasis);
 	}
 	.l {
-		font-size: 0.85rem;
-		color: var(--text-secondary);
+		font-size: 1rem;
+		color: var(--text-on-dark);
 		margin-top: 4px;
 	}
 </style>

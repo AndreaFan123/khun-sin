@@ -11,7 +11,10 @@
 			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL -->
 			{dataSources.intro}（<a href={dataSources.marnUrl} target="_blank" rel="noopener"
 				>海保署官網</a
-			>）。{dataSources.mapAttribution}。<br />
+			>）。
+		</p>
+		<p>
+			{dataSources.mapAttribution}。<br />
 			{dataSources.reminder}
 		</p>
 	</div>
@@ -23,7 +26,6 @@
 		color: var(--text-on-dark-secondary);
 		font-size: 0.875rem;
 		padding: 40px 0;
-		border-top: 1px solid var(--border-on-dark);
 	}
 	.brand {
 		color: var(--text-on-dark);

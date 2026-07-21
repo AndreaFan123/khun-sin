@@ -1,6 +1,7 @@
 <script lang="ts">
 	import SectionHead from '$lib/components/ui/SectionHead.svelte';
 	import KpiCard from '$lib/components/ui/KpiCard.svelte';
+	import WaveDivider from '$lib/components/ui/WaveDivider.svelte';
 	// import MarnNetwork from '$lib/components/ui/MarnNetwork.svelte';
 	import {
 		rescueStory,
@@ -43,14 +44,19 @@
 			<h3>{collectiveStranding.title}</h3>
 			<p>{collectiveStranding.body}</p>
 		</div>
+	</div>
+</section>
 
-		<div class="kpis-head">
-			<SectionHead
-				eyebrow="白海豚保育數據"
-				title="把每一次相遇，記成保育的知識"
-				lead="個體辨識名錄、海上調查、科學採樣與病理分析——這些數字是第一線團隊日復一日的累積，也是保育決策的基礎。"
-			/>
-		</div>
+<WaveDivider from="var(--paper-200)" to="var(--navy-800)" flip />
+
+<section class="kpi-band">
+	<div class="wrap">
+		<SectionHead
+			onDark
+			eyebrow="白海豚保育數據"
+			title="用微光，照亮未來救援的路"
+			lead="個體辨識名錄、海上調查、科學採樣與病理分析——這些數字是第一線團隊日復一日的累積，也是保育決策的基礎。"
+		/>
 
 		<div class="kpis">
 			{#each conservationKpis as kpi (kpi.metric)}
@@ -121,8 +127,8 @@
 	.note p {
 		color: var(--text-secondary);
 	}
-	.kpis-head {
-		margin-top: 82px;
+	.kpi-band {
+		background: var(--bg-band-dark);
 	}
 	.kpis {
 		display: grid;

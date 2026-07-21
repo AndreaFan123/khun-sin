@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>知識分享 · Khun-Sin</title>
+	<title>故事分享 · Khun-Sin</title>
 	<meta name="description" content="認識台灣的鯨豚、人為威脅與保育行動的成果。" />
 </svelte:head>
 
@@ -15,4 +15,10 @@
 <ThreatsSection />
 <WaveDivider from="var(--navy-800)" to="var(--paper-200)" flip />
 <ConservationSection />
-<WaveDivider from="var(--paper-200)" to="var(--navy-900)" height={60} />
+<WaveDivider
+	from="var(--navy-800)"
+	to="var(--navy-900)"
+	stroke="var(--slate-500)"
+	height={56}
+	flip
+/>
