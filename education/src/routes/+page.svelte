@@ -13,7 +13,12 @@
 </svelte:head>
 
 <Hero />
-<WaveDivider from="var(--navy-900)" to="var(--paper-200)" />
+<WaveDivider
+	from="var(--navy-900)"
+	to="var(--paper-200)"
+	height={110}
+	layers={['var(--navy-700)', 'var(--navy-500)', 'var(--slate-400)', 'var(--slate-200)']}
+/>
 <HowToReport />
 <ReportFormTeaser />
 <WaveDivider from="var(--paper-200)" to="var(--navy-800)" flip />

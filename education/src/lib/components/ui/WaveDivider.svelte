@@ -1,16 +1,21 @@
 <script lang="ts">
 	// Band-boundary divider (fix/tweak_ui): the next section's color rises like
-	// a sea surface, with contour-line echoes above the crest — the
-	// topographic/wave motif from the brand exploration. Pure strokes + one
-	// flat fill; no gradients, no shadows.
+	// a sea surface — the topographic/wave motif from the brand exploration.
+	// Two modes, both flat (no gradients, no shadows):
+	// - default: one filled wave + two fading contour-line echoes above the crest
+	// - layered: `layers` stacks intermediate filled waves between `from` and
+	//   `to`, light-to-deep — a stepped sea cross-section (deepest = `from`)
 	let {
 		from,
 		to,
 		height = 80,
-		flip = false
-	}: { from: string; to: string; height?: number; flip?: boolean } = $props();
+		flip = false,
+		layers = []
+	}: { from: string; to: string; height?: number; flip?: boolean; layers?: string[] } = $props();
 
 	const crest = 'M0,64 C240,108 480,12 720,40 C960,68 1200,116 1440,72';
+	const filled = `${crest} L1440,120 L0,120 Z`;
+	const step = $derived(layers.length ? Math.round(60 / (layers.length + 1)) : 0);
 </script>
 
 <div class="divider" style="background:{from}" aria-hidden="true">
@@ -21,25 +26,32 @@
 		class:flip
 		role="presentation"
 	>
-		<path
-			d={crest}
-			transform="translate(0,-24)"
-			fill="none"
-			stroke={to}
-			stroke-width="1.5"
-			opacity="0.16"
-			vector-effect="non-scaling-stroke"
-		/>
-		<path
-			d={crest}
-			transform="translate(0,-12)"
-			fill="none"
-			stroke={to}
-			stroke-width="1.5"
-			opacity="0.36"
-			vector-effect="non-scaling-stroke"
-		/>
-		<path d="{crest} L1440,120 L0,120 Z" fill={to} />
+		{#if layers.length}
+			{#each layers as color, i (color)}
+				<path d={filled} transform="translate(0,{i * step})" fill={color} />
+			{/each}
+			<path d={filled} transform="translate(0,{layers.length * step})" fill={to} />
+		{:else}
+			<path
+				d={crest}
+				transform="translate(0,-24)"
+				fill="none"
+				stroke={to}
+				stroke-width="1.5"
+				opacity="0.16"
+				vector-effect="non-scaling-stroke"
+			/>
+			<path
+				d={crest}
+				transform="translate(0,-12)"
+				fill="none"
+				stroke={to}
+				stroke-width="1.5"
+				opacity="0.36"
+				vector-effect="non-scaling-stroke"
+			/>
+			<path d={filled} fill={to} />
+		{/if}
 	</svg>
 </div>
 
