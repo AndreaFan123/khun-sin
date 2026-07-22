@@ -25,15 +25,18 @@ education/
     ├── app.css                 # design tokens (:root), reset, typography — lifted from index.html
     ├── routes/
     │   ├── +layout.ts          # export const prerender = true
-    │   ├── +layout.svelte      # app.css, header nav, <Tooltip/> singleton
+    │   ├── +layout.svelte      # app.css, nav/footer, locale context (URL /en prefix → en copy)
     │   ├── +page.svelte        # home: action + data (per spec IA)
-    │   ├── learn/+page.svelte  # knowledge: species, threats, conservation
-    │   └── en/report/+page.svelte  # EN essentials (backlog #23, Sprint 5 candidate)
+    │   ├── learn/+page.svelte  # stories: species, threats, conservation
+    │   ├── en/+page.svelte     # full English mirror of home (#23)
+    │   └── en/learn/+page.svelte  # full English mirror of stories
     └── lib/
+        ├── copy.ts             # locale context: useSite() → { copy, locale }; root layout provides
         ├── data/
-        │   ├── strandings.ts   # typed datasets (see Data layer)
+        │   ├── strandings.ts   # typed datasets incl. nameEn labels (see Data layer)
         │   ├── taiwan-geo.ts   # county SVG paths + centroids — generated at build time, committed
-        │   └── site.ts         # hero stats, species cards, threats, steps, MARN nodes copy-as-data
+        │   ├── site.ts         # ALL zh copy: cards, steps, chart cards, section heads, UI strings
+        │   └── site-en.ts      # faithful English mirror of site.ts — keep in sync on every copy change
         ├── components/
         │   ├── sections/       # grouped by route, per the spec's IA
         │   │   ├── home/       # Hero, HowToReport, ReportFormTeaser, DataDashboard, Cta
@@ -214,6 +217,16 @@ Added per phase, not upfront:
 - **Vitest** for pure logic: scale/layout helpers, derived-stat functions (e.g. percentage of outlying-island strandings).
 - **Playwright** smoke test (optional, add when CI exists): page renders, five charts present, tooltip appears on hover.
 - Manual acceptance: Lighthouse ≥ current single-file scores; RWD breakpoints at 860px behave identically.
+
+## Bilingual mirror (#23, shipped 2026-07-22)
+
+Full-site English at `/en` + `/en/learn`, with no i18n library:
+
+- The root layout derives the locale from the URL (`/en` prefix) and provides a reactive `{ copy, locale }` accessor via context (`lib/copy.ts`); components call `useSite()` instead of importing `site.ts` directly.
+- `site-en.ts` mirrors every `site.ts` export — **standing rule: any copy change in `site.ts` must be mirrored there** (shape-identical files; drift is silent).
+- Charts and the map localize fully: `nameEn` labels in `strandings.ts`, legacy chart renderers take unit/label options, month axis labels come from `uiCopy`, map tooltips/aria switch per locale.
+- The nav's 中/EN switcher targets the equivalent page in the other language; both locales prerender as static pages.
+- Known gap: `<html lang>` is static (`app.html`) — per-locale lang attributes need a server hook; revisit with the Sprint 3 a11y pass.
 
 ## UI-iteration additions (fix/tweak_ui, 2026-07-21/22)
 

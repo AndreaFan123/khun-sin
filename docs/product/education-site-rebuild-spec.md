@@ -46,7 +46,9 @@ The education site — Taiwan's cetacean stranding data made readable for the ge
              Conservation stories (rescue story, no-perfect-solution, collective stranding)
              White-dolphin KPI band (dark stage, count-up numbers)
 
-/en/report   EN essentials (#23) — English stranding-response guide (priority raised, see P1-5)
+/en, /en/learn   Full English mirror (#23, shipped 2026-07-22) — faithful translation of
+             both pages down to chart takeaways, axis labels, tooltips and map labels;
+             the 中/EN switcher (nav + mobile bar) jumps to the same page in the other language
 
 Band seams site-wide use the WaveDivider system (see visual-direction).
 Removed during the fix/tweak_ui iteration: report-form teaser (P0-8 deferred
@@ -97,13 +99,13 @@ Charts follow **data** (all on the home dashboard); cards and stories follow **k
 | P1-2 | Map visual quality | Dark-ocean stage; layered glow + breathing pulse; coral = outlying islands, aqua = main island; honors reduced-motion |
 | P1-3 | Map is static-first | Land + dots prerender as SVG in built HTML; hover tooltip ("連江縣：26 隻") and pulse are progressive enhancement |
 | P1-4 | Geometry pipeline | One-off `scripts/` generation (d3-geo + topojson-client at build time only); output committed as `taiwan-geo.ts`; zero runtime bytes added. Shipped with Natural Earth-derived geometry; MOI upgrade = source swap + re-run |
-| P1-5 | **EN essentials `/en/report`** — priority raised 2026-07-22: Taiwan's coasts see many foreign visitors, and the stranding-response content is exactly what they need in English | All safety-critical content (118, steps, do/don't, on-site safety, report-even-if-dead) in English; visibly linked from the report section and footer |
+| P1-5 | **Full English mirror `/en` + `/en/learn`** — priority raised then widened 2026-07-22 (Andrea: faithfully present the same content as the Chinese site, translated); supersedes the standalone essentials-page plan | Every content block of both pages translated — sections, chart titles/takeaways/legends, axis labels, tooltips, map labels, aria descriptions; 中/EN switcher in nav + mobile bar targets the equivalent page; both locales prerender statically with zero i18n runtime |
 
 ### P2 — future considerations (design for, don't build)
 
 - **Species gallery (`/species/[slug]`)**: a dedicated route per species (~30) with real photos, video, and eventually sound. Homepage species cards become entry points into it. The long-lead work is **media collection and licensing** (Cetacean Society, OCA, CC-licensed sources) — start that pipeline early; heavy media likely needs external hosting (e.g. video embeds), decided when the gallery is specced.
 - **Donation entry (post-launch)**: a quiet "support the front line" block — primary: external donation links to established conservation orgs (clearly labeled as external; pairs with the org relationships built for the species gallery, #19); secondary: a footer-level "support this site's operations" link, framed strictly as site upkeep. Must not compete with the primary CTAs (118 awareness, sharing knowledge).
-- **Full bilingual (`/en`)**: EN essentials moved up to P1-5 (2026-07-22). Full-site translation stays here — copy-as-data discipline (P0-3) is the enabler; i18n library (compile-time, e.g. Paraglide) chosen when this starts, deferred until the domain/brand launch and reader evidence justify the ongoing ×2 translation upkeep.
+- ~~Full bilingual (`/en`)~~ — **shipped** as P1-5 (2026-07-22) without an i18n library: a locale context picks between `site.ts` (zh) and `site-en.ts` (en). Standing maintenance rule: **every copy change in `site.ts` must be mirrored in `site-en.ts`** — the files are shape-identical, drift is silent.
 - **Sea turtle section**: data model should not hard-code "cetacean" where "species group" is meant.
 - **Multi-year dashboard**: keep chart components data-driven by year so a year-selector is an extension, not a rewrite.
 - **Report-system reuse**: design tokens stay in one importable CSS file, promotable to `shared/` per ADR-002.
