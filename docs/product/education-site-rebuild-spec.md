@@ -125,7 +125,7 @@ Charts follow **data** (all on the home dashboard); cards and stories follow **k
 
 | Question | Owner | Blocking? |
 |----------|-------|-----------|
-| Domain: brand name is decided (**Khun-Sin**, see [brand.md](../design/brand.md)) — check registration of `khunsin.tw` / `khun-sin.tw`; binds to the Vercel project and affects OG URLs | Andrea | No — deploy on `khun-sin.vercel.app` first |
+| ~~Domain~~ — **resolved 2026-07-22**: `khun-sin.com` registered and live at [www.khun-sin.com](https://www.khun-sin.com), bound to the Vercel project | Andrea | Done |
 | Analytics: none vs privacy-friendly (e.g. self-hostable counter)? Currently no way to measure readership | Andrea | No — can add post-launch |
 | Social preview (OG image) — current page has none; add during rebuild? | Andrea | No |
 | Species-gallery media: which sources (Cetacean Society / OCA / CC) and what licensing terms? Long-lead — start inquiries before the gallery is specced | Andrea | No (P2) |
