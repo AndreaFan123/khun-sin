@@ -2,19 +2,16 @@
 	import SectionHead from '$lib/components/ui/SectionHead.svelte';
 	import ChartCard from '$lib/components/charts/ChartCard.svelte';
 	import LegacyChartMount from '$lib/components/charts/LegacyChartMount.svelte';
-	import { chartCards } from '$lib/data/site';
+	import { useSite } from '$lib/copy';
 
-	const byKey = (key: string) => chartCards.find((c) => c.key === key)!;
+	const site = useSite();
+	const head = $derived(site().copy.sectionHeads.data);
+	const byKey = (key: string) => site().copy.chartCards.find((c) => c.key === key)!;
 </script>
 
 <section id="data" class="band-dark">
 	<div class="wrap">
-		<SectionHead
-			onDark
-			eyebrow="數據"
-			title="數字代表著無數生命"
-			lead="「擱淺」是鯨豚因傷病、迷航、遭到船隻撞擊等種種因素而被沖上岸的現象。每一隻鯨豚的犧牲都讓我們更了解海洋：擱淺的種類、地點、季節與死因，透露著整個海域的資訊。以下數據來自海保署「海保救援網（MARN）」的官方擱淺報告。"
-		/>
+		<SectionHead onDark eyebrow={head.eyebrow} title={head.title} lead={head.lead} />
 
 		<div class="grid two">
 			<ChartCard copy={byKey('trend')}><LegacyChartMount key="trend" /></ChartCard>

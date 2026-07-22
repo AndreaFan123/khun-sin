@@ -1,16 +1,20 @@
 <script lang="ts">
-	import { brandFootnote, dataSources } from '$lib/data/site';
+	import { useSite } from '$lib/copy';
 	import Wordmark from '$lib/components/ui/Wordmark.svelte';
+
+	const site = useSite();
+	const c = $derived(site().copy);
+	const dataSources = $derived(c.dataSources);
 </script>
 
 <footer>
 	<div class="wrap">
-		<div class="brand"><Wordmark onDark /> · 台灣鯨豚擱淺通報與數據</div>
-		<p class="footnote">{brandFootnote.body}</p>
+		<div class="brand"><Wordmark onDark /> · {c.uiCopy.footerBrandLine}</div>
+		<p class="footnote">{c.brandFootnote.body}</p>
 		<p class="src">
 			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL -->
 			{dataSources.intro}（<a href={dataSources.marnUrl} target="_blank" rel="noopener"
-				>海保署官網</a
+				>{dataSources.marnLinkText}</a
 			>）。
 		</p>
 		<p>

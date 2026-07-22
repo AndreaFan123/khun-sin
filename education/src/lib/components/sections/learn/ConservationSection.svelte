@@ -3,21 +3,22 @@
 	import KpiCard from '$lib/components/ui/KpiCard.svelte';
 	import WaveDivider from '$lib/components/ui/WaveDivider.svelte';
 	// import MarnNetwork from '$lib/components/ui/MarnNetwork.svelte';
-	import {
-		rescueStory,
-		collectiveStranding,
-		noPerfectSolution,
-		conservationKpis
-	} from '$lib/data/site';
+	import { useSite } from '$lib/copy';
 	import { whiteDolphinProgram2025 } from '$lib/data/strandings';
+
+	const site = useSite();
+	const c = $derived(site().copy);
+	const rescueStory = $derived(c.rescueStory);
+	const collectiveStranding = $derived(c.collectiveStranding);
+	const noPerfectSolution = $derived(c.noPerfectSolution);
 </script>
 
 <section>
 	<div class="wrap">
 		<SectionHead
-			eyebrow="保育行動與成果"
-			title="一隻鯨豚的獲救，是一整個網絡的合作"
-			lead="救援不是單一單位能完成的事。海洋委員會海保署扮演整合核心，串聯海巡署、地方政府、學術鯨豚中心、獸醫與民間團體，組成「海保救援網（MARN）」。當通報進來，這些角色會接力到同一個現場。"
+			eyebrow={c.sectionHeads.conservation.eyebrow}
+			title={c.sectionHeads.conservation.title}
+			lead={c.sectionHeads.conservation.lead}
 		/>
 
 		<!-- <MarnNetwork /> -->
@@ -53,13 +54,13 @@
 	<div class="wrap">
 		<SectionHead
 			onDark
-			eyebrow="白海豚保育數據"
-			title="用微光，照亮未來救援的路"
-			lead="個體辨識名錄、海上調查、科學採樣與病理分析——這些數字是第一線團隊日復一日的累積，也是保育決策的基礎。"
+			eyebrow={c.sectionHeads.kpi.eyebrow}
+			title={c.sectionHeads.kpi.title}
+			lead={c.sectionHeads.kpi.lead}
 		/>
 
 		<div class="kpis">
-			{#each conservationKpis as kpi (kpi.metric)}
+			{#each c.conservationKpis as kpi (kpi.metric)}
 				<KpiCard value={whiteDolphinProgram2025[kpi.metric]} unit={kpi.unit} label={kpi.label} />
 			{/each}
 		</div>

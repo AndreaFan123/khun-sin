@@ -37,6 +37,8 @@ export const totals: StrandingTotals[] = [
 
 export interface SpeciesCount {
 	name: string;
+	/** English label for the /en mirror. */
+	nameEn: string;
 	count: number;
 	/** Story emphasis (amber channel): e.g. 露脊鼠海豚 share trend, 中華白海豚. */
 	emphasis?: boolean;
@@ -44,6 +46,8 @@ export interface SpeciesCount {
 
 export interface CountyCount {
 	name: string;
+	/** English label for the /en mirror. */
+	nameEn: string;
 	count: number;
 	/** Lienchiang / Kinmen / Penghu — the hotspot story. */
 	offshoreIsland: boolean;
@@ -57,6 +61,8 @@ export interface MonthCount {
 
 export interface CauseCount {
 	name: string;
+	/** English label for the /en mirror. */
+	nameEn: string;
 	count: number;
 	emphasis?: boolean;
 }
@@ -73,33 +79,33 @@ export const breakdowns: PeriodBreakdown[] = [
 	{
 		period: { year: 2025 },
 		species: [
-			{ name: '露脊鼠海豚', count: 58, emphasis: true },
-			{ name: '印太瓶鼻海豚', count: 14 },
-			{ name: '熱帶斑海豚', count: 8 },
-			{ name: '弗氏海豚', count: 8 },
-			{ name: '瓶鼻海豚', count: 8 },
-			{ name: '小抹香鯨', count: 4 },
-			{ name: '中華白海豚', count: 3, emphasis: true },
-			{ name: '飛旋海豚', count: 3 },
-			{ name: '柯氏喙鯨', count: 3 },
-			{ name: '其他 12 種', count: 19 }
+			{ name: '露脊鼠海豚', nameEn: 'Finless porpoise', count: 58, emphasis: true },
+			{ name: '印太瓶鼻海豚', nameEn: 'Indo-Pacific bottlenose', count: 14 },
+			{ name: '熱帶斑海豚', nameEn: 'Pantropical spotted dolphin', count: 8 },
+			{ name: '弗氏海豚', nameEn: 'Fraser’s dolphin', count: 8 },
+			{ name: '瓶鼻海豚', nameEn: 'Common bottlenose', count: 8 },
+			{ name: '小抹香鯨', nameEn: 'Pygmy sperm whale', count: 4 },
+			{ name: '中華白海豚', nameEn: 'Chinese white dolphin', count: 3, emphasis: true },
+			{ name: '飛旋海豚', nameEn: 'Spinner dolphin', count: 3 },
+			{ name: '柯氏喙鯨', nameEn: 'Cuvier’s beaked whale', count: 3 },
+			{ name: '其他 12 種', nameEn: '12 other species', count: 19 }
 		],
 		counties: [
-			{ name: '連江縣', count: 26, offshoreIsland: true },
-			{ name: '金門縣', count: 24, offshoreIsland: true },
-			{ name: '澎湖縣', count: 15, offshoreIsland: true },
-			{ name: '宜蘭縣', count: 14, offshoreIsland: false },
-			{ name: '新北市', count: 9, offshoreIsland: false },
-			{ name: '桃園市', count: 7, offshoreIsland: false },
-			{ name: '苗栗縣', count: 7, offshoreIsland: false },
-			{ name: '高雄市', count: 6, offshoreIsland: false },
-			{ name: '花蓮縣', count: 4, offshoreIsland: false },
-			{ name: '台東縣', count: 3, offshoreIsland: false },
-			{ name: '彰化縣', count: 3, offshoreIsland: false },
-			{ name: '台南市', count: 3, offshoreIsland: false },
-			{ name: '屏東縣', count: 3, offshoreIsland: false },
-			{ name: '新竹市', count: 2, offshoreIsland: false },
-			{ name: '基隆市', count: 2, offshoreIsland: false }
+			{ name: '連江縣', nameEn: 'Lienchiang', count: 26, offshoreIsland: true },
+			{ name: '金門縣', nameEn: 'Kinmen', count: 24, offshoreIsland: true },
+			{ name: '澎湖縣', nameEn: 'Penghu', count: 15, offshoreIsland: true },
+			{ name: '宜蘭縣', nameEn: 'Yilan', count: 14, offshoreIsland: false },
+			{ name: '新北市', nameEn: 'New Taipei', count: 9, offshoreIsland: false },
+			{ name: '桃園市', nameEn: 'Taoyuan', count: 7, offshoreIsland: false },
+			{ name: '苗栗縣', nameEn: 'Miaoli', count: 7, offshoreIsland: false },
+			{ name: '高雄市', nameEn: 'Kaohsiung', count: 6, offshoreIsland: false },
+			{ name: '花蓮縣', nameEn: 'Hualien', count: 4, offshoreIsland: false },
+			{ name: '台東縣', nameEn: 'Taitung', count: 3, offshoreIsland: false },
+			{ name: '彰化縣', nameEn: 'Changhua', count: 3, offshoreIsland: false },
+			{ name: '台南市', nameEn: 'Tainan', count: 3, offshoreIsland: false },
+			{ name: '屏東縣', nameEn: 'Pingtung', count: 3, offshoreIsland: false },
+			{ name: '新竹市', nameEn: 'Hsinchu', count: 2, offshoreIsland: false },
+			{ name: '基隆市', nameEn: 'Keelung', count: 2, offshoreIsland: false }
 		],
 		months: [
 			{ month: 1, count: 14 },
@@ -116,11 +122,16 @@ export const breakdowns: PeriodBreakdown[] = [
 			{ month: 12, count: 19 }
 		],
 		causes: [
-			{ name: '大體腐敗，無法判定', count: 89 },
-			{ name: '疑似人類活動（混獲、撞擊）', count: 19, emphasis: true },
-			{ name: '疾病或出生後即死亡', count: 12 },
-			{ name: '與母體分離', count: 4 },
-			{ name: '其他', count: 4 }
+			{ name: '大體腐敗，無法判定', nameEn: 'Too decomposed to determine', count: 89 },
+			{
+				name: '疑似人類活動（混獲、撞擊）',
+				nameEn: 'Suspected human activity (bycatch, strikes)',
+				count: 19,
+				emphasis: true
+			},
+			{ name: '疾病或出生後即死亡', nameEn: 'Disease or neonatal death', count: 12 },
+			{ name: '與母體分離', nameEn: 'Separated from mother', count: 4 },
+			{ name: '其他', nameEn: 'Other', count: 4 }
 		]
 	}
 ];

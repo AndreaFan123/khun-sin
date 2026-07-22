@@ -5,6 +5,11 @@
 	// prefers-reduced-motion.
 	import { landPath, mapWidth, mapHeight, countyPoints } from '$lib/data/taiwan-geo';
 	import { findBreakdown } from '$lib/data/strandings';
+	import { useSite } from '$lib/copy';
+
+	const site = useSite();
+	const en = $derived(site().locale === 'en');
+	const ui = $derived(site().copy.uiCopy);
 
 	const counties = findBreakdown(2025)!.counties!;
 
@@ -16,11 +21,7 @@
 	const labelled = new Set(['連江縣', '金門縣', '澎湖縣', '宜蘭縣']);
 </script>
 
-<svg
-	viewBox="0 0 {mapWidth} {mapHeight}"
-	role="img"
-	aria-label="2025 年台灣各縣市鯨豚擱淺分布地圖：連江 26、金門 24、澎湖 15 為熱點，離島三縣合計佔全台 51%"
->
+<svg viewBox="0 0 {mapWidth} {mapHeight}" role="img" aria-label={ui.mapAriaLabel}>
 	<defs>
 		<filter id="dot-glow" x="-80%" y="-80%" width="260%" height="260%">
 			<feGaussianBlur stdDeviation="5" />
@@ -33,11 +34,11 @@
 		<g class="dot" class:offshore={d.offshoreIsland}>
 			<circle class="halo" cx={d.x} cy={d.y} r={d.r * 1.9} filter="url(#dot-glow)" />
 			<circle class="core" cx={d.x} cy={d.y} r={d.r}>
-				<title>{d.name}：{d.count} 隻</title>
+				<title>{en ? `${d.nameEn}: ${d.count}` : `${d.name}：${d.count} 隻`}</title>
 			</circle>
 			{#if labelled.has(d.name)}
 				<text class="lbl" x={d.x + d.r + 8} y={d.y + 5}
-					>{d.name.replace('縣', '').replace('市', '')} {d.count}</text
+					>{en ? d.nameEn : d.name.replace('縣', '').replace('市', '')} {d.count}</text
 				>
 			{/if}
 		</g>

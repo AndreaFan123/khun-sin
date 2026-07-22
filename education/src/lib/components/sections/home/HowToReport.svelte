@@ -2,16 +2,17 @@
 	import SectionHead from '$lib/components/ui/SectionHead.svelte';
 	import StepCard from '$lib/components/ui/StepCard.svelte';
 	import DoDontList from '$lib/components/ui/DoDontList.svelte';
-	import { hotline, reportSteps, doList, dontList } from '$lib/data/site';
+	import { useSite } from '$lib/copy';
+
+	const site = useSite();
+	const c = $derived(site().copy);
+	const hotline = $derived(c.hotline);
+	const head = $derived(c.sectionHeads.report);
 </script>
 
 <section id="report">
 	<div class="wrap">
-		<SectionHead
-			eyebrow="如何通報與參與"
-			title="「通報」是最關鍵的第一步"
-			lead="絕大多數擱淺鯨豚在發現時已經死亡，幸運的話，可能還有一線生機！活體救援是分秒必爭的事。第一步，從一通電話開始。你不需要是專家——只需要知道該打給誰、以及有哪些該做與不該做的事。"
-		/>
+		<SectionHead eyebrow={head.eyebrow} title={head.title} lead={head.lead} />
 
 		<div class="callbar">
 			<div class="big">
@@ -24,14 +25,14 @@
 		</div>
 
 		<div class="steps">
-			{#each reportSteps as step, i (step.title)}
+			{#each c.reportSteps as step, i (step.title)}
 				<StepCard {step} index={i} />
 			{/each}
 		</div>
 
 		<div class="dodont">
-			<DoDontList kind="do" title="該做的事" items={doList} />
-			<DoDontList kind="dont" title="絕對不要做的事" items={dontList} />
+			<DoDontList kind="do" title={c.uiCopy.doTitle} items={c.doList} />
+			<DoDontList kind="dont" title={c.uiCopy.dontTitle} items={c.dontList} />
 		</div>
 	</div>
 </section>
