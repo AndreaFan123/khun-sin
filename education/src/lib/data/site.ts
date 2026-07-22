@@ -379,6 +379,7 @@ export const uiCopy = {
 	navData: '數據',
 	navMap: '擱淺地圖',
 	navLearn: '故事分享',
+	navSupport: '支持第一線',
 	heroEmergencyPrefix: '發現擱淺？',
 	heroEmergencySuffix: '，處理步驟往下看',
 	doTitle: '該做的事',
