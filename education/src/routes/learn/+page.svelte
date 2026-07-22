@@ -2,6 +2,7 @@
 	import SpeciesSection from '$lib/components/sections/learn/SpeciesSection.svelte';
 	import ThreatsSection from '$lib/components/sections/learn/ThreatsSection.svelte';
 	import ConservationSection from '$lib/components/sections/learn/ConservationSection.svelte';
+	import SupportSection from '$lib/components/sections/learn/SupportSection.svelte';
 	import WaveDivider from '$lib/components/ui/WaveDivider.svelte';
 </script>
 
@@ -15,10 +16,6 @@
 <ThreatsSection />
 <WaveDivider from="var(--navy-800)" to="var(--paper-200)" flip />
 <ConservationSection />
-<WaveDivider
-	from="var(--navy-800)"
-	to="var(--navy-900)"
-	stroke="var(--slate-500)"
-	height={56}
-	flip
-/>
+<WaveDivider from="var(--navy-800)" to="var(--paper-200)" flip />
+<SupportSection />
+<WaveDivider from="var(--paper-200)" to="var(--navy-900)" height={56} />

@@ -14,7 +14,11 @@ export default defineConfig({
 			// Deployed on Vercel (ADR-001 deployment update, 2026-07-21). Every route
 			// is prerendered (src/routes/+layout.ts), so the output is still pure
 			// static HTML served from the CDN — no server-rendered code paths.
-			adapter: adapter()
+			adapter: adapter(),
+
+			// Inline all our (small) stylesheets into the prerendered HTML —
+			// removes render-blocking CSS round trips (Lighthouse finding).
+			inlineStyleThreshold: 16384
 		})
 	]
 });

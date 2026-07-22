@@ -66,6 +66,7 @@
 		<a href="{home}#data" onclick={closeMenu}>{ui.navData}</a>
 		<a href="{home}#map" onclick={closeMenu}>{ui.navMap}</a>
 		<a href={learn} onclick={closeMenu}>{ui.navLearn}</a>
+		<a href="{learn}#support" onclick={closeMenu}>{ui.navSupport}</a>
 	</nav>
 {/if}
 
