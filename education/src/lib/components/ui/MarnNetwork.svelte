@@ -4,10 +4,12 @@
 	// corners, orthogonal traces connecting them. Our flat language: navy
 	// stage, hairline node cards, amber only on the hub. ≤700px falls back
 	// to a vertical list — the radial layout doesn't survive small screens.
-	import { marnNodes } from '$lib/data/site';
+	import { useSite } from '$lib/copy';
 
-	const hub = marnNodes.find((n) => n.name === '海保署')!;
-	const satellites = marnNodes.filter((n) => n.name !== '海保署');
+	const site = useSite();
+	// marnNodes order is stable across locales; index 1 is the integration core.
+	const hub = $derived(site().copy.marnNodes[1]);
+	const satellites = $derived(site().copy.marnNodes.filter((_, i) => i !== 1));
 
 	// Corner positions for the four satellites (SVG viewBox coordinates).
 	const slots = [
@@ -16,18 +18,14 @@
 		{ x: 40, y: 334, entry: 'bl' },
 		{ x: 650, y: 334, entry: 'br' }
 	];
-	const nodes = satellites.map((n, i) => ({ ...n, ...slots[i] }));
+	const nodes = $derived(satellites.map((n, i) => ({ ...n, ...slots[i] })));
 
 	const SW = 210; // satellite width
 	const SH = 90;
 </script>
 
 <div class="stage">
-	<svg
-		viewBox="0 0 900 460"
-		role="img"
-		aria-label="海保救援網（MARN）架構：海保署為整合核心，串聯海巡署、學術鯨豚中心、在地民間團體與獸醫團隊"
-	>
+	<svg viewBox="0 0 900 460" role="img" aria-label={site().copy.uiCopy.marnAriaLabel}>
 		<!-- perimeter ring: the four partners also link to each other -->
 		<path class="trace outer" d="M250,61 H650" />
 		<path class="trace outer" d="M250,399 H650" />

@@ -34,18 +34,26 @@ The education site — Taiwan's cetacean stranding data made readable for the ge
 
 ```
 /            Home — action + data
-             Hero (condensed mission + 118 visible immediately)
-             How to respond: 118, four steps, do/don't, on-site safety, report-even-if-dead
-             Report-form slot: "通報系統開發中 — 現在請撥 118" teaser until the form ships (ADR-003)
-             Data dashboard: 7-year trend, Taiwan map (Sprint 4), county, seasonality, species, causes
-             Footer: brand footnote (鯤鯓 story), data sources, support links (#22)
+             Hero (editorial copy 「鯨豚救援是「向死而生」」, 118 entry + count-up stats in first viewport)
+             How to respond: 118 callbar, four steps, do/don't
+             Data dashboard: 7-year trend, seasonality, county, causes, species (five chart cards)
+             Stranding map (#map): county bubble map — pulled forward from Sprint 4 (2026-07-22)
+             Footer: brand footnote (鯤鯓 story), MARN + Natural Earth attribution
 
-/learn       Knowledge — the narrative arc (wonder → threat → hope)
+/learn       "故事分享" — the narrative arc (wonder → threat → hope)
              Species of Taiwan (cards → future /species/[slug] gallery)
              Human threats (threat cards, land-behavior surprise)
-             Conservation in action (MARN network, pygmy killer whale story, KPIs, "no perfect solution")
+             Conservation stories (rescue story, no-perfect-solution, collective stranding)
+             White-dolphin KPI band (dark stage, count-up numbers)
 
-/en/report   EN essentials (#23) — translates the home page's response content
+/en, /en/learn   Full English mirror (#23, shipped 2026-07-22) — faithful translation of
+             both pages down to chart takeaways, axis labels, tooltips and map labels;
+             the 中/EN switcher (nav + mobile bar) jumps to the same page in the other language
+
+Band seams site-wide use the WaveDivider system (see visual-direction).
+Removed during the fix/tweak_ui iteration: report-form teaser (P0-8 deferred
+to ADR-003 — component kept), home CTA section, report-even-if-dead block,
+MARN diagram placement (component built, placement TBD).
 ```
 
 Charts follow **data** (all on the home dashboard); cards and stories follow **knowledge** (`/learn`). The original emotional arc is preserved intact on `/learn`; the homepage carries a utility narrative: *what to do → soon you can report here → why it matters, in data*.
@@ -76,7 +84,7 @@ Charts follow **data** (all on the home dashboard); cards and stories follow **k
 |---|-------------|---------------------|
 | P0-1 | SvelteKit scaffold under `education/`, full prerender, deployed on Vercel | `npm run build` emits fully prerendered static pages; Vercel git integration (Root Directory `education/`) deploys main → production and every PR → preview URL |
 | P0-2 | All legacy content migrated and regrouped into the two-route IA (`/` action+data, `/learn` knowledge) with header navigation | Every content block from `index.html` exists on one of the two routes per the IA section; per-section visual comparison shows only the intended deltas in [visual-direction.md](../design/visual-direction.md) — desktop and ≤ 860 px |
-| P0-8 | Report-form placeholder slot on the homepage | A quiet teaser card ("通報系統開發中 — 現在請撥 118") in the reserved slot; no dead links; swaps to the real form entry when ADR-003 ships |
+| P0-8 | Report-form placeholder slot on the homepage | **Deferred (2026-07-22)**: the teaser was removed in the fix/tweak_ui iteration; the component is kept and the requirement returns when ADR-003 ships |
 | P0-3 | All statistics extracted to `src/lib/data/` as typed modules, keyed by period (annual **and** quarterly) | No numeric literal from the MARN reports appears in any component; derived stats (percentages, totals) are computed, not stored; schema accepts both annual reports and quarterly snapshots, so backfilling a new quarter is an additive data change |
 | P0-4 | Five charts rewritten as declarative Svelte components | No `createElementNS` remains; tooltips, enter animations, and responsive re-layout match current behavior |
 | P0-5 | Cross-cutting behaviors as idiomatic Svelte | Scroll-reveal and tooltip are actions; tooltip is a single instance in the layout |
@@ -90,14 +98,14 @@ Charts follow **data** (all on the home dashboard); cards and stories follow **k
 | P1-1 | Taiwan stranding map in the homepage data dashboard | Real county boundaries (MOI open data, simplified); one dot per county, radius ∝ √count; extent includes Lienchiang, Kinmen, Penghu |
 | P1-2 | Map visual quality | Dark-ocean stage; layered glow + breathing pulse; coral = outlying islands, aqua = main island; honors reduced-motion |
 | P1-3 | Map is static-first | Land + dots prerender as SVG in built HTML; hover tooltip ("連江縣：26 隻") and pulse are progressive enhancement |
-| P1-4 | Geometry pipeline | One-off `scripts/` generation (mapshaper + d3-geo at build time only); output committed as `taiwan-geo.ts`; zero runtime bytes added |
+| P1-4 | Geometry pipeline | One-off `scripts/` generation (d3-geo + topojson-client at build time only); output committed as `taiwan-geo.ts`; zero runtime bytes added. Shipped with Natural Earth-derived geometry; MOI upgrade = source swap + re-run |
+| P1-5 | **Full English mirror `/en` + `/en/learn`** — priority raised then widened 2026-07-22 (Andrea: faithfully present the same content as the Chinese site, translated); supersedes the standalone essentials-page plan | Every content block of both pages translated — sections, chart titles/takeaways/legends, axis labels, tooltips, map labels, aria descriptions; 中/EN switcher in nav + mobile bar targets the equivalent page; both locales prerender statically with zero i18n runtime |
 
 ### P2 — future considerations (design for, don't build)
 
 - **Species gallery (`/species/[slug]`)**: a dedicated route per species (~30) with real photos, video, and eventually sound. Homepage species cards become entry points into it. The long-lead work is **media collection and licensing** (Cetacean Society, OCA, CC-licensed sources) — start that pipeline early; heavy media likely needs external hosting (e.g. video embeds), decided when the gallery is specced.
 - **Donation entry (post-launch)**: a quiet "support the front line" block — primary: external donation links to established conservation orgs (clearly labeled as external; pairs with the org relationships built for the species gallery, #19); secondary: a footer-level "support this site's operations" link, framed strictly as site upkeep. Must not compete with the primary CTAs (118 awareness, sharing knowledge).
-- **EN essentials (decided 2026-07-21, first bilingual step)**: translate only the stranding-response content — 118, the four steps, do/don't, on-site safety, "report even if dead" — as `/en/report` (or an EN block). ~15% of the copy, ~90% of the safety value; serves the foreign-visitor-on-a-beach persona. Sprint 5 candidate after the map ships.
-- **Full bilingual (`/en`)**: copy-as-data discipline (P0-3) is the enabler; i18n library (compile-time, e.g. Paraglide) chosen when this starts. Deferred until the domain/brand launch and reader evidence justify the ongoing ×2 translation upkeep.
+- ~~Full bilingual (`/en`)~~ — **shipped** as P1-5 (2026-07-22) without an i18n library: a locale context picks between `site.ts` (zh) and `site-en.ts` (en). Standing maintenance rule: **every copy change in `site.ts` must be mirrored in `site-en.ts`** — the files are shape-identical, drift is silent.
 - **Sea turtle section**: data model should not hard-code "cetacean" where "species group" is meant.
 - **Multi-year dashboard**: keep chart components data-driven by year so a year-selector is an extension, not a rewrite.
 - **Report-system reuse**: design tokens stay in one importable CSS file, promotable to `shared/` per ADR-002.

@@ -139,7 +139,12 @@ export interface ColDatum {
 	emphasis?: boolean;
 }
 
-export function colChart(cont: HTMLElement, data: ColDatum[], opts: { h?: number } = {}): void {
+export function colChart(
+	cont: HTMLElement,
+	data: ColDatum[],
+	opts: { h?: number; unit?: string } = {}
+): void {
+	const unit = opts.unit ?? ' 隻';
 	const W = cont.clientWidth || 560;
 	const H = opts.h ?? 260;
 	const padB = 34;
@@ -189,7 +194,7 @@ export function colChart(cont: HTMLElement, data: ColDatum[], opts: { h?: number
 		});
 		(r as SVGElement & { style: CSSStyleDeclaration }).style.cursor = 'pointer';
 		r.addEventListener('mousemove', (e) =>
-			showTT(`<b>${d.label}</b><br>${d.value} 隻`, e as MouseEvent)
+			showTT(`<b>${d.label}</b><br>${d.value}${unit}`, e as MouseEvent)
 		);
 		r.addEventListener('mouseleave', hideTT);
 		svg.appendChild(r);
@@ -234,7 +239,21 @@ export interface StackDatum {
 	live: number;
 }
 
-export function stackChart(cont: HTMLElement, data: StackDatum[], opts: { h?: number } = {}): void {
+export function stackChart(
+	cont: HTMLElement,
+	data: StackDatum[],
+	opts: {
+		h?: number;
+		unit?: string;
+		yearSuffix?: string;
+		deadLabel?: string;
+		liveLabel?: string;
+	} = {}
+): void {
+	const unit = opts.unit ?? ' 隻';
+	const yearSuffix = opts.yearSuffix ?? ' 年';
+	const deadLabel = opts.deadLabel ?? '死亡';
+	const liveLabel = opts.liveLabel ?? '活體';
 	const W = cont.clientWidth || 560;
 	const H = opts.h ?? 280;
 	const padB = 34;
@@ -287,7 +306,7 @@ export function stackChart(cont: HTMLElement, data: StackDatum[], opts: { h?: nu
 		});
 		(rd as SVGElement & { style: CSSStyleDeclaration }).style.cursor = 'pointer';
 		rd.addEventListener('mousemove', (e) =>
-			showTT(`<b>${d.label} 年</b><br>死亡 ${d.dead} 隻`, e as MouseEvent)
+			showTT(`<b>${d.label}${yearSuffix}</b><br>${deadLabel} ${d.dead}${unit}`, e as MouseEvent)
 		);
 		rd.addEventListener('mouseleave', hideTT);
 		svg.appendChild(rd);
@@ -303,7 +322,7 @@ export function stackChart(cont: HTMLElement, data: StackDatum[], opts: { h?: nu
 		});
 		(rl as SVGElement & { style: CSSStyleDeclaration }).style.cursor = 'pointer';
 		rl.addEventListener('mousemove', (e) =>
-			showTT(`<b>${d.label} 年</b><br>活體 ${d.live} 隻`, e as MouseEvent)
+			showTT(`<b>${d.label}${yearSuffix}</b><br>${liveLabel} ${d.live}${unit}`, e as MouseEvent)
 		);
 		rl.addEventListener('mouseleave', hideTT);
 		svg.appendChild(rl);

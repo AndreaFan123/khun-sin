@@ -25,15 +25,18 @@ education/
     ├── app.css                 # design tokens (:root), reset, typography — lifted from index.html
     ├── routes/
     │   ├── +layout.ts          # export const prerender = true
-    │   ├── +layout.svelte      # app.css, header nav, <Tooltip/> singleton
+    │   ├── +layout.svelte      # app.css, nav/footer, locale context (URL /en prefix → en copy)
     │   ├── +page.svelte        # home: action + data (per spec IA)
-    │   ├── learn/+page.svelte  # knowledge: species, threats, conservation
-    │   └── en/report/+page.svelte  # EN essentials (backlog #23, Sprint 5 candidate)
+    │   ├── learn/+page.svelte  # stories: species, threats, conservation
+    │   ├── en/+page.svelte     # full English mirror of home (#23)
+    │   └── en/learn/+page.svelte  # full English mirror of stories
     └── lib/
+        ├── copy.ts             # locale context: useSite() → { copy, locale }; root layout provides
         ├── data/
-        │   ├── strandings.ts   # typed datasets (see Data layer)
+        │   ├── strandings.ts   # typed datasets incl. nameEn labels (see Data layer)
         │   ├── taiwan-geo.ts   # county SVG paths + centroids — generated at build time, committed
-        │   └── site.ts         # hero stats, species cards, threats, steps, MARN nodes copy-as-data
+        │   ├── site.ts         # ALL zh copy: cards, steps, chart cards, section heads, UI strings
+        │   └── site-en.ts      # faithful English mirror of site.ts — keep in sync on every copy change
         ├── components/
         │   ├── sections/       # grouped by route, per the spec's IA
         │   │   ├── home/       # Hero, HowToReport, ReportFormTeaser, DataDashboard, Cta
@@ -129,11 +132,11 @@ A county-level bubble map — real county boundaries with one glowing dot per co
 **Geometry pipeline (build-time, output committed):**
 
 ```
-MOI county GeoJSON → mapshaper simplify → project to SVG paths (Mercator)
-→ src/lib/data/taiwan-geo.ts  (typed county paths + centroids, committed)
+Natural Earth-derived TopoJSON (datamaps, MIT) → merge + Mercator fit over
+land + all county points → src/lib/data/taiwan-geo.ts (committed)
 ```
 
-A one-off generation script under `scripts/`; re-run only if boundaries ever change. Nothing is fetched at runtime.
+`scripts/generate-taiwan-geo.mjs` (d3-geo + topojson-client, devDeps only); re-run only if the geometry source changes. Nothing is fetched at runtime. **Status (2026-07-22): shipped early on fix/tweak_ui** as its own home section (`#map`) with a nav entry; upgrading to MOI county boundaries (#14's original acceptance) = swap the source URL and re-run.
 
 **Rendering:** `TaiwanMap.svelte` declaratively renders `<path>` per county and the dot layers via `{#each}`, exactly like the other charts: data via `$props()`, tooltips via the shared `use:tooltip` ("連江縣：26 隻"), reveal animation lights the dots in sequence. The whole map prerenders — land and dots are static SVG in the built HTML; pulse and hover are progressive enhancement.
 
@@ -182,7 +185,7 @@ Added per phase, not upfront:
 |---------|-------|---------|
 | `vitest` | 2 | Unit tests for scale/derived-stat helpers |
 | `@playwright/test` | 3 (optional) | Smoke test: page renders, charts present, tooltip works |
-| `mapshaper`, `d3-geo` | 4 | One-off geometry generation script (build-time only; output committed as `taiwan-geo.ts`, ships zero bytes) |
+| `d3-geo`, `topojson-client` | shipped | One-off geometry generator (build-time only; output committed as `taiwan-geo.ts`, ships zero bytes; mapshaper unnecessary with the pre-simplified Natural Earth source) |
 
 ### Deliberately NOT installed
 
@@ -214,6 +217,28 @@ Added per phase, not upfront:
 - **Vitest** for pure logic: scale/layout helpers, derived-stat functions (e.g. percentage of outlying-island strandings).
 - **Playwright** smoke test (optional, add when CI exists): page renders, five charts present, tooltip appears on hover.
 - Manual acceptance: Lighthouse ≥ current single-file scores; RWD breakpoints at 860px behave identically.
+
+## Bilingual mirror (#23, shipped 2026-07-22)
+
+Full-site English at `/en` + `/en/learn`, with no i18n library:
+
+- The root layout derives the locale from the URL (`/en` prefix) and provides a reactive `{ copy, locale }` accessor via context (`lib/copy.ts`); components call `useSite()` instead of importing `site.ts` directly.
+- `site-en.ts` mirrors every `site.ts` export — **standing rule: any copy change in `site.ts` must be mirrored there** (shape-identical files; drift is silent).
+- Charts and the map localize fully: `nameEn` labels in `strandings.ts`, legacy chart renderers take unit/label options, month axis labels come from `uiCopy`, map tooltips/aria switch per locale.
+- The nav's 中/EN switcher targets the equivalent page in the other language; both locales prerender as static pages.
+- Known gap: `<html lang>` is static (`app.html`) — per-locale lang attributes need a server hook; revisit with the Sprint 3 a11y pass.
+
+## UI-iteration additions (fix/tweak_ui, 2026-07-21/22)
+
+Components and behaviors added during Andrea's design iteration, all within the token system (see visual-direction for the design rules):
+
+- `ui/WaveDivider.svelte` — three-mode band-seam waves (contour-echo / layered / stroke-only)
+- `ui/CountUp.svelte` — Tween count-up; `whenVisible` mode for below-the-fold stats
+- `ui/MarnNetwork.svelte` — hub-and-spoke MARN diagram (SVG) with mobile vertical-spine fallback; **placement currently TBD** (removed from ConservationSection during iteration)
+- `charts/TaiwanMap.svelte` + `sections/home/MapSection.svelte` — see Interactive map
+- `ui/Nav.svelte` — scroll-state pill (navy + sanctioned 8px backdrop-blur), mobile two-button bottom bar (icon-only menu sheet + `tel:118` dial pill, inlined Lucide icons)
+- Mobile type scale: root 18px at ≤640px (app.css)
+- Removed from pages during iteration (components kept): `ReportFormTeaser` (spec P0-8 deferred), home `Cta`, report-even-if-dead block
 
 ## Migration phases
 

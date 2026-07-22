@@ -1,18 +1,18 @@
 <script lang="ts">
 	import SectionHead from '$lib/components/ui/SectionHead.svelte';
-	import { threats, landSurprise } from '$lib/data/site';
+	import { useSite } from '$lib/copy';
+
+	const site = useSite();
+	const c = $derived(site().copy);
+	const head = $derived(c.sectionHeads.threats);
+	const landSurprise = $derived(c.landSurprise);
 </script>
 
 <section class="band-dark">
 	<div class="wrap">
-		<SectionHead
-			onDark
-			eyebrow="人為威脅"
-			title="鯨豚面臨的人為威脅"
-			lead="混獲、撞擊、噪音、廢棄物——多數威脅來自人類活動。認識它們，是減少傷害的第一步。"
-		/>
+		<SectionHead onDark eyebrow={head.eyebrow} title={head.title} lead={head.lead} />
 		<div class="threats">
-			{#each threats as threat (threat.title)}
+			{#each c.threats as threat (threat.title)}
 				<div class="threat">
 					<h3>{threat.title}</h3>
 					<p>{threat.description}</p>

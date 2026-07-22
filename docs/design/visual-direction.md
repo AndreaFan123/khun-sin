@@ -7,7 +7,7 @@
 
 The subject — strandings, death, rescue — is heavy. The visual language stays restrained and lets typography, a disciplined palette, and the data itself carry the page:
 
-- **No pictograms.** All emoji removed (species cards, threat cards, network nodes, do/don't lists). No icon set replaces them for now; cards are carried by type hierarchy and semantic color (left-border bands, tags).
+- **No decorative pictograms.** All emoji removed (species cards, threat cards, network nodes, do/don't lists); cards are carried by type hierarchy and semantic color (left-border bands, tags). Amendment (2026-07-22): **functional UI icons are allowed** as inlined Lucide SVGs (ISC license) — currently menu/x/phone in the mobile bottom bar. Inline only; no icon-font or icon package dependency.
 - **One typeface, everywhere.** The whole site — headings, body, wordmark — uses the Noto Sans TC stack (`"Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif`). No webfont is downloaded at all: zero font bytes, zero external requests. Accepted trade-off: minor glyph differences across platforms when Noto Sans TC isn't installed (Windows falls back to Microsoft JhengHei). Serif headings were considered and dropped. Brand wordmark rules live in [brand.md](brand.md).
 - **Flat, minimal surfaces — no shadows anywhere.** Cards are distinguished purely by a half-step lighter surface (`paper-100` on `paper-200`) and a hairline border (`paper-300`); on dark bands, by a slightly lighter navy or a hairline of translucent white. `box-shadow` does not appear in the rebuilt CSS. Depth comes from the light/dark band rhythm, not from simulated elevation.
 - **The species gallery** (future route, see spec P2) is where photographic/media richness will live; the main page stays editorial.
@@ -101,6 +101,35 @@ No red family: "don't/danger" derives from the amber family (burnt rust) to keep
 | `--chart-sequence` | slate-200 → 400 → 500 → 700 → 900 | single-hue magnitude ramp |
 | `--chart-muted` | slate-300 | de-emphasized series (deceased) |
 
+## Wave divider system (fix/tweak_ui)
+
+Band seams site-wide use `WaveDivider` — the topographic/sea motif from the brand exploration, in three flat modes (multi-crest path, sloped edge tangents so wide screens keep curvature):
+
+| Mode | Construction | Used at |
+|---|---|---|
+| Contour-echo | One filled wave + two fading echo strokes above the crest | paper ↔ navy seams |
+| Layered cross-section | Stacked filled waves stepping light→deep (deepest = hero bg) | Hero → report (navy-900 → paper via navy-700/500, slate-400/200) |
+| Stroke-only | Fill invisible (from ≈ to); slate contour lines draw the waterline | dark → dark seams (data → map, map/KPI band → footer) |
+
+Alternate seams are flipped so the wave shape doesn't repeat.
+
+## Motion inventory
+
+All motion honors `prefers-reduced-motion` (disabled → final state shown immediately):
+
+- **Count-up numbers**: hero stats on load; below-the-fold stats (KPI band) start on first intersection.
+- **Hero arrow**: 1.8s translateY bob.
+- **Map dots**: 2.6s breathing halo pulse.
+- **Nav**: 0.25s bar→pill transition on scroll; mobile menu sheet 0.22s slide-up.
+- **Charts**: bar enter transitions (legacy, carried into Sprint 2 rewrites).
+
+## Sanctioned exceptions to the flat rule
+
+Two deliberate exceptions, decided by Andrea during fix/tweak_ui; everything else stays flat (no shadows, no gradients):
+
+1. **Backdrop blur (8px)** on the scrolled nav pill and the mobile menu sheet — `rgba(navy-900, 0.72–0.9)` over content.
+2. **feGaussianBlur glow halos** on the stranding-map county dots (the "glowing dots" concept is the point of that visualization).
+
 ## Accessibility — hard rules
 
 Verified pairs (WCAG 2.1, computed):
@@ -119,7 +148,7 @@ Verified pairs (WCAG 2.1, computed):
 Rules:
 
 1. Every text pair ≥ 4.5:1 (AA); large text (≥24px / ≥19px bold) and meaningful graphics ≥ 3:1. Any new pair gets computed before use.
-2. Base font size 16px. Minimums raised from the current page: footer 13px → 14px, chart ticks 11px → 12px. Line-height ≥ 1.6 body.
+2. Base font size 16px on desktop, **root 18px at ≤640px** (2026-07-22: every rem-based size scales up on phones — no small mobile text; chart SVG text bumps to 14px). Minimums raised from the legacy page: footer 13px → 14px, chart ticks 11px → 12px (desktop). Line-height ≥ 1.6 body.
 3. Information never encoded by color alone — charts keep text value labels; map dots get text/tooltip equivalents.
 4. `prefers-reduced-motion` disables reveal, pulse, and canvas animations (per architecture doc).
 5. Visible `:focus-visible` styles on all interactive elements, styled with `--accent` on dark and `navy-700` on light.
