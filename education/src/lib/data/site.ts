@@ -289,6 +289,89 @@ export const dataSources = {
 	intro:
 		'資料來源：海洋委員會海洋保育署「海保救援網（MARN）」2019–2025 歷年全年度擱淺報告及 2026 年第一季擱淺報告',
 	marnUrl: 'https://www.oca.gov.tw/ch/home.jsp?id=379&parentpath=0,296,375',
+	marnLinkText: '海保署官網',
 	reminder: '',
 	mapAttribution: '地圖輪廓：Natural Earth（公有領域）'
+};
+
+/* ---------- UI copy previously inlined in components (extracted for the /en mirror) ---------- */
+
+export const sectionHeads = {
+	report: {
+		eyebrow: '如何通報與參與',
+		title: '「通報」是最關鍵的第一步',
+		lead: '絕大多數擱淺鯨豚在發現時已經死亡，幸運的話，可能還有一線生機！活體救援是分秒必爭的事。第一步，從一通電話開始。你不需要是專家——只需要知道該打給誰、以及有哪些該做與不該做的事。'
+	},
+	data: {
+		eyebrow: '數據',
+		title: '數字代表著無數生命',
+		lead: '「擱淺」是鯨豚因傷病、迷航、遭到船隻撞擊等種種因素而被沖上岸的現象。每一隻鯨豚的犧牲都讓我們更了解海洋：擱淺的種類、地點、季節與死因，透露著整個海域的資訊。以下數據來自海保署「海保救援網（MARN）」的官方擱淺報告。'
+	},
+	map: {
+		eyebrow: '擱淺地圖',
+		title: '擱淺發生在哪裡',
+		lead: '每個亮點是一個縣市，大小代表 2025 年的擱淺數量。連江、金門、澎湖三個離島縣市合計 65 隻——佔了全台的 51%，離島近岸的江豚族群是熱點中的熱點。'
+	},
+	know: {
+		eyebrow: '認識台灣的鯨豚',
+		title: '一座被鯨豚環繞的島嶼',
+		lead: '台灣位在黑潮與大陸棚交會處，海域生產力豐沛。長期調查已在台灣周邊記錄到約 30 種鯨豚，接近全球種類的三分之一——從沿岸的白海豚到深海的抹香鯨，這裡是名副其實的鯨豚多樣性熱點。光是 2025 一年，就有 21 種鯨豚被記錄到擱淺。'
+	},
+	threats: {
+		eyebrow: '人為威脅',
+		title: '鯨豚面臨的人為威脅',
+		lead: '混獲、撞擊、噪音、廢棄物——多數威脅來自人類活動。認識它們，是減少傷害的第一步。'
+	},
+	conservation: {
+		eyebrow: '保育行動與成果',
+		title: '一隻鯨豚的獲救，是一整個網絡的合作',
+		lead: '救援不是單一單位能完成的事。海洋委員會海保署扮演整合核心，串聯海巡署、地方政府、學術鯨豚中心、獸醫與民間團體，組成「海保救援網（MARN）」。當通報進來，這些角色會接力到同一個現場。'
+	},
+	kpi: {
+		eyebrow: '白海豚保育數據',
+		title: '用微光，照亮未來救援的路',
+		lead: '個體辨識名錄、海上調查、科學採樣與病理分析——這些數字是第一線團隊日復一日的累積，也是保育決策的基礎。'
+	}
+};
+
+export const uiCopy = {
+	navReport: '通報',
+	navData: '數據',
+	navMap: '擱淺地圖',
+	navLearn: '故事分享',
+	heroEmergencyPrefix: '發現擱淺？',
+	heroEmergencySuffix: '，處理步驟往下看',
+	doTitle: '該做的事',
+	dontTitle: '絕對不要做的事',
+	takeawayLabel: '可能的資訊：',
+	mapLegendOffshore: '離島縣市（熱點）',
+	mapLegendMain: '本島縣市',
+	mapLegendNote: '亮點大小 ∝ 擱淺數量（隻）',
+	mapAriaLabel:
+		'2025 年台灣各縣市鯨豚擱淺分布地圖：連江 26、金門 24、澎湖 15 為熱點，離島三縣合計佔全台 51%',
+	marnAriaLabel:
+		'海保救援網（MARN）架構：海保署為整合核心，串聯海巡署、學術鯨豚中心、在地民間團體與獸醫團隊',
+	footerBrandLine: '台灣鯨豚擱淺通報與數據',
+	dialAriaLabel: '撥打 118 海巡署救援專線',
+	menuOpenLabel: '開啟選單',
+	menuCloseLabel: '關閉選單',
+	unitAnimals: '隻',
+	unitSpecies: '種',
+	chartDeadLabel: '死亡',
+	chartLiveLabel: '活體',
+	chartYearSuffix: ' 年',
+	monthLabels: [
+		'1月',
+		'2月',
+		'3月',
+		'4月',
+		'5月',
+		'6月',
+		'7月',
+		'8月',
+		'9月',
+		'10月',
+		'11月',
+		'12月'
+	]
 };

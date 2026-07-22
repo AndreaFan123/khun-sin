@@ -1,7 +1,12 @@
 <script lang="ts">
 	import CountUp from '$lib/components/ui/CountUp.svelte';
-	import { heroCopy, hotline } from '$lib/data/site';
+	import { useSite } from '$lib/copy';
 	import { findTotals, totalOf } from '$lib/data/strandings';
+
+	const site = useSite();
+	const heroCopy = $derived(site().copy.heroCopy);
+	const hotline = $derived(site().copy.hotline);
+	const ui = $derived(site().copy.uiCopy);
 
 	const latest = findTotals(2025)!;
 	const total = totalOf(latest);
@@ -19,12 +24,12 @@
 
 		<div class="stats">
 			<div class="stat">
-				<div class="num"><CountUp value={total} /><small>隻</small></div>
+				<div class="num"><CountUp value={total} /><small>{ui.unitAnimals}</small></div>
 				<div class="lbl">{latest.period.year} {heroCopy.statTotalLabel}</div>
 			</div>
 			<div class="stat">
 				<div class="num">
-					<CountUp value={latest.speciesCount!} duration={1100} /><small>種</small>
+					<CountUp value={latest.speciesCount!} duration={1100} /><small>{ui.unitSpecies}</small>
 				</div>
 				<div class="lbl">{heroCopy.statSpeciesLabel}</div>
 			</div>
@@ -36,7 +41,7 @@
 
 		<a class="emergency" href="#report">
 			<span class="what"
-				>發現擱淺？{hotline.label}，處理步驟往下看
+				>{ui.heroEmergencyPrefix}{hotline.label}{ui.heroEmergencySuffix}
 				<span class="arrow" aria-hidden="true">↓</span></span
 			>
 		</a>

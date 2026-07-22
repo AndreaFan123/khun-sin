@@ -1,8 +1,11 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import type { ChartCardCopy } from '$lib/data/site';
+	import { useSite } from '$lib/copy';
 
 	let { copy, children }: { copy: ChartCardCopy; children?: Snippet } = $props();
+
+	const site = useSite();
 </script>
 
 <div class="chart-card">
@@ -22,7 +25,7 @@
 		{/each}
 	</div>
 	<article class="takeaway">
-		<b>可能的資訊：</b>
+		<b>{site().copy.uiCopy.takeawayLabel}</b>
 		<p>{copy.takeaway}</p>
 	</article>
 </div>
