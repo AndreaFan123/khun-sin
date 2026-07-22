@@ -6,12 +6,12 @@
  */
 
 import type {
-	SpeciesCard,
-	Threat,
-	ReportStep,
-	MarnNode,
+	ChartCardCopy,
 	ConservationKpi,
-	ChartCardCopy
+	MarnNode,
+	ReportStep,
+	SpeciesCard,
+	Threat
 } from '$lib/data/site';
 
 export const speciesCards: SpeciesCard[] = [
@@ -258,7 +258,7 @@ export const formTeaser = {
 export const heroCopy = {
 	badge: 'Taiwan cetacean stranding data · 2019–2025 annual & 2026 Q1',
 	titleLead: 'Cetacean rescue is ',
-	titleHighlight: '“life facing death”',
+	titleHighlight: '“Being-towards-death”',
 	titleTail: '',
 	sub: 'Every stranded whale or dolphin may be a life reaching its end. Rescue cannot always turn death around — but every effort turns a life into scientific knowledge that guides Taiwan’s cetacean rescue forward.',
 	statDeadLabel: 'already dead when found — rescue races the clock',
@@ -284,6 +284,39 @@ export const dataSources = {
 	marnLinkText: 'OCA website',
 	reminder: '',
 	mapAttribution: 'Map outline: Natural Earth (public domain)'
+};
+
+export const supportCopy = {
+	head: {
+		eyebrow: 'Support the front line',
+		title: 'Want to do more for them?',
+		lead: 'Donations and volunteering never pass through this site — the links below go straight to the organizations that hold the front line year after year. Every bit of support becomes rescue pools, medical supplies and at-sea surveys.'
+	},
+	links: [
+		{
+			name: 'Taiwan Cetacean Society',
+			description:
+				'Founded in 1998, advancing cetacean and sea-turtle rescue, research and education, and running northern Taiwan’s rescue and rehabilitation center.',
+			url: 'https://www.whale.org.tw/portal_c1_cnt.php?owner_num=c1_561041&button_num=c1&folder_id=',
+			linkLabel: 'Donate'
+		},
+		{
+			name: 'NCKU Marine Biology & Cetacean Research Center',
+			description:
+				'Taiwan’s only dedicated cetacean rescue station — live rescue, medical rehabilitation, and necropsy research on deceased individuals.',
+			url: 'https://mbcrc.web2.ncku.edu.tw/',
+			linkLabel: 'Official site & volunteering'
+		},
+		{
+			name: 'Kuroshio Ocean Education Foundation',
+			description:
+				'A Hualien-based ocean education and at-sea cetacean survey organization, guarding the east coast with decades of accumulated observation.',
+			url: 'https://www.kuroshio.org.tw/',
+			linkLabel: 'Official site'
+		}
+	],
+	disclosure:
+		'All links are external; donations and support go directly to each organization — this site never handles any funds.'
 };
 
 export const sectionHeads = {

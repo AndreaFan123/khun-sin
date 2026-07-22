@@ -294,6 +294,46 @@ export const dataSources = {
 	mapAttribution: '地圖輪廓：Natural Earth（公有領域）'
 };
 
+export interface NgoLink {
+	name: string;
+	description: string;
+	url: string;
+	linkLabel: string;
+}
+
+/** Referral-first support model (issue #22): links go straight to the
+ *  organizations — this site never handles money. URLs verified against
+ *  official domains 2026-07-22. */
+export const supportCopy = {
+	head: {
+		eyebrow: '支持第一線',
+		title: '想為牠們做更多？',
+		lead: '捐款與志工報名都不經過本站——以下連結直接通往長年守在第一線的組織。每一分支持，都會變成救援池、醫療物資與海上調查的一部分。'
+	},
+	links: [
+		{
+			name: '中華鯨豚協會',
+			description:
+				'1998 年成立，推動鯨豚與海龜的救援、研究與教育，並營運北台灣的鯨豚與海龜救傷中心。',
+			url: 'https://www.whale.org.tw/portal_c1_cnt.php?owner_num=c1_561041&button_num=c1&folder_id=',
+			linkLabel: '前往捐款'
+		},
+		{
+			name: '成大海洋生物及鯨豚研究中心',
+			description: '全台唯一專職鯨豚搶救站，負責活體救援、醫療復健，以及死亡個體的解剖與研究。',
+			url: 'https://mbcrc.web2.ncku.edu.tw/',
+			linkLabel: '官方網站與志工資訊'
+		},
+		{
+			name: '黑潮海洋文教基金會',
+			description: '以花蓮為基地的海洋教育與鯨豚海上調查組織，用長年累積的觀察守護東海岸的海。',
+			url: 'https://www.kuroshio.org.tw/',
+			linkLabel: '官方網站'
+		}
+	] as NgoLink[],
+	disclosure: '以上皆為外部連結，捐款與支持直接進入各組織，本站不經手任何款項。'
+};
+
 /* ---------- UI copy previously inlined in components (extracted for the /en mirror) ---------- */
 
 export const sectionHeads = {
