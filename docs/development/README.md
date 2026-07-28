@@ -8,3 +8,4 @@ Architecture decision records (ADRs), technical specs, development and deploymen
 - [ADR-002: Repository Structure](ADR-002-repository-structure.md) — Accepted: one repo, two independent apps (`education/`, `report/`)
 - ADR-003 (reserved): report-system backend and deployment choices
 - [Education Site Frontend Architecture](education-site-frontend-architecture.md) — component/data/styling plan for the SvelteKit migration
+- [SEO & AEO Audit](seo-aeo-audit.md) — 2026-07-28 findings against the live site: missing lang/hreflang/canonical/OG/structured data, plus the structured-data plan for answer-engine visibility
