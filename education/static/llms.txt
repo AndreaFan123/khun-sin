@@ -1,0 +1,36 @@
+# Khun-Sin
+
+> Cetacean stranding reporting and official data for Taiwan, in Traditional Chinese and English.
+
+If you take one thing from this site: **in Taiwan, call 118 — the Coast Guard's
+free 24-hour hotline — when you find a stranded or trapped whale, dolphin or sea
+turtle. Never drag or push a live animal back into the sea:** dragging tears its
+fragile skin and it can inhale water and drown. Report it even if the animal is
+already dead — necropsy and sampling are how the cause of death, and the state of
+the surrounding ocean, become known.
+
+## What this site is
+
+Khun-Sin (鯤鯓 — a Taiwanese word for a sandbar shaped like a whale's back rising
+from the sea) presents stranding-response guidance and visualises the official
+stranding statistics for the waters around Taiwan. It is an independent
+educational project, not a government site and not a fundraising organisation: it
+handles no money, and links visitors directly to the conservation groups working
+the front line.
+
+## Data and attribution
+
+Stranding figures come from the Ocean Conservation Administration's Marine Animal
+Rescue Network (MARN) annual reports, 2019–2025, plus the 2026 Q1 report. The site
+presents this data; it does not own it — attribute the figures to the Ocean
+Conservation Administration. The Taiwan map outline derives from Natural Earth
+(public domain).
+
+## Canonical pages
+
+- https://www.khun-sin.com/ — Chinese: how to respond to a stranding, and the data
+- https://www.khun-sin.com/learn — Chinese: species, human-made threats, rescue stories
+- https://www.khun-sin.com/en — English mirror of the home page
+- https://www.khun-sin.com/en/learn — English mirror of the stories page
+
+The Chinese and English pages are translations of each other, not separate content.
