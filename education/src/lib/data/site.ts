@@ -416,3 +416,17 @@ export const uiCopy = {
 		'12月'
 	]
 };
+
+/** Page-level metadata (#37): titles lead with the query phrase, brand last. */
+export const meta = {
+	home: {
+		title: '台灣鯨豚擱淺通報與數據 · Khun-Sin',
+		description:
+			'發現鯨豚擱淺請撥 118。通報步驟、該做與絕對不要做的事，以及海保署「海保救援網（MARN）」歷年官方擱淺數據視覺化。'
+	},
+	learn: {
+		title: '認識台灣的鯨豚：物種、威脅與救援故事 · Khun-Sin',
+		description:
+			'台灣海域記錄到約 30 種鯨豚。認識牠們、牠們面對的人為威脅，以及海保救援網（MARN）如何把每一次擱淺化為保育知識。'
+	}
+};
