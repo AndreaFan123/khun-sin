@@ -10,7 +10,8 @@
 
 <section id="know">
 	<div class="wrap">
-		<SectionHead eyebrow={head.eyebrow} title={head.title} lead={head.lead} />
+		<!-- First head on the stories route: no hero above it, so this is the page's h1 -->
+		<SectionHead as="h1" eyebrow={head.eyebrow} title={head.title} lead={head.lead} />
 		<div class="cards">
 			{#each c.speciesCards as card (card.name)}
 				<SpeciesCard {card} />

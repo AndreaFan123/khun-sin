@@ -174,3 +174,105 @@ export const offshoreShare = (counties: CountyCount[]): number => {
 
 /** Winter months (Dec–Feb) — derived, not stored. */
 export const isWinterMonth = (month: number): boolean => month === 12 || month <= 2;
+
+/* ---------- Chart-ready selectors (pure; the interface charts render through) ----------
+ *
+ * These raise the seam above the raw arrays: the year default, the non-null
+ * lookups, the grand-total plumbing, the per-row share, and the emphasis rules
+ * all live here, so a view only chooses locale labels and formats numbers.
+ * One implementation, N consumers (LegacyChartMount today, the declarative
+ * chart components in #8–#10 tomorrow). Presentation stays out: no locale label
+ * selection, no number formatting — those are view concerns by design.
+ */
+
+/** The most recent report year with a full breakdown — hides the literal from callers. */
+export const LATEST_BREAKDOWN_YEAR = 2025;
+
+/** Grand total (dead + live) for a period — the denominator for shares. */
+const grandTotal = (year: number, quarter?: 1 | 2 | 3 | 4): number => {
+	const t = findTotals(year, quarter);
+	return t ? totalOf(t) : 0;
+};
+
+export interface SpeciesRow {
+	name: string;
+	nameEn: string;
+	count: number;
+	/** Fraction of the period's grand total (0–1). */
+	share: number;
+	emphasis: boolean;
+}
+
+export interface CountyRow {
+	name: string;
+	nameEn: string;
+	count: number;
+	share: number;
+	offshoreIsland: boolean;
+}
+
+export interface CauseRow {
+	name: string;
+	nameEn: string;
+	count: number;
+	share: number;
+	emphasis: boolean;
+}
+
+export interface MonthRow {
+	/** 1–12 */
+	month: number;
+	count: number;
+	/** Winter month (Dec–Feb) — the seasonality story. */
+	emphasis: boolean;
+}
+
+export interface TrendRow {
+	year: number;
+	dead: number;
+	live: number;
+}
+
+export const speciesRows = (year: number = LATEST_BREAKDOWN_YEAR): SpeciesRow[] => {
+	const grand = grandTotal(year);
+	return (findBreakdown(year)?.species ?? []).map((s) => ({
+		name: s.name,
+		nameEn: s.nameEn,
+		count: s.count,
+		share: grand ? shareOf(s.count, grand) : 0,
+		emphasis: s.emphasis ?? false
+	}));
+};
+
+export const countyRows = (year: number = LATEST_BREAKDOWN_YEAR): CountyRow[] => {
+	const grand = grandTotal(year);
+	return (findBreakdown(year)?.counties ?? []).map((c) => ({
+		name: c.name,
+		nameEn: c.nameEn,
+		count: c.count,
+		share: grand ? shareOf(c.count, grand) : 0,
+		offshoreIsland: c.offshoreIsland
+	}));
+};
+
+export const causeRows = (year: number = LATEST_BREAKDOWN_YEAR): CauseRow[] => {
+	const grand = grandTotal(year);
+	return (findBreakdown(year)?.causes ?? []).map((c) => ({
+		name: c.name,
+		nameEn: c.nameEn,
+		count: c.count,
+		share: grand ? shareOf(c.count, grand) : 0,
+		emphasis: c.emphasis ?? false
+	}));
+};
+
+export const monthRows = (year: number = LATEST_BREAKDOWN_YEAR): MonthRow[] =>
+	(findBreakdown(year)?.months ?? []).map((m) => ({
+		month: m.month,
+		count: m.count,
+		emphasis: isWinterMonth(m.month)
+	}));
+
+/** Annual dead/live series in year order — the multi-year trend chart input. */
+export const trendRows = (): TrendRow[] =>
+	annualTotals().map((t) => ({ year: t.period.year, dead: t.dead, live: t.live }));
