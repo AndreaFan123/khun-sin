@@ -1,18 +1,17 @@
 <script lang="ts">
+	import Seo from '$lib/seo/Seo.svelte';
+	import { useSite } from '$lib/copy';
 	import SpeciesSection from '$lib/components/sections/learn/SpeciesSection.svelte';
 	import ThreatsSection from '$lib/components/sections/learn/ThreatsSection.svelte';
 	import ConservationSection from '$lib/components/sections/learn/ConservationSection.svelte';
 	import SupportSection from '$lib/components/sections/learn/SupportSection.svelte';
 	import WaveDivider from '$lib/components/ui/WaveDivider.svelte';
+
+	const site = useSite();
+	const meta = $derived(site().copy.meta.learn);
 </script>
 
-<svelte:head>
-	<title>Stories · Khun-Sin</title>
-	<meta
-		name="description"
-		content="Meet Taiwan’s cetaceans, the human-made threats they face, and the rescue network working for them."
-	/>
-</svelte:head>
+<Seo path="/en/learn" title={meta.title} description={meta.description} />
 
 <SpeciesSection />
 <WaveDivider from="var(--paper-200)" to="var(--navy-800)" />

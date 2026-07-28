@@ -2,6 +2,7 @@
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import { useSite } from '$lib/copy';
+	import { entryFor } from '$lib/seo/routes';
 	import Wordmark from '$lib/components/ui/Wordmark.svelte';
 
 	let y = $state(0);
@@ -14,20 +15,16 @@
 	const isEn = $derived(site().locale === 'en');
 	const ui = $derived(site().copy.uiCopy);
 
-	// Localized route targets: the switcher jumps to the same page in the
-	// other language; section anchors stay on the current locale's home.
-	const home = $derived(isEn ? resolve('/en') : resolve('/'));
-	const learn = $derived(isEn ? resolve('/en/learn') : resolve('/learn'));
+	// Route targets come from the shared route table (#37): section anchors
+	// stay on the current locale's home, and the switcher jumps to whatever
+	// that table says is this page's counterpart.
 	const onLearn = $derived(page.url.pathname.endsWith('/learn'));
-	const otherLocale = $derived(
-		isEn
-			? onLearn
-				? resolve('/learn')
-				: resolve('/')
-			: onLearn
-				? resolve('/en/learn')
-				: resolve('/en')
+	const current = $derived(
+		entryFor(onLearn ? (isEn ? '/en/learn' : '/learn') : isEn ? '/en' : '/')
 	);
+	const home = $derived(resolve(isEn ? '/en' : '/'));
+	const learn = $derived(resolve(isEn ? '/en/learn' : '/learn'));
+	const otherLocale = $derived(resolve(current.alternate));
 </script>
 
 <svelte:window bind:scrollY={y} />

@@ -386,3 +386,17 @@ export const uiCopy = {
 	chartYearSuffix: '',
 	monthLabels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 };
+
+/** Page-level metadata (#37): titles lead with the query phrase, brand last. */
+export const meta = {
+	home: {
+		title: 'Taiwan cetacean stranding reporting & data · Khun-Sin',
+		description:
+			'Found a stranded whale or dolphin in Taiwan? Call 118. What to do, what never to do, and the Ocean Conservation Administration’s official stranding data visualised.'
+	},
+	learn: {
+		title: 'Taiwan’s whales and dolphins: species, threats and rescue · Khun-Sin',
+		description:
+			'Around 30 cetacean species are recorded in Taiwan’s waters. Meet them, understand the human-made threats they face, and see how the rescue network turns each stranding into knowledge.'
+	}
+};
