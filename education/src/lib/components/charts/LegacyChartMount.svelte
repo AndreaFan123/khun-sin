@@ -2,14 +2,7 @@
 	import { onMount } from 'svelte';
 	import { hBar, colChart, stackChart } from '$lib/charts-legacy';
 	import { useSite } from '$lib/copy';
-	import {
-		annualTotals,
-		findBreakdown,
-		findTotals,
-		totalOf,
-		shareOf,
-		isWinterMonth
-	} from '$lib/data/strandings';
+	import { speciesRows, countyRows, causeRows, monthRows, trendRows } from '$lib/data/strandings';
 
 	let { key }: { key: 'trend' | 'months' | 'counties' | 'causes' | 'species' } = $props();
 
@@ -22,25 +15,23 @@
 		const ui = copy.uiCopy;
 		const en = locale === 'en';
 		const unit = en ? '' : ' 隻';
-		const b = findBreakdown(2025)!;
-		const grand = totalOf(findTotals(2025)!);
 		if (key === 'species')
 			hBar(
 				host,
-				b.species!.map((s) => ({
+				speciesRows().map((s) => ({
 					label: en ? s.nameEn : s.name,
 					value: s.count,
 					emphasis: s.emphasis,
 					display: en
-						? `${s.count} (${(shareOf(s.count, grand) * 100).toFixed(1)}%)`
-						: `${s.count} 隻（${(shareOf(s.count, grand) * 100).toFixed(1)}%）`
+						? `${s.count} (${(s.share * 100).toFixed(1)}%)`
+						: `${s.count} 隻（${(s.share * 100).toFixed(1)}%）`
 				})),
 				{ padL: en ? 190 : 96 }
 			);
 		if (key === 'counties')
 			hBar(
 				host,
-				b.counties!.map((c) => ({
+				countyRows().map((c) => ({
 					label: en ? c.nameEn : c.name,
 					value: c.count,
 					emphasis: c.offshoreIsland,
@@ -51,30 +42,30 @@
 		if (key === 'causes')
 			hBar(
 				host,
-				b.causes!.map((c) => ({
+				causeRows().map((c) => ({
 					label: en ? c.nameEn : c.name,
 					value: c.count,
 					emphasis: c.emphasis,
 					display: en
-						? `${c.count} (${Math.round(shareOf(c.count, grand) * 100)}%)`
-						: `${c.count} 隻（${Math.round(shareOf(c.count, grand) * 100)}%）`
+						? `${c.count} (${Math.round(c.share * 100)}%)`
+						: `${c.count} 隻（${Math.round(c.share * 100)}%）`
 				})),
 				{ padL: en ? 240 : 150 }
 			);
 		if (key === 'months')
 			colChart(
 				host,
-				b.months!.map((m) => ({
+				monthRows().map((m) => ({
 					label: ui.monthLabels[m.month - 1],
 					value: m.count,
-					emphasis: isWinterMonth(m.month)
+					emphasis: m.emphasis
 				})),
 				{ unit }
 			);
 		if (key === 'trend')
 			stackChart(
 				host,
-				annualTotals().map((t) => ({ label: String(t.period.year), dead: t.dead, live: t.live })),
+				trendRows().map((t) => ({ label: String(t.year), dead: t.dead, live: t.live })),
 				{
 					unit,
 					yearSuffix: ui.chartYearSuffix,

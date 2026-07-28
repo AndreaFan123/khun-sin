@@ -4,16 +4,14 @@
 	// static SVG; the pulse is progressive enhancement and honors
 	// prefers-reduced-motion.
 	import { landPath, mapWidth, mapHeight, countyPoints } from '$lib/data/taiwan-geo';
-	import { findBreakdown } from '$lib/data/strandings';
+	import { countyRows } from '$lib/data/strandings';
 	import { useSite } from '$lib/copy';
 
 	const site = useSite();
 	const en = $derived(site().locale === 'en');
 	const ui = $derived(site().copy.uiCopy);
 
-	const counties = findBreakdown(2025)!.counties!;
-
-	const dots = counties.map((c) => {
+	const dots = countyRows().map((c) => {
 		const p = countyPoints.find((pt) => pt.name === c.name)!;
 		return { ...c, x: p.x, y: p.y, r: 2.6 * Math.sqrt(c.count) };
 	});
