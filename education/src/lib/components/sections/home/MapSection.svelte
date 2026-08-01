@@ -55,7 +55,9 @@
 		background: var(--slate-300);
 	}
 	.note {
-		color: var(--text-muted);
+		/* Dimmest on-dark step that still clears 4.5:1 (6.7:1 on navy-900).
+		   --text-muted is a light-surface token and fails here at 2.9:1. */
+		color: var(--slate-400);
 	}
 	@media (max-width: 860px) {
 		section {

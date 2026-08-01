@@ -1,12 +1,14 @@
 <script lang="ts">
 	import type { SpeciesCard } from '$lib/data/site';
 
-	let { card }: { card: SpeciesCard } = $props();
+	// The stories page gives its first section head the h1, so these cards sit a
+	// level below it; sections headed by an h2 pass 'h3' instead.
+	let { card, as = 'h3' }: { card: SpeciesCard; as?: 'h2' | 'h3' } = $props();
 </script>
 
 <article class="card">
 	<span class="tag {card.tagKind}">{card.tag}</span>
-	<h3>{card.name}</h3>
+	<svelte:element this={as} class="name">{card.name}</svelte:element>
 	<div class="sci">{card.scientificName}</div>
 	<p>{card.description}</p>
 </article>
@@ -38,7 +40,7 @@
 		background: var(--slate-100);
 		color: var(--slate-700);
 	}
-	h3 {
+	.name {
 		font-size: 1.25rem;
 	}
 	.sci {

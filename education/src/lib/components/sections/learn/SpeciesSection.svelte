@@ -14,7 +14,7 @@
 		<SectionHead as="h1" eyebrow={head.eyebrow} title={head.title} lead={head.lead} />
 		<div class="cards">
 			{#each c.speciesCards as card (card.name)}
-				<SpeciesCard {card} />
+				<SpeciesCard {card} as="h2" />
 			{/each}
 		</div>
 	</div>
