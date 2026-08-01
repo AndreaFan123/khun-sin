@@ -400,3 +400,22 @@ export const meta = {
 			'Around 30 cetacean species are recorded in Taiwan’s waters. Meet them, understand the human-made threats they face, and see how the rescue network turns each stranding into knowledge.'
 	}
 };
+
+/** Alt text for the share card image (#39). */
+export const ogImageAlt: string =
+	'Khun-Sin share card: Found a stranded whale or dolphin? Call 118';
+
+/**
+ * Copy used only by structured data (#41, #42) — mirror of the zh block.
+ */
+export const schemaCopy = {
+	/** FAQPage entries must be questions; the page shows these as two lists. */
+	doQuestion: 'What should I do when I find a stranded whale or dolphin?',
+	dontQuestion: 'What must I never do to a stranded whale or dolphin?',
+	sourceName: 'Ocean Conservation Administration',
+	dataset: {
+		name: 'Taiwan cetacean stranding statistics (MARN)',
+		description:
+			'Annual and quarterly cetacean stranding statistics for the waters around Taiwan: totals, dead versus live, species, county distribution, month, and determined cause of death. Sourced from the Ocean Conservation Administration’s Marine Animal Rescue Network (MARN) reports and presented by Khun-Sin.'
+	}
+};
