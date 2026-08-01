@@ -400,3 +400,7 @@ export const meta = {
 			'Around 30 cetacean species are recorded in Taiwan’s waters. Meet them, understand the human-made threats they face, and see how the rescue network turns each stranding into knowledge.'
 	}
 };
+
+/** Alt text for the share card image (#39). */
+export const ogImageAlt: string =
+	'Khun-Sin share card: Found a stranded whale or dolphin? Call 118';

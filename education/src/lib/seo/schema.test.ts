@@ -3,7 +3,14 @@ import * as zh from '$lib/data/site';
 import * as en from '$lib/data/site-en';
 import { totals } from '$lib/data/strandings';
 import { SITE_ORIGIN } from './routes';
-import { buildDataset, buildFaqPage, buildHowTo, buildOrganization, buildWebSite } from './schema';
+import {
+	buildDataset,
+	buildFaqPage,
+	buildHowTo,
+	buildOrganization,
+	buildWebSite,
+	serializeJsonLd
+} from './schema';
 
 const locales = [
 	['zh', zh],
@@ -107,5 +114,24 @@ describe.each(locales)('Organization and WebSite (%s)', (locale, copy) => {
 		expect(site['@type']).toBe('WebSite');
 		expect(site.publisher).toEqual({ '@id': `${SITE_ORIGIN}/#organization` });
 		expect(site.inLanguage).toBe(locale === 'en' ? 'en' : 'zh-Hant-TW');
+	});
+});
+
+describe('serializeJsonLd', () => {
+	it('emits one script tag per schema', () => {
+		const html = serializeJsonLd([buildOrganization(zh), buildWebSite(zh, 'zh')]);
+		expect(html.match(/<script type="application\/ld\+json">/g)).toHaveLength(2);
+	});
+
+	it('escapes markup so page content can never break out of the script tag', () => {
+		const html = serializeJsonLd([{ '@type': 'Thing', name: 'a </script><img> b' }]);
+		expect(html).not.toContain('</script><img>');
+		expect(html).toContain('\\u003c/script');
+	});
+
+	it('produces parseable JSON', () => {
+		const html = serializeJsonLd([buildHowTo(zh, 'zh')]);
+		const body = html.replace(/<\/?script[^>]*>/g, '').replace(/\\u003c/g, '<');
+		expect(() => JSON.parse(body)).not.toThrow();
 	});
 });

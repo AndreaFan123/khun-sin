@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Seo from '$lib/seo/Seo.svelte';
 	import { useSite } from '$lib/copy';
+	import { buildDataset, buildFaqPage, buildHowTo } from '$lib/seo/schema';
 	import Hero from '$lib/components/sections/home/Hero.svelte';
 	import HowToReport from '$lib/components/sections/home/HowToReport.svelte';
 	// import ReportFormTeaser from '$lib/components/sections/home/ReportFormTeaser.svelte';
@@ -11,9 +12,17 @@
 
 	const site = useSite();
 	const meta = $derived(site().copy.meta.home);
+
+	// The response guidance and the statistics are what answer engines
+	// should be able to quote from this page (#41, #42).
+	const schema = $derived([
+		buildHowTo(site().copy, site().locale),
+		buildFaqPage(site().copy, site().locale),
+		buildDataset(site().copy, site().locale)
+	]);
 </script>
 
-<Seo path="/" title={meta.title} description={meta.description} />
+<Seo path="/" title={meta.title} description={meta.description} {schema} />
 
 <Hero />
 <WaveDivider

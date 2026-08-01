@@ -132,3 +132,17 @@ export const buildDataset = (copy: SiteCopy, locale: Locale): JsonLd => {
 		keywords: ['cetacean stranding', 'Taiwan', 'marine conservation', '鯨豚擱淺', '海洋保育']
 	};
 };
+
+/**
+ * Render schemas as script tags. `<` is escaped so a stray `</script>` in page
+ * copy can never terminate the tag early and inject markup — the copy modules
+ * are trusted today, but this is the kind of thing that stops being true
+ * quietly.
+ */
+export const serializeJsonLd = (schemas: JsonLd[]): string =>
+	schemas
+		.map(
+			(schema) =>
+				`<script type="application/ld+json">${JSON.stringify(schema).replace(/</g, '\\u003c')}</script>`
+		)
+		.join('\n');

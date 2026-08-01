@@ -430,3 +430,6 @@ export const meta = {
 			'台灣海域記錄到約 30 種鯨豚。認識牠們、牠們面對的人為威脅，以及海保救援網（MARN）如何把每一次擱淺化為保育知識。'
 	}
 };
+
+/** Alt text for the share card image (#39). */
+export const ogImageAlt: string = 'Khun-Sin 分享卡片：發現擱淺鯨豚，請立刻撥打 118';
