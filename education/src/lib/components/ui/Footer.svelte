@@ -1,11 +1,21 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { useSite } from '$lib/copy';
+	import { fill, formatReportLabel } from '$lib/format';
+	import { lastUpdated, latestPeriod } from '$lib/data/strandings';
 	import Wordmark from '$lib/components/ui/Wordmark.svelte';
 
 	const site = useSite();
 	const c = $derived(site().copy);
 	const dataSources = $derived(c.dataSources);
+	// How current the figures are — a different fact from what they cover, and
+	// the one a reader needs to judge whether the numbers are still good.
+	const currencyNote = $derived(
+		fill(c.dataCurrency.note, {
+			date: lastUpdated,
+			report: formatReportLabel(latestPeriod(), c)
+		})
+	);
 	const supportHref = $derived(
 		site().locale === 'en' ? `${resolve('/en/learn')}#support` : `${resolve('/learn')}#support`
 	);
@@ -19,6 +29,7 @@
 			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- resolved with anchor -->
 			<a href={supportHref}>{c.uiCopy.navSupport} →</a>
 		</p>
+		<p class="currency">{currencyNote}</p>
 		<p class="src">
 			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL -->
 			{dataSources.intro}（<a href={dataSources.marnUrl} target="_blank" rel="noopener"
@@ -56,6 +67,10 @@
 	}
 	.footnote {
 		margin-top: 10px;
+		color: var(--slate-300);
+	}
+	.currency {
+		margin-top: 14px;
 		color: var(--slate-300);
 	}
 	.src {

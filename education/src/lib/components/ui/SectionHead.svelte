@@ -1,15 +1,25 @@
 <script lang="ts">
+	// `as` sets the heading level only — styling is identical either way.
+	// Routes without a hero (the stories pages) pass as="h1" on their first
+	// section so the page has a top-level landmark (#38).
 	let {
 		eyebrow,
 		title,
 		lead = '',
-		onDark = false
-	}: { eyebrow: string; title: string; lead?: string; onDark?: boolean } = $props();
+		onDark = false,
+		as = 'h2'
+	}: {
+		eyebrow: string;
+		title: string;
+		lead?: string;
+		onDark?: boolean;
+		as?: 'h1' | 'h2';
+	} = $props();
 </script>
 
 <div class="sec-head" class:on-dark={onDark}>
 	<span class="eyebrow">{eyebrow}</span>
-	<h2>{title}</h2>
+	<svelte:element this={as} class="title">{title}</svelte:element>
 	{#if lead}<p class="lead">{lead}</p>{/if}
 </div>
 
@@ -35,7 +45,7 @@
 		background: var(--accent);
 		border-radius: 2px;
 	}
-	h2 {
+	.title {
 		font-size: clamp(1.8rem, 4vw, 4rem);
 	}
 	.lead {
@@ -47,7 +57,7 @@
 	.on-dark .eyebrow {
 		color: var(--accent);
 	}
-	.on-dark h2 {
+	.on-dark .title {
 		color: var(--text-on-dark);
 	}
 	.on-dark .lead {

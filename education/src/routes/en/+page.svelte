@@ -1,18 +1,22 @@
 <script lang="ts">
+	import Seo from '$lib/seo/Seo.svelte';
+	import { useSite } from '$lib/copy';
+	import { buildHomeSchema } from '$lib/seo/schema';
 	import Hero from '$lib/components/sections/home/Hero.svelte';
 	import HowToReport from '$lib/components/sections/home/HowToReport.svelte';
 	import DataDashboard from '$lib/components/sections/home/DataDashboard.svelte';
 	import MapSection from '$lib/components/sections/home/MapSection.svelte';
 	import WaveDivider from '$lib/components/ui/WaveDivider.svelte';
+
+	const site = useSite();
+	const meta = $derived(site().copy.meta.home);
+
+	// The response guidance and the statistics are what answer engines
+	// should be able to quote from this page (#41, #42).
+	const schema = $derived(buildHomeSchema(site()));
 </script>
 
-<svelte:head>
-	<title>Khun-Sin · Taiwan cetacean stranding reporting & data</title>
-	<meta
-		name="description"
-		content="Found a stranded whale or dolphin in Taiwan? Call 118. Stranding-response guidance and official data, in English."
-	/>
-</svelte:head>
+<Seo path="/en" title={meta.title} description={meta.description} {schema} />
 
 <Hero />
 <WaveDivider

@@ -1,15 +1,17 @@
 <script lang="ts">
+	import Seo from '$lib/seo/Seo.svelte';
+	import { useSite } from '$lib/copy';
 	import SpeciesSection from '$lib/components/sections/learn/SpeciesSection.svelte';
 	import ThreatsSection from '$lib/components/sections/learn/ThreatsSection.svelte';
 	import ConservationSection from '$lib/components/sections/learn/ConservationSection.svelte';
 	import SupportSection from '$lib/components/sections/learn/SupportSection.svelte';
 	import WaveDivider from '$lib/components/ui/WaveDivider.svelte';
+
+	const site = useSite();
+	const meta = $derived(site().copy.meta.learn);
 </script>
 
-<svelte:head>
-	<title>故事分享 · Khun-Sin</title>
-	<meta name="description" content="認識台灣的鯨豚、人為威脅與保育行動的成果。" />
-</svelte:head>
+<Seo path="/learn" title={meta.title} description={meta.description} />
 
 <SpeciesSection />
 <WaveDivider from="var(--paper-200)" to="var(--navy-800)" />

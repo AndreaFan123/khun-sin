@@ -1,4 +1,7 @@
 <script lang="ts">
+	import Seo from '$lib/seo/Seo.svelte';
+	import { useSite } from '$lib/copy';
+	import { buildHomeSchema } from '$lib/seo/schema';
 	import Hero from '$lib/components/sections/home/Hero.svelte';
 	import HowToReport from '$lib/components/sections/home/HowToReport.svelte';
 	// import ReportFormTeaser from '$lib/components/sections/home/ReportFormTeaser.svelte';
@@ -6,12 +9,16 @@
 	import MapSection from '$lib/components/sections/home/MapSection.svelte';
 	// import Cta from '$lib/components/sections/home/Cta.svelte';
 	import WaveDivider from '$lib/components/ui/WaveDivider.svelte';
+
+	const site = useSite();
+	const meta = $derived(site().copy.meta.home);
+
+	// The response guidance and the statistics are what answer engines
+	// should be able to quote from this page (#41, #42).
+	const schema = $derived(buildHomeSchema(site()));
 </script>
 
-<svelte:head>
-	<title>Khun-Sin · 台灣鯨豚擱淺通報與數據</title>
-	<meta name="description" content="發現鯨豚擱淺請撥 118。台灣鯨豚擱淺通報資訊與官方數據視覺化。" />
-</svelte:head>
+<Seo path="/" title={meta.title} description={meta.description} {schema} />
 
 <Hero />
 <WaveDivider

@@ -416,3 +416,49 @@ export const uiCopy = {
 		'12月'
 	]
 };
+
+/** Page-level metadata (#37): titles lead with the query phrase, brand last. */
+export const meta = {
+	home: {
+		title: '台灣鯨豚擱淺通報與數據 · Khun-Sin',
+		description:
+			'發現鯨豚擱淺請撥 118。通報步驟、該做與絕對不要做的事，以及海保署「海保救援網（MARN）」歷年官方擱淺數據視覺化。'
+	},
+	learn: {
+		title: '認識台灣的鯨豚：物種、威脅與救援故事 · Khun-Sin',
+		description:
+			'台灣海域記錄到約 30 種鯨豚。認識牠們、牠們面對的人為威脅，以及海保救援網（MARN）如何把每一次擱淺化為保育知識。'
+	}
+};
+
+/** Alt text for the share card image (#39). */
+export const ogImageAlt: string = 'Khun-Sin 分享卡片：發現擱淺鯨豚，請立刻撥打 118';
+
+/**
+ * Copy used only by structured data (#41, #42). It lives here, mirrored in
+ * site-en.ts, for the same reason every other string does: a second hand-written
+ * locale store drifts silently.
+ */
+export const schemaCopy = {
+	/** FAQPage entries must be questions; the page shows these as two lists. */
+	doQuestion: '發現擱淺鯨豚時，該做什麼？',
+	dontQuestion: '發現擱淺鯨豚時，絕對不要做什麼？',
+	sourceName: '海洋委員會海洋保育署',
+	dataset: {
+		name: '台灣鯨豚擱淺統計（海保救援網 MARN）',
+		description:
+			'台灣周邊海域鯨豚擱淺的年度與季度統計：擱淺總數、死亡與活體、物種、縣市分布、月份與死因判定。資料來自海洋委員會海洋保育署「海保救援網（MARN）」歷年官方擱淺報告，由 Khun-Sin 整理呈現。'
+	}
+};
+
+/**
+ * Data currency (#: raised 2026-07-28) — how current the figures are, which is
+ * a different fact from what periods they cover. Coverage is derived from the
+ * data; currency is a human statement about when it was last reconciled.
+ */
+export const dataCurrency = {
+	note: '資料更新於 {date}，內容依據海保署{report}。',
+	annualReport: '{year} 年度擱淺報告',
+	quarterlyReport: '{year} 年第{quarter}季擱淺報告',
+	quarterNumerals: ['一', '二', '三', '四']
+};
