@@ -63,7 +63,8 @@
 	.disclosure {
 		margin-top: 24px;
 		font-size: 0.85rem;
-		color: var(--text-muted);
+		/* --text-muted only clears AA on --bg-card; this sits on the page background. */
+		color: var(--text-secondary);
 	}
 	@media (max-width: 860px) {
 		section {
