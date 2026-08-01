@@ -44,6 +44,9 @@ export const localeForPathname = (pathname: string): Locale =>
 
 export const htmlLangOf = (locale: Locale): string => HTML_LANG[locale];
 
+/** The home route for a locale — routing knowledge stays in the route table. */
+export const homePathFor = (locale: Locale): RoutePath => (locale === 'en' ? '/en' : '/');
+
 export const absolute = (path: RoutePath): string =>
 	path === '/' ? `${SITE_ORIGIN}/` : `${SITE_ORIGIN}${path}`;
 

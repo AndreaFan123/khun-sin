@@ -35,7 +35,7 @@ describe('sitemap', () => {
 		}
 	});
 
-	it('escapes nothing it should not — no raw ampersands', () => {
+	it('leaves no unescaped ampersands', () => {
 		expect(xml).not.toMatch(/&(?!amp;|lt;|gt;|quot;|apos;)/);
 	});
 });

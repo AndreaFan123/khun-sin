@@ -433,3 +433,20 @@ export const meta = {
 
 /** Alt text for the share card image (#39). */
 export const ogImageAlt: string = 'Khun-Sin 分享卡片：發現擱淺鯨豚，請立刻撥打 118';
+
+/**
+ * Copy used only by structured data (#41, #42). It lives here, mirrored in
+ * site-en.ts, for the same reason every other string does: a second hand-written
+ * locale store drifts silently.
+ */
+export const schemaCopy = {
+	/** FAQPage entries must be questions; the page shows these as two lists. */
+	doQuestion: '發現擱淺鯨豚時，該做什麼？',
+	dontQuestion: '發現擱淺鯨豚時，絕對不要做什麼？',
+	sourceName: '海洋委員會海洋保育署',
+	dataset: {
+		name: '台灣鯨豚擱淺統計（海保救援網 MARN）',
+		description:
+			'台灣周邊海域鯨豚擱淺的年度與季度統計：擱淺總數、死亡與活體、物種、縣市分布、月份與死因判定。資料來自海洋委員會海洋保育署「海保救援網（MARN）」歷年官方擱淺報告，由 Khun-Sin 整理呈現。'
+	}
+};

@@ -20,17 +20,22 @@
 	const locale = $derived(site().locale);
 	const copy = $derived(site().copy);
 
+	// Per-locale share-card assets and tags, in one place.
+	const OG = {
+		zh: { image: ogImageZh, locale: 'zh_TW', alternate: 'en_US' },
+		en: { image: ogImageEn, locale: 'en_US', alternate: 'zh_TW' }
+	} as const;
+
 	const canonical = $derived(absolute(path));
 	const alternates = $derived(alternatesFor(path));
 
 	// Social platforms require absolute image URLs.
-	const ogImage = $derived(`${SITE_ORIGIN}${locale === 'en' ? ogImageEn : ogImageZh}`);
-	const ogLocale = $derived(locale === 'en' ? 'en_US' : 'zh_TW');
-	const ogLocaleAlternate = $derived(locale === 'en' ? 'zh_TW' : 'en_US');
+	const og = $derived(OG[locale]);
+	const ogImage = $derived(`${SITE_ORIGIN}${og.image}`);
 
 	// Site identity rides along on every page; pages add their own on top.
 	const jsonLd = $derived(
-		serializeJsonLd([buildOrganization(copy), buildWebSite(copy, locale), ...schema])
+		serializeJsonLd([buildOrganization(site()), buildWebSite(site()), ...schema])
 	);
 </script>
 
@@ -47,8 +52,8 @@
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
 	<meta property="og:url" content={canonical} />
-	<meta property="og:locale" content={ogLocale} />
-	<meta property="og:locale:alternate" content={ogLocaleAlternate} />
+	<meta property="og:locale" content={og.locale} />
+	<meta property="og:locale:alternate" content={og.alternate} />
 	<meta property="og:image" content={ogImage} />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />

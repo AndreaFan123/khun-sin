@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import type { SiteContext } from '$lib/copy';
 import * as zh from '$lib/data/site';
 import * as en from '$lib/data/site-en';
 import { totals } from '$lib/data/strandings';
@@ -6,19 +7,23 @@ import { SITE_ORIGIN } from './routes';
 import {
 	buildDataset,
 	buildFaqPage,
+	buildHomeSchema,
 	buildHowTo,
 	buildOrganization,
 	buildWebSite,
 	serializeJsonLd
 } from './schema';
 
-const locales = [
-	['zh', zh],
-	['en', en]
+const contexts = [
+	['zh', { copy: zh, locale: 'zh' } satisfies SiteContext],
+	['en', { copy: en, locale: 'en' } satisfies SiteContext]
 ] as const;
 
-describe.each(locales)('HowTo (%s)', (locale, copy) => {
-	const howTo = buildHowTo(copy, locale);
+const expectedLang = (locale: string) => (locale === 'en' ? 'en' : 'zh-Hant-TW');
+
+describe.each(contexts)('HowTo (%s)', (locale, context) => {
+	const howTo = buildHowTo(context);
+	const { copy } = context;
 
 	it('is a schema.org HowTo', () => {
 		expect(howTo['@context']).toBe('https://schema.org');
@@ -33,17 +38,25 @@ describe.each(locales)('HowTo (%s)', (locale, copy) => {
 		expect(steps.every((s) => s['@type'] === 'HowToStep')).toBe(true);
 	});
 
-	it('carries the hotline number as the tool the reader needs', () => {
+	it('carries the hotline number the reader needs', () => {
 		expect(JSON.stringify(howTo)).toContain(copy.hotline.number);
 	});
 
+	it('asserts nothing beyond what the page shows', () => {
+		// No duration claim — the page never says how long reporting takes.
+		expect(howTo.totalTime).toBeUndefined();
+		const tool = howTo.tool as { name: string }[];
+		expect(tool[0].name).toBe(copy.hotline.label);
+	});
+
 	it('states its language', () => {
-		expect(howTo.inLanguage).toBe(locale === 'en' ? 'en' : 'zh-Hant-TW');
+		expect(howTo.inLanguage).toBe(expectedLang(locale));
 	});
 });
 
-describe.each(locales)('FAQPage (%s)', (locale, copy) => {
-	const faq = buildFaqPage(copy, locale);
+describe.each(contexts)('FAQPage (%s)', (locale, context) => {
+	const faq = buildFaqPage(context);
+	const { copy } = context;
 	const entries = faq.mainEntity as {
 		'@type': string;
 		name: string;
@@ -53,16 +66,20 @@ describe.each(locales)('FAQPage (%s)', (locale, copy) => {
 	it('is a schema.org FAQPage in the page language', () => {
 		expect(faq['@context']).toBe('https://schema.org');
 		expect(faq['@type']).toBe('FAQPage');
-		expect(faq.inLanguage).toBe(locale === 'en' ? 'en' : 'zh-Hant-TW');
+		expect(faq.inLanguage).toBe(expectedLang(locale));
 	});
 
-	it('covers every do and never item', () => {
-		expect(entries).toHaveLength(copy.doList.length + copy.dontList.length);
+	it('mirrors the page: one do question and one never question', () => {
+		expect(entries).toHaveLength(2);
+		expect(entries.map((e) => e.name)).toEqual([
+			copy.schemaCopy.doQuestion,
+			copy.schemaCopy.dontQuestion
+		]);
 	});
 
 	it('answers verbatim from the page copy — nothing asserted that is not shown', () => {
-		const shown = [...copy.doList, ...copy.dontList];
-		expect(entries.map((e) => e.acceptedAnswer.text)).toEqual(shown);
+		for (const item of copy.doList) expect(entries[0].acceptedAnswer.text).toContain(item);
+		for (const item of copy.dontList) expect(entries[1].acceptedAnswer.text).toContain(item);
 	});
 
 	it('shapes every entry as a Question with an Answer', () => {
@@ -72,15 +89,15 @@ describe.each(locales)('FAQPage (%s)', (locale, copy) => {
 	});
 });
 
-describe.each(locales)('Dataset (%s)', (locale, copy) => {
-	const dataset = buildDataset(copy, locale);
+describe.each(contexts)('Dataset (%s)', (locale, context) => {
+	const dataset = buildDataset(context);
 
 	it('is a schema.org Dataset', () => {
 		expect(dataset['@context']).toBe('https://schema.org');
 		expect(dataset['@type']).toBe('Dataset');
 		expect(dataset.name).toBeTruthy();
 		expect(dataset.description).toBeTruthy();
-		expect(dataset.inLanguage).toBe(locale === 'en' ? 'en' : 'zh-Hant-TW');
+		expect(dataset.inLanguage).toBe(expectedLang(locale));
 	});
 
 	it('credits the Ocean Conservation Administration as the source, not this site', () => {
@@ -94,14 +111,14 @@ describe.each(locales)('Dataset (%s)', (locale, copy) => {
 		expect(dataset.temporalCoverage).toBe(`${Math.min(...years)}/${Math.max(...years)}`);
 	});
 
-	it('links back to the page that presents it', () => {
-		expect(String(dataset.url)).toContain(SITE_ORIGIN);
+	it('points at the page in its own language', () => {
+		expect(dataset.url).toBe(locale === 'en' ? `${SITE_ORIGIN}/en` : `${SITE_ORIGIN}/`);
 	});
 });
 
-describe.each(locales)('Organization and WebSite (%s)', (locale, copy) => {
-	const org = buildOrganization(copy);
-	const site = buildWebSite(copy, locale);
+describe.each(contexts)('Organization and WebSite (%s)', (locale, context) => {
+	const org = buildOrganization(context);
+	const website = buildWebSite(context);
 
 	it('identifies the site at a stable id', () => {
 		expect(org['@type']).toBe('Organization');
@@ -111,15 +128,24 @@ describe.each(locales)('Organization and WebSite (%s)', (locale, copy) => {
 	});
 
 	it('publishes the WebSite through that same organization', () => {
-		expect(site['@type']).toBe('WebSite');
-		expect(site.publisher).toEqual({ '@id': `${SITE_ORIGIN}/#organization` });
-		expect(site.inLanguage).toBe(locale === 'en' ? 'en' : 'zh-Hant-TW');
+		expect(website['@type']).toBe('WebSite');
+		expect(website.publisher).toEqual({ '@id': `${SITE_ORIGIN}/#organization` });
+		expect(website.inLanguage).toBe(expectedLang(locale));
+	});
+});
+
+describe('buildHomeSchema', () => {
+	it('bundles what the home page adds to the site-wide identity', () => {
+		const types = buildHomeSchema(contexts[0][1]).map((s) => s['@type']);
+		expect(types).toEqual(['HowTo', 'FAQPage', 'Dataset']);
 	});
 });
 
 describe('serializeJsonLd', () => {
+	const zhContext = contexts[0][1];
+
 	it('emits one script tag per schema', () => {
-		const html = serializeJsonLd([buildOrganization(zh), buildWebSite(zh, 'zh')]);
+		const html = serializeJsonLd([buildOrganization(zhContext), buildWebSite(zhContext)]);
 		expect(html.match(/<script type="application\/ld\+json">/g)).toHaveLength(2);
 	});
 
@@ -130,7 +156,7 @@ describe('serializeJsonLd', () => {
 	});
 
 	it('produces parseable JSON', () => {
-		const html = serializeJsonLd([buildHowTo(zh, 'zh')]);
+		const html = serializeJsonLd([buildHowTo(zhContext)]);
 		const body = html.replace(/<\/?script[^>]*>/g, '').replace(/\\u003c/g, '<');
 		expect(() => JSON.parse(body)).not.toThrow();
 	});
