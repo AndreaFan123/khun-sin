@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { SiteContext } from '$lib/copy';
 import * as zh from '$lib/data/site';
 import * as en from '$lib/data/site-en';
-import { totals } from '$lib/data/strandings';
+import { lastUpdated, totals } from '$lib/data/strandings';
 import { SITE_ORIGIN } from './routes';
 import {
 	buildDataset,
@@ -159,5 +159,13 @@ describe('serializeJsonLd', () => {
 		const html = serializeJsonLd([buildHowTo(zhContext)]);
 		const body = html.replace(/<\/?script[^>]*>/g, '').replace(/\\u003c/g, '<');
 		expect(() => JSON.parse(body)).not.toThrow();
+	});
+});
+
+describe('Dataset currency', () => {
+	it('declares when the figures were last reconciled, not just what they cover', () => {
+		const dataset = buildDataset(contexts[0][1]);
+		expect(dataset.dateModified).toBe(lastUpdated);
+		expect(dataset.dateModified).not.toBe(dataset.temporalCoverage);
 	});
 });

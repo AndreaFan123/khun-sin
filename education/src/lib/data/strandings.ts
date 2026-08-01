@@ -144,6 +144,13 @@ export const whiteDolphinProgram2025 = {
 	pathologyCases: 21 // necropsy/pathology analyses in 2025
 };
 
+/**
+ * When these figures were last reconciled against the published MARN reports.
+ * A human statement — the only part of data currency that cannot be derived.
+ * Update it whenever a report is added or re-checked.
+ */
+export const lastUpdated = '2026-07-22';
+
 /* ---------- Derived helpers (pure — unit-test targets for #11) ---------- */
 
 export const totalOf = (t: StrandingTotals): number => t.dead + t.live;
@@ -276,3 +283,14 @@ export const monthRows = (year: number = LATEST_BREAKDOWN_YEAR): MonthRow[] =>
 /** Annual dead/live series in year order — the multi-year trend chart input. */
 export const trendRows = (): TrendRow[] =>
 	annualTotals().map((t) => ({ year: t.period.year, dead: t.dead, live: t.live }));
+
+/** The most recent published report these figures include — derived, never stated twice. */
+export const latestPeriod = (): Period =>
+	totals
+		.map((t) => t.period)
+		.reduce((latest, period) =>
+			period.year > latest.year ||
+			(period.year === latest.year && (period.quarter ?? 0) > (latest.quarter ?? 0))
+				? period
+				: latest
+		);

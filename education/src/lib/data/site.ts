@@ -450,3 +450,15 @@ export const schemaCopy = {
 			'台灣周邊海域鯨豚擱淺的年度與季度統計：擱淺總數、死亡與活體、物種、縣市分布、月份與死因判定。資料來自海洋委員會海洋保育署「海保救援網（MARN）」歷年官方擱淺報告，由 Khun-Sin 整理呈現。'
 	}
 };
+
+/**
+ * Data currency (#: raised 2026-07-28) — how current the figures are, which is
+ * a different fact from what periods they cover. Coverage is derived from the
+ * data; currency is a human statement about when it was last reconciled.
+ */
+export const dataCurrency = {
+	note: '資料更新於 {date}，內容依據海保署{report}。',
+	annualReport: '{year} 年度擱淺報告',
+	quarterlyReport: '{year} 年第{quarter}季擱淺報告',
+	quarterNumerals: ['一', '二', '三', '四']
+};

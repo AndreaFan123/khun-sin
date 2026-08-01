@@ -419,3 +419,13 @@ export const schemaCopy = {
 			'Annual and quarterly cetacean stranding statistics for the waters around Taiwan: totals, dead versus live, species, county distribution, month, and determined cause of death. Sourced from the Ocean Conservation Administration’s Marine Animal Rescue Network (MARN) reports and presented by Khun-Sin.'
 	}
 };
+
+/**
+ * Data currency — mirror of the zh block.
+ */
+export const dataCurrency = {
+	note: 'Data updated {date}, based on the Ocean Conservation Administration {report}.',
+	annualReport: '{year} annual stranding report',
+	quarterlyReport: '{year} Q{quarter} stranding report',
+	quarterNumerals: ['1', '2', '3', '4']
+};

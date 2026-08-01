@@ -17,7 +17,7 @@
  */
 
 import type { SiteContext } from '$lib/copy';
-import { totals } from '$lib/data/strandings';
+import { lastUpdated, totals } from '$lib/data/strandings';
 import { absolute, homePathFor, htmlLangOf, SITE_ORIGIN } from './routes';
 
 export type JsonLd = Record<string, unknown>;
@@ -98,6 +98,7 @@ export const buildDataset = ({ copy, locale }: SiteContext): JsonLd => {
 		inLanguage: htmlLangOf(locale),
 		url: absolute(homePathFor(locale)),
 		temporalCoverage: `${Math.min(...years)}/${Math.max(...years)}`,
+		dateModified: lastUpdated,
 		spatialCoverage: { '@type': 'Place', name: 'Taiwan' },
 		creator: {
 			'@type': 'GovernmentOrganization',
