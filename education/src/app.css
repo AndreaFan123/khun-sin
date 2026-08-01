@@ -68,7 +68,10 @@
 	--bg-band-darker: var(--navy-900); /* hero, footer */
 	--text-primary: var(--paper-900);
 	--text-secondary: var(--slate-700); /* 5.5:1 on paper-200 */
-	--text-muted: var(--paper-600); /* captions/ticks — large or graphic use */
+	/* Captions and chart ticks. Clears AA on --bg-card (4.99:1) but NOT on --bg
+	   (4.33:1) — for body text on the page background use --text-secondary, and
+	   on dark bands use --text-on-dark-secondary or --slate-400. */
+	--text-muted: var(--paper-600);
 	--text-on-dark: var(--paper-50);
 	--text-on-dark-secondary: var(--slate-200);
 	--heading: var(--navy-700);
