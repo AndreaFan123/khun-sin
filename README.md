@@ -29,22 +29,30 @@ So the strategy is deliberately **not** "build a promotional website." It is:
 
 Everything in this repo serves that pipeline.
 
-## The three pillars
+## Three pillars — an early sketch
 
-1. **Standard form (the backbone)** — mobile-first, offline-capable, controlled
-   vocabulary, photos that carry GPS, one case number that follows an event from
-   first report to closure. Progressive stages: public report → local volunteer
-   triage → professional (Level A) field response → care log & case closure.
-   Explicitly aligned with the Ocean Conservation Administration's **MARN**
-   rescue record — a digital front-end for MARN, not a competing system.
-2. **Central database (the heart)** — one "stranding event" at its core with many
-   child records; standardized codes and coordinates, layered permissions
-   (public / volunteer / coordinator / researcher / open data), automatic merging
-   of duplicate reports, and an audit trail per entry.
-3. **Public reporting entry (the face)** — a login-free, single-page report form
-   whose key differentiator is a **feedback loop**: give reporters a case number
-   so they can follow what happened next. The public map and dashboard are
-   generated from the same database.
+None of this is settled. What follows is a working hypothesis, written down so
+it can be argued with, and it has **not yet been tested against the people who
+would use it** — the volunteers, coordinators and vets doing this work today.
+Expect it to change once it has.
+
+1. **A standard form** — mobile-first and usable with poor signal on a beach,
+   with one case number following an event from first report through to closure.
+   It would sit in front of the Ocean Conservation Administration's **MARN**
+   record rather than compete with it.
+2. **A central database** — the stranding event as the core record, with access
+   layered from public through to researcher. The open questions are the ones
+   that matter: how duplicate reports of the same animal get merged, and how
+   much location detail can be published without drawing a crowd to a live
+   stranding.
+3. **A public entry point** — a login-free report form whose difference would be
+   the feedback loop: a case number the reporter can follow, so that reporting
+   stops feeling like shouting into a void.
+
+Fuller notes — including how Taiwan's rescue chain works today and what
+comparable systems abroad do — are in
+[`docs/product/專案筆記.md`](docs/product/專案筆記.md). The design proper belongs
+to ADR-003, which has not been written.
 
 ## What exists today
 
