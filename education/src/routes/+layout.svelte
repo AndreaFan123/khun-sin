@@ -5,6 +5,7 @@
 	import { htmlLangOf } from '$lib/seo/routes';
 	import Nav from '$lib/components/ui/Nav.svelte';
 	import Footer from '$lib/components/ui/Footer.svelte';
+	import Tooltip from '$lib/components/ui/Tooltip.svelte';
 
 	let { children, data } = $props();
 
@@ -29,3 +30,5 @@
 </main>
 
 <Footer />
+
+<Tooltip />

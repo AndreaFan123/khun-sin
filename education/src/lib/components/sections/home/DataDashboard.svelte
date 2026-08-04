@@ -1,7 +1,7 @@
 <script lang="ts">
 	import SectionHead from '$lib/components/ui/SectionHead.svelte';
 	import ChartCard from '$lib/components/charts/ChartCard.svelte';
-	import LegacyChartMount from '$lib/components/charts/LegacyChartMount.svelte';
+	import StrandingChart from '$lib/components/charts/StrandingChart.svelte';
 	import { useSite } from '$lib/copy';
 
 	const site = useSite();
@@ -14,15 +14,15 @@
 		<SectionHead onDark eyebrow={head.eyebrow} title={head.title} lead={head.lead} />
 
 		<div class="grid two">
-			<ChartCard copy={byKey('trend')}><LegacyChartMount key="trend" /></ChartCard>
-			<ChartCard copy={byKey('months')}><LegacyChartMount key="months" /></ChartCard>
+			<ChartCard copy={byKey('trend')}><StrandingChart chart="trend" /></ChartCard>
+			<ChartCard copy={byKey('months')}><StrandingChart chart="months" /></ChartCard>
 		</div>
 		<div class="grid">
-			<ChartCard copy={byKey('counties')}><LegacyChartMount key="counties" /></ChartCard>
-			<ChartCard copy={byKey('causes')}><LegacyChartMount key="causes" /></ChartCard>
+			<ChartCard copy={byKey('counties')}><StrandingChart chart="counties" /></ChartCard>
+			<ChartCard copy={byKey('causes')}><StrandingChart chart="causes" /></ChartCard>
 		</div>
 		<div class="grid">
-			<ChartCard copy={byKey('species')}><LegacyChartMount key="species" /></ChartCard>
+			<ChartCard copy={byKey('species')}><StrandingChart chart="species" /></ChartCard>
 		</div>
 	</div>
 </section>

@@ -187,8 +187,8 @@ export const isWinterMonth = (month: number): boolean => month === 12 || month <
  * These raise the seam above the raw arrays: the year default, the non-null
  * lookups, the grand-total plumbing, the per-row share, and the emphasis rules
  * all live here, so a view only chooses locale labels and formats numbers.
- * One implementation, N consumers (LegacyChartMount today, the declarative
- * chart components in #8–#10 tomorrow). Presentation stays out: no locale label
+ * One implementation, N consumers (the declarative chart components, via
+ * StrandingChart). Presentation stays out: no locale label
  * selection, no number formatting — those are view concerns by design.
  */
 
