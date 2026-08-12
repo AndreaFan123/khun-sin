@@ -7,7 +7,9 @@
 	// — which is what makes the figures readable to crawlers that do not run
 	// JavaScript.
 	import { hBarLayout } from '$lib/charts/layout';
+	import { describeChart } from '$lib/charts/describe';
 	import { tooltip } from '$lib/actions/tooltip';
+	import { reveal } from '$lib/actions/reveal';
 
 	export interface BarItem {
 		label: string;
@@ -28,16 +30,21 @@
 	/** Sensible width for prerendering, replaced the moment the container is measured. */
 	const width = $derived(containerWidth || 560);
 	const layout = $derived(hBarLayout(items, { width, padLeft }));
+
+	const descriptionId = $props.id();
+	const description = $derived(describeChart(items.map((item) => item.tooltip)));
 </script>
 
-<div class="chart" bind:clientWidth={containerWidth}>
+<div class="chart" use:reveal bind:clientWidth={containerWidth}>
 	<svg
 		viewBox="0 0 {layout.width} {layout.height}"
 		width="100%"
 		height={layout.height}
 		role="img"
 		aria-label={ariaLabel}
+		aria-describedby={descriptionId}
 	>
+		<desc id={descriptionId}>{description}</desc>
 		{#each items as item, index (item.label)}
 			{@const row = layout.rows[index]}
 			<text
@@ -85,7 +92,6 @@
 		cursor: pointer;
 		transform-box: fill-box;
 		transform-origin: left center;
-		animation: grow 0.9s cubic-bezier(0.22, 1, 0.36, 1) backwards;
 	}
 	.bar.emphasis {
 		fill: var(--chart-emphasis);
@@ -93,9 +99,6 @@
 	.barlabel.emphasis {
 		fill: var(--text-primary);
 		font-weight: 700;
-	}
-	.barvalue {
-		animation: fade 0.4s ease backwards;
 	}
 	/* Inside the bar the label sits on the fill, so it takes the contrasting ink. */
 	.barvalue.inside {
@@ -114,10 +117,15 @@
 			opacity: 0;
 		}
 	}
-	@media (prefers-reduced-motion: reduce) {
-		.bar,
-		.barvalue {
-			animation: none;
+	/* The entrance is opt-in, not opt-out: stated as no-preference so it can
+	   never out-specify a reduce rule. Without motion — or without JS, since
+	   `revealed` is set by an observer — the chart is simply already there. */
+	@media (prefers-reduced-motion: no-preference) {
+		.chart:global(.revealed) .bar {
+			animation: grow 0.9s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+		}
+		.chart:global(.revealed) .barvalue {
+			animation: fade 0.4s ease backwards;
 		}
 	}
 </style>

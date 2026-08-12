@@ -3,7 +3,9 @@
 	// The two segments animate as one column so the stack never appears to
 	// separate mid-flight.
 	import { stackedLayout } from '$lib/charts/layout';
+	import { describeChart } from '$lib/charts/describe';
 	import { tooltip } from '$lib/actions/tooltip';
+	import { reveal } from '$lib/actions/reveal';
 
 	export interface StackedItem {
 		label: string;
@@ -18,16 +20,22 @@
 	let containerWidth = $state(0);
 	const width = $derived(containerWidth || 560);
 	const layout = $derived(stackedLayout(items, { width }));
+	const descriptionId = $props.id();
+	const description = $derived(
+		describeChart(items.flatMap((item) => [item.deadTooltip, item.liveTooltip]))
+	);
 </script>
 
-<div class="chart" bind:clientWidth={containerWidth}>
+<div class="chart" use:reveal bind:clientWidth={containerWidth}>
 	<svg
 		viewBox="0 0 {layout.width} {layout.height}"
 		width="100%"
 		height={layout.height}
 		role="img"
 		aria-label={ariaLabel}
+		aria-describedby={descriptionId}
 	>
+		<desc id={descriptionId}>{description}</desc>
 		{#each layout.ticks as tick (tick.value)}
 			<line class="gridline" x1={layout.axisLeft} x2={layout.axisRight} y1={tick.y} y2={tick.y} />
 			<text class="tick" x={layout.axisLeft - 6} y={tick.y + 3} text-anchor="end">{tick.value}</text
@@ -83,7 +91,6 @@
 	.stack {
 		transform-box: fill-box;
 		transform-origin: bottom center;
-		animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) backwards;
 	}
 	.segment {
 		cursor: pointer;
@@ -93,9 +100,6 @@
 	}
 	.segment.live {
 		fill: var(--chart-emphasis);
-	}
-	.barvalue {
-		animation: fade 0.4s ease backwards;
 	}
 	@keyframes rise {
 		from {
@@ -107,10 +111,15 @@
 			opacity: 0;
 		}
 	}
-	@media (prefers-reduced-motion: reduce) {
-		.stack,
-		.barvalue {
-			animation: none;
+	/* The entrance is opt-in, not opt-out: stated as no-preference so it can
+	   never out-specify a reduce rule. Without motion — or without JS, since
+	   `revealed` is set by an observer — the chart is simply already there. */
+	@media (prefers-reduced-motion: no-preference) {
+		.chart:global(.revealed) .stack {
+			animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+		}
+		.chart:global(.revealed) .barvalue {
+			animation: fade 0.4s ease backwards;
 		}
 	}
 </style>
