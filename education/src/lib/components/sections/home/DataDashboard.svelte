@@ -1,7 +1,7 @@
 <script lang="ts">
 	import SectionHead from '$lib/components/ui/SectionHead.svelte';
 	import ChartCard from '$lib/components/charts/ChartCard.svelte';
-	import StrandingChart from '$lib/components/charts/StrandingChart.svelte';
+	import StrandingChart from '$lib/components/sections/home/StrandingChart.svelte';
 	import { useSite } from '$lib/copy';
 
 	const site = useSite();

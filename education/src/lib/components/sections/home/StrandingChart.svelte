@@ -3,9 +3,9 @@
 	// components below know nothing about cetaceans; this is the only place
 	// that picks locale labels and formats numbers — the division the selector
 	// layer in strandings.ts was written for.
-	import BarChartHorizontal from './BarChartHorizontal.svelte';
-	import ColumnChart from './ColumnChart.svelte';
-	import StackedColumnChart from './StackedColumnChart.svelte';
+	import BarChartHorizontal from '$lib/components/charts/BarChartHorizontal.svelte';
+	import ColumnChart from '$lib/components/charts/ColumnChart.svelte';
+	import StackedColumnChart from '$lib/components/charts/StackedColumnChart.svelte';
 	import { useSite } from '$lib/copy';
 	import { causeRows, countyRows, monthRows, speciesRows, trendRows } from '$lib/data/strandings';
 
