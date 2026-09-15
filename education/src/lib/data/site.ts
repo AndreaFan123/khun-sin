@@ -264,7 +264,7 @@ export const formTeaser = {
 };
 
 export const heroCopy = {
-	badge: '台灣鯨豚擱淺數據 · 2019–2025 全年度 & 2026 第一季',
+	badge: '台灣鯨豚擱淺數據 · 2019–2025 全年度 & 2026 第二季',
 	titleLead: '鯨豚救援是',
 	titleHighlight: '「向死而生」',
 	titleTail: '',
@@ -287,7 +287,7 @@ export const brandFootnote = {
 
 export const dataSources = {
 	intro:
-		'資料來源：海洋委員會海洋保育署「海保救援網（MARN）」2019–2025 歷年全年度擱淺報告及 2026 年第一季擱淺報告',
+		'資料來源：海洋委員會海洋保育署「海保救援網（MARN）」2019–2025 歷年全年度擱淺報告及 2026 年第一、二季擱淺報告',
 	marnUrl: 'https://www.oca.gov.tw/ch/home.jsp?id=379&parentpath=0,296,375',
 	marnLinkText: '海保署官網',
 	reminder: '',

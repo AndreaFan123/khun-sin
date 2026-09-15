@@ -4,7 +4,7 @@
  * may appear in a component; derived stats are computed, never stored).
  *
  * Source: Ocean Conservation Administration "海保救援網 (MARN)" annual
- * stranding reports 2019–2025 and the 2026 Q1 report.
+ * stranding reports 2019–2025 and the 2026 Q1 and Q2 reports.
  *
  * Period-keyed schema: annual entries omit `quarter`; quarterly snapshots set
  * it. Backfilling a new report (annual or quarterly) is purely additive.
@@ -32,7 +32,8 @@ export const totals: StrandingTotals[] = [
 	{ period: { year: 2023 }, dead: 141, live: 17 },
 	{ period: { year: 2024 }, dead: 135, live: 24 },
 	{ period: { year: 2025 }, dead: 121, live: 7, speciesCount: 21 },
-	{ period: { year: 2026, quarter: 1 }, dead: 58, live: 7, speciesCount: 13 }
+	{ period: { year: 2026, quarter: 1 }, dead: 58, live: 7, speciesCount: 13 },
+	{ period: { year: 2026, quarter: 2 }, dead: 49, live: 12, speciesCount: 13 }
 ];
 
 export interface SpeciesCount {
@@ -149,7 +150,7 @@ export const whiteDolphinProgram2025 = {
  * A human statement — the only part of data currency that cannot be derived.
  * Update it whenever a report is added or re-checked.
  */
-export const lastUpdated = '2026-07-22';
+export const lastUpdated = '2026-09-10';
 
 /* ---------- Derived helpers (pure — unit-test targets for #11) ---------- */
 
