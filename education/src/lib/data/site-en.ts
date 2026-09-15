@@ -256,7 +256,7 @@ export const formTeaser = {
 };
 
 export const heroCopy = {
-	badge: 'Taiwan cetacean stranding data · 2019–2025 annual & 2026 Q1',
+	badge: 'Taiwan cetacean stranding data · 2019–2025 annual & 2026 Q2',
 	titleLead: 'Cetacean rescue is ',
 	titleHighlight: '“Being-towards-death”',
 	titleTail: '',
@@ -279,7 +279,7 @@ export const brandFootnote = {
 
 export const dataSources = {
 	intro:
-		'Data: Ocean Conservation Administration “Marine Animal Rescue Network (MARN)” annual stranding reports 2019–2025 and the 2026 Q1 report',
+		'Data: Ocean Conservation Administration “Marine Animal Rescue Network (MARN)” annual stranding reports 2019–2025 and the 2026 Q1 and Q2 reports',
 	marnUrl: 'https://www.oca.gov.tw/ch/home.jsp?id=379&parentpath=0,296,375',
 	marnLinkText: 'OCA website',
 	reminder: '',

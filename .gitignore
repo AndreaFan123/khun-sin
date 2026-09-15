@@ -1,1 +1,7 @@
 .vercel
+
+# Local agent tooling — machine-specific, deliberately not shared.
+.agents/
+.claude/skills/
+CLAUDE.md
+skills-lock.json

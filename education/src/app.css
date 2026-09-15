@@ -155,24 +155,7 @@ h4 {
 	padding: 0 24px;
 }
 
-/* ---- Transitional legacy-chart styles (#6) — removed with charts-legacy.ts in Sprint 2 ---- */
-.chart-tt {
-	position: fixed;
-	z-index: 99;
-	pointer-events: none;
-	background: var(--navy-900);
-	color: var(--paper-50);
-	padding: 8px 11px;
-	border-radius: 9px;
-	font-size: 0.82rem;
-	opacity: 0;
-	transition: opacity 0.12s;
-	white-space: nowrap;
-	max-width: 240px;
-}
-.chart-tt b {
-	color: var(--amber-300);
-}
+/* ---- Shared chart text (the three chart components render through these) ---- */
 svg .tick {
 	fill: var(--text-muted);
 	font-size: 12px;
@@ -186,21 +169,10 @@ svg .barvalue {
 	font-size: 12px;
 	font-weight: 700;
 }
-svg .bar-rect {
-	transition:
-		width 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-		height 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-		y 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-}
 @media (max-width: 640px) {
 	svg .tick,
 	svg .barlabel,
 	svg .barvalue {
 		font-size: 14px;
-	}
-}
-@media (prefers-reduced-motion: reduce) {
-	svg .bar-rect {
-		transition: none;
 	}
 }
