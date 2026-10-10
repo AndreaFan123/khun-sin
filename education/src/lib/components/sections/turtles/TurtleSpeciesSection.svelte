@@ -32,7 +32,7 @@
 
 <style>
 	section {
-		padding: 92px 0;
+		padding: 52px 0 92px;
 	}
 	.species-grid {
 		display: grid;
@@ -82,7 +82,7 @@
 	}
 	@media (max-width: 720px) {
 		section {
-			padding: 64px 0;
+			padding: 44px 0 64px;
 		}
 		.species-grid {
 			grid-template-columns: 1fr;
