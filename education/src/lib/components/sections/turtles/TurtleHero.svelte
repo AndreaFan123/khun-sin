@@ -28,7 +28,6 @@
 	.hero {
 		position: relative;
 		overflow: hidden;
-		background: var(--bg-band-darker);
 		padding: 96px 0 88px;
 	}
 	.hero::after {
