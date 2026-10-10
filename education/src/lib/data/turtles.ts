@@ -36,7 +36,6 @@ export interface TurtlePageCopy {
 		lead: string;
 		steps: TurtleFeature[];
 		callLabel: string;
-		callAriaLabel: string;
 	};
 	sources: { title: string; intro: string; links: TurtleSource[] };
 }
@@ -159,8 +158,7 @@ export const turtlePage: TurtlePageCopy = {
 			},
 			{ title: '安全守候', description: '維持距離、減少圍觀與噪音，依救援人員指示協助。' }
 		],
-		callLabel: '撥打 118 救援專線',
-		callAriaLabel: '撥打海巡署 118 海龜救援專線'
+		callLabel: '海巡署 24 小時救援專線'
 	},
 	sources: {
 		title: '資料來源',

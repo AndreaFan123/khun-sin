@@ -15,10 +15,10 @@
 	<div class="wrap rescue-layout">
 		<div>
 			<SectionHead onDark eyebrow={rescue.eyebrow} title={rescue.title} lead={rescue.lead} />
-			<a class="call" href="tel:118" aria-label={rescue.callAriaLabel}>
-				<span>118</span>
-				{rescue.callLabel}
-			</a>
+			<div class="hotline">
+				<strong>118</strong>
+				<span>{rescue.callLabel}</span>
+			</div>
 		</div>
 		<ol>
 			{#each rescue.steps as step, index (step.title)}
@@ -63,26 +63,26 @@
 		grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
 		gap: 72px;
 	}
-	.call {
-		display: inline-flex;
-		align-items: center;
-		gap: 14px;
-		background: var(--accent);
-		border-radius: 999px;
-		padding: 10px 22px 10px 12px;
-		color: var(--navy-900);
-		font-weight: 700;
-		text-decoration: none;
-	}
-	.call span {
+	.hotline {
 		display: grid;
-		place-items: center;
-		width: 52px;
-		height: 52px;
-		border: 1px solid var(--amber-800);
-		border-radius: 50%;
-		font-size: 1.25rem;
+		gap: 8px;
+		background: var(--navy-700);
+		border-radius: var(--radius);
+		padding: 30px 34px;
+	}
+	.hotline strong {
+		color: var(--accent);
+		font-size: clamp(4rem, 8vw, 6.5rem);
+		font-weight: 800;
+		letter-spacing: 0.04em;
+		line-height: 0.9;
 		font-variant-numeric: tabular-nums;
+	}
+	.hotline span {
+		color: var(--text-on-dark-secondary);
+		font-size: clamp(1.15rem, 2vw, 1.5rem);
+		font-weight: 600;
+		letter-spacing: 0.08em;
 	}
 	ol {
 		list-style: none;

@@ -137,8 +137,7 @@ export const turtlePage: TurtlePageCopy = {
 					'Keep your distance, reduce crowds and noise, and follow the rescue team’s instructions.'
 			}
 		],
-		callLabel: 'Call the 118 rescue line',
-		callAriaLabel: 'Call the Coast Guard 118 sea turtle rescue line'
+		callLabel: 'Coast Guard 24-hour rescue line'
 	},
 	sources: {
 		title: 'Sources',
