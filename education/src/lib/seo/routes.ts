@@ -49,6 +49,15 @@ export const htmlLangOf = (locale: Locale): string => HTML_LANG[locale];
 /** The home route for a locale — routing knowledge stays in the route table. */
 export const homePathFor = (locale: Locale): RoutePath => (locale === 'en' ? '/en' : '/');
 
+/** Known route for navigation and locale switching; unknown paths fall back home. */
+export const routePathFor = (pathname: string): RoutePath => {
+	const normalized = pathname.length > 1 ? pathname.replace(/\/+$/, '') : '/';
+	return (
+		routes.find((route) => route.path === normalized)?.path ??
+		homePathFor(localeForPathname(pathname))
+	);
+};
+
 export const absolute = (path: RoutePath): string =>
 	path === '/' ? `${SITE_ORIGIN}/` : `${SITE_ORIGIN}${path}`;
 

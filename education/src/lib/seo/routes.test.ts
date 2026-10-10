@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { alternatesFor, entryFor, routes } from './routes';
+import { alternatesFor, entryFor, routePathFor, routes } from './routes';
 
 describe('localized turtle routes', () => {
 	it('registers the Traditional Chinese and English turtle pages as counterparts', () => {
@@ -15,5 +15,10 @@ describe('localized turtle routes', () => {
 			{ hreflang: 'en', href: 'https://www.khun-sin.com/en/turtles' },
 			{ hreflang: 'x-default', href: 'https://www.khun-sin.com/en/turtles' }
 		]);
+	});
+
+	it('resolves the current turtle route for navigation, including trailing slashes', () => {
+		expect(routePathFor('/turtles')).toBe('/turtles');
+		expect(routePathFor('/en/turtles/')).toBe('/en/turtles');
 	});
 });

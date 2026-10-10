@@ -362,6 +362,7 @@ export const uiCopy = {
 	navData: 'Data',
 	navMap: 'Map',
 	navLearn: 'Stories',
+	navTurtles: 'Sea turtles',
 	navSupport: 'Support the front line',
 	heroEmergencyPrefix: 'Found a stranding? ',
 	heroEmergencySuffix: ' — steps below',

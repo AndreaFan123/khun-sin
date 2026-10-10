@@ -2,7 +2,7 @@
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import { useSite } from '$lib/copy';
-	import { entryFor } from '$lib/seo/routes';
+	import { entryFor, routePathFor } from '$lib/seo/routes';
 	import Wordmark from '$lib/components/ui/Wordmark.svelte';
 
 	let y = $state(0);
@@ -18,12 +18,10 @@
 	// Route targets come from the shared route table (#37): section anchors
 	// stay on the current locale's home, and the switcher jumps to whatever
 	// that table says is this page's counterpart.
-	const onLearn = $derived(page.url.pathname.endsWith('/learn'));
-	const current = $derived(
-		entryFor(onLearn ? (isEn ? '/en/learn' : '/learn') : isEn ? '/en' : '/')
-	);
+	const current = $derived(entryFor(routePathFor(page.url.pathname)));
 	const home = $derived(resolve(isEn ? '/en' : '/'));
 	const learn = $derived(resolve(isEn ? '/en/learn' : '/learn'));
+	const turtles = $derived(resolve(isEn ? '/en/turtles' : '/turtles'));
 	const otherLocale = $derived(resolve(current.alternate));
 </script>
 
@@ -38,6 +36,7 @@
 				<a href="{home}#data">{ui.navData}</a>
 				<a href="{home}#map">{ui.navMap}</a>
 				<a href={learn}>{ui.navLearn}</a>
+				<a href={turtles}>{ui.navTurtles}</a>
 			</nav>
 			<div class="lang" role="group" aria-label="語言 / Language">
 				<a
@@ -63,6 +62,7 @@
 		<a href="{home}#data" onclick={closeMenu}>{ui.navData}</a>
 		<a href="{home}#map" onclick={closeMenu}>{ui.navMap}</a>
 		<a href={learn} onclick={closeMenu}>{ui.navLearn}</a>
+		<a href={turtles} onclick={closeMenu}>{ui.navTurtles}</a>
 		<a href="{learn}#support" onclick={closeMenu}>{ui.navSupport}</a>
 	</nav>
 {/if}
