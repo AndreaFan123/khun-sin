@@ -28,10 +28,10 @@ Run the complete local pipeline after adding or replacing source PDFs:
 make pipeline REPORTS_DIR="/path/to/台灣鯨豚擱淺報告"
 ```
 
-This performs the three currently supported stages in order:
+This performs the four currently supported stages in order:
 
 ```text
-inventory -> extract source observations -> validate
+inventory -> extract source observations -> validate -> resolve canonical values
 ```
 
 Each stage can also run independently:
@@ -40,6 +40,7 @@ Each stage can also run independently:
 make inventory REPORTS_DIR="/path/to/台灣鯨豚擱淺報告"
 make extract REPORTS_DIR="/path/to/台灣鯨豚擱淺報告"
 make validate
+make resolve
 ```
 
 Run the test suite with:
@@ -54,7 +55,7 @@ make test
 2. `source observations`: stores every extracted number with provenance.
 3. `resolution`: applies the approved source-authority policy without deleting
    disagreements.
-4. `canonical data`: will contain only reviewed values approved for publication.
+4. `canonical data`: contains only values selected by the source policy.
 5. `publish`: will generate the JSON consumed by the education site.
 
 The current extraction coverage is:
@@ -68,8 +69,12 @@ The current extraction coverage is:
 Reviewed values live in `config/reviewed-observations.json`. A review is only
 accepted when its source path and SHA-256 checksum match the current manifest,
 so replacing a PDF cannot silently reuse an old transcription. Quarterly MARN
-narrative extraction and publication remain future slices.
+narrative extraction and website publication remain future slices.
 
-GitHub Actions runs the tests and validates the committed observation dataset.
-It intentionally does not re-extract PDFs because the raw files are external to
-the repository.
+`data/canonical-observations.json` is safe for downstream use: an
+equal-authority disagreement is omitted from canonical output and placed in
+`review_queue`, causing the resolve command and CI job to fail until reviewed.
+
+GitHub Actions runs the tests, validates the committed source observations and
+re-runs canonical resolution. It intentionally does not re-extract PDFs because
+the raw files are external to the repository.

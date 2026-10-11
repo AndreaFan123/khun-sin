@@ -4,6 +4,11 @@ import argparse
 from pathlib import Path
 from typing import Sequence
 
+from .canonical import (
+    build_canonical_dataset,
+    read_source_observations,
+    write_canonical_dataset,
+)
 from .extract import extract_observations, write_observation_dataset
 from .manifest import scan_source_root, write_manifest
 from .validate import validate_observation_dataset, write_validation_report
@@ -35,6 +40,13 @@ def main(argv: Sequence[str] | None = None) -> int:
     validate.add_argument("--input", type=Path, required=True)
     validate.add_argument("--output", type=Path, required=True)
 
+    resolve = subparsers.add_parser(
+        "resolve",
+        help="select canonical values and preserve source conflicts",
+    )
+    resolve.add_argument("--input", type=Path, required=True)
+    resolve.add_argument("--output", type=Path, required=True)
+
     args = parser.parse_args(argv)
     if args.command == "inventory":
         entries = scan_source_root(args.source_root)
@@ -60,6 +72,17 @@ def main(argv: Sequence[str] | None = None) -> int:
         write_validation_report(result, args.output)
         print(f"Validation {'passed' if result.valid else 'failed'} with {len(result.issues)} issues")
         return 0 if result.valid else 1
+
+    if args.command == "resolve":
+        observations = read_source_observations(args.input)
+        result = build_canonical_dataset(observations)
+        write_canonical_dataset(result, args.output)
+        print(
+            f"Wrote {len(result.canonical_observations)} canonical observations, "
+            f"{len(result.conflict_resolutions)} resolved conflicts, and "
+            f"{len(result.review_queue)} review items to {args.output}"
+        )
+        return 1 if result.review_queue else 0
 
     parser.error(f"Unsupported command: {args.command}")
     return 2
