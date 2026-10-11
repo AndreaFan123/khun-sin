@@ -4,10 +4,9 @@
 	// canonical, language alternates, share card, site identity — derives from
 	// the route table and the locale context, so no page hand-writes meta markup.
 	import { useSite } from '$lib/copy';
-	import { absolute, alternatesFor, SITE_ORIGIN, type RoutePath } from '$lib/seo/routes';
+	import { absolute, alternatesFor, type RoutePath } from '$lib/seo/routes';
 	import { buildOrganization, buildWebSite, serializeJsonLd, type JsonLd } from '$lib/seo/schema';
-	import ogImageZh from '$lib/assets/khun-Sin-OG-image/og-image-zh.jpg';
-	import ogImageEn from '$lib/assets/khun-Sin-OG-image/og-image-en.jpg';
+	import { socialImage } from '$lib/seo/social';
 
 	let {
 		path,
@@ -22,16 +21,15 @@
 
 	// Per-locale share-card assets and tags, in one place.
 	const OG = {
-		zh: { image: ogImageZh, locale: 'zh_TW', alternate: 'en_US' },
-		en: { image: ogImageEn, locale: 'en_US', alternate: 'zh_TW' }
+		zh: { locale: 'zh_TW', alternate: 'en_US' },
+		en: { locale: 'en_US', alternate: 'zh_TW' }
 	} as const;
 
 	const canonical = $derived(absolute(path));
 	const alternates = $derived(alternatesFor(path));
 
-	// Social platforms require absolute image URLs.
 	const og = $derived(OG[locale]);
-	const ogImage = $derived(`${SITE_ORIGIN}${og.image}`);
+	const ogImage = $derived(socialImage(locale));
 
 	// Site identity rides along on every page; pages add their own on top.
 	const jsonLd = $derived(
