@@ -6,5 +6,8 @@ export const prerender = true;
 
 export const GET = async () =>
 	new Response(buildLlmsTxt({ copy: en, locale: 'en' }, totals), {
-		headers: { 'content-type': 'text/plain; charset=utf-8' }
+		headers: {
+			'content-type': 'text/plain; charset=utf-8',
+			'cache-control': 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800'
+		}
 	});
