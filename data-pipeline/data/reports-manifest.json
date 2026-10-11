@@ -1,0 +1,1362 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "source_id": "oca-2019-q1-61aea2ef9c80",
+      "source_relpath": "海龜/2019/2019-第一季.pdf",
+      "sha256": "61aea2ef9c80bee5d970a0fea33a0e7afdc54614bde9594efadd750b9c190415",
+      "file_size": 105006,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2019,
+        "period_type": "quarter",
+        "quarter": 1
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® Excel® 2021",
+      "pdf_creation_date": "2026-02-12T14:08:34+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2019-annual-bb73e0ad07bf",
+      "source_relpath": "海龜/2019/2019-第一季至第四季.pdf",
+      "sha256": "bb73e0ad07bf2ce41b3f9ef44c4971887cf7a5f8e092289d4ddd964c1407d747",
+      "file_size": 88019,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2019,
+        "period_type": "annual",
+        "quarter": null
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® Excel® 2019",
+      "pdf_creation_date": "2020-03-12T09:34:34+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2019-q3-ad93dac0ac58",
+      "source_relpath": "海龜/2019/2019-第三季.pdf",
+      "sha256": "ad93dac0ac58db3243b92ed10802c521c172deea1ee3cca5c0717c4daa72051b",
+      "file_size": 64396,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2019,
+        "period_type": "quarter",
+        "quarter": 3
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "cetacean"
+      ],
+      "pdf_creator": "Gaaiho PDF",
+      "pdf_creation_date": "2019-11-05T18:17:08+08:00",
+      "warnings": [
+        "collection_hint_mismatch"
+      ]
+    },
+    {
+      "source_id": "oca-2019-q2-70d6b8e1d728",
+      "source_relpath": "海龜/2019/2019-第二季.pdf",
+      "sha256": "70d6b8e1d7280620e5534eafa2833f9c37e1ce6692a83f2f857698213f546012",
+      "file_size": 59972,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2019,
+        "period_type": "quarter",
+        "quarter": 2
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "4.海洋委員會公務統計-海保署6月月報及108年第2季季報.xlsx",
+      "pdf_creation_date": "2019-08-06T17:30:25+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2019-q4-1ea31cba1a71",
+      "source_relpath": "海龜/2019/2019-第四季.pdf",
+      "sha256": "1ea31cba1a71e8cea3276163ce26a64ca85aff67f879de331d465ce04b54f4cc",
+      "file_size": 73746,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2019,
+        "period_type": "quarter",
+        "quarter": 4
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® Excel® 2016",
+      "pdf_creation_date": "2020-02-04T14:08:08+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2020-q1-dd31746eca4d",
+      "source_relpath": "海龜/2020/2020-第一季.pdf",
+      "sha256": "dd31746eca4d3feb929117c34877a127dfb6cc8c83146b71cb4bb5f514f49b49",
+      "file_size": 68238,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2020,
+        "period_type": "quarter",
+        "quarter": 1
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® Excel® 2016",
+      "pdf_creation_date": "2020-07-28T11:34:51+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2020-annual-cbc5aec83104",
+      "source_relpath": "海龜/2020/2020-第一季至第四季.pdf",
+      "sha256": "cbc5aec83104d5f25588cd45f715ee6a74147f9fee8a251c4d8c9f790580fe62",
+      "file_size": 53369,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2020,
+        "period_type": "annual",
+        "quarter": null
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Gaaiho PDF",
+      "pdf_creation_date": "2021-04-12T16:28:13+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2020-q3-5f693407d95e",
+      "source_relpath": "海龜/2020/2020-第三季.pdf",
+      "sha256": "5f693407d95e55bc7f27eb5159c8dcab969ab72a930a597809f2b9dbb3b1bbbe",
+      "file_size": 67459,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2020,
+        "period_type": "quarter",
+        "quarter": 3
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® Excel® 2016",
+      "pdf_creation_date": "2020-10-21T09:04:21+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2020-q2-159ae0d9dfcf",
+      "source_relpath": "海龜/2020/2020-第二季.pdf",
+      "sha256": "159ae0d9dfcf116fa2c3ef6e01cf0a68c9a19d0b3988c99a5ea9dc50ab2e55dc",
+      "file_size": 66631,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2020,
+        "period_type": "quarter",
+        "quarter": 2
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® Excel® 2016",
+      "pdf_creation_date": "2020-07-28T11:38:50+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2020-q4-8fa2fe1e7d23",
+      "source_relpath": "海龜/2020/2020-第四季.pdf",
+      "sha256": "8fa2fe1e7d23016b7b1bd6583a4683fece821d6c2ff99b8780183a2bc583f5c3",
+      "file_size": 68599,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2020,
+        "period_type": "quarter",
+        "quarter": 4
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® Excel® 2016",
+      "pdf_creation_date": "2021-04-01T15:47:42+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2021-q1-b26e05f733aa",
+      "source_relpath": "海龜/2021/2021-第一季.pdf",
+      "sha256": "b26e05f733aac2142cbae6931a3a62a42fc86627c6243900bac790e1f7735efb",
+      "file_size": 65024,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2021,
+        "period_type": "quarter",
+        "quarter": 1
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® Excel® 2016",
+      "pdf_creation_date": "2021-05-10T11:21:21+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2021-annual-3609a39e1236",
+      "source_relpath": "海龜/2021/2021-第一季至第四季.pdf",
+      "sha256": "3609a39e1236c568589f927dd3ee1ffd6b557d60469cf0db22dacffa7d57e5f9",
+      "file_size": 89186,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2021,
+        "period_type": "annual",
+        "quarter": null
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® Excel® 2016",
+      "pdf_creation_date": "2022-03-14T15:56:30+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2021-q3-26399981c6c1",
+      "source_relpath": "海龜/2021/2021-第三季.pdf",
+      "sha256": "26399981c6c1524d657d1fbf6ee0930cad4cb599165a01dab86c52059c23b40f",
+      "file_size": 78431,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2021,
+        "period_type": "quarter",
+        "quarter": 3
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® Excel® 2016",
+      "pdf_creation_date": "2021-11-09T19:10:45+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2021-q2-e0eac85bf15d",
+      "source_relpath": "海龜/2021/2021-第二季.pdf",
+      "sha256": "e0eac85bf15d7aec8dd90ecf49c8d772cf8f1e89a03941091562b9e7c2944657",
+      "file_size": 78395,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2021,
+        "period_type": "quarter",
+        "quarter": 2
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® Excel® 2016",
+      "pdf_creation_date": "2021-08-09T13:44:50+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2021-q4-456e18dcde1c",
+      "source_relpath": "海龜/2021/2021-第四季.pdf",
+      "sha256": "456e18dcde1c7f570a3b48d6c50d4237029e51572981373ea17fdf02e083f5f9",
+      "file_size": 84212,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2021,
+        "period_type": "quarter",
+        "quarter": 4
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® Excel® 2016",
+      "pdf_creation_date": "2022-03-14T15:55:00+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2022-q1-6edb61c2adf5",
+      "source_relpath": "海龜/2022/2022_第一季.pdf",
+      "sha256": "6edb61c2adf514fbb91294428df619690dc1668fffcca2820dd0cbe9804cb986",
+      "file_size": 83928,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2022,
+        "period_type": "quarter",
+        "quarter": 1
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® Excel® 2016",
+      "pdf_creation_date": "2022-04-25T15:05:58+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2022-annual-cd562a60bbe3",
+      "source_relpath": "海龜/2022/2022_第一季至第四季.pdf",
+      "sha256": "cd562a60bbe3d8c814747e0bb8e057c3b1d8f7da8f1713235a68f7dd7d85333c",
+      "file_size": 114235,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2022,
+        "period_type": "annual",
+        "quarter": null
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "111年公務統計報表-海龜",
+      "pdf_creation_date": "2023-02-14T15:44:45+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2022-q3-a28d0fcadaf8",
+      "source_relpath": "海龜/2022/2022_第三季.pdf",
+      "sha256": "a28d0fcadaf86014a7fb9e14864c13da856d3a6126ad0cf82c4417a622b39ed1",
+      "file_size": 120212,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2022,
+        "period_type": "quarter",
+        "quarter": 3
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "111年Q3公務統計報表",
+      "pdf_creation_date": "2022-10-11T15:37:43+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2022-q2-ed4403fcb24d",
+      "source_relpath": "海龜/2022/2022_第二季.pdf",
+      "sha256": "ed4403fcb24d9e49611a010a6fe7665aa254790b98c18b691e2c8b51cd166edc",
+      "file_size": 83993,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2022,
+        "period_type": "quarter",
+        "quarter": 2
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® Excel® 2021",
+      "pdf_creation_date": "2022-11-09T10:33:10+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2022-q4-52089ddf50bd",
+      "source_relpath": "海龜/2022/2022_第四季.pdf",
+      "sha256": "52089ddf50bdbda5c2de15e998521f52733da5bc88d795ff9e541003f0301f2a",
+      "file_size": 113994,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2022,
+        "period_type": "quarter",
+        "quarter": 4
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "公務統計報表 (海龜擱淺事件統計)",
+      "pdf_creation_date": "2023-01-17T16:34:34+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2023-q1-6c15375b0862",
+      "source_relpath": "海龜/2023/2023_第一季.pdf",
+      "sha256": "6c15375b08623ebd294878d30f058f09fb85bf0bc78a267c7c69631b0fd5814e",
+      "file_size": 100598,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2023,
+        "period_type": "quarter",
+        "quarter": 1
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Gaaiho PDF",
+      "pdf_creation_date": "2023-04-21T09:03:19+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2023-annual-a3c592ee539e",
+      "source_relpath": "海龜/2023/2023_第一季至第四季.pdf",
+      "sha256": "a3c592ee539e9b11270f0f9b6ecd53c29542420fe99494308473d1e87b5b4396",
+      "file_size": 59717,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2023,
+        "period_type": "annual",
+        "quarter": null
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Gaaiho PDF",
+      "pdf_creation_date": "2024-02-23T14:16:00+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2023-q3-53f692888526",
+      "source_relpath": "海龜/2023/2023_第三季.pdf",
+      "sha256": "53f69288852603e55b2f4ea531542288c0f1beddc61fe2bc246d3457b9b779ca",
+      "file_size": 58978,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2023,
+        "period_type": "quarter",
+        "quarter": 3
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Gaaiho PDF",
+      "pdf_creation_date": "2023-10-16T10:26:52+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2023-q2-9c4748c23cb1",
+      "source_relpath": "海龜/2023/2023_第二季.pdf",
+      "sha256": "9c4748c23cb160123caaa99151390dab518e584b475681ccdd4ba26ee6298e68",
+      "file_size": 58909,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2023,
+        "period_type": "quarter",
+        "quarter": 2
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Gaaiho PDF",
+      "pdf_creation_date": "2023-07-19T09:33:56+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2023-q4-5ef4e29ac7cf",
+      "source_relpath": "海龜/2023/2023_第四季.pdf",
+      "sha256": "5ef4e29ac7cfe56d5250bb95bbd3e8e5373f4833cd0af85ecf649c5db5164dc7",
+      "file_size": 59759,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2023,
+        "period_type": "quarter",
+        "quarter": 4
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Gaaiho PDF",
+      "pdf_creation_date": "2024-02-02T15:32:40+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2024-q1-95e317b80bb3",
+      "source_relpath": "海龜/2024/2024_第一季.pdf",
+      "sha256": "95e317b80bb36b95d95b00770a5f35f56b1e0617a8e92bc883b0ec4f528b6f58",
+      "file_size": 66637,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2024,
+        "period_type": "quarter",
+        "quarter": 1
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Gaaiho PDF",
+      "pdf_creation_date": "2024-08-06T15:03:45+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2024-annual-bc4642d6fb0a",
+      "source_relpath": "海龜/2024/2024_第一季至第四季.pdf",
+      "sha256": "bc4642d6fb0adc601a5890a7760692d289dfcd3dc282b05ab461d32b1d1d5332",
+      "file_size": 83836,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2024,
+        "period_type": "annual",
+        "quarter": null
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® Excel® 2021",
+      "pdf_creation_date": "2025-02-12T15:50:14+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2024-q3-1a1e9a70f9c3",
+      "source_relpath": "海龜/2024/2024_第三季.pdf",
+      "sha256": "1a1e9a70f9c34313d9338970988c0ee1e0130e27b2a707a43ddcda3567c32e4f",
+      "file_size": 83986,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2024,
+        "period_type": "quarter",
+        "quarter": 3
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® Excel® 2021",
+      "pdf_creation_date": "2024-11-04T14:25:52+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2024-q2-4ab6d25fa929",
+      "source_relpath": "海龜/2024/2024_第二季.pdf",
+      "sha256": "4ab6d25fa929817e1ed0e18e43bb356a9dab6c15e8df5836e20c8644e6dc0975",
+      "file_size": 66369,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2024,
+        "period_type": "quarter",
+        "quarter": 2
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Gaaiho PDF",
+      "pdf_creation_date": "2024-08-06T15:06:12+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2024-q4-16bac587b8a1",
+      "source_relpath": "海龜/2024/2024_第四季.pdf",
+      "sha256": "16bac587b8a1a671f85766d9b588777c6a23e03e9e622bc0b045f7bc07348758",
+      "file_size": 84183,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2024,
+        "period_type": "quarter",
+        "quarter": 4
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® Excel® 2021",
+      "pdf_creation_date": "2025-01-21T15:39:11+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2025-q1-c4b5c60bf20e",
+      "source_relpath": "海龜/2025/2025_第一季.pdf",
+      "sha256": "c4b5c60bf20e9de56994f09c7dfc8bc6a08a9a06c2ad2b0289addc39d172378c",
+      "file_size": 103589,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2025,
+        "period_type": "quarter",
+        "quarter": 1
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® Excel® 2021",
+      "pdf_creation_date": "2026-02-12T13:50:47+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2025-annual-7493d49f00e7",
+      "source_relpath": "海龜/2025/2025_第一季至第四季.pdf",
+      "sha256": "7493d49f00e7042428bdce5e3562517f8f69b35196d4297f8a66d9d2abb2d12a",
+      "file_size": 104569,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2025,
+        "period_type": "annual",
+        "quarter": null
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® Excel® 2021",
+      "pdf_creation_date": "2026-03-20T10:11:04+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2025-q3-68bef3a90d55",
+      "source_relpath": "海龜/2025/2025_第三季.pdf",
+      "sha256": "68bef3a90d5522d2fc33d94ffc3faacc1d31482da34f698e4a67566217947cd9",
+      "file_size": 103831,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2025,
+        "period_type": "quarter",
+        "quarter": 3
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® Excel® 2021",
+      "pdf_creation_date": "2026-03-20T11:06:09+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2025-q2-55c294c68ee8",
+      "source_relpath": "海龜/2025/2025_第二季.pdf",
+      "sha256": "55c294c68ee81581d65527482265cea8b0bd0249efdcdfade73a41b626c0ba75",
+      "file_size": 108538,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2025,
+        "period_type": "quarter",
+        "quarter": 2
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® Excel® 2021",
+      "pdf_creation_date": "2025-07-25T17:21:00+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2025-q4-9c8f2eb127e5",
+      "source_relpath": "海龜/2025/2025_第四季.pdf",
+      "sha256": "9c8f2eb127e545ac02c86520326f778729114838d0d8c06fead62395680ba85c",
+      "file_size": 104623,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2025,
+        "period_type": "quarter",
+        "quarter": 4
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® Excel® 2021",
+      "pdf_creation_date": "2026-03-20T10:05:42+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2026-q1-3c590d057d82",
+      "source_relpath": "海龜/2026/2026_第一季.pdf",
+      "sha256": "3c590d057d82465ea120faa207bd6b2be6b345861e7c13c88585220096a50128",
+      "file_size": 105966,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2026,
+        "period_type": "quarter",
+        "quarter": 1
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® Excel® 2021",
+      "pdf_creation_date": "2026-05-21T12:03:13+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2026-q2-2535c0514966",
+      "source_relpath": "海龜/2026/2026_第二季.pdf",
+      "sha256": "2535c051496669768c8dd3621240534cddca9328779c207659cafbf49dc1ccec",
+      "file_size": 139087,
+      "page_count": 1,
+      "reporting_period": {
+        "year": 2026,
+        "period_type": "quarter",
+        "quarter": 2
+      },
+      "collection_hint": "sea_turtle",
+      "document_family": "official_statistical_table",
+      "animal_groups": [
+        "sea_turtle"
+      ],
+      "pdf_creator": null,
+      "pdf_creation_date": "2026-07-21T14:06:02+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2019-annual-22232c87d2bc",
+      "source_relpath": "鯨豚/2019/2019_全年度_擱淺報告.pdf",
+      "sha256": "22232c87d2bcec88998e89d4a5a9fdd52e1d01574ad06299cb02d031fe05168a",
+      "file_size": 3548424,
+      "page_count": 27,
+      "reporting_period": {
+        "year": 2019,
+        "period_type": "annual",
+        "quarter": null
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [
+        "cetacean",
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® PowerPoint® 2016",
+      "pdf_creation_date": "2020-02-18T09:47:31+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2019-q1-83ab7151d15e",
+      "source_relpath": "鯨豚/2019/2019_第一季_擱淺報告.pdf",
+      "sha256": "83ab7151d15e344cf9ce55535a5bd8f1dba9577d5f48d5768081f14136856be3",
+      "file_size": 2929701,
+      "page_count": 13,
+      "reporting_period": {
+        "year": 2019,
+        "period_type": "quarter",
+        "quarter": 1
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [
+        "cetacean",
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® PowerPoint® 2016",
+      "pdf_creation_date": "2019-05-07T14:07:46+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2019-q3-4a746a6d9371",
+      "source_relpath": "鯨豚/2019/2019_第三季_擱淺報告.pdf",
+      "sha256": "4a746a6d93711673bab4cedd68545d86f98bdd6e358285b286d1339d267c4b88",
+      "file_size": 1481770,
+      "page_count": 20,
+      "reporting_period": {
+        "year": 2019,
+        "period_type": "quarter",
+        "quarter": 3
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [
+        "cetacean",
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® PowerPoint® 2016",
+      "pdf_creation_date": "2019-10-18T17:01:47+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2019-q2-2b2a71d6da17",
+      "source_relpath": "鯨豚/2019/2019_第二季_擱淺報告.pdf",
+      "sha256": "2b2a71d6da171346d344021c0d71c32ef89fa4c6370550b89ce5e0445681f4a8",
+      "file_size": 3755004,
+      "page_count": 22,
+      "reporting_period": {
+        "year": 2019,
+        "period_type": "quarter",
+        "quarter": 2
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [
+        "cetacean",
+        "sea_turtle"
+      ],
+      "pdf_creator": "Microsoft® PowerPoint® 適用於 Office 365 的",
+      "pdf_creation_date": "2019-07-11T22:58:34+08:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2020-annual-1912ef92eaa1",
+      "source_relpath": "鯨豚/2020/2020_全年度_擱淺報告.pdf",
+      "sha256": "1912ef92eaa1932ce935a3a54dcc1b5b818acf66dcbaf46f21928ff576561f4e",
+      "file_size": 27418229,
+      "page_count": 16,
+      "reporting_period": {
+        "year": 2020,
+        "period_type": "annual",
+        "quarter": null
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [
+        "cetacean"
+      ],
+      "pdf_creator": null,
+      "pdf_creation_date": null,
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2020-q1-c7f84eff5d19",
+      "source_relpath": "鯨豚/2020/2020_第一季_擱淺報告.pdf",
+      "sha256": "c7f84eff5d1996ca0df8c0e4aa59612d28b403c7562db6df6661a9769cd92605",
+      "file_size": 8468818,
+      "page_count": 18,
+      "reporting_period": {
+        "year": 2020,
+        "period_type": "quarter",
+        "quarter": 1
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [],
+      "pdf_creator": null,
+      "pdf_creation_date": null,
+      "warnings": [
+        "animal_group_not_detected"
+      ]
+    },
+    {
+      "source_id": "oca-2020-q3-29f2d53abfe5",
+      "source_relpath": "鯨豚/2020/2020_第三季_擱淺報告.pdf",
+      "sha256": "29f2d53abfe5d985494b94b0d3799c26d804cff08a35f4e8626593d98a56dd94",
+      "file_size": 15658393,
+      "page_count": 17,
+      "reporting_period": {
+        "year": 2020,
+        "period_type": "quarter",
+        "quarter": 3
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [],
+      "pdf_creator": "ImageToPDF",
+      "pdf_creation_date": "2021-07-03T12:49:02+08:00",
+      "warnings": [
+        "animal_group_not_detected"
+      ]
+    },
+    {
+      "source_id": "oca-2020-q2-5da49ff5b3f7",
+      "source_relpath": "鯨豚/2020/2020_第二季_擱淺報告.pdf",
+      "sha256": "5da49ff5b3f7eb76793fc9b7a95b579cefae9bd8b5e8c864b2abcff392cccea2",
+      "file_size": 38841061,
+      "page_count": 19,
+      "reporting_period": {
+        "year": 2020,
+        "period_type": "quarter",
+        "quarter": 2
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [],
+      "pdf_creator": null,
+      "pdf_creation_date": null,
+      "warnings": [
+        "animal_group_not_detected"
+      ]
+    },
+    {
+      "source_id": "oca-2021-annual-c210da490352",
+      "source_relpath": "鯨豚/2021/2021_全年度_擱淺報告.pdf",
+      "sha256": "c210da4903529aacd81834efff42fa2eaf83271b3c14b2776d532137b9d19e64",
+      "file_size": 18262222,
+      "page_count": 17,
+      "reporting_period": {
+        "year": 2021,
+        "period_type": "annual",
+        "quarter": null
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [],
+      "pdf_creator": "ImageToPDF",
+      "pdf_creation_date": "2022-03-14T15:50:12+08:00",
+      "warnings": [
+        "animal_group_not_detected"
+      ]
+    },
+    {
+      "source_id": "oca-2021-q1-079bbff10395",
+      "source_relpath": "鯨豚/2021/2021_第一季_擱淺報告.pdf",
+      "sha256": "079bbff103957210b72d58ca131ea3a2479da4bbdec6bc07796aeb894b302d06",
+      "file_size": 18297710,
+      "page_count": 17,
+      "reporting_period": {
+        "year": 2021,
+        "period_type": "quarter",
+        "quarter": 1
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [
+        "cetacean"
+      ],
+      "pdf_creator": null,
+      "pdf_creation_date": null,
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2021-q3-059f442e30f4",
+      "source_relpath": "鯨豚/2021/2021_第三季_擱淺報告.pdf",
+      "sha256": "059f442e30f4deb7855233428df9086322bacfb8c44598169d23f21285b084d4",
+      "file_size": 6375373,
+      "page_count": 17,
+      "reporting_period": {
+        "year": 2021,
+        "period_type": "quarter",
+        "quarter": 3
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [],
+      "pdf_creator": "ImageToPDF",
+      "pdf_creation_date": "2021-11-09T19:01:08+08:00",
+      "warnings": [
+        "animal_group_not_detected"
+      ]
+    },
+    {
+      "source_id": "oca-2021-q2-3c4eb38aeed0",
+      "source_relpath": "鯨豚/2021/2021_第二季_擱淺報告.pdf",
+      "sha256": "3c4eb38aeed01ed53a38457ca57979c79881f70c12af4aafd07251e73ccfa598",
+      "file_size": 15283939,
+      "page_count": 19,
+      "reporting_period": {
+        "year": 2021,
+        "period_type": "quarter",
+        "quarter": 2
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [],
+      "pdf_creator": "ImageToPDF",
+      "pdf_creation_date": "2021-08-09T14:50:04+08:00",
+      "warnings": [
+        "animal_group_not_detected"
+      ]
+    },
+    {
+      "source_id": "oca-2022-annual-da669277ed26",
+      "source_relpath": "鯨豚/2022/2022_全年度_擱淺報告.pdf",
+      "sha256": "da669277ed26a69fcb8eb3004cf22836ddf70780cda6e22b7eba39d5d068bf83",
+      "file_size": 11316205,
+      "page_count": 17,
+      "reporting_period": {
+        "year": 2022,
+        "period_type": "annual",
+        "quarter": null
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [
+        "cetacean"
+      ],
+      "pdf_creator": "Canva",
+      "pdf_creation_date": "2023-03-07T01:33:16+00:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2022-q1-1740999f51f9",
+      "source_relpath": "鯨豚/2022/2022_第一季_擱淺報告.pdf",
+      "sha256": "1740999f51f9ec7ca38714269403aa3d578453fd505c5b9f4f7d4f84ceec8cae",
+      "file_size": 16824992,
+      "page_count": 17,
+      "reporting_period": {
+        "year": 2022,
+        "period_type": "quarter",
+        "quarter": 1
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [],
+      "pdf_creator": "ImageToPDF",
+      "pdf_creation_date": "2022-04-25T15:09:10+08:00",
+      "warnings": [
+        "animal_group_not_detected"
+      ]
+    },
+    {
+      "source_id": "oca-2022-q3-5eebcd5a628d",
+      "source_relpath": "鯨豚/2022/2022_第三季_擱淺報告.pdf",
+      "sha256": "5eebcd5a628d0e38dbf94919484f0d919774d07f6cc51a1f08f9dc711f3802e0",
+      "file_size": 7124246,
+      "page_count": 16,
+      "reporting_period": {
+        "year": 2022,
+        "period_type": "quarter",
+        "quarter": 3
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [
+        "cetacean",
+        "sea_turtle"
+      ],
+      "pdf_creator": "Canva",
+      "pdf_creation_date": "2022-11-10T05:47:19+00:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2022-q2-33990c9ffcb1",
+      "source_relpath": "鯨豚/2022/2022_第二季_擱淺報告.pdf",
+      "sha256": "33990c9ffcb19d1b19617e092f41b524281025ff5ea45b5d84e0c4ed2c8e9218",
+      "file_size": 11301402,
+      "page_count": 17,
+      "reporting_period": {
+        "year": 2022,
+        "period_type": "quarter",
+        "quarter": 2
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [
+        "cetacean",
+        "sea_turtle"
+      ],
+      "pdf_creator": "Canva",
+      "pdf_creation_date": "2022-08-03T02:39:00+00:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2023-annual-053cf3854972",
+      "source_relpath": "鯨豚/2023/2023_全年度_擱淺報告.pdf",
+      "sha256": "053cf38549727f6f06bf7b02305937da03d63a84cfbb211aa57a1f4d65287c85",
+      "file_size": 16968675,
+      "page_count": 18,
+      "reporting_period": {
+        "year": 2023,
+        "period_type": "annual",
+        "quarter": null
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [
+        "cetacean"
+      ],
+      "pdf_creator": "Canva",
+      "pdf_creation_date": "2024-02-23T03:04:27+00:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2023-q1-558e55473506",
+      "source_relpath": "鯨豚/2023/2023_第一季_擱淺報告.pdf",
+      "sha256": "558e5547350630b64d140eb8e104d71a2df2596f2194c6b90ac729ee24a7b33a",
+      "file_size": 11760121,
+      "page_count": 14,
+      "reporting_period": {
+        "year": 2023,
+        "period_type": "quarter",
+        "quarter": 1
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [
+        "cetacean",
+        "sea_turtle"
+      ],
+      "pdf_creator": "Canva",
+      "pdf_creation_date": "2023-05-02T03:36:00+00:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2023-q3-78bd63685947",
+      "source_relpath": "鯨豚/2023/2023_第三季_擱淺報告.pdf",
+      "sha256": "78bd63685947dd6fa923f195d58fb9883d8282ed427be1d2eb4f191e89fec972",
+      "file_size": 8498097,
+      "page_count": 16,
+      "reporting_period": {
+        "year": 2023,
+        "period_type": "quarter",
+        "quarter": 3
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [
+        "cetacean"
+      ],
+      "pdf_creator": "Canva",
+      "pdf_creation_date": "2023-11-01T05:42:15+00:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2023-q2-fc2d4236af44",
+      "source_relpath": "鯨豚/2023/2023_第二季_擱淺報告.pdf",
+      "sha256": "fc2d4236af44a771c2cc87cc408b7edabf2c3b488902f130cbc4f31833456d32",
+      "file_size": 11601713,
+      "page_count": 16,
+      "reporting_period": {
+        "year": 2023,
+        "period_type": "quarter",
+        "quarter": 2
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [
+        "cetacean",
+        "sea_turtle"
+      ],
+      "pdf_creator": "Canva",
+      "pdf_creation_date": "2023-08-10T01:37:14+00:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2024-annual-7502454c45b3",
+      "source_relpath": "鯨豚/2024/2024_全年度_擱淺報告.pdf",
+      "sha256": "7502454c45b3a3a8115516253f518c8ccaa99417f9641160aded4b11060eac73",
+      "file_size": 17234939,
+      "page_count": 21,
+      "reporting_period": {
+        "year": 2024,
+        "period_type": "annual",
+        "quarter": null
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [
+        "cetacean"
+      ],
+      "pdf_creator": "Canva",
+      "pdf_creation_date": "2025-02-18T02:11:39+00:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2024-q1-565749c00fb7",
+      "source_relpath": "鯨豚/2024/2024_第一季_擱淺報告.pdf",
+      "sha256": "565749c00fb795a85ee75ed9a3e8c77107c3ec8a39156426f7c9d9b1a5af688d",
+      "file_size": 10623899,
+      "page_count": 16,
+      "reporting_period": {
+        "year": 2024,
+        "period_type": "quarter",
+        "quarter": 1
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [
+        "cetacean"
+      ],
+      "pdf_creator": "Canva",
+      "pdf_creation_date": "2024-04-19T04:08:42+00:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2024-q3-99ec05b05a8e",
+      "source_relpath": "鯨豚/2024/2024_第三季_擱淺報告.pdf",
+      "sha256": "99ec05b05a8ec5157d8718374543ede3d78f9c766694bdb9e9ee3bba7204005a",
+      "file_size": 30978572,
+      "page_count": 14,
+      "reporting_period": {
+        "year": 2024,
+        "period_type": "quarter",
+        "quarter": 3
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [
+        "cetacean",
+        "sea_turtle"
+      ],
+      "pdf_creator": "Canva",
+      "pdf_creation_date": "2024-11-04T06:13:14+00:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2024-q2-2818f8ea098d",
+      "source_relpath": "鯨豚/2024/2024_第二季_擱淺報告.pdf",
+      "sha256": "2818f8ea098de53682ddc37383b5b05e16518f509d6fbd0be97396bebab7a2d9",
+      "file_size": 13806167,
+      "page_count": 16,
+      "reporting_period": {
+        "year": 2024,
+        "period_type": "quarter",
+        "quarter": 2
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [
+        "cetacean",
+        "sea_turtle"
+      ],
+      "pdf_creator": "Canva",
+      "pdf_creation_date": "2024-08-06T03:20:15+00:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2025-q2-06f0b953af0d",
+      "source_relpath": "鯨豚/2025/ 2025_第二季_擱淺報告.pdf",
+      "sha256": "06f0b953af0d8c7968dd3bb3e18e618127e2ec8815088147f7bed6edf4313296",
+      "file_size": 6666230,
+      "page_count": 14,
+      "reporting_period": {
+        "year": 2025,
+        "period_type": "quarter",
+        "quarter": 2
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [
+        "cetacean",
+        "sea_turtle"
+      ],
+      "pdf_creator": "Canva",
+      "pdf_creation_date": "2025-08-12T06:20:36+00:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2025-annual-d0b45e159d7b",
+      "source_relpath": "鯨豚/2025/2025_全年度_擱淺報告.pdf",
+      "sha256": "d0b45e159d7bccad9a21116014b9bb7e93b7335496d1f3e766e22de1d8bf3aae",
+      "file_size": 4680859,
+      "page_count": 21,
+      "reporting_period": {
+        "year": 2025,
+        "period_type": "annual",
+        "quarter": null
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [
+        "cetacean",
+        "sea_turtle"
+      ],
+      "pdf_creator": null,
+      "pdf_creation_date": null,
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2025-q1-c2a8272e94a7",
+      "source_relpath": "鯨豚/2025/2025_第一季_擱淺報告.pdf",
+      "sha256": "c2a8272e94a746000f150c9c8f98a22ab7c96b767e1119a70aa8588c1f14fef4",
+      "file_size": 9451760,
+      "page_count": 17,
+      "reporting_period": {
+        "year": 2025,
+        "period_type": "quarter",
+        "quarter": 1
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [
+        "cetacean"
+      ],
+      "pdf_creator": "Canva",
+      "pdf_creation_date": "2025-05-01T09:44:41+00:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2025-q3-054a6ce5fa10",
+      "source_relpath": "鯨豚/2025/2025_第三季_擱淺報告.pdf",
+      "sha256": "054a6ce5fa1062c423135655c1b5ba23bb3805a2d71d6c2f075fffcb27821518",
+      "file_size": 14411664,
+      "page_count": 16,
+      "reporting_period": {
+        "year": 2025,
+        "period_type": "quarter",
+        "quarter": 3
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [
+        "cetacean",
+        "sea_turtle"
+      ],
+      "pdf_creator": "Canva",
+      "pdf_creation_date": "2025-11-13T09:24:00+00:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2026-q1-7384aaf86614",
+      "source_relpath": "鯨豚/2026/2026_第一季_擱淺報告.pdf",
+      "sha256": "7384aaf866140c8f062c59a3e53f17c1eb3eb8ad655651041b4b416a096f63b3",
+      "file_size": 23705072,
+      "page_count": 16,
+      "reporting_period": {
+        "year": 2026,
+        "period_type": "quarter",
+        "quarter": 1
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [
+        "cetacean",
+        "sea_turtle"
+      ],
+      "pdf_creator": "Canva",
+      "pdf_creation_date": "2026-05-27T08:50:50+00:00",
+      "warnings": []
+    },
+    {
+      "source_id": "oca-2026-q2-330a3b3cad2c",
+      "source_relpath": "鯨豚/2026/2026_第二季_擱淺報告.pdf",
+      "sha256": "330a3b3cad2ce0cda066be45eb341b6dbc577a636085396c103d5e648a4a65df",
+      "file_size": 19091346,
+      "page_count": 16,
+      "reporting_period": {
+        "year": 2026,
+        "period_type": "quarter",
+        "quarter": 2
+      },
+      "collection_hint": "cetacean",
+      "document_family": "marn_narrative_report",
+      "animal_groups": [
+        "cetacean",
+        "sea_turtle"
+      ],
+      "pdf_creator": "Canva",
+      "pdf_creation_date": "2026-08-31T07:18:50+00:00",
+      "warnings": []
+    }
+  ]
+}
