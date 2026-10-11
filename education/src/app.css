@@ -60,6 +60,9 @@
 	--rust-600: #b25e1f; /* large text only (3.6:1) */
 	--rust-700: #8f4a15; /* body text on light (5.2:1) */
 	--rust-800: #7a3f13;
+	--iucn-critically-endangered: #d81e05;
+	--iucn-vulnerable: #f9e814;
+	--iucn-near-threatened: #007f82;
 
 	/* ---- Usage mapping (see visual-direction.md) ---- */
 	--bg: var(--paper-200);

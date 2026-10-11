@@ -14,54 +14,73 @@ export const turtlePage: TurtlePageCopy = {
 		facts: [
 			{ value: '5 species', label: 'recorded in the waters around Taiwan' },
 			{ value: 'All', label: 'protected as Category I endangered wildlife' }
-		]
+		],
+		imageSourceLabel: 'Photo:'
 	},
 	speciesHead: {
 		eyebrow: 'Meet the travellers',
 		title: 'One sea, five ways of life',
-		lead: 'From the frequently seen green turtle to the ocean-roaming leatherback, each has a different shape, diet and range. Identification is only the beginning; they also need safe room to feed and migrate.'
+		lead: 'From the frequently seen green turtle to the ocean-roaming leatherback, each has a different shape, diet and range. Identification is only the beginning; they also need safe room to feed and migrate.',
+		imageSourceLabel: 'Image source:',
+		redListLabel: 'IUCN Red List'
 	},
 	species: [
 		{
-			name: 'Green turtle',
+			name: 'Green sea turtle',
 			scientificName: 'Chelonia mydas',
 			label: 'Most often recorded',
 			description:
-				'The sea turtle most often recorded around Taiwan. Adults mainly eat seagrass and algae and forage around reefs and coastal feeding grounds.'
+				'The sea turtle most often recorded around Taiwan. Adults mainly eat seagrass and algae and forage around reefs and coastal feeding grounds.',
+			imageKey: 'green',
+			imageAlt: 'A green sea turtle resting on a coral reef',
+			redList: { label: 'Threatened', level: 'threatened' }
 		},
 		{
-			name: 'Hawksbill turtle',
+			name: 'Hawksbill sea turtle',
 			scientificName: 'Eretmochelys imbricata',
 			label: 'Reef resident',
 			description:
-				'Its narrow beak reaches into reef crevices, while overlapping shell plates form a distinctive pattern that once made it a target of the shell trade.'
+				'Its narrow beak reaches into reef crevices, while overlapping shell plates form a distinctive pattern that once made it a target of the shell trade.',
+			imageKey: 'hawksbill',
+			imageAlt: 'A hawksbill sea turtle swimming through blue water',
+			redList: { label: 'Critically Endangered', level: 'critically-endangered' }
 		},
 		{
-			name: 'Loggerhead turtle',
+			name: 'Loggerhead sea turtle',
 			scientificName: 'Caretta caretta',
 			label: 'Powerful jaws',
 			description:
-				'A large head and strong jaws help it eat crustaceans and shellfish. Around Taiwan it is more often known from offshore sightings or strandings.'
+				'A large head and strong jaws help it eat crustaceans and shellfish. Around Taiwan it is more often known from offshore sightings or strandings.',
+			imageKey: 'loggerhead',
+			imageAlt: 'A loggerhead sea turtle swimming underwater',
+			redList: { label: 'Vulnerable', level: 'vulnerable' }
 		},
 		{
-			name: 'Olive ridley turtle',
+			name: 'Olive ridley sea turtle',
 			scientificName: 'Lepidochelys olivacea',
 			label: 'Rare visitor',
 			description:
-				'A relatively small turtle with an olive, heart-shaped shell. Records in Taiwan are uncommon, but bycatch and injury can still bring individuals into rescue.'
+				'A relatively small turtle with an olive, heart-shaped shell. Records in Taiwan are uncommon, but bycatch and injury can still bring individuals into rescue.',
+			imageKey: 'oliveRidley',
+			imageAlt: 'An olive ridley sea turtle swimming near the surface',
+			redList: { label: 'Vulnerable', level: 'vulnerable' }
 		},
 		{
-			name: 'Leatherback turtle',
+			name: 'Leatherback sea turtle',
 			scientificName: 'Dermochelys coriacea',
 			label: 'Ocean giant',
 			description:
-				'The largest living sea turtle. Instead of hard shell plates, its back has ridged, leathery skin, suited to roaming deep offshore waters in search of jellyfish.'
+				'The largest living sea turtle. Instead of hard shell plates, its back has ridged, leathery skin, suited to roaming deep offshore waters in search of jellyfish.',
+			imageKey: 'leatherback',
+			imageAlt: 'A leatherback sea turtle swimming through deep blue water',
+			redList: { label: 'Vulnerable', level: 'vulnerable' }
 		}
 	],
 	journeyHead: {
 		eyebrow: 'Life journey',
 		title: 'A lifetime that connects sea and shore',
-		lead: 'Sea turtles spend most of their lives in the ocean, but reproduction brings them back to land. Nesting beaches, coastal feeding grounds and migration routes all matter.'
+		lead: 'Sea turtles spend most of their lives in the ocean, but reproduction brings them back to land. Nesting beaches, coastal feeding grounds and migration routes all matter.',
+		imageSourceLabel: 'Photo:'
 	},
 	journey: [
 		{
@@ -138,24 +157,5 @@ export const turtlePage: TurtlePageCopy = {
 			}
 		],
 		callLabel: 'Coast Guard 24-hour rescue line'
-	},
-	sources: {
-		title: 'Sources',
-		intro:
-			'Content is based on public information from Taiwan’s Ocean Conservation Administration. Unverified annual sea-turtle statistics are intentionally not included.',
-		links: [
-			{
-				label: 'Sea Turtle Conservation Plan',
-				url: 'https://www.oca.gov.tw/userfiles/A47020000A/files/1130524%E6%B5%B7%E9%BE%9C%E4%BF%9D%E8%82%B2%E8%A8%88%E7%95%AB%28%E6%A0%B8%E5%AE%9A%E7%89%88%29.pdf'
-			},
-			{
-				label: 'Marine Animal Rescue Network',
-				url: 'https://www.oca.gov.tw/ch/home.jsp?id=186&parentpath=0%2C6%2C185'
-			},
-			{
-				label: '100 Marine Animals of Taiwan',
-				url: 'https://www.oca.gov.tw/ch/home.jsp?dataserno=202101210001&id=229&mcustomize=publication_view.jsp&parentpath=0%2C7%2C225'
-			}
-		]
 	}
 };

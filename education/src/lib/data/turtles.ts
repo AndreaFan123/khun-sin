@@ -3,16 +3,17 @@ export interface TurtleSpecies {
 	scientificName: string;
 	label: string;
 	description: string;
+	imageKey: 'green' | 'hawksbill' | 'loggerhead' | 'oliveRidley' | 'leatherback';
+	imageAlt: string;
+	redList: {
+		label: string;
+		level: 'critically-endangered' | 'vulnerable' | 'threatened';
+	};
 }
 
 export interface TurtleFeature {
 	title: string;
 	description: string;
-}
-
-export interface TurtleSource {
-	label: string;
-	url: string;
 }
 
 export interface TurtlePageCopy {
@@ -23,10 +24,17 @@ export interface TurtlePageCopy {
 		highlight: string;
 		lead: string;
 		facts: { value: string; label: string }[];
+		imageSourceLabel: string;
 	};
-	speciesHead: { eyebrow: string; title: string; lead: string };
+	speciesHead: {
+		eyebrow: string;
+		title: string;
+		lead: string;
+		imageSourceLabel: string;
+		redListLabel: string;
+	};
 	species: TurtleSpecies[];
-	journeyHead: { eyebrow: string; title: string; lead: string };
+	journeyHead: { eyebrow: string; title: string; lead: string; imageSourceLabel: string };
 	journey: TurtleFeature[];
 	threatsHead: { eyebrow: string; title: string; lead: string };
 	threats: TurtleFeature[];
@@ -37,7 +45,6 @@ export interface TurtlePageCopy {
 		steps: TurtleFeature[];
 		callLabel: string;
 	};
-	sources: { title: string; intro: string; links: TurtleSource[] };
 }
 
 export const turtlePage: TurtlePageCopy = {
@@ -54,52 +61,71 @@ export const turtlePage: TurtlePageCopy = {
 		facts: [
 			{ value: '5 種', label: '台灣海域有紀錄的海龜' },
 			{ value: '全數', label: '列為第 I 級瀕臨絕種保育類' }
-		]
+		],
+		imageSourceLabel: '圖片來源：'
 	},
 	speciesHead: {
 		eyebrow: '認識牠們',
 		title: '同一片海，不同的生存方式',
-		lead: '從常見的綠蠵龜到遠洋的革龜，外形、食性與活動海域各不相同。辨識只是開始，更重要的是讓牠們保有安全遷徙與覓食的空間。'
+		lead: '從常見的綠蠵龜到遠洋的革龜，外形、食性與活動海域各不相同。辨識只是開始，更重要的是讓牠們保有安全遷徙與覓食的空間。',
+		imageSourceLabel: '圖片來源：',
+		redListLabel: 'IUCN 紅色名錄'
 	},
 	species: [
 		{
 			name: '綠蠵龜',
-			scientificName: 'Chelonia mydas',
+			scientificName: 'Chelonia mydas (Green Sea Turtle)',
 			label: '台灣最常見',
-			description: '台灣海域最常被記錄的海龜。成龜主要取食海草與藻類，常在珊瑚礁與沿岸覓食區活動。'
+			description: '台灣海域最常被記錄的海龜。成龜主要取食海草與藻類，常在珊瑚礁與沿岸覓食區活動。',
+			imageKey: 'green',
+			imageAlt: '綠蠵龜停留在珊瑚礁上',
+			redList: { label: '受威脅', level: 'threatened' }
 		},
 		{
 			name: '玳瑁',
-			scientificName: 'Eretmochelys imbricata',
+			scientificName: 'Eretmochelys imbricata (Hawksbill Sea Turtle)',
 			label: '珊瑚礁居民',
 			description:
-				'嘴喙狹長、背甲盾片呈覆瓦狀，善於在珊瑚礁縫隙覓食。美麗背甲也曾讓牠們長期遭到捕捉。'
+				'嘴喙狹長、背甲盾片呈覆瓦狀，善於在珊瑚礁縫隙覓食。美麗背甲也曾讓牠們長期遭到捕捉。',
+			imageKey: 'hawksbill',
+			imageAlt: '玳瑁在藍色海水中游動',
+			redList: { label: '極危', level: 'critically-endangered' }
 		},
 		{
 			name: '赤蠵龜',
-			scientificName: 'Caretta caretta',
+			scientificName: 'Caretta caretta (Loggerhead Sea Turtle)',
 			label: '強壯顎部',
 			description:
-				'頭部較大、顎力強，能取食甲殼類與貝類。牠們跨越廣大海域，在台灣多為海上目擊或擱淺紀錄。'
+				'頭部較大、顎力強，能取食甲殼類與貝類。牠們跨越廣大海域，在台灣多為海上目擊或擱淺紀錄。',
+			imageKey: 'loggerhead',
+			imageAlt: '赤蠵龜在海中游動',
+			redList: { label: '易危', level: 'vulnerable' }
 		},
 		{
 			name: '欖蠵龜',
-			scientificName: 'Lepidochelys olivacea',
+			scientificName: 'Lepidochelys olivacea (Olive Ridley Sea Turtle)',
 			label: '稀有訪客',
-			description: '體型相對嬌小，橄欖色背甲近似心形。在台灣紀錄不多，仍會因混獲或受傷而需要救援。'
+			description: '體型相對嬌小，橄欖色背甲近似心形。在台灣紀錄不多，仍會因混獲或受傷而需要救援。',
+			imageKey: 'oliveRidley',
+			imageAlt: '欖蠵龜游在接近水面的海中',
+			redList: { label: '易危', level: 'vulnerable' }
 		},
 		{
 			name: '革龜',
-			scientificName: 'Dermochelys coriacea',
+			scientificName: 'Dermochelys coriacea (Leatherback Sea Turtle)',
 			label: '遠洋巨人',
 			description:
-				'現存體型最大的海龜，背部不是硬質盾片，而是帶有縱脊的革質皮膚，能在深遠海域追尋水母。'
+				'現存體型最大的海龜，背部不是硬質盾片，而是帶有縱脊的革質皮膚，能在深遠海域追尋水母。',
+			imageKey: 'leatherback',
+			imageAlt: '革龜在深藍色海水中游動',
+			redList: { label: '易危', level: 'vulnerable' }
 		}
 	],
 	journeyHead: {
 		eyebrow: '生命旅程',
 		title: '牠的一生，把海與岸連在一起',
-		lead: '海龜大多數時間生活在海中，但繁殖必須回到陸地。沙灘、近岸覓食場與遷徙海域缺一不可。'
+		lead: '海龜大多數時間生活在海中，但繁殖必須回到陸地。沙灘、近岸覓食場與遷徙海域缺一不可。',
+		imageSourceLabel: '圖片來源：'
 	},
 	journey: [
 		{
@@ -159,23 +185,5 @@ export const turtlePage: TurtlePageCopy = {
 			{ title: '安全守候', description: '維持距離、減少圍觀與噪音，依救援人員指示協助。' }
 		],
 		callLabel: '海巡署 24 小時救援專線'
-	},
-	sources: {
-		title: '資料來源',
-		intro: '頁面內容依海洋委員會海洋保育署公開資料整理；本站未納入尚未完成校核的海龜年度統計。',
-		links: [
-			{
-				label: '海龜保育計畫',
-				url: 'https://www.oca.gov.tw/userfiles/A47020000A/files/1130524%E6%B5%B7%E9%BE%9C%E4%BF%9D%E8%82%B2%E8%A8%88%E7%95%AB%28%E6%A0%B8%E5%AE%9A%E7%89%88%29.pdf'
-			},
-			{
-				label: '海保救援網',
-				url: 'https://www.oca.gov.tw/ch/home.jsp?id=186&parentpath=0%2C6%2C185'
-			},
-			{
-				label: '臺灣百種海洋動物圖鑑',
-				url: 'https://www.oca.gov.tw/ch/home.jsp?dataserno=202101210001&id=229&mcustomize=publication_view.jsp&parentpath=0%2C7%2C225'
-			}
-		]
 	}
 };

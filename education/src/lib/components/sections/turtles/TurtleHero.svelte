@@ -21,6 +21,12 @@
 				{/each}
 			</div>
 		</div>
+		<p class="image-credit">
+			{copy.imageSourceLabel}
+			<a href="https://unsplash.com/@jesseschoff" target="_blank" rel="noreferrer"
+				>Jesse Schoff / Unsplash</a
+			>
+		</p>
 	</div>
 </section>
 
@@ -47,6 +53,24 @@
 	.hero-content {
 		position: relative;
 		z-index: 1;
+	}
+	.image-credit {
+		margin: 28px 0 0;
+		color: var(--slate-300);
+		font-size: 0.72rem;
+		text-align: right;
+	}
+	.image-credit a {
+		color: inherit;
+		text-underline-offset: 0.18em;
+	}
+	.image-credit a:hover {
+		color: var(--text-on-dark);
+	}
+	.image-credit a:focus-visible {
+		outline: 2px solid var(--text-on-dark);
+		outline-offset: 3px;
+		border-radius: 2px;
 	}
 	.copy {
 		max-width: 700px;
@@ -106,13 +130,19 @@
 	}
 	@media (max-width: 860px) {
 		.hero {
-			padding: 72px 0 60px;
+			padding: 72px 0 76px;
 		}
 		.hero-bg {
 			object-position: 58% center;
 		}
 	}
 	@media (max-width: 540px) {
+		.hero {
+			padding-bottom: 96px;
+		}
+		.image-credit {
+			margin-top: 24px;
+		}
 		.facts {
 			flex-direction: column;
 			gap: 18px;

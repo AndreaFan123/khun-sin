@@ -2,13 +2,7 @@
 	import SectionHead from '$lib/components/ui/SectionHead.svelte';
 	import type { TurtlePageCopy } from '$lib/data/turtles';
 
-	let {
-		rescue,
-		sources
-	}: {
-		rescue: TurtlePageCopy['rescue'];
-		sources: TurtlePageCopy['sources'];
-	} = $props();
+	let { rescue }: { rescue: TurtlePageCopy['rescue'] } = $props();
 </script>
 
 <section class="rescue band-dark">
@@ -31,23 +25,6 @@
 				</li>
 			{/each}
 		</ol>
-	</div>
-</section>
-
-<section class="sources">
-	<div class="wrap sources-layout">
-		<div>
-			<h2>{sources.title}</h2>
-			<p>{sources.intro}</p>
-		</div>
-		<ul>
-			{#each sources.links as source (source.url)}
-				<li>
-					<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- official external source -->
-					<a href={source.url} target="_blank" rel="noopener">{source.label} ↗</a>
-				</li>
-			{/each}
-		</ul>
 	</div>
 </section>
 
@@ -108,41 +85,11 @@
 	li p {
 		color: var(--text-on-dark-secondary);
 	}
-	.sources {
-		background: var(--paper-200);
-		padding: 48px 0 68px;
-	}
-	.sources-layout {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 54px;
-		padding-top: 34px;
-		border-top: 1px solid var(--paper-400);
-	}
-	.sources h2 {
-		margin-bottom: 8px;
-		font-size: 1.1rem;
-	}
-	.sources p {
-		color: var(--text-secondary);
-		font-size: 0.9rem;
-	}
-	.sources ul {
-		display: grid;
-		gap: 8px;
-		list-style: none;
-	}
-	.sources a {
-		color: var(--slate-700);
-		font-weight: 700;
-		text-underline-offset: 3px;
-	}
 	@media (max-width: 800px) {
 		.rescue {
 			padding: 64px 0;
 		}
-		.rescue-layout,
-		.sources-layout {
+		.rescue-layout {
 			grid-template-columns: 1fr;
 			gap: 34px;
 		}

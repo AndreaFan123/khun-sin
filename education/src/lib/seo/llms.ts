@@ -21,9 +21,15 @@ export const buildLlmsTxt = ({ copy }: SiteContext, totals: StrandingTotals[]): 
 
 	const pages = routes
 		.map((route) => {
-			const isStories = route.path.endsWith('learn');
-			const title = `${isStories ? 'Stories' : 'Home'} (${route.locale === 'en' ? 'English' : 'Chinese'})`;
-			const description = isStories ? copy.meta.learn.description : copy.meta.home.description;
+			const isCetaceans = route.path.endsWith('cetaceans');
+			const isSupport = route.path.endsWith('support');
+			const pageTitle = isCetaceans ? 'Cetaceans' : isSupport ? 'Support' : 'Home';
+			const title = `${pageTitle} (${route.locale === 'en' ? 'English' : 'Chinese'})`;
+			const description = isCetaceans
+				? copy.meta.learn.description
+				: isSupport
+					? copy.meta.support.description
+					: copy.meta.home.description;
 			return `- [${title}](${absolute(route.path)}): ${description}`;
 		})
 		.join('\n');

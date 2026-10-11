@@ -2,17 +2,45 @@
 	import SectionHead from '$lib/components/ui/SectionHead.svelte';
 	import TaiwanMap from '$lib/components/charts/TaiwanMap.svelte';
 	import { useSite } from '$lib/copy';
+	import { countyRows } from '$lib/data/strandings';
+	import { turtleCountyRows } from '$lib/data/turtle-strandings';
 
 	const site = useSite();
 	const head = $derived(site().copy.sectionHeads.map);
 	const ui = $derived(site().copy.uiCopy);
+	const animals = $derived(site().copy.mapAnimalCopy);
 </script>
 
 <section id="map">
 	<div class="wrap">
-		<SectionHead onDark eyebrow={head.eyebrow} title={head.title} lead={head.lead} />
+		<SectionHead onDark as="h1" eyebrow={head.eyebrow} title={head.title} lead={head.lead} />
 
-		<TaiwanMap />
+		<div class="maps">
+			<article class="map-card">
+				<div class="map-copy">
+					<h2>{animals.cetacean.title}</h2>
+					<p>{animals.cetacean.lead}</p>
+				</div>
+				<TaiwanMap
+					rows={countyRows()}
+					ariaLabel={animals.cetacean.ariaLabel}
+					labelledNames={animals.cetacean.labelledNames}
+					filterId="cetacean-dot-glow"
+				/>
+			</article>
+			<article class="map-card">
+				<div class="map-copy">
+					<h2>{animals.seaTurtle.title}</h2>
+					<p>{animals.seaTurtle.lead}</p>
+				</div>
+				<TaiwanMap
+					rows={turtleCountyRows()}
+					ariaLabel={animals.seaTurtle.ariaLabel}
+					labelledNames={animals.seaTurtle.labelledNames}
+					filterId="turtle-dot-glow"
+				/>
+			</article>
+		</div>
 
 		<div class="legend">
 			<span class="li"><span class="sw offshore"></span>{ui.mapLegendOffshore}</span>
@@ -26,6 +54,28 @@
 	section {
 		padding: 92px 0;
 		background: var(--bg-band-darker);
+	}
+	.maps {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 26px;
+	}
+	.map-card {
+		padding: 28px 24px 18px;
+		border: 1px solid var(--border-on-dark);
+		border-radius: var(--radius);
+		background: var(--navy-800);
+	}
+	.map-copy {
+		min-height: 142px;
+	}
+	.map-copy h2 {
+		color: var(--text-on-dark);
+		font-size: 1.6rem;
+	}
+	.map-copy p {
+		margin-top: 8px;
+		color: var(--text-on-dark-secondary);
 	}
 	.legend {
 		display: flex;
@@ -62,6 +112,12 @@
 	@media (max-width: 860px) {
 		section {
 			padding: 64px 0;
+		}
+		.maps {
+			grid-template-columns: 1fr;
+		}
+		.map-copy {
+			min-height: 0;
 		}
 	}
 </style>

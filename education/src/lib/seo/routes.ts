@@ -13,7 +13,19 @@ import type { Locale } from '$lib/copy';
 /** Production origin — required because social and canonical URLs must be absolute. */
 export const SITE_ORIGIN = 'https://www.khun-sin.com';
 
-export type RoutePath = '/' | '/learn' | '/turtles' | '/en' | '/en/learn' | '/en/turtles';
+export type RoutePath =
+	| '/'
+	| '/data'
+	| '/map'
+	| '/cetaceans'
+	| '/sea-turtles'
+	| '/support'
+	| '/en'
+	| '/en/data'
+	| '/en/map'
+	| '/en/cetaceans'
+	| '/en/sea-turtles'
+	| '/en/support';
 
 export interface RouteEntry {
 	path: RoutePath;
@@ -24,11 +36,17 @@ export interface RouteEntry {
 
 export const routes: RouteEntry[] = [
 	{ path: '/', locale: 'zh', alternate: '/en' },
-	{ path: '/learn', locale: 'zh', alternate: '/en/learn' },
-	{ path: '/turtles', locale: 'zh', alternate: '/en/turtles' },
+	{ path: '/data', locale: 'zh', alternate: '/en/data' },
+	{ path: '/map', locale: 'zh', alternate: '/en/map' },
+	{ path: '/cetaceans', locale: 'zh', alternate: '/en/cetaceans' },
+	{ path: '/sea-turtles', locale: 'zh', alternate: '/en/sea-turtles' },
+	{ path: '/support', locale: 'zh', alternate: '/en/support' },
 	{ path: '/en', locale: 'en', alternate: '/' },
-	{ path: '/en/learn', locale: 'en', alternate: '/learn' },
-	{ path: '/en/turtles', locale: 'en', alternate: '/turtles' }
+	{ path: '/en/data', locale: 'en', alternate: '/data' },
+	{ path: '/en/map', locale: 'en', alternate: '/map' },
+	{ path: '/en/cetaceans', locale: 'en', alternate: '/cetaceans' },
+	{ path: '/en/sea-turtles', locale: 'en', alternate: '/sea-turtles' },
+	{ path: '/en/support', locale: 'en', alternate: '/support' }
 ];
 
 /** BCP 47 tags for the `lang` attribute and hreflang annotations. */

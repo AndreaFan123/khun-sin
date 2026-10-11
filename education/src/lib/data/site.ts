@@ -11,40 +11,105 @@ export interface SpeciesCard {
 	name: string;
 	scientificName: string;
 	description: string;
+	imageKey:
+		| 'taiwaneseHumpback'
+		| 'indoPacificFinless'
+		| 'yangtzeFinless'
+		| 'commonBottlenose'
+		| 'indoPacificBottlenose'
+		| 'rissos'
+		| 'pygmySpermWhale'
+		| 'cuviersBeakedWhale';
+	imageAlt: string;
+	redList?: {
+		label: string;
+		level: 'critically-endangered' | 'vulnerable' | 'near-threatened';
+	};
 }
 
 export const speciesCards: SpeciesCard[] = [
 	{
-		tag: '極度瀕危 CR',
+		tag: '台灣特有亞種',
 		tagKind: 'critical',
 		name: '台灣白海豚',
 		scientificName: 'Sousa chinensis taiwanensis',
 		description:
-			'只生活在台灣西部沿海的特有亞種，粉白身影被稱為「媽祖魚」。學者估計現存不到 50 隻，且族群每年約下滑 3–4%，是台灣最急迫的海洋保育對象。'
+			'只生活在台灣西部沿海的特有亞種，粉白身影被稱為「媽祖魚」。學者估計現存不到 50 隻，且族群每年約下滑 3–4%，是台灣最急迫的海洋保育對象。',
+		imageKey: 'taiwaneseHumpback',
+		imageAlt: '台灣白海豚游在近岸海面',
+		redList: { label: '極危', level: 'critically-endangered' }
 	},
 	{
-		tag: '離島常見',
+		tag: '近岸江豚',
 		tagKind: 'common',
-		name: '露脊鼠海豚',
-		scientificName: 'Neophocaena spp.（江豚）',
+		name: '寬脊露脊鼠海豚',
+		scientificName: 'Neophocaena phocaenoides',
 		description:
-			'沒有背鰭、體型嬌小的近岸鼠海豚，是金門、馬祖、澎湖海域的住民。牠也是 2025 年擱淺數量最多的物種，佔全年的 45%。'
+			'又稱印太江豚或印太洋露脊鼠海豚，沒有背鰭、體型嬌小，生活在近岸淺海。過去常被籠統稱作「露脊鼠海豚」，此處依物種分開標示。',
+		imageKey: 'indoPacificFinless',
+		imageAlt: '寬脊露脊鼠海豚露出海面',
+		redList: { label: '易危', level: 'vulnerable' }
 	},
 	{
-		tag: '近海常見',
+		tag: '近岸江豚',
+		tagKind: 'common',
+		name: '窄脊露脊鼠海豚',
+		scientificName: 'Neophocaena asiaeorientalis',
+		description:
+			'又稱東亞江豚或窄脊江豚，外型同樣沒有背鰭，與寬脊露脊鼠海豚是不同物種。中文俗名相近，閱讀觀察或擱淺紀錄時需搭配學名確認。',
+		imageKey: 'yangtzeFinless',
+		imageAlt: '窄脊露脊鼠海豚游在水中'
+	},
+	{
+		tag: '瓶鼻海豚',
 		tagKind: 'info',
-		name: '瓶鼻海豚',
+		name: '真瓶鼻海豚',
 		scientificName: 'Tursiops truncatus',
 		description:
-			'最為人熟悉的海豚之一，聰明、群居、好奇心強。台灣海域有瓶鼻海豚與印太瓶鼻海豚兩種，是賞鯨常見的明星。'
+			'英文名為 Common Bottlenose Dolphin，是最為人熟悉的海豚之一。牠與外型相近的印太瓶鼻海豚是不同物種，紀錄時需搭配學名確認。',
+		imageKey: 'commonBottlenose',
+		imageAlt: '真瓶鼻海豚游在海中'
+	},
+	{
+		tag: '瓶鼻海豚',
+		tagKind: 'info',
+		name: '印太瓶鼻海豚',
+		scientificName: 'Tursiops aduncus',
+		description:
+			'英文名為 Indo-Pacific Bottlenose Dolphin。牠與真瓶鼻海豚外型相近，但屬於不同物種；觀察或擱淺紀錄應保留各自學名。',
+		imageKey: 'indoPacificBottlenose',
+		imageAlt: '印太瓶鼻海豚游在海中',
+		redList: { label: '近危', level: 'near-threatened' }
 	},
 	{
 		tag: '遠洋物種',
 		tagKind: 'info',
-		name: '花紋海豚',
+		name: '瑞氏海豚',
 		scientificName: 'Grampus griseus',
 		description:
-			'成體身上佈滿打鬥與社交留下的白色刮痕，像一幅海洋的地圖。花蓮外海是牠們常出沒的舞台，也是賞鯨的常客。'
+			'民間與賞鯨界更常稱牠「花紋海豚」或「里氏海豚」。台灣討海人依外型叫牠「大頭仔（tuā-thâu-á）」：牠沒有一般海豚明顯的尖嘴，頭部鈍圓；年長個體因傷疤累積而呈灰白色，像光頭和尚，又稱「和尚鯃（huê-ê-siūnn-thâu）」。',
+		imageKey: 'rissos',
+		imageAlt: '瑞氏海豚游在海中'
+	},
+	{
+		tag: '2025 擱淺紀錄',
+		tagKind: 'info',
+		name: '小抹香鯨',
+		scientificName: 'Kogia breviceps',
+		description:
+			'屬於小抹香鯨科，與名稱相近的侏儒抹香鯨是不同物種。2025 年台灣鯨豚擱淺統計記錄 4 隻，辨識紀錄時需搭配學名確認。',
+		imageKey: 'pygmySpermWhale',
+		imageAlt: '小抹香鯨游在海中'
+	},
+	{
+		tag: '2025 擱淺紀錄',
+		tagKind: 'info',
+		name: '柯氏喙鯨',
+		scientificName: 'Ziphius cavirostris',
+		description:
+			'適應深潛生活的喙鯨，主要活動於較深水域。2025 年台灣鯨豚擱淺統計記錄 3 隻；外觀辨識不易，擱淺紀錄需由專業人員確認。',
+		imageKey: 'cuviersBeakedWhale',
+		imageAlt: '柯氏喙鯨游在海中'
 	}
 ];
 
@@ -95,12 +160,12 @@ export interface ReportStep {
 export const reportSteps: ReportStep[] = [
 	{
 		title: '撥打 118',
-		description: '向海巡署通報，啟動整個救援。請務必等後單位確認沒有問題後掛電話再掛'
+		description: '向海巡署通報，啟動整個救援。請務必等接線單位確認資訊無誤後，再掛斷電話。'
 	},
 	{
 		title: '說清楚「狀態」',
 		description:
-			'提供地點、時間、你的聯繫方式，並描述動物大小(可以展開雙臂，或者用腳掌大小評估)、是活體還是死亡(觀察呼吸孔有無收縮)、有無外傷——這決定要派多少人、開什麼車、帶什麼裝備。'
+			'提供地點、時間、你的聯繫方式，並描述是鯨豚或海龜、動物大小、是否仍有呼吸或活動、有無外傷或漁具纏繞——這會影響救援團隊需要帶來的人力與裝備。'
 	},
 	{
 		title: '保持距離守候',
@@ -119,7 +184,7 @@ export const hotline = {
 		'發現擱淺或受困的鯨豚、海龜，立即撥打 118。海巡署全年無休，會第一時間聯繫海保署、中華鯨豚協會以及合作的學術研究等專業團隊。',
 	infoTitle: '就算無生命跡象，也請務必通報',
 	infoDescription:
-		'絕大多數擱淺鯨豚被發現時已經死亡——但這絕不代表牠們不重要。每一具遺體都承載著大量資訊：透過解剖、採樣與病理分析，研究人員能解讀死因、健康狀況，以及整片海洋環境的變化。光是 2025 年，就有 62 隻個體完成科學採樣、21 件病理分析。你的一通通報，可能就是解開一個科學謎題的鑰匙。'
+		'死亡的鯨豚與海龜仍能提供死因、健康狀況與海洋環境的重要資訊。請回報位置與狀態，不要因為動物已無生命跡象而略過通報。'
 };
 
 export const doList: string[] = [
@@ -131,9 +196,9 @@ export const doList: string[] = [
 ];
 
 export const dontList: string[] = [
-	'不要自行把活體海豚拖回或推回海裡——拖行會嚴重擦傷海豚脆弱的皮膚，也可能造成二次嗆水（2024 年就有 4 隻因此死亡）',
+	'不要自行把鯨豚或海龜拖回、推回海裡；牠可能需要先接受醫療評估，搬運方式不當也會造成二次傷害',
 	'不要在未經指導下搬移、觸碰或拉扯動物',
-	'不要餵食或往呼吸孔澆水',
+	'不要餵食，也不要往呼吸孔、口鼻或傷口灌水',
 	'不要因好奇而過度靠近，以免驚擾動物、也危及自身安全'
 ];
 
@@ -257,6 +322,94 @@ export const chartCards: ChartCardCopy[] = [
 	}
 ];
 
+export interface AnimalSectionCopy {
+	eyebrow: string;
+	title: string;
+	lead: string;
+}
+
+export interface MapAnimalCopy {
+	title: string;
+	lead: string;
+	ariaLabel: string;
+	labelledNames: string[];
+}
+
+export const dataAnimalCopy: Record<'cetacean' | 'seaTurtle', AnimalSectionCopy> = {
+	cetacean: {
+		eyebrow: '鯨豚',
+		title: '近岸與離島的鯨豚訊號',
+		lead: '2025 年共記錄 128 隻鯨豚擱淺，死亡 121 隻、活體 7 隻。以下保留年度趨勢、月份、縣市、原因與物種等完整觀察。'
+	},
+	seaTurtle: {
+		eyebrow: '海龜',
+		title: '更高的通報量，不同的空間分布',
+		lead: '2025 年共記錄 330 隻海龜擱淺，死亡 197 隻、活體 133 隻。宜蘭、澎湖與臺東是當年度數量最高的三個縣市。'
+	}
+};
+
+export const turtleChartCards: ChartCardCopy[] = [
+	{
+		key: 'trend',
+		title: '近七年海龜擱淺趨勢',
+		subtitle: '2019–2025，依死亡與活體區分（單位：隻）',
+		takeaway:
+			'2021 年達 359 隻後，總數連續三年約落在 315–330 隻；2025 年活體 133 隻，是這七年最高。通報量也會受到救援網絡、定置網回報與發現機會影響，不宜直接視為族群數量。',
+		legend: [
+			{ label: '死亡個體', colorVar: '--chart-muted' },
+			{ label: '活體個體', colorVar: '--chart-emphasis' }
+		]
+	},
+	{
+		key: 'counties',
+		title: '海龜擱淺縣市分布',
+		subtitle: '2025 年各縣市擱淺數量（單位：隻）',
+		takeaway:
+			'宜蘭 76 隻、澎湖 58 隻、臺東 57 隻，三地合計占全年 58%。這與鯨豚集中於連江、金門、澎湖的分布明顯不同。',
+		legend: [
+			{ label: '前三高縣市', colorVar: '--chart-emphasis' },
+			{ label: '其他縣市', colorVar: '--chart-baseline' }
+		]
+	},
+	{
+		key: 'causes',
+		title: '海龜擱淺事件類型',
+		subtitle: '2025 年 330 件通報的事件分類',
+		takeaway:
+			'岸際擱淺占 59%，混獲占 27%；另有漂流、廢棄魚網纏繞與其他類型。事件分類描述發現情境，不等同完整死因判定。',
+		legend: [
+			{ label: '漁業相關', colorVar: '--chart-emphasis' },
+			{ label: '其他類型', colorVar: '--chart-baseline' }
+		]
+	},
+	{
+		key: 'species',
+		title: '2025 年擱淺海龜種類',
+		subtitle: '全年共 330 隻，以綠蠵龜為主',
+		takeaway:
+			'綠蠵龜 259 隻，占 78%；其次為欖蠵龜 39 隻與玳瑁 27 隻。不同種類的棲地利用與人為風險並不相同。',
+		legend: [
+			{ label: '綠蠵龜', colorVar: '--chart-emphasis' },
+			{ label: '其他種類', colorVar: '--chart-baseline' }
+		]
+	}
+];
+
+export const mapAnimalCopy: Record<'cetacean' | 'seaTurtle', MapAnimalCopy> = {
+	cetacean: {
+		title: '鯨豚',
+		lead: '2025 年以連江、金門、澎湖三個離島縣市最集中，合計 65 隻，占全年 51%。',
+		ariaLabel: '2025 年台灣各縣市鯨豚擱淺分布：連江 26、金門 24、澎湖 15 為前三個熱點',
+		labelledNames: ['連江縣', '金門縣', '澎湖縣', '宜蘭縣']
+	},
+	seaTurtle: {
+		title: '海龜',
+		lead: '2025 年以宜蘭 76 隻最多，其次為澎湖 58 隻與臺東 57 隻，熱點橫跨東北角、離島與東岸。',
+		ariaLabel: '2025 年台灣各縣市海龜擱淺分布：宜蘭 76、澎湖 58、臺東 57 為前三個熱點',
+		labelledNames: ['宜蘭縣', '澎湖縣', '臺東縣']
+	}
+};
+
 export const formTeaser = {
 	title: '線上通報系統，開發中',
 	body: '我們正在打造手機優先的擱淺通報表單——30 秒完成通報、案件編號可追蹤後續。上線前，發現擱淺請直接撥打 118。',
@@ -264,14 +417,13 @@ export const formTeaser = {
 };
 
 export const heroCopy = {
-	badge: '台灣鯨豚擱淺數據 · 2019–2025 全年度 & 2026 第一季',
-	titleLead: '鯨豚救援是',
-	titleHighlight: '「向死而生」',
+	badge: '鯨豚・海龜擱淺通報',
+	titleLead: '發現擱淺，',
+	titleHighlight: '先撥 118',
 	titleTail: '',
-	sub: '每一隻擱淺的鯨豚，都代表著牠的生命可能來到盡頭。救援未必能翻轉生死，但每一次的盡力，都能讓生命化為科學的養分，指引台灣鯨豚救援繼續前行。',
-	statDeadLabel: '發現時已死亡，救援與時間賽跑',
-	statTotalLabel: '年全台鯨豚擱淺通報',
-	statSpeciesLabel: '一年內擱淺的鯨豚物種數'
+	sub: '無論遇見的是鯨豚或海龜，無論仍有生命跡象或已經死亡，都請先通報海巡署。不要自行推回海裡，讓救援團隊依現場狀況提供指示。',
+	hotlineScope: '鯨豚與海龜共用同一支救援專線',
+	stepsLabel: '查看通報步驟與現場注意事項'
 };
 
 export const ctaCopy = {
@@ -287,9 +439,24 @@ export const brandFootnote = {
 
 export const dataSources = {
 	intro:
-		'資料來源：海洋委員會海洋保育署「海保救援網（MARN）」2019–2025 歷年全年度擱淺報告及 2026 年第一季擱淺報告',
+		'資料來源：海洋委員會海洋保育署「海保救援網（MARN）」鯨豚擱淺報告與海龜擱淺統計表；畫面的年度比較使用 2019–2025 完整年度資料',
 	marnUrl: 'https://www.oca.gov.tw/ch/home.jsp?id=379&parentpath=0,296,375',
 	marnLinkText: '海保署官網',
+	turtleSourcesLabel: '海龜頁面資料來源：',
+	turtleSources: [
+		{
+			label: '海龜保育計畫',
+			url: 'https://www.oca.gov.tw/userfiles/A47020000A/files/1130524%E6%B5%B7%E9%BE%9C%E4%BF%9D%E8%82%B2%E8%A8%88%E7%95%AB%28%E6%A0%B8%E5%AE%9A%E7%89%88%29.pdf'
+		},
+		{
+			label: '海保救援網',
+			url: 'https://www.oca.gov.tw/ch/home.jsp?id=186&parentpath=0%2C6%2C185'
+		},
+		{
+			label: '臺灣百種海洋動物圖鑑',
+			url: 'https://www.oca.gov.tw/ch/home.jsp?dataserno=202101210001&id=229&mcustomize=publication_view.jsp&parentpath=0%2C7%2C225'
+		}
+	],
 	reminder: '',
 	mapAttribution: '地圖輪廓：Natural Earth（公有領域）'
 };
@@ -338,24 +505,29 @@ export const supportCopy = {
 
 export const sectionHeads = {
 	report: {
-		eyebrow: '如何通報與參與',
-		title: '「通報」是最關鍵的第一步',
-		lead: '絕大多數擱淺鯨豚在發現時已經死亡，幸運的話，可能還有一線生機！活體救援是分秒必爭的事。第一步，從一通電話開始。你不需要是專家——只需要知道該打給誰、以及有哪些該做與不該做的事。'
+		eyebrow: '鯨豚與海龜通報',
+		title: '',
+		lead: ''
 	},
 	data: {
-		eyebrow: '數據',
-		title: '數字代表著無數生命',
-		lead: '「擱淺」是鯨豚因傷病、迷航、遭到船隻撞擊等種種因素而被沖上岸的現象。每一隻鯨豚的犧牲都讓我們更了解海洋：擱淺的種類、地點、季節與死因，透露著整個海域的資訊。以下數據來自海保署「海保救援網（MARN）」的官方擱淺報告。'
+		eyebrow: '擱淺數據',
+		title: '同一張救援網，兩種不同的海洋訊號',
+		lead: '鯨豚與海龜都由 118 啟動海保救援網，但擱淺數量、季節與地點並不相同。以下並列海保署官方統計表與 MARN 報告資料，讓兩類動物的差異可以一起閱讀。'
 	},
 	map: {
 		eyebrow: '擱淺地圖',
-		title: '擱淺發生在哪裡',
-		lead: '每個亮點是一個縣市，大小代表 2025 年的擱淺數量。連江、金門、澎湖三個離島縣市合計 65 隻——佔了全台的 51%，離島近岸的江豚族群是熱點中的熱點。'
+		title: '鯨豚和海龜擱淺的熱點地圖',
+		lead: '每個亮點代表一個縣市，大小對應 2025 年的擱淺數量。並列鯨豚與海龜後，可以看見離島、東北角與東岸承受著不同的救援壓力。'
 	},
 	know: {
 		eyebrow: '認識台灣的鯨豚',
 		title: '一座被鯨豚環繞的島嶼',
-		lead: '台灣位在黑潮與大陸棚交會處，海域生產力豐沛。長期調查已在台灣周邊記錄到約 30 種鯨豚，接近全球種類的三分之一——從沿岸的白海豚到深海的抹香鯨，這裡是名副其實的鯨豚多樣性熱點。光是 2025 一年，就有 21 種鯨豚被記錄到擱淺。'
+		lead: '台灣位在黑潮與大陸棚交會處，海域生產力豐沛。長期調查已在台灣周邊記錄到約 30 種鯨豚，接近全球種類的三分之一——從沿岸的白海豚到深海的抹香鯨，這裡是名副其實的鯨豚多樣性熱點。光是 2025 一年，就有 21 種鯨豚被記錄到擱淺。',
+		facts: [
+			{ value: '約 30 種', label: '台灣周邊長期記錄的鯨豚' },
+			{ value: '21 種', label: '2025 年有擱淺紀錄的鯨豚' }
+		],
+		imageSourceLabel: '圖片來源：'
 	},
 	threats: {
 		eyebrow: '人為威脅',
@@ -376,9 +548,9 @@ export const sectionHeads = {
 
 export const uiCopy = {
 	navReport: '通報',
-	navData: '數據',
+	navData: '擱淺數據',
 	navMap: '擱淺地圖',
-	navLearn: '故事分享',
+	navLearn: '認識鯨豚',
 	navTurtles: '認識海龜',
 	navSupport: '支持第一線',
 	heroEmergencyPrefix: '發現擱淺？',
@@ -386,14 +558,14 @@ export const uiCopy = {
 	doTitle: '該做的事',
 	dontTitle: '絕對不要做的事',
 	takeawayLabel: '可能的資訊：',
-	mapLegendOffshore: '離島縣市（熱點）',
-	mapLegendMain: '本島縣市',
+	mapLegendOffshore: '該動物的重點縣市',
+	mapLegendMain: '其他縣市',
 	mapLegendNote: '亮點大小 ∝ 擱淺數量（隻）',
 	mapAriaLabel:
 		'2025 年台灣各縣市鯨豚擱淺分布地圖：連江 26、金門 24、澎湖 15 為熱點，離島三縣合計佔全台 51%',
 	marnAriaLabel:
 		'海保救援網（MARN）架構：海保署為整合核心，串聯海巡署、學術鯨豚中心、在地民間團體與獸醫團隊',
-	footerBrandLine: '台灣鯨豚擱淺通報與數據',
+	footerBrandLine: '台灣鯨豚與海龜擱淺通報與數據',
 	dialAriaLabel: '撥打 118 海巡署救援專線',
 	menuOpenLabel: '開啟選單',
 	menuCloseLabel: '關閉選單',
@@ -421,19 +593,32 @@ export const uiCopy = {
 /** Page-level metadata (#37): titles lead with the query phrase, brand last. */
 export const meta = {
 	home: {
-		title: '台灣鯨豚擱淺通報與數據 · Khun-Sin',
+		title: '台灣鯨豚與海龜擱淺通報 118 · Khun-Sin',
 		description:
-			'發現鯨豚擱淺請撥 118。通報步驟、該做與絕對不要做的事，以及海保署「海保救援網（MARN）」歷年官方擱淺數據視覺化。'
+			'發現擱淺或受困的鯨豚、海龜請撥 118。查看通報時需要提供的資訊、現場該做與絕對不要做的事。'
+	},
+	data: {
+		title: '台灣鯨豚與海龜擱淺數據 · Khun-Sin',
+		description: '整理海保署官方報告中的鯨豚與海龜年度擱淺數量、發現狀態、物種及原因。'
+	},
+	map: {
+		title: '台灣鯨豚與海龜擱淺地圖 · Khun-Sin',
+		description: '比較 2025 年台灣各縣市的鯨豚與海龜擱淺分布，辨識兩類海洋動物不同的熱點。'
 	},
 	learn: {
 		title: '認識台灣的鯨豚：物種、威脅與救援故事 · Khun-Sin',
 		description:
 			'台灣海域記錄到約 30 種鯨豚。認識牠們、牠們面對的人為威脅，以及海保救援網（MARN）如何把每一次擱淺化為保育知識。'
+	},
+	support: {
+		title: '支持海洋保育第一線 · Khun-Sin',
+		description:
+			'直接前往中華鯨豚協會、成大海洋生物及鯨豚研究中心與黑潮海洋文教基金會，支持救援、研究與海洋教育。'
 	}
 };
 
 /** Alt text for the share card image (#39). */
-export const ogImageAlt: string = 'Khun-Sin 分享卡片：發現擱淺鯨豚，請立刻撥打 118';
+export const ogImageAlt: string = 'Khun-Sin 分享卡片：發現擱淺鯨豚或海龜，請撥打 118';
 
 /**
  * Copy used only by structured data (#41, #42). It lives here, mirrored in
@@ -442,13 +627,13 @@ export const ogImageAlt: string = 'Khun-Sin 分享卡片：發現擱淺鯨豚，
  */
 export const schemaCopy = {
 	/** FAQPage entries must be questions; the page shows these as two lists. */
-	doQuestion: '發現擱淺鯨豚時，該做什麼？',
-	dontQuestion: '發現擱淺鯨豚時，絕對不要做什麼？',
+	doQuestion: '發現擱淺鯨豚或海龜時，該做什麼？',
+	dontQuestion: '發現擱淺鯨豚或海龜時，絕對不要做什麼？',
 	sourceName: '海洋委員會海洋保育署',
 	dataset: {
-		name: '台灣鯨豚擱淺統計（海保救援網 MARN）',
+		name: '台灣鯨豚與海龜擱淺統計（海保救援網 MARN）',
 		description:
-			'台灣周邊海域鯨豚擱淺的年度與季度統計：擱淺總數、死亡與活體、物種、縣市分布、月份與死因判定。資料來自海洋委員會海洋保育署「海保救援網（MARN）」歷年官方擱淺報告，由 Khun-Sin 整理呈現。'
+			'台灣周邊海域鯨豚與海龜擱淺統計：擱淺總數、死亡與活體、物種、縣市分布、月份與事件類型。資料來自海洋委員會海洋保育署「海保救援網（MARN）」官方擱淺報告與統計表，由 Khun-Sin 整理呈現。'
 	}
 };
 
@@ -458,7 +643,7 @@ export const schemaCopy = {
  * data; currency is a human statement about when it was last reconciled.
  */
 export const dataCurrency = {
-	note: '資料更新於 {date}，內容依據海保署{report}。',
+	note: '資料更新於 {date}；年度圖表比較 2019–2025 完整年度。',
 	annualReport: '{year} 年度擱淺報告',
 	quarterlyReport: '{year} 年第{quarter}季擱淺報告',
 	quarterNumerals: ['一', '二', '三', '四']

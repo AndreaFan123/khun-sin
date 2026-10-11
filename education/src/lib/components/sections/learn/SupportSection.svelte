@@ -1,6 +1,6 @@
 <script lang="ts">
-	// Referral-first support block (issue #22): the narrative exit at the end
-	// of the stories page. External links only — this site never touches money.
+	// Referral-first support page (issue #22). External links only — this site
+	// never touches money.
 	import SectionHead from '$lib/components/ui/SectionHead.svelte';
 	import { useSite } from '$lib/copy';
 
@@ -10,7 +10,7 @@
 
 <section id="support">
 	<div class="wrap">
-		<SectionHead eyebrow={c.head.eyebrow} title={c.head.title} lead={c.head.lead} />
+		<SectionHead as="h1" eyebrow={c.head.eyebrow} title={c.head.title} lead={c.head.lead} />
 
 		<div class="cards">
 			{#each c.links as org (org.name)}

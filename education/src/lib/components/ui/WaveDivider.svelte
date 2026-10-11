@@ -10,6 +10,8 @@
 		to,
 		height = 80,
 		flip = false,
+		overlayNext = false,
+		overlayPrevious = false,
 		layers = [],
 		stroke
 	}: {
@@ -17,6 +19,10 @@
 		to: string;
 		height?: number;
 		flip?: boolean;
+		/** Let the following section sit behind the divider so its media shows below the crest. */
+		overlayNext?: boolean;
+		/** Let the preceding section extend behind the divider so its media shows above the crest. */
+		overlayPrevious?: boolean;
 		layers?: string[];
 		/** Contour-echo color override — needed when from/to are close in value
 		 *  (e.g. two dark bands) and the default `to`-colored echoes vanish. */
@@ -29,10 +35,19 @@
 	const crest =
 		'M0,52 C120,20 260,96 420,64 C580,32 700,100 860,72 C1020,44 1160,104 1300,60 C1370,38 1410,42 1440,56';
 	const filled = `${crest} L1440,120 L0,120 Z`;
+	const filledAbove = `${crest} L1440,0 L0,0 Z`;
 	const step = $derived(layers.length ? Math.round(60 / (layers.length + 1)) : 0);
 </script>
 
-<div class="divider" style="background:{from}" aria-hidden="true">
+<div
+	class="divider"
+	class:overlay-next={overlayNext}
+	class:overlay-previous={overlayPrevious}
+	style="background:{overlayNext || overlayPrevious
+		? 'transparent'
+		: from}; --divider-height:{height}px"
+	aria-hidden="true"
+>
 	<svg
 		viewBox="0 0 1440 120"
 		preserveAspectRatio="none"
@@ -40,7 +55,35 @@
 		class:flip
 		role="presentation"
 	>
-		{#if layers.length}
+		{#if overlayNext}
+			<path d={filledAbove} fill={from} />
+			<path
+				d={crest}
+				transform="translate(0,-24)"
+				fill="none"
+				stroke={stroke ?? to}
+				stroke-width="1.5"
+				opacity="0.16"
+				vector-effect="non-scaling-stroke"
+			/>
+			<path
+				d={crest}
+				transform="translate(0,-12)"
+				fill="none"
+				stroke={stroke ?? to}
+				stroke-width="1.5"
+				opacity="0.36"
+				vector-effect="non-scaling-stroke"
+			/>
+			<path
+				d={crest}
+				fill="none"
+				stroke={stroke ?? to}
+				stroke-width="1.5"
+				opacity="0.6"
+				vector-effect="non-scaling-stroke"
+			/>
+		{:else if layers.length}
 			{#each layers as color, i (color)}
 				<path d={filled} transform="translate(0,{i * step})" fill={color} />
 			{/each}
@@ -82,6 +125,18 @@
 <style>
 	.divider {
 		line-height: 0;
+	}
+	.divider.overlay-next {
+		position: relative;
+		z-index: 2;
+		margin-bottom: calc(-1 * var(--divider-height));
+		pointer-events: none;
+	}
+	.divider.overlay-previous {
+		position: relative;
+		z-index: 2;
+		margin-top: calc(-1 * var(--divider-height));
+		pointer-events: none;
 	}
 	svg {
 		display: block;

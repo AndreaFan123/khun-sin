@@ -20,8 +20,11 @@
 	// that table says is this page's counterpart.
 	const current = $derived(entryFor(routePathFor(page.url.pathname)));
 	const home = $derived(resolve(isEn ? '/en' : '/'));
-	const learn = $derived(resolve(isEn ? '/en/learn' : '/learn'));
-	const turtles = $derived(resolve(isEn ? '/en/turtles' : '/turtles'));
+	const data = $derived(resolve(isEn ? '/en/data' : '/data'));
+	const map = $derived(resolve(isEn ? '/en/map' : '/map'));
+	const cetaceans = $derived(resolve(isEn ? '/en/cetaceans' : '/cetaceans'));
+	const turtles = $derived(resolve(isEn ? '/en/sea-turtles' : '/sea-turtles'));
+	const support = $derived(resolve(isEn ? '/en/support' : '/support'));
 	const otherLocale = $derived(resolve(current.alternate));
 </script>
 
@@ -29,13 +32,16 @@
 
 <header class:scrolled>
 	<div class="bar">
-		<a class="brand" href={home}><Wordmark onDark /></a>
+		<div class="brand-group">
+			<a class="brand" href={home}><Wordmark onDark /></a>
+			<a class="support-link" href={support}>{ui.navSupport}</a>
+		</div>
 		<div class="right">
 			<nav aria-label="主導覽">
-				<a href="{home}#report">{ui.navReport}</a>
-				<a href="{home}#data">{ui.navData}</a>
-				<a href="{home}#map">{ui.navMap}</a>
-				<a href={learn}>{ui.navLearn}</a>
+				<a href={home}>{ui.navReport}</a>
+				<a href={data}>{ui.navData}</a>
+				<a href={map}>{ui.navMap}</a>
+				<a href={cetaceans}>{ui.navLearn}</a>
 				<a href={turtles}>{ui.navTurtles}</a>
 			</nav>
 			<div class="lang" role="group" aria-label="語言 / Language">
@@ -58,12 +64,12 @@
 {#if menuOpen}
 	<button class="backdrop" aria-label={ui.menuCloseLabel} onclick={closeMenu}></button>
 	<nav id="mobile-menu" class="sheet" aria-label="行動版選單">
-		<a href="{home}#report" onclick={closeMenu}>{ui.navReport}</a>
-		<a href="{home}#data" onclick={closeMenu}>{ui.navData}</a>
-		<a href="{home}#map" onclick={closeMenu}>{ui.navMap}</a>
-		<a href={learn} onclick={closeMenu}>{ui.navLearn}</a>
+		<a href={home} onclick={closeMenu}>{ui.navReport}</a>
+		<a href={data} onclick={closeMenu}>{ui.navData}</a>
+		<a href={map} onclick={closeMenu}>{ui.navMap}</a>
+		<a href={cetaceans} onclick={closeMenu}>{ui.navLearn}</a>
 		<a href={turtles} onclick={closeMenu}>{ui.navTurtles}</a>
-		<a href="{learn}#support" onclick={closeMenu}>{ui.navSupport}</a>
+		<a href={support} onclick={closeMenu}>{ui.navSupport}</a>
 	</nav>
 {/if}
 
@@ -140,6 +146,31 @@
 		letter-spacing: 0.005em;
 		transition: color 0.25s ease;
 	}
+	.brand-group {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+	}
+	.support-link {
+		display: inline-flex;
+		align-items: center;
+		background: var(--accent);
+		color: var(--navy-900);
+		border-radius: 999px;
+		padding: 7px 13px;
+		font-size: 0.84rem;
+		font-weight: 700;
+		line-height: 1;
+		text-decoration: none;
+		white-space: nowrap;
+		transition:
+			background 0.2s ease,
+			transform 0.2s ease;
+	}
+	.support-link:hover {
+		background: var(--amber-300);
+		transform: translateY(-1px);
+	}
 	.right {
 		display: flex;
 		align-items: center;
@@ -200,6 +231,9 @@
 		display: none;
 	}
 	@media (max-width: 640px) {
+		.support-link {
+			display: none;
+		}
 		header nav,
 		header .lang {
 			display: none;
@@ -315,6 +349,7 @@
 		header,
 		.bar,
 		.brand,
+		.support-link,
 		nav a {
 			transition: none;
 		}

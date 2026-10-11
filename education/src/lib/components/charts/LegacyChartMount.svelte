@@ -2,9 +2,27 @@
 	import { onMount } from 'svelte';
 	import { hBar, colChart, stackChart } from '$lib/charts-legacy';
 	import { useSite } from '$lib/copy';
-	import { speciesRows, countyRows, causeRows, monthRows, trendRows } from '$lib/data/strandings';
+	import {
+		speciesRows as cetaceanSpeciesRows,
+		countyRows as cetaceanCountyRows,
+		causeRows as cetaceanCauseRows,
+		monthRows,
+		trendRows as cetaceanTrendRows
+	} from '$lib/data/strandings';
+	import {
+		turtleSpeciesRows,
+		turtleCountyRows,
+		turtleCauseRows,
+		turtleTrendRows
+	} from '$lib/data/turtle-strandings';
 
-	let { key }: { key: 'trend' | 'months' | 'counties' | 'causes' | 'species' } = $props();
+	let {
+		key,
+		animalGroup = 'cetacean'
+	}: {
+		key: 'trend' | 'months' | 'counties' | 'causes' | 'species';
+		animalGroup?: 'cetacean' | 'seaTurtle';
+	} = $props();
 
 	const site = useSite();
 
@@ -15,10 +33,14 @@
 		const ui = copy.uiCopy;
 		const en = locale === 'en';
 		const unit = en ? '' : ' 隻';
+		const species = animalGroup === 'seaTurtle' ? turtleSpeciesRows() : cetaceanSpeciesRows();
+		const counties = animalGroup === 'seaTurtle' ? turtleCountyRows() : cetaceanCountyRows();
+		const causes = animalGroup === 'seaTurtle' ? turtleCauseRows() : cetaceanCauseRows();
+		const trends = animalGroup === 'seaTurtle' ? turtleTrendRows() : cetaceanTrendRows();
 		if (key === 'species')
 			hBar(
 				host,
-				speciesRows().map((s) => ({
+				species.map((s) => ({
 					label: en ? s.nameEn : s.name,
 					value: s.count,
 					emphasis: s.emphasis,
@@ -31,10 +53,10 @@
 		if (key === 'counties')
 			hBar(
 				host,
-				countyRows().map((c) => ({
+				counties.map((c) => ({
 					label: en ? c.nameEn : c.name,
 					value: c.count,
-					emphasis: c.offshoreIsland,
+					emphasis: c.emphasis,
 					display: `${c.count}${unit}`
 				})),
 				{ padL: en ? 110 : 96 }
@@ -42,7 +64,7 @@
 		if (key === 'causes')
 			hBar(
 				host,
-				causeRows().map((c) => ({
+				causes.map((c) => ({
 					label: en ? c.nameEn : c.name,
 					value: c.count,
 					emphasis: c.emphasis,
@@ -52,7 +74,7 @@
 				})),
 				{ padL: en ? 240 : 150 }
 			);
-		if (key === 'months')
+		if (key === 'months' && animalGroup === 'cetacean')
 			colChart(
 				host,
 				monthRows().map((m) => ({
@@ -65,7 +87,7 @@
 		if (key === 'trend')
 			stackChart(
 				host,
-				trendRows().map((t) => ({ label: String(t.year), dead: t.dead, live: t.live })),
+				trends.map((t) => ({ label: String(t.year), dead: t.dead, live: t.live })),
 				{
 					unit,
 					yearSuffix: ui.chartYearSuffix,
