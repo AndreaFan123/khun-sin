@@ -1,20 +1,25 @@
 <script lang="ts">
-	import CountUp from '$lib/components/ui/CountUp.svelte';
+	import heroVideo from '$lib/assets/landing-hero-video.mp4';
 	import { useSite } from '$lib/copy';
-	import { findTotals, totalOf } from '$lib/data/strandings';
 
 	const site = useSite();
 	const heroCopy = $derived(site().copy.heroCopy);
 	const hotline = $derived(site().copy.hotline);
-	const ui = $derived(site().copy.uiCopy);
-
-	const latest = findTotals(2025)!;
-	const total = totalOf(latest);
-	const deadPct = Math.round((latest.dead / total) * 100);
 </script>
 
 <section class="hero">
-	<div class="wrap">
+	<video
+		class="hero-video"
+		src={heroVideo}
+		autoplay
+		muted
+		loop
+		playsinline
+		preload="metadata"
+		aria-hidden="true"
+		tabindex="-1"
+	></video>
+	<div class="wrap hero-content">
 		<span class="kbadge">{heroCopy.badge}</span>
 		<h1>
 			{heroCopy.titleLead}<span class="hl">{heroCopy.titleHighlight}</span><br
@@ -22,27 +27,16 @@
 		</h1>
 		<p class="sub">{heroCopy.sub}</p>
 
-		<div class="stats">
-			<div class="stat">
-				<div class="num"><CountUp value={total} /><small>{ui.unitAnimals}</small></div>
-				<div class="lbl">{latest.period.year} {heroCopy.statTotalLabel}</div>
-			</div>
-			<div class="stat">
-				<div class="num">
-					<CountUp value={latest.speciesCount!} duration={1100} /><small>{ui.unitSpecies}</small>
-				</div>
-				<div class="lbl">{heroCopy.statSpeciesLabel}</div>
-			</div>
-			<div class="stat">
-				<div class="num"><CountUp value={deadPct} duration={1700} /><small>%</small></div>
-				<div class="lbl">{heroCopy.statDeadLabel}</div>
+		<div class="hotline">
+			<strong>{hotline.number}</strong>
+			<div>
+				<span>{hotline.label}</span>
+				<small>{heroCopy.hotlineScope}</small>
 			</div>
 		</div>
 
 		<a class="emergency" href="#report">
-			<span class="what"
-				>{ui.heroEmergencyPrefix}{hotline.label}{ui.heroEmergencySuffix}
-				<span class="arrow" aria-hidden="true">↓</span></span
+			<span class="what">{heroCopy.stepsLabel} <span class="arrow" aria-hidden="true">↓</span></span
 			>
 		</a>
 	</div>
@@ -50,9 +44,30 @@
 
 <style>
 	.hero {
+		position: relative;
+		overflow: hidden;
 		background: var(--bg-band-darker);
 		color: var(--text-on-dark);
-		padding: 88px 0 72px;
+		padding: 88px 0 182px;
+	}
+	.hero::before {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		inset: 0;
+		background: rgba(16, 31, 61, 0.72);
+	}
+	.hero-video {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+	.hero-content {
+		position: relative;
+		z-index: 2;
 	}
 	.kbadge {
 		display: inline-block;
@@ -82,32 +97,37 @@
 		width: 100%;
 	}
 
-	.stats {
+	.hotline {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-between;
-		gap: 38px;
-		margin-top: 150px;
-		margin-bottom: 100px;
+		align-items: end;
+		gap: 24px 40px;
+		margin-top: 96px;
+		padding: 36px 40px;
+		border: 1px solid var(--border-on-dark);
+		border-radius: var(--radius);
+		background: var(--navy-800);
 	}
-	.stat .num {
-		font-size: clamp(6rem, 9vw, 6rem);
+	.hotline strong {
+		font-size: clamp(6rem, 16vw, 10rem);
 		font-weight: 800;
-		color: var(--text-on-dark);
-		line-height: 1;
+		color: var(--accent);
+		line-height: 0.8;
 		font-variant-numeric: tabular-nums;
 	}
-	.stat .num small {
-		font-size: 1.3rem;
-		font-weight: 600;
-		color: var(--accent);
-		margin-left: 4px;
+	.hotline div {
+		display: grid;
+		gap: 4px;
+		padding-bottom: 4px;
 	}
-	.stat .lbl {
+	.hotline span {
+		font-size: clamp(1.25rem, 2vw, 1.75rem);
+		font-weight: 600;
+		color: var(--text-on-dark);
+	}
+	.hotline small {
 		font-size: 1rem;
 		color: var(--text-on-dark-secondary);
-		margin-top: 6px;
-		max-width: 20ch;
 	}
 	.emergency {
 		display: inline-flex;
@@ -147,8 +167,23 @@
 		}
 	}
 	@media (prefers-reduced-motion: reduce) {
+		.hero-video {
+			display: none;
+		}
 		.arrow {
 			animation: none;
+		}
+	}
+	@media (max-width: 640px) {
+		.hero {
+			padding-top: 64px;
+		}
+		h1 {
+			font-size: clamp(3rem, 14vw, 4.5rem);
+		}
+		.hotline {
+			margin-top: 64px;
+			padding: 28px 24px;
 		}
 	}
 </style>

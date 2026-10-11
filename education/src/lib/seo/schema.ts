@@ -50,8 +50,11 @@ export const buildWebSite = ({ copy, locale }: SiteContext): JsonLd => ({
 export const buildHowTo = ({ copy, locale }: SiteContext): JsonLd => ({
 	'@context': CONTEXT,
 	'@type': 'HowTo',
-	name: copy.sectionHeads.report.title,
-	description: copy.sectionHeads.report.lead,
+	// The compact Chinese report section intentionally has no visible title or
+	// lead. Keep its structured data useful by falling back to localized copy
+	// that is already shown elsewhere on the same page.
+	name: copy.sectionHeads.report.title || copy.schemaCopy.doQuestion,
+	description: copy.sectionHeads.report.lead || copy.meta.home.description,
 	inLanguage: htmlLangOf(locale),
 	tool: [{ '@type': 'HowToTool', name: copy.hotline.label }],
 	step: copy.reportSteps.map((step, index) => ({

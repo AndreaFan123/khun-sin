@@ -1,0 +1,2743 @@
+{
+  "schema_version": 1,
+  "source_policy": "official_tables_preferred_marn_supplemental",
+  "observations": [
+    {
+      "key": {
+        "year": 2019,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-q1-61aea2ef9c80",
+      "source_page": 1,
+      "value": 102,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-q1-61aea2ef9c80",
+      "source_page": 1,
+      "value": 102,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-q1-61aea2ef9c80",
+      "source_page": 1,
+      "value": 20,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-q1-61aea2ef9c80",
+      "source_page": 1,
+      "value": 82,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-annual-bb73e0ad07bf",
+      "source_page": 1,
+      "value": 269,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-annual-bb73e0ad07bf",
+      "source_page": 1,
+      "value": 269,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-annual-bb73e0ad07bf",
+      "source_page": 1,
+      "value": 62,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-annual-bb73e0ad07bf",
+      "source_page": 1,
+      "value": 207,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": 3,
+        "animal_group": "cetacean",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-q3-ad93dac0ac58",
+      "source_page": 1,
+      "value": 12,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": 3,
+        "animal_group": "cetacean",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-q3-ad93dac0ac58",
+      "source_page": 1,
+      "value": 12,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": 3,
+        "animal_group": "cetacean",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-q3-ad93dac0ac58",
+      "source_page": 1,
+      "value": 2,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": 3,
+        "animal_group": "cetacean",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-q3-ad93dac0ac58",
+      "source_page": 1,
+      "value": 10,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-q2-70d6b8e1d728",
+      "source_page": 1,
+      "value": 71,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-q2-70d6b8e1d728",
+      "source_page": 1,
+      "value": 71,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-q2-70d6b8e1d728",
+      "source_page": 1,
+      "value": 18,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-q2-70d6b8e1d728",
+      "source_page": 1,
+      "value": 53,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-q4-1ea31cba1a71",
+      "source_page": 1,
+      "value": 59,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-q4-1ea31cba1a71",
+      "source_page": 1,
+      "value": 59,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-q4-1ea31cba1a71",
+      "source_page": 1,
+      "value": 16,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-q4-1ea31cba1a71",
+      "source_page": 1,
+      "value": 43,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-q1-dd31746eca4d",
+      "source_page": 1,
+      "value": 101,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-q1-dd31746eca4d",
+      "source_page": 1,
+      "value": 101,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-q1-dd31746eca4d",
+      "source_page": 1,
+      "value": 10,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-q1-dd31746eca4d",
+      "source_page": 1,
+      "value": 91,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-annual-cbc5aec83104",
+      "source_page": 1,
+      "value": 335,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-annual-cbc5aec83104",
+      "source_page": 1,
+      "value": 59,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-annual-cbc5aec83104",
+      "source_page": 1,
+      "value": 276,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-q3-5f693407d95e",
+      "source_page": 1,
+      "value": 49,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-q3-5f693407d95e",
+      "source_page": 1,
+      "value": 72,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-q3-5f693407d95e",
+      "source_page": 1,
+      "value": 34,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-q3-5f693407d95e",
+      "source_page": 1,
+      "value": 38,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-q2-159ae0d9dfcf",
+      "source_page": 1,
+      "value": 57,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-q2-159ae0d9dfcf",
+      "source_page": 1,
+      "value": 57,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-q2-159ae0d9dfcf",
+      "source_page": 1,
+      "value": 6,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-q2-159ae0d9dfcf",
+      "source_page": 1,
+      "value": 51,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-q4-8fa2fe1e7d23",
+      "source_page": 1,
+      "value": 105,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-q4-8fa2fe1e7d23",
+      "source_page": 1,
+      "value": 105,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-q4-8fa2fe1e7d23",
+      "source_page": 1,
+      "value": 12,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-q4-8fa2fe1e7d23",
+      "source_page": 1,
+      "value": 93,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-q1-b26e05f733aa",
+      "source_page": 1,
+      "value": 125,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-q1-b26e05f733aa",
+      "source_page": 1,
+      "value": 125,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-q1-b26e05f733aa",
+      "source_page": 1,
+      "value": 20,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-q1-b26e05f733aa",
+      "source_page": 1,
+      "value": 105,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-annual-3609a39e1236",
+      "source_page": 1,
+      "value": 359,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-annual-3609a39e1236",
+      "source_page": 1,
+      "value": 359,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-annual-3609a39e1236",
+      "source_page": 1,
+      "value": 70,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-annual-3609a39e1236",
+      "source_page": 1,
+      "value": 289,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-q3-26399981c6c1",
+      "source_page": 1,
+      "value": 50,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-q3-26399981c6c1",
+      "source_page": 1,
+      "value": 50,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-q3-26399981c6c1",
+      "source_page": 1,
+      "value": 9,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-q3-26399981c6c1",
+      "source_page": 1,
+      "value": 41,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-q2-e0eac85bf15d",
+      "source_page": 1,
+      "value": 74,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-q2-e0eac85bf15d",
+      "source_page": 1,
+      "value": 74,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-q2-e0eac85bf15d",
+      "source_page": 1,
+      "value": 11,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-q2-e0eac85bf15d",
+      "source_page": 1,
+      "value": 63,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-q4-456e18dcde1c",
+      "source_page": 1,
+      "value": 110,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-q4-456e18dcde1c",
+      "source_page": 1,
+      "value": 110,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-q4-456e18dcde1c",
+      "source_page": 1,
+      "value": 30,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-q4-456e18dcde1c",
+      "source_page": 1,
+      "value": 80,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-q1-6edb61c2adf5",
+      "source_page": 1,
+      "value": 106,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-q1-6edb61c2adf5",
+      "source_page": 1,
+      "value": 106,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-q1-6edb61c2adf5",
+      "source_page": 1,
+      "value": 25,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-q1-6edb61c2adf5",
+      "source_page": 1,
+      "value": 81,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-annual-cd562a60bbe3",
+      "source_page": 1,
+      "value": 315,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-annual-cd562a60bbe3",
+      "source_page": 1,
+      "value": 315,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-annual-cd562a60bbe3",
+      "source_page": 1,
+      "value": 75,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-annual-cd562a60bbe3",
+      "source_page": 1,
+      "value": 240,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-q3-a28d0fcadaf8",
+      "source_page": 1,
+      "value": 63,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-q3-a28d0fcadaf8",
+      "source_page": 1,
+      "value": 63,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-q3-a28d0fcadaf8",
+      "source_page": 1,
+      "value": 21,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-q3-a28d0fcadaf8",
+      "source_page": 1,
+      "value": 42,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-q2-ed4403fcb24d",
+      "source_page": 1,
+      "value": 74,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-q2-ed4403fcb24d",
+      "source_page": 1,
+      "value": 74,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-q2-ed4403fcb24d",
+      "source_page": 1,
+      "value": 13,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-q2-ed4403fcb24d",
+      "source_page": 1,
+      "value": 61,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-q4-52089ddf50bd",
+      "source_page": 1,
+      "value": 72,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-q4-52089ddf50bd",
+      "source_page": 1,
+      "value": 72,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-q4-52089ddf50bd",
+      "source_page": 1,
+      "value": 15,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-q4-52089ddf50bd",
+      "source_page": 1,
+      "value": 57,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-q1-6c15375b0862",
+      "source_page": 1,
+      "value": 96,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-q1-6c15375b0862",
+      "source_page": 1,
+      "value": 96,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-q1-6c15375b0862",
+      "source_page": 1,
+      "value": 11,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-q1-6c15375b0862",
+      "source_page": 1,
+      "value": 85,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-annual-a3c592ee539e",
+      "source_page": 1,
+      "value": 321,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-annual-a3c592ee539e",
+      "source_page": 1,
+      "value": 321,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-annual-a3c592ee539e",
+      "source_page": 1,
+      "value": 73,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-annual-a3c592ee539e",
+      "source_page": 1,
+      "value": 248,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-q3-53f692888526",
+      "source_page": 1,
+      "value": 48,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-q3-53f692888526",
+      "source_page": 1,
+      "value": 48,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-q3-53f692888526",
+      "source_page": 1,
+      "value": 14,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-q3-53f692888526",
+      "source_page": 1,
+      "value": 34,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-q2-9c4748c23cb1",
+      "source_page": 1,
+      "value": 87,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-q2-9c4748c23cb1",
+      "source_page": 1,
+      "value": 87,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-q2-9c4748c23cb1",
+      "source_page": 1,
+      "value": 18,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-q2-9c4748c23cb1",
+      "source_page": 1,
+      "value": 69,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-q4-5ef4e29ac7cf",
+      "source_page": 1,
+      "value": 90,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-q4-5ef4e29ac7cf",
+      "source_page": 1,
+      "value": 90,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-q4-5ef4e29ac7cf",
+      "source_page": 1,
+      "value": 30,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-q4-5ef4e29ac7cf",
+      "source_page": 1,
+      "value": 60,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-q1-95e317b80bb3",
+      "source_page": 1,
+      "value": 105,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-q1-95e317b80bb3",
+      "source_page": 1,
+      "value": 105,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-q1-95e317b80bb3",
+      "source_page": 1,
+      "value": 20,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-q1-95e317b80bb3",
+      "source_page": 1,
+      "value": 85,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-annual-bc4642d6fb0a",
+      "source_page": 1,
+      "value": 325,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-annual-bc4642d6fb0a",
+      "source_page": 1,
+      "value": 325,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-annual-bc4642d6fb0a",
+      "source_page": 1,
+      "value": 88,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-annual-bc4642d6fb0a",
+      "source_page": 1,
+      "value": 237,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-q3-1a1e9a70f9c3",
+      "source_page": 1,
+      "value": 49,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-q3-1a1e9a70f9c3",
+      "source_page": 1,
+      "value": 49,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-q3-1a1e9a70f9c3",
+      "source_page": 1,
+      "value": 16,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-q3-1a1e9a70f9c3",
+      "source_page": 1,
+      "value": 33,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-q2-4ab6d25fa929",
+      "source_page": 1,
+      "value": 88,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-q2-4ab6d25fa929",
+      "source_page": 1,
+      "value": 88,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-q2-4ab6d25fa929",
+      "source_page": 1,
+      "value": 17,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-q2-4ab6d25fa929",
+      "source_page": 1,
+      "value": 71,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-q4-16bac587b8a1",
+      "source_page": 1,
+      "value": 83,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-q4-16bac587b8a1",
+      "source_page": 1,
+      "value": 83,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-q4-16bac587b8a1",
+      "source_page": 1,
+      "value": 35,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-q4-16bac587b8a1",
+      "source_page": 1,
+      "value": 48,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-q1-c4b5c60bf20e",
+      "source_page": 1,
+      "value": 117,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-q1-c4b5c60bf20e",
+      "source_page": 1,
+      "value": 117,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-q1-c4b5c60bf20e",
+      "source_page": 1,
+      "value": 43,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-q1-c4b5c60bf20e",
+      "source_page": 1,
+      "value": 74,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-annual-7493d49f00e7",
+      "source_page": 1,
+      "value": 330,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-annual-7493d49f00e7",
+      "source_page": 1,
+      "value": 330,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-annual-7493d49f00e7",
+      "source_page": 1,
+      "value": 133,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": null,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-annual-7493d49f00e7",
+      "source_page": 1,
+      "value": 197,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-q3-68bef3a90d55",
+      "source_page": 1,
+      "value": 37,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-q3-68bef3a90d55",
+      "source_page": 1,
+      "value": 37,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-q3-68bef3a90d55",
+      "source_page": 1,
+      "value": 10,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": 3,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-q3-68bef3a90d55",
+      "source_page": 1,
+      "value": 27,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-q2-55c294c68ee8",
+      "source_page": 1,
+      "value": 82,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-q2-55c294c68ee8",
+      "source_page": 1,
+      "value": 82,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-q2-55c294c68ee8",
+      "source_page": 1,
+      "value": 24,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-q2-55c294c68ee8",
+      "source_page": 1,
+      "value": 58,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-q4-9c8f2eb127e5",
+      "source_page": 1,
+      "value": 94,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-q4-9c8f2eb127e5",
+      "source_page": 1,
+      "value": 94,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-q4-9c8f2eb127e5",
+      "source_page": 1,
+      "value": 56,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": 4,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-q4-9c8f2eb127e5",
+      "source_page": 1,
+      "value": 38,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2026,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2026-q1-3c590d057d82",
+      "source_page": 1,
+      "value": 132,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2026,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2026-q1-3c590d057d82",
+      "source_page": 1,
+      "value": 132,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2026,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2026-q1-3c590d057d82",
+      "source_page": 1,
+      "value": 51,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2026,
+        "quarter": 1,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2026-q1-3c590d057d82",
+      "source_page": 1,
+      "value": 81,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2026,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2026-q2-2535c0514966",
+      "source_page": 1,
+      "value": 140,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2026,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2026-q2-2535c0514966",
+      "source_page": 1,
+      "value": 140,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2026,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2026-q2-2535c0514966",
+      "source_page": 1,
+      "value": 69,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2026,
+        "quarter": 2,
+        "animal_group": "sea_turtle",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2026-q2-2535c0514966",
+      "source_page": 1,
+      "value": 71,
+      "authority": "official_statistical_table",
+      "extraction_method": "layout_text",
+      "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-annual-22232c87d2bc",
+      "source_page": 2,
+      "value": 140,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-annual-22232c87d2bc",
+      "source_page": 2,
+      "value": 150,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-annual-22232c87d2bc",
+      "source_page": 2,
+      "value": 132,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-annual-22232c87d2bc",
+      "source_page": 2,
+      "value": 18,
+      "authority": "marn_narrative_report",
+      "extraction_method": "derived_from_reported_statuses",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "live_stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-annual-22232c87d2bc",
+      "source_page": 2,
+      "value": 15,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "navigation_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-annual-22232c87d2bc",
+      "source_page": 2,
+      "value": 3,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-annual-1912ef92eaa1",
+      "source_page": 2,
+      "value": 161,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-annual-1912ef92eaa1",
+      "source_page": 2,
+      "value": 143,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-annual-1912ef92eaa1",
+      "source_page": 2,
+      "value": 18,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-annual-c210da490352",
+      "source_page": 2,
+      "value": 144,
+      "authority": "marn_narrative_report",
+      "extraction_method": "manual_transcription",
+      "review_status": "reviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-annual-c210da490352",
+      "source_page": 2,
+      "value": 133,
+      "authority": "marn_narrative_report",
+      "extraction_method": "manual_transcription",
+      "review_status": "reviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-annual-c210da490352",
+      "source_page": 2,
+      "value": 11,
+      "authority": "marn_narrative_report",
+      "extraction_method": "manual_transcription",
+      "review_status": "reviewed"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-annual-da669277ed26",
+      "source_page": 16,
+      "value": 144,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-annual-da669277ed26",
+      "source_page": 16,
+      "value": 119,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-annual-da669277ed26",
+      "source_page": 16,
+      "value": 25,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-annual-053cf3854972",
+      "source_page": 4,
+      "value": 158,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-annual-053cf3854972",
+      "source_page": 4,
+      "value": 141,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-annual-053cf3854972",
+      "source_page": 4,
+      "value": 17,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-annual-7502454c45b3",
+      "source_page": 4,
+      "value": 159,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-annual-7502454c45b3",
+      "source_page": 4,
+      "value": 135,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-annual-7502454c45b3",
+      "source_page": 4,
+      "value": 24,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-annual-d0b45e159d7b",
+      "source_page": 20,
+      "value": 128,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-annual-d0b45e159d7b",
+      "source_page": 20,
+      "value": 121,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-annual-d0b45e159d7b",
+      "source_page": 20,
+      "value": 7,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    }
+  ],
+  "failures": []
+}

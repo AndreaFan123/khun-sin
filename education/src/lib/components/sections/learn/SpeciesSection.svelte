@@ -1,20 +1,19 @@
 <script lang="ts">
-	import SectionHead from '$lib/components/ui/SectionHead.svelte';
 	import SpeciesCard from '$lib/components/ui/SpeciesCard.svelte';
 	import { useSite } from '$lib/copy';
 
 	const site = useSite();
 	const c = $derived(site().copy);
-	const head = $derived(c.sectionHeads.know);
+	const imageSourceLabel = $derived(site().locale === 'en' ? 'Image source:' : '圖片來源：');
+	const redListLabel = $derived(site().locale === 'en' ? 'IUCN Red List' : 'IUCN 紅色名錄');
+	const speciesLabel = $derived(site().locale === 'en' ? 'Cetacean species' : '鯨豚物種');
 </script>
 
-<section id="know">
+<section aria-label={speciesLabel}>
 	<div class="wrap">
-		<!-- First head on the stories route: no hero above it, so this is the page's h1 -->
-		<SectionHead as="h1" eyebrow={head.eyebrow} title={head.title} lead={head.lead} />
 		<div class="cards">
 			{#each c.speciesCards as card (card.name)}
-				<SpeciesCard {card} as="h2" />
+				<SpeciesCard {card} as="h2" {imageSourceLabel} {redListLabel} />
 			{/each}
 		</div>
 	</div>
@@ -26,8 +25,13 @@
 	}
 	.cards {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 20px;
+	}
+	@media (max-width: 720px) {
+		.cards {
+			grid-template-columns: 1fr;
+		}
 	}
 	@media (max-width: 860px) {
 		section {

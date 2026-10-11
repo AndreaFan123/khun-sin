@@ -3,25 +3,39 @@
 	// outline + one glowing dot per county, radius ∝ √count. Fully prerendered
 	// static SVG; the pulse is progressive enhancement and honors
 	// prefers-reduced-motion.
-	import { landPath, mapWidth, mapHeight, countyPoints } from '$lib/data/taiwan-geo';
-	import { countyRows } from '$lib/data/strandings';
+	import { landPath, mapWidth, mapHeight, countyPointFor } from '$lib/data/taiwan-geo';
 	import { useSite } from '$lib/copy';
+	import type { CountyRow } from '$lib/data/strandings';
+
+	let {
+		rows,
+		ariaLabel,
+		labelledNames,
+		filterId
+	}: {
+		rows: CountyRow[];
+		ariaLabel: string;
+		labelledNames: string[];
+		filterId: string;
+	} = $props();
 
 	const site = useSite();
 	const en = $derived(site().locale === 'en');
-	const ui = $derived(site().copy.uiCopy);
 
-	const dots = countyRows().map((c) => {
-		const p = countyPoints.find((pt) => pt.name === c.name)!;
-		return { ...c, x: p.x, y: p.y, r: 2.6 * Math.sqrt(c.count) };
-	});
+	const dots = $derived(
+		rows.map((c) => {
+			const p = countyPointFor(c.name);
+			if (!p) throw new Error(`No map coordinate for ${c.name}`);
+			return { ...c, x: p.x, y: p.y, r: 2.6 * Math.sqrt(c.count) };
+		})
+	);
 
-	const labelled = new Set(['連江縣', '金門縣', '澎湖縣', '宜蘭縣']);
+	const labelled = $derived(new Set(labelledNames));
 </script>
 
-<svg viewBox="0 0 {mapWidth} {mapHeight}" role="img" aria-label={ui.mapAriaLabel}>
+<svg viewBox="0 0 {mapWidth} {mapHeight}" role="img" aria-label={ariaLabel}>
 	<defs>
-		<filter id="dot-glow" x="-80%" y="-80%" width="260%" height="260%">
+		<filter id={filterId} x="-80%" y="-80%" width="260%" height="260%">
 			<feGaussianBlur stdDeviation="5" />
 		</filter>
 	</defs>
@@ -29,8 +43,8 @@
 	<path class="land" d={landPath} />
 
 	{#each dots as d (d.name)}
-		<g class="dot" class:offshore={d.offshoreIsland}>
-			<circle class="halo" cx={d.x} cy={d.y} r={d.r * 1.9} filter="url(#dot-glow)" />
+		<g class="dot" class:emphasis={d.emphasis}>
+			<circle class="halo" cx={d.x} cy={d.y} r={d.r * 1.9} filter={'url(#' + filterId + ')'} />
 			<circle class="core" cx={d.x} cy={d.y} r={d.r}>
 				<title>{en ? `${d.nameEn}: ${d.count}` : `${d.name}：${d.count} 隻`}</title>
 			</circle>
@@ -66,10 +80,10 @@
 		transform-origin: center;
 		animation: breathe 2.6s ease-in-out infinite;
 	}
-	.offshore .core {
+	.emphasis .core {
 		fill: var(--accent);
 	}
-	.offshore .halo {
+	.emphasis .halo {
 		fill: var(--accent);
 		opacity: 0.5;
 	}

@@ -58,10 +58,14 @@ to ADR-003, which has not been written.
 
 - **`education/`** — the **education site**, a SvelteKit rebuild of the original
   single-file page. It is the *public face* pillar's first deliverable: Taiwan's
-  cetacean stranding data made readable for a general audience, with an
-  interactive Taiwan stranding map, seven-year trends, seasonality, county and
-  cause breakdowns, species cards, and a full English mirror. All numbers live in
-  typed data files so a new annual MARN report is a data edit, not a markup edit.
+  cetacean and sea-turtle stranding data made readable for a general audience,
+  with interactive Taiwan stranding maps, seven-year trends, county and incident
+  breakdowns, species cards, and a full English mirror. All numbers live in typed
+  data files so a new annual report is a data edit, not a markup edit.
+- **`data-pipeline/`** — a Python pipeline that inventories official PDF reports,
+  extracts source observations with page-level provenance, validates them, and
+  resolves canonical values according to an explicit source-authority policy.
+  See [`data-pipeline/README.md`](data-pipeline/README.md) for setup and commands.
 - **`docs/`** — product vision, requirements, ADRs, testing and design docs. See
   [`docs/README.md`](docs/README.md) for the layout, and
   [`docs/product/education-site-rebuild-spec.md`](docs/product/education-site-rebuild-spec.md)
@@ -74,11 +78,70 @@ starts.
 
 ## Data source
 
-All statistics come from the Ocean Conservation Administration's
-**海保救援網 (MARN)** annual stranding reports (2019–2025) and the 2026 Q1 report.
-No numeric literal from those reports lives in a component — every number is
-sourced from `education/src/lib/data/` and derived stats are computed, never
-stored.
+Statistics come from the Ocean Conservation Administration's **海保救援網
+(MARN)** cetacean reports and official sea-turtle statistical tables. The
+website's annual comparisons currently use complete 2019–2025 data. No numeric
+literal from those reports lives in a component — every number is sourced from
+`education/src/lib/data/` and derived stats are computed, never stored.
+
+## Data pipeline plan
+
+The pipeline is designed to make every published number traceable back to an
+official document while preserving disagreements instead of silently choosing a
+convenient value.
+
+```text
+Official PDFs (kept outside the repository)
+  → inventory and SHA-256 manifest
+  → source observations with document and page provenance
+  → validation and conflict detection
+  → source-authority resolution and human review gate
+  → canonical observations
+  → publish adapter for the education site (planned)
+```
+
+### Current foundation
+
+The first four executable stages are implemented in `data-pipeline/`:
+
+1. **Inventory** classifies reports by their contents and records an immutable
+   checksum; file names and workstation-specific paths are not treated as
+   identity.
+2. **Extract** retains each value as a source observation with its document,
+   page and metric context. Official statistical tables and MARN narrative
+   reports remain separate evidence.
+3. **Validate** checks the observation set before anything can be promoted.
+4. **Resolve** applies the approved source hierarchy. Equal-authority conflicts
+   are omitted from canonical output and sent to a review queue, causing the
+   command and CI job to fail closed.
+
+Image-only or ambiguous reports can be transcribed through a reviewed input.
+That review is pinned to the source path and checksum, so replacing a PDF cannot
+silently reuse an old manual value.
+
+### Planned delivery slices
+
+1. **Publish contract** — define a small, versioned JSON schema for the figures
+   the education site consumes. Generated output must be deterministic and must
+   not overwrite narrative copy, translations or presentation code.
+2. **Website adapter** — transform canonical observations into generated data
+   modules or JSON under `education/src/lib/data/`, then run the existing data,
+   schema and build checks before publication.
+3. **Coverage expansion** — add quarterly MARN narrative reports and the
+   remaining sea-turtle tables one document family at a time, with extraction
+   fixtures and provenance tests for each family.
+4. **Repeatable annual update** — document one operator workflow for adding new
+   reports, reviewing conflicts, comparing the generated diff and publishing the
+   site. CI will validate committed observations and canonical resolution; raw
+   PDFs will remain external.
+5. **Future field-data intake** — only after the report pipeline is stable and
+   the workflow has been validated with rescue teams, connect structured case
+   records to the same canonical model. Public output must redact sensitive
+   locations and operational or personal information by default.
+
+The publish step is intentionally not automatic yet: source conflicts and
+manual transcriptions require an explicit human approval boundary before data
+can reach the public site.
 
 ## Tech stack
 
@@ -105,6 +168,5 @@ project.
 
 Khun-Sin is **not** a legal entity and never collects conservation donations
 itself (Taiwan's Charitable Solicitation Act restricts public fundraising to
-qualified organizations). Support is **referral-first**: it links out to
-established organizations, plus an honestly-framed "support this site's
-operations" link — operations only, never worded as conservation giving.
+qualified organizations). Support is **referral-first**: it links visitors
+directly to established organizations, and this site never handles any funds.

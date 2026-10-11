@@ -1,0 +1,40 @@
+name: Data pipeline
+
+on:
+  pull_request:
+    paths:
+      - 'data-pipeline/**'
+      - '.github/workflows/data-pipeline.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'data-pipeline/**'
+      - '.github/workflows/data-pipeline.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: data-pipeline/pyproject.toml
+      - name: Install pipeline
+        run: python -m pip install ./data-pipeline
+      - name: Run tests
+        run: python -m unittest discover -s data-pipeline/tests -v
+      - name: Validate committed observations
+        run: >-
+          python -m khunsin_data validate
+          --input data-pipeline/data/source-observations.json
+          --output /tmp/khunsin-validation-report.json
+      - name: Verify canonical resolution
+        run: >-
+          python -m khunsin_data resolve
+          --input data-pipeline/data/source-observations.json
+          --output /tmp/khunsin-canonical-observations.json

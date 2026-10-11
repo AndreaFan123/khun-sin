@@ -26,6 +26,7 @@ const centroids = [
 	{ name: '新北市', lon: 121.62, lat: 25.05 },
 	{ name: '桃園市', lon: 121.1, lat: 25.0 },
 	{ name: '苗栗縣', lon: 120.72, lat: 24.56 },
+	{ name: '台中市', lon: 120.68, lat: 24.15 },
 	{ name: '高雄市', lon: 120.28, lat: 22.62 },
 	{ name: '花蓮縣', lon: 121.55, lat: 23.9 },
 	{ name: '台東縣', lon: 121.1, lat: 22.75 },

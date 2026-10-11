@@ -150,7 +150,7 @@ export const whiteDolphinProgram2025 = {
  * A human statement — the only part of data currency that cannot be derived.
  * Update it whenever a report is added or re-checked.
  */
-export const lastUpdated = '2026-09-10';
+export const lastUpdated = '2026-10-11';
 
 /* ---------- Derived helpers (pure — unit-test targets for #11) ---------- */
 
@@ -217,6 +217,8 @@ export interface CountyRow {
 	count: number;
 	share: number;
 	offshoreIsland: boolean;
+	/** Whether the row is visually highlighted in its animal-specific view. */
+	emphasis: boolean;
 }
 
 export interface CauseRow {
@@ -259,7 +261,8 @@ export const countyRows = (year: number = LATEST_BREAKDOWN_YEAR): CountyRow[] =>
 		nameEn: c.nameEn,
 		count: c.count,
 		share: grand ? shareOf(c.count, grand) : 0,
-		offshoreIsland: c.offshoreIsland
+		offshoreIsland: c.offshoreIsland,
+		emphasis: c.offshoreIsland
 	}));
 };
 

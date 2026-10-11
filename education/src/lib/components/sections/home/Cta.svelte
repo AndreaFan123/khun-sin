@@ -9,7 +9,7 @@
 		<p>{ctaCopy.body}</p>
 		<div class="btnrow">
 			<a class="btn primary" href="#report">{ctaCopy.primaryLabel}</a>
-			<a class="btn ghost" href={resolve('/learn')}>{ctaCopy.secondaryLabel}</a>
+			<a class="btn ghost" href={resolve('/cetaceans')}>{ctaCopy.secondaryLabel}</a>
 		</div>
 	</div>
 </section>

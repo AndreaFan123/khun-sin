@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "khunsin-data"
+version = "0.1.0"
+description = "Traceable ingestion pipeline for Taiwan marine-animal stranding reports"
+requires-python = ">=3.11"
+dependencies = ["pypdf>=6.1,<7"]
+
+[project.scripts]
+khunsin-data = "khunsin_data.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

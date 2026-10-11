@@ -8,13 +8,31 @@
 	import StackedColumnChart from '$lib/components/charts/StackedColumnChart.svelte';
 	import { useSite } from '$lib/copy';
 	import { causeRows, countyRows, monthRows, speciesRows, trendRows } from '$lib/data/strandings';
+	import {
+		turtleCauseRows,
+		turtleCountyRows,
+		turtleSpeciesRows,
+		turtleTrendRows
+	} from '$lib/data/turtle-strandings';
 
-	let { chart }: { chart: 'trend' | 'months' | 'counties' | 'causes' | 'species' } = $props();
+	let {
+		chart,
+		animalGroup = 'cetacean'
+	}: {
+		chart: 'trend' | 'months' | 'counties' | 'causes' | 'species';
+		animalGroup?: 'cetacean' | 'seaTurtle';
+	} = $props();
 
 	const site = useSite();
 	const isEn = $derived(site().locale === 'en');
 	const ui = $derived(site().copy.uiCopy);
-	const cards = $derived(site().copy.chartCards);
+	const cards = $derived(
+		animalGroup === 'seaTurtle' ? site().copy.turtleChartCards : site().copy.chartCards
+	);
+	const species = () => (animalGroup === 'seaTurtle' ? turtleSpeciesRows() : speciesRows());
+	const counties = () => (animalGroup === 'seaTurtle' ? turtleCountyRows() : countyRows());
+	const causes = () => (animalGroup === 'seaTurtle' ? turtleCauseRows() : causeRows());
+	const trends = () => (animalGroup === 'seaTurtle' ? turtleTrendRows() : trendRows());
 
 	/** The card's own title is the honest description of what the chart shows. */
 	const ariaLabel = $derived(cards.find((c) => c.key === chart)?.title ?? '');
@@ -38,7 +56,7 @@
 	<BarChartHorizontal
 		{ariaLabel}
 		padLeft={gutter.species}
-		items={speciesRows().map((row) => ({
+		items={species().map((row) => ({
 			label: isEn ? row.nameEn : row.name,
 			value: row.count,
 			display: withShare(row.count, row.share, 1),
@@ -50,19 +68,19 @@
 	<BarChartHorizontal
 		{ariaLabel}
 		padLeft={gutter.counties}
-		items={countyRows().map((row) => ({
+		items={counties().map((row) => ({
 			label: isEn ? row.nameEn : row.name,
 			value: row.count,
 			display: count(row.count),
 			tooltip: `${isEn ? row.nameEn : row.name}\n${count(row.count)}`,
-			emphasis: row.offshoreIsland
+			emphasis: row.emphasis
 		}))}
 	/>
 {:else if chart === 'causes'}
 	<BarChartHorizontal
 		{ariaLabel}
 		padLeft={gutter.causes}
-		items={causeRows().map((row) => ({
+		items={causes().map((row) => ({
 			label: isEn ? row.nameEn : row.name,
 			value: row.count,
 			display: withShare(row.count, row.share, 0),
@@ -83,7 +101,7 @@
 {:else if chart === 'trend'}
 	<StackedColumnChart
 		{ariaLabel}
-		items={trendRows().map((row) => ({
+		items={trends().map((row) => ({
 			label: String(row.year),
 			dead: row.dead,
 			live: row.live,

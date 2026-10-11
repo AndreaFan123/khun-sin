@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "reviews": [
+    {
+      "source_sha256": "c210da4903529aacd81834efff42fa2eaf83271b3c14b2776d532137b9d19e64",
+      "source_relpath": "鯨豚/2021/2021_全年度_擱淺報告.pdf",
+      "source_page": 2,
+      "animal_group": "cetacean",
+      "metrics": {
+        "stranding_count": 144,
+        "dead_count": 133,
+        "live_count": 11
+      },
+      "review_note": "The PDF is image-only. Page 2 was visually transcribed from its annual cetacean summary."
+    }
+  ]
+}
