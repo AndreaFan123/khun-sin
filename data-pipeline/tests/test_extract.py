@@ -35,7 +35,7 @@ class ObservationDatasetTests(unittest.TestCase):
             payload = json.loads(destination.read_text(encoding="utf-8"))
 
         self.assertEqual(payload["schema_version"], 1)
-        self.assertEqual(payload["source_policy"], "official_statistical_tables_for_aggregates")
+        self.assertEqual(payload["source_policy"], "official_tables_preferred_marn_supplemental")
         self.assertEqual(payload["observations"][0]["value"], 102)
         self.assertEqual(payload["observations"][0]["authority"], "official_statistical_table")
         self.assertEqual(payload["failures"], [])

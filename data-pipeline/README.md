@@ -31,7 +31,7 @@ make pipeline REPORTS_DIR="/path/to/台灣鯨豚擱淺報告"
 This performs the three currently supported stages in order:
 
 ```text
-inventory -> extract official aggregate totals -> validate
+inventory -> extract source observations -> validate
 ```
 
 Each stage can also run independently:
@@ -57,9 +57,18 @@ make test
 4. `canonical data`: will contain only reviewed values approved for publication.
 5. `publish`: will generate the JSON consumed by the education site.
 
-The current slice implements layers 1-3 for aggregate totals in official
-statistical tables. Narrative-report extraction and publication are added
-incrementally after each report family has a reviewed fixture.
+The current extraction coverage is:
+
+- aggregate totals from every detected official statistical table;
+- annual cetacean totals from MARN narrative reports for 2019-2025;
+- separate 2019 `live_stranding_count` and `navigation_count` metrics, while
+  retaining the derived non-dead `live_count` used for cross-source comparison;
+- checksum-pinned manual transcription for the image-only 2021 annual report.
+
+Reviewed values live in `config/reviewed-observations.json`. A review is only
+accepted when its source path and SHA-256 checksum match the current manifest,
+so replacing a PDF cannot silently reuse an old transcription. Quarterly MARN
+narrative extraction and publication remain future slices.
 
 GitHub Actions runs the tests and validates the committed observation dataset.
 It intentionally does not re-extract PDFs because the raw files are external to

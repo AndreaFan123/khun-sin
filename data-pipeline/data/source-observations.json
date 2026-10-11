@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "source_policy": "official_statistical_tables_for_aggregates",
+  "source_policy": "official_tables_preferred_marn_supplemental",
   "observations": [
     {
       "key": {
@@ -2353,6 +2353,390 @@
       "authority": "official_statistical_table",
       "extraction_method": "layout_text",
       "review_status": "unreviewed"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "report_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-annual-22232c87d2bc",
+      "source_page": 2,
+      "value": 140,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-annual-22232c87d2bc",
+      "source_page": 2,
+      "value": 150,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-annual-22232c87d2bc",
+      "source_page": 2,
+      "value": 132,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-annual-22232c87d2bc",
+      "source_page": 2,
+      "value": 18,
+      "authority": "marn_narrative_report",
+      "extraction_method": "derived_from_reported_statuses",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "live_stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-annual-22232c87d2bc",
+      "source_page": 2,
+      "value": 15,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2019,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "navigation_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2019-annual-22232c87d2bc",
+      "source_page": 2,
+      "value": 3,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-annual-1912ef92eaa1",
+      "source_page": 2,
+      "value": 161,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-annual-1912ef92eaa1",
+      "source_page": 2,
+      "value": 143,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2020,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2020-annual-1912ef92eaa1",
+      "source_page": 2,
+      "value": 18,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-annual-c210da490352",
+      "source_page": 2,
+      "value": 144,
+      "authority": "marn_narrative_report",
+      "extraction_method": "manual_transcription",
+      "review_status": "reviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-annual-c210da490352",
+      "source_page": 2,
+      "value": 133,
+      "authority": "marn_narrative_report",
+      "extraction_method": "manual_transcription",
+      "review_status": "reviewed"
+    },
+    {
+      "key": {
+        "year": 2021,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2021-annual-c210da490352",
+      "source_page": 2,
+      "value": 11,
+      "authority": "marn_narrative_report",
+      "extraction_method": "manual_transcription",
+      "review_status": "reviewed"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-annual-da669277ed26",
+      "source_page": 16,
+      "value": 144,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-annual-da669277ed26",
+      "source_page": 16,
+      "value": 119,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2022,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2022-annual-da669277ed26",
+      "source_page": 16,
+      "value": 25,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-annual-053cf3854972",
+      "source_page": 4,
+      "value": 158,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-annual-053cf3854972",
+      "source_page": 4,
+      "value": 141,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2023,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2023-annual-053cf3854972",
+      "source_page": 4,
+      "value": 17,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-annual-7502454c45b3",
+      "source_page": 4,
+      "value": 159,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-annual-7502454c45b3",
+      "source_page": 4,
+      "value": 135,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2024,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2024-annual-7502454c45b3",
+      "source_page": 4,
+      "value": 24,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "stranding_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-annual-d0b45e159d7b",
+      "source_page": 20,
+      "value": 128,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "dead_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-annual-d0b45e159d7b",
+      "source_page": 20,
+      "value": 121,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
+    },
+    {
+      "key": {
+        "year": 2025,
+        "quarter": null,
+        "animal_group": "cetacean",
+        "metric": "live_count",
+        "dimension_type": "total",
+        "dimension_key": "all"
+      },
+      "source_id": "oca-2025-annual-d0b45e159d7b",
+      "source_page": 20,
+      "value": 7,
+      "authority": "marn_narrative_report",
+      "extraction_method": "layout_text",
+      "review_status": "auto_extracted"
     }
   ],
   "failures": []

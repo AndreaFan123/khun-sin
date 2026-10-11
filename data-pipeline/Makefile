@@ -1,5 +1,6 @@
 REPORTS_DIR ?=
 DATA_DIR ?= data
+REVIEWED_INPUT ?= config/reviewed-observations.json
 
 .PHONY: sync test inventory extract validate pipeline require-reports-dir
 
@@ -17,7 +18,7 @@ inventory: require-reports-dir
 	uv run khunsin-data inventory --source-root "$(REPORTS_DIR)" --output "$(DATA_DIR)/reports-manifest.json"
 
 extract: require-reports-dir
-	uv run khunsin-data extract --source-root "$(REPORTS_DIR)" --output "$(DATA_DIR)/source-observations.json"
+	uv run khunsin-data extract --source-root "$(REPORTS_DIR)" --reviewed-input "$(REVIEWED_INPUT)" --output "$(DATA_DIR)/source-observations.json"
 
 validate:
 	uv run khunsin-data validate --input "$(DATA_DIR)/source-observations.json" --output "$(DATA_DIR)/validation-report.json"

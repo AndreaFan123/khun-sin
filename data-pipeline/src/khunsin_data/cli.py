@@ -4,7 +4,7 @@ import argparse
 from pathlib import Path
 from typing import Sequence
 
-from .extract import extract_official_observations, write_observation_dataset
+from .extract import extract_observations, write_observation_dataset
 from .manifest import scan_source_root, write_manifest
 from .validate import validate_observation_dataset, write_validation_report
 
@@ -22,10 +22,11 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     extract = subparsers.add_parser(
         "extract",
-        help="extract aggregate observations from official statistical tables",
+        help="extract aggregate observations from supported report families",
     )
     extract.add_argument("--source-root", type=Path, required=True)
     extract.add_argument("--output", type=Path, required=True)
+    extract.add_argument("--reviewed-input", type=Path)
 
     validate = subparsers.add_parser(
         "validate",
@@ -43,7 +44,10 @@ def main(argv: Sequence[str] | None = None) -> int:
         return 0
 
     if args.command == "extract":
-        result = extract_official_observations(args.source_root)
+        result = extract_observations(
+            args.source_root,
+            reviewed_input=args.reviewed_input,
+        )
         write_observation_dataset(result, args.output)
         print(
             f"Wrote {len(result.observations)} observations with "
