@@ -29,6 +29,7 @@
 
 <style>
 	section {
+		flex: 1 0 auto;
 		padding: 92px 0;
 	}
 	.cards {

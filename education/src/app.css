@@ -118,6 +118,10 @@ html {
 
 /* ---- Typography — one family site-wide, no webfont (zero font bytes) ---- */
 body {
+	min-height: 100vh;
+	min-height: 100svh;
+	display: flex;
+	flex-direction: column;
 	font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
 	font-size: 1rem; /* 16px base; minimums: captions/ticks ≥ 12px, footer ≥ 14px */
 	line-height: 1.75;
@@ -126,6 +130,12 @@ body {
 	-webkit-font-smoothing: antialiased;
 	scroll-behavior: smooth;
 	text-wrap: balance;
+}
+
+main {
+	flex: 1 0 auto;
+	display: flex;
+	flex-direction: column;
 }
 
 /* Mobile: raise the root size so every rem-based size scales up together —
