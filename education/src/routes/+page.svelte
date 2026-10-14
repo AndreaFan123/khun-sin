@@ -9,8 +9,7 @@
 	const site = useSite();
 	const meta = $derived(site().copy.meta.home);
 
-	// The response guidance and the statistics are what answer engines
-	// should be able to quote from this page (#41, #42).
+	// Reporting guidance belongs here; Dataset markup lives on the data pages.
 	const schema = $derived(buildHomeSchema(site()));
 </script>
 

@@ -18,7 +18,7 @@
 
 import type { SiteContext } from '$lib/copy';
 import { lastUpdated, totals } from '$lib/data/strandings';
-import { absolute, homePathFor, htmlLangOf, SITE_ORIGIN } from './routes';
+import { absolute, htmlLangOf, SITE_ORIGIN } from './routes';
 
 export type JsonLd = Record<string, unknown>;
 
@@ -99,7 +99,7 @@ export const buildDataset = ({ copy, locale }: SiteContext): JsonLd => {
 		name: copy.schemaCopy.dataset.name,
 		description: copy.schemaCopy.dataset.description,
 		inLanguage: htmlLangOf(locale),
-		url: absolute(homePathFor(locale)),
+		url: absolute(locale === 'en' ? '/en/data' : '/data'),
 		temporalCoverage: `${Math.min(...years)}/${Math.max(...years)}`,
 		dateModified: lastUpdated,
 		spatialCoverage: { '@type': 'Place', name: 'Taiwan' },
@@ -117,8 +117,7 @@ export const buildDataset = ({ copy, locale }: SiteContext): JsonLd => {
 /** What the home routes add on top of the site-wide identity schemas. */
 export const buildHomeSchema = (context: SiteContext): JsonLd[] => [
 	buildHowTo(context),
-	buildFaqPage(context),
-	buildDataset(context)
+	buildFaqPage(context)
 ];
 
 /**
