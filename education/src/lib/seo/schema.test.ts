@@ -112,7 +112,7 @@ describe.each(contexts)('Dataset (%s)', (locale, context) => {
 	});
 
 	it('points at the page in its own language', () => {
-		expect(dataset.url).toBe(locale === 'en' ? `${SITE_ORIGIN}/en` : `${SITE_ORIGIN}/`);
+		expect(dataset.url).toBe(locale === 'en' ? `${SITE_ORIGIN}/en/data` : `${SITE_ORIGIN}/data`);
 	});
 });
 
@@ -137,7 +137,7 @@ describe.each(contexts)('Organization and WebSite (%s)', (locale, context) => {
 describe('buildHomeSchema', () => {
 	it('bundles what the home page adds to the site-wide identity', () => {
 		const types = buildHomeSchema(contexts[0][1]).map((s) => s['@type']);
-		expect(types).toEqual(['HowTo', 'FAQPage', 'Dataset']);
+		expect(types).toEqual(['HowTo', 'FAQPage']);
 	});
 });
 
