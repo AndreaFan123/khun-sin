@@ -594,3 +594,14 @@ export const dataCurrency = {
 	quarterlyReport: '{year} Q{quarter} stranding report',
 	quarterNumerals: ['1', '2', '3', '4']
 };
+
+export const errorPage = {
+	notFoundTitle: 'We couldn’t find this page',
+	notFoundDescription:
+		'The address may have changed, or the page may no longer exist. Return to the reporting guide or explore Taiwan’s marine stranding data.',
+	errorTitle: 'This page is unavailable right now',
+	errorDescription: 'Please try again later, or continue exploring from the home page.',
+	home: 'Back to reporting guide',
+	data: 'Explore stranding data',
+	linksLabel: 'Continue exploring'
+};
