@@ -648,3 +648,14 @@ export const dataCurrency = {
 	quarterlyReport: '{year} 年第{quarter}季擱淺報告',
 	quarterNumerals: ['一', '二', '三', '四']
 };
+
+export const errorPage = {
+	notFoundTitle: '找不到這個頁面',
+	notFoundDescription:
+		'這個網址可能已變更，或頁面已不存在。你可以回到通報首頁，或繼續探索台灣的海洋數據。',
+	errorTitle: '目前無法載入頁面',
+	errorDescription: '請稍後再試，或從首頁繼續瀏覽。',
+	home: '返回通報首頁',
+	data: '查看擱淺數據',
+	linksLabel: '繼續瀏覽'
+};
