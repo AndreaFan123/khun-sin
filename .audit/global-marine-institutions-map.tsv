@@ -1,0 +1,5 @@
+timestamp	decision	evidence	result
+2026-10-23T00:00:00+08:00	Keep the existing Taiwan stranding map unchanged	The current /map route and MapSection are built around county-level cetacean and sea-turtle stranding data	Create a separate institutions route
+2026-10-23T00:00:00+08:00	Model one jurisdiction with multiple institutions	Official Taiwan, UK, Canada, Australia, and EU sources split marine duties across agencies and levels	The map selects a jurisdiction; the detail panel explains institutions by role
+2026-10-23T00:00:00+08:00	Use a static SVG map	The site is fully prerendered and already generates geography at build time	Commit simplified world geometry and ship no map runtime
+2026-10-23T00:00:00+08:00	Limit the first release	The user's goal is an introduction, not a legal directory	Start with seven countries and treat the EU as a separate regional profile

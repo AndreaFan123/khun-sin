@@ -22,3 +22,4 @@ changes, not for every edit — and let them diverge in the small stuff rather t
 paying a translation tax on a scratchpad. When they drift far enough to mislead,
 add to the English file's status note rather than rewriting history.
 - [Education Site Rebuild Spec](education-site-rebuild-spec.md) — PRD for the SvelteKit rebuild: goals, P0/P1/P2 requirements, acceptance criteria, phasing. Grounded in ADR-001/002 and the frontend architecture.
+- [Global marine conservation institutions map assessment](global-marine-conservation-institutions-map-assessment.md). Proposed bilingual `/institutions` route, source-backed first jurisdictions, static SVG map approach, information model, risks, and definition of done.
