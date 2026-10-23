@@ -1,0 +1,7 @@
+timestamp	decision	evidence	result
+2026-10-23T00:00:00+08:00	Use two different editorial themes	The competitor analysis needs evidence that the format works beyond rescue and bycatch stories	Week 44 tests prioritisation frameworks; Week 45 tests citizen-science methods
+2026-10-23T00:00:00+08:00	Activate sources only after a terms review	IUCN, WDC, STC, and IMMA publish different reuse or data-licence conditions	Record each rights state and block every package that needs permission or commercial clarification
+2026-10-23T00:00:00+08:00	Use no source media	The selected sources reserve image rights or require item-level permission	Write original bilingual copy and leave media selection for a later rights-reviewed step
+2026-10-23T00:00:00+08:00	Do not treat nine drafts as demand validation	The packages are unpublished and have no reader or production-time observations	Use the result only to judge source yield, workflow repeatability, and rights friction
+2026-10-23T00:00:00+08:00	Stop synthetic production after the third cycle	Nine packages satisfy the planned three-week structural test	Move next to reader review and human editor timing instead of generating more drafts
+2026-10-23T00:00:00+08:00	Verify every record with the existing gate	The validator checks source rights, candidate-package identity, required sections, media rights, and unpublished metrics	Validation passed for 13 sources, 13 candidates, 9 packages, and 9 performance records; the self-test reported both expected failures
