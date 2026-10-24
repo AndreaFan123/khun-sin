@@ -550,7 +550,7 @@ export const meta = {
 
 /** Alt text for the share card image (#39). */
 export const ogImageAlt: string =
-	'Khun-Sin share card: Found a stranded cetacean or sea turtle? Call 118';
+	'Khun-Sin cetacean and sea turtle stranding report card: Found a stranding? Call 118, over abstract blue-grey waves.';
 
 /**
  * Copy used only by structured data (#41, #42) — mirror of the zh block.
