@@ -1,36 +1,13 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import heroVideo from '$lib/assets/landing-hero-video.mp4';
+	import OceanWaves from '$lib/components/ui/OceanWaves.svelte';
 	import { useSite } from '$lib/copy';
 	const site = useSite();
 	const heroCopy = $derived(site().copy.heroCopy);
 	const hotline = $derived(site().copy.hotline);
-	let video: HTMLVideoElement;
-	onMount(() => {
-		const motion = matchMedia('(prefers-reduced-motion: reduce)');
-		const syncMotion = () => {
-			if (motion.matches) video.pause();
-			else void video.play().catch(() => {});
-		};
-		syncMotion();
-		motion.addEventListener('change', syncMotion);
-		return () => motion.removeEventListener('change', syncMotion);
-	});
 </script>
 
 <section class="hero" aria-labelledby="hero-title">
-	<video
-		bind:this={video}
-		class="hero-video"
-		src={heroVideo}
-		autoplay
-		muted
-		loop
-		playsinline
-		preload="metadata"
-		aria-hidden="true"
-		tabindex="-1"
-	></video>
+	<div class="hero-waves"><OceanWaves variant="hero" /></div>
 	<div class="hero-content">
 		<p class="eyebrow">{heroCopy.badge}</p>
 		<h1 id="hero-title">
@@ -59,22 +36,14 @@
 		background: var(--bg);
 		padding: 48px 24px 28px;
 	}
-	.hero::before {
-		content: '';
+	.hero-waves {
 		position: absolute;
 		inset: 0;
-		background: var(--bg);
-		opacity: var(--hero-overlay-opacity);
 		z-index: -1;
-	}
-	.hero-video {
-		position: absolute;
-		inset: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center;
-		z-index: -2;
+		pointer-events: none;
+		--wave-back: color-mix(in srgb, var(--text-primary) 10%, var(--bg));
+		--wave-middle: color-mix(in srgb, var(--text-primary) 20%, var(--bg));
+		--wave-front: color-mix(in srgb, var(--text-primary) 28%, var(--bg));
 	}
 	.hero-content {
 		width: 100%;
@@ -139,6 +108,11 @@
 			min-height: calc(100svh - 80px);
 			padding-top: 28px;
 		}
+		.hero-waves {
+			inset: auto 0 0;
+			height: 28%;
+			max-height: 220px;
+		}
 		h1 {
 			font-size: clamp(47px, 12vw, 68px);
 			line-height: 1.35;
@@ -158,11 +132,6 @@
 		}
 		.more {
 			margin-top: 30px;
-		}
-	}
-	@media (prefers-reduced-motion: reduce) {
-		.hero-video {
-			display: none;
 		}
 	}
 </style>

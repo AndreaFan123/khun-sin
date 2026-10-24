@@ -6,7 +6,7 @@
 	import { useSite } from '$lib/copy';
 	import { absolute, alternatesFor, type RoutePath } from '$lib/seo/routes';
 	import { buildOrganization, buildWebSite, serializeJsonLd, type JsonLd } from '$lib/seo/schema';
-	import { socialImage } from '$lib/seo/social';
+	import { SOCIAL_IMAGE_DIMENSIONS, socialImage } from '$lib/seo/social';
 
 	let {
 		path,
@@ -53,8 +53,8 @@
 	<meta property="og:locale" content={og.locale} />
 	<meta property="og:locale:alternate" content={og.alternate} />
 	<meta property="og:image" content={ogImage} />
-	<meta property="og:image:width" content="1200" />
-	<meta property="og:image:height" content="630" />
+	<meta property="og:image:width" content={String(SOCIAL_IMAGE_DIMENSIONS.width)} />
+	<meta property="og:image:height" content={String(SOCIAL_IMAGE_DIMENSIONS.height)} />
 	<meta property="og:image:alt" content={copy.ogImageAlt} />
 
 	<meta name="twitter:card" content="summary_large_image" />
