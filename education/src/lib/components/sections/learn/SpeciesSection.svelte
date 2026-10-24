@@ -6,6 +6,9 @@
 	const c = $derived(site().copy);
 	const imageSourceLabel = $derived(site().locale === 'en' ? 'Image source:' : '圖片來源：');
 	const redListLabel = $derived(site().locale === 'en' ? 'IUCN Red List' : 'IUCN 紅色名錄');
+	const detailLinkLabel = $derived(
+		site().locale === 'en' ? 'Explore the Taiwanese white dolphin' : '深入認識台灣白海豚'
+	);
 	const speciesLabel = $derived(site().locale === 'en' ? 'Cetacean species' : '鯨豚物種');
 </script>
 
@@ -13,7 +16,7 @@
 	<div class="wrap">
 		<div class="cards">
 			{#each c.speciesCards as card (card.name)}
-				<SpeciesCard {card} as="h2" {imageSourceLabel} {redListLabel} />
+				<SpeciesCard {card} as="h2" {imageSourceLabel} {redListLabel} {detailLinkLabel} />
 			{/each}
 		</div>
 	</div>

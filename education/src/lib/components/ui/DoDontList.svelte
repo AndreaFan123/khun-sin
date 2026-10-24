@@ -3,7 +3,7 @@
 </script>
 
 <div class="dd {kind}">
-	<h4>{title}</h4>
+	<h3>{title}</h3>
 	<ul>
 		{#each items as item (item)}
 			<li>{item}</li>
@@ -14,57 +14,39 @@
 <style>
 	.dd {
 		border-radius: var(--radius);
-		padding: 24px 26px;
-		border: 1px solid var(--border);
-		border-left-width: 5px;
-		border-top-width: 0;
-		border-right-width: 0;
-		border-bottom-width: 0;
-		border-radius: 0 var(--radius) var(--radius) 0;
-	}
-	.dd.do {
-		background: var(--green-100);
-		border-left-color: var(--green-600);
+		padding: 30px;
+		background: var(--bg-card);
 	}
 	.dd.dont {
-		background: var(--rust-100);
-		border-left-color: var(--rust-600);
+		background: var(--bg-soft);
 	}
-	h4 {
-		font-size: 1.3rem;
-		margin-bottom: 14px;
+	h3 {
+		font-size: 26px;
+		margin-bottom: 20px;
 	}
-	.do h4 {
-		color: var(--green-800);
-	}
-	.dont h4 {
-		color: var(--rust-700);
+	.dont h3 {
+		color: var(--accent-text);
 	}
 	ul {
-		list-style: none;
-		display: flex;
-		flex-direction: column;
-		gap: 11px;
+		padding-left: 1.2em;
+		display: grid;
+		gap: 18px;
 	}
 	li {
-		font-size: 1rem;
-		padding-left: 16px;
-		position: relative;
-		color: var(--text-primary);
+		font-size: 19px;
+		padding-left: 4px;
+		color: var(--text-secondary);
+		line-height: 1.9;
 	}
-	li::before {
-		content: '';
-		position: absolute;
-		left: 0;
-		top: 0.65em;
-		width: 6px;
-		height: 6px;
-		border-radius: 50%;
-	}
-	.do li::before {
-		background: var(--green-600);
-	}
-	.dont li::before {
-		background: var(--rust-600);
+	@media (max-width: 640px) {
+		.dd {
+			padding: 25px;
+		}
+		h3 {
+			font-size: 24px;
+		}
+		li {
+			font-size: 18px;
+		}
 	}
 </style>

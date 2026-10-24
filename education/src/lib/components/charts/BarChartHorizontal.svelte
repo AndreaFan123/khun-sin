@@ -102,10 +102,10 @@
 	}
 	/* Inside the bar the label sits on the fill, so it takes the contrasting ink. */
 	.barvalue.inside {
-		fill: var(--paper-50);
+		fill: var(--chart-baseline-ink);
 	}
 	.barvalue.inside.emphasis {
-		fill: var(--navy-900);
+		fill: var(--on-accent);
 	}
 	@keyframes grow {
 		from {

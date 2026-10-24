@@ -23,12 +23,34 @@
 	<link rel="icon" type="image/png" href={favicon} />
 </svelte:head>
 
+<a class="skip-link" href="#main-content"
+	>{site.locale === 'en' ? 'Skip to main content' : '跳至主要內容'}</a
+>
 <Nav />
 
-<main>
+<main id="main-content" tabindex="-1">
 	{@render children()}
 </main>
 
 <Footer />
 
 <Tooltip />
+
+<style>
+	.skip-link {
+		position: fixed;
+		top: 0;
+		left: 1rem;
+		z-index: 100;
+		padding: 0.75rem 1rem;
+		background: var(--bg-card);
+		color: var(--text-primary);
+		transform: translateY(-200%);
+	}
+	.skip-link:focus {
+		transform: translateY(0);
+	}
+	main {
+		scroll-margin-top: 6rem;
+	}
+</style>

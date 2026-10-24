@@ -1,6 +1,14 @@
 <!doctype html>
-<html lang="%lang%">
+<html lang="%lang%" data-theme="auto">
 	<head>
+		<script>
+			try {
+				const theme = localStorage.getItem('khun-sin-theme');
+				if (theme === 'light' || theme === 'dark' || theme === 'auto') {
+					document.documentElement.dataset.theme = theme;
+				}
+			} catch {}
+		</script>
 		<!-- Google tag (gtag.js) -->
 		<script>
 			// Check the actual origin: the same prerendered HTML can be served on preview domains.

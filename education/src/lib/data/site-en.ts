@@ -26,6 +26,7 @@ export const speciesCards: SpeciesCard[] = [
 			'A subspecies found only along Taiwan’s west coast, its pink-white figure is known locally as the “Matsu fish”. Scholars estimate fewer than 50 remain, declining about 3–4% a year — Taiwan’s most urgent marine conservation case.',
 		imageKey: 'taiwaneseHumpback',
 		imageAlt: 'A Taiwanese white dolphin swimming near the coast',
+		detailPath: '/en/cetaceans/sousa-chinensis-taiwanensis',
 		redList: { label: 'Critically Endangered', level: 'critically-endangered' }
 	},
 	{
@@ -220,27 +221,8 @@ export const noPerfectSolution = {
 };
 
 export const conservationKpis: ConservationKpi[] = [
-	{
-		metric: 'catalogued',
-		unit: '',
-		label:
-			'Individuals in the Taiwanese white dolphin photo-ID catalogue, tracking every one of the “pink spirits”'
-	},
-	{
-		metric: 'sampled',
-		unit: '',
-		label: 'Individuals scientifically sampled in 2025, for pathology and cause-of-death analysis'
-	},
-	{
-		metric: 'sightingGroups',
-		unit: ' groups',
-		label: 'Cumulative at-sea white dolphin sighting records, underpinning population monitoring'
-	},
-	{
-		metric: 'pathologyCases',
-		unit: ' cases',
-		label: 'Pathology analyses in 2025, turning each death into conservation knowledge'
-	}
+	{ metric: 'sampled', unit: ' individuals', label: 'Cetaceans scientifically sampled in 2025' },
+	{ metric: 'pathologyCases', unit: ' cases', label: 'Cetacean pathology analyses in 2025' }
 ];
 
 export const chartCards: ChartCardCopy[] = [
@@ -581,7 +563,7 @@ export const schemaCopy = {
 	dataset: {
 		name: 'Taiwan cetacean and sea turtle stranding statistics (MARN)',
 		description:
-			'Cetacean and sea turtle stranding statistics for the waters around Taiwan: totals, dead versus live, species, county distribution, month, and event type. Sourced from the Ocean Conservation Administration’s Marine Animal Rescue Network (MARN) reports and statistical tables, and presented by Khun-Sin.'
+			'Full-year trends for 2019–2025 and 2025 annual breakdowns for cetaceans and sea turtles around Taiwan: totals, dead versus live, species, county distribution, month, and event type. Sourced from the Ocean Conservation Administration’s Marine Animal Rescue Network (MARN) reports and statistical tables, and presented by Khun-Sin.'
 	}
 };
 

@@ -75,7 +75,7 @@
 		position: absolute;
 		z-index: 1;
 		inset: 0;
-		background: linear-gradient(180deg, rgba(16, 31, 61, 0.72), rgba(16, 31, 61, 0.82));
+		background: linear-gradient(180deg, rgba(16, 31, 61, 0.82), rgba(16, 31, 61, 0.82));
 	}
 	.journey-bg {
 		position: absolute;
@@ -140,7 +140,7 @@
 		border: 1px solid var(--slate-400);
 		border-radius: 50%;
 		background: var(--navy-800);
-		color: var(--accent);
+		color: var(--accent-on-dark);
 		font-weight: 700;
 		transition: transform 420ms cubic-bezier(0.34, 1.56, 0.64, 1);
 	}

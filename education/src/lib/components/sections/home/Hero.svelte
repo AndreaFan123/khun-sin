@@ -1,14 +1,26 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import heroVideo from '$lib/assets/landing-hero-video.mp4';
 	import { useSite } from '$lib/copy';
-
 	const site = useSite();
 	const heroCopy = $derived(site().copy.heroCopy);
 	const hotline = $derived(site().copy.hotline);
+	let video: HTMLVideoElement;
+	onMount(() => {
+		const motion = matchMedia('(prefers-reduced-motion: reduce)');
+		const syncMotion = () => {
+			if (motion.matches) video.pause();
+			else void video.play().catch(() => {});
+		};
+		syncMotion();
+		motion.addEventListener('change', syncMotion);
+		return () => motion.removeEventListener('change', syncMotion);
+	});
 </script>
 
-<section class="hero">
+<section class="hero" aria-labelledby="hero-title">
 	<video
+		bind:this={video}
 		class="hero-video"
 		src={heroVideo}
 		autoplay
@@ -19,43 +31,41 @@
 		aria-hidden="true"
 		tabindex="-1"
 	></video>
-	<div class="wrap hero-content">
-		<span class="kbadge">{heroCopy.badge}</span>
-		<h1>
-			{heroCopy.titleLead}<span class="hl">{heroCopy.titleHighlight}</span><br
-			/>{heroCopy.titleTail}
+	<div class="hero-content">
+		<p class="eyebrow">{heroCopy.badge}</p>
+		<h1 id="hero-title">
+			{heroCopy.titleLead}<br /><span>{heroCopy.titleHighlight}</span>{heroCopy.titleTail}
 		</h1>
-		<p class="sub">{heroCopy.sub}</p>
-
-		<div class="hotline">
-			<strong>{hotline.number}</strong>
-			<div>
-				<span>{hotline.label}</span>
-				<small>{heroCopy.hotlineScope}</small>
-			</div>
-		</div>
-
-		<a class="emergency" href="#report">
-			<span class="what">{heroCopy.stepsLabel} <span class="arrow" aria-hidden="true">↓</span></span
-			>
-		</a>
+		<p class="lead">{heroCopy.sub}</p>
+		<a class="hotline" href="tel:118" aria-label={site().copy.uiCopy.dialAriaLabel}
+			><strong>{hotline.number}</strong>{hotline.label}</a
+		>
+		<p class="scope">{heroCopy.hotlineScope}</p>
 	</div>
+	<a class="more" href="#report">{heroCopy.stepsLabel}</a>
 </section>
 
 <style>
 	.hero {
 		position: relative;
+		isolation: isolate;
 		overflow: hidden;
-		background: var(--bg-band-darker);
-		color: var(--text-on-dark);
-		padding: 88px 0 182px;
+		min-height: calc(100svh - 96px);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		background: var(--bg);
+		padding: 48px 24px 28px;
 	}
 	.hero::before {
 		content: '';
 		position: absolute;
-		z-index: 1;
 		inset: 0;
-		background: rgba(16, 31, 61, 0.72);
+		background: var(--bg);
+		opacity: var(--hero-overlay-opacity);
+		z-index: -1;
 	}
 	.hero-video {
 		position: absolute;
@@ -64,126 +74,95 @@
 		height: 100%;
 		object-fit: cover;
 		object-position: center;
+		z-index: -2;
 	}
 	.hero-content {
-		position: relative;
-		z-index: 2;
+		width: 100%;
+		max-width: 1040px;
+		margin: auto 0;
 	}
-	.kbadge {
-		display: inline-block;
-		margin-bottom: 22px;
-		padding: 7px 15px;
-		border-radius: 999px;
-		border: 2px solid var(--border-on-dark);
-		color: var(--slate-200);
-		font-weight: 500;
-		font-size: 0.9rem;
-		letter-spacing: 0.08em;
+	.eyebrow {
+		color: var(--text-primary);
+		margin-bottom: 18px;
+		font-size: 1rem;
+		letter-spacing: 0.1em;
 	}
 	h1 {
-		font-size: clamp(4rem, 6vw, 7rem);
-		color: var(--text-on-dark);
-		letter-spacing: 0.02em;
-		width: 100%;
-	}
-	.hl {
-		color: var(--accent);
-	}
-	.sub {
-		font-size: clamp(1.3rem, 2.2vw, 1.4rem);
-		margin-top: 22px;
-		max-width: 100%;
-		color: var(--text-on-dark-secondary);
-		width: 100%;
-	}
-
-	.hotline {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: end;
-		gap: 24px 40px;
-		margin-top: 96px;
-		padding: 36px 40px;
-		border: 1px solid var(--border-on-dark);
-		border-radius: var(--radius);
-		background: var(--navy-800);
-	}
-	.hotline strong {
-		font-size: clamp(6rem, 16vw, 10rem);
+		font-size: clamp(64px, 7.2vw, 96px);
 		font-weight: 800;
+		line-height: 1.12;
+		letter-spacing: -0.045em;
+	}
+	h1 span {
 		color: var(--accent);
-		line-height: 0.8;
 		font-variant-numeric: tabular-nums;
 	}
-	.hotline div {
-		display: grid;
-		gap: 4px;
-		padding-bottom: 4px;
+	.lead {
+		max-width: 730px;
+		margin: 25px auto 24px;
+		font-size: 20px;
+		line-height: 1.85;
 	}
-	.hotline span {
-		font-size: clamp(1.25rem, 2vw, 1.75rem);
-		font-weight: 600;
-		color: var(--text-on-dark);
-	}
-	.hotline small {
-		font-size: 1rem;
-		color: var(--text-on-dark-secondary);
-	}
-	.emergency {
+	.hotline {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		width: 100%;
 		gap: 16px;
-		margin-top: 34px;
-		padding: 16px 22px;
-		border-radius: var(--radius);
-		/* border: 1px solid var(--accent); */
+		border-radius: 6px;
+		min-height: 60px;
+		padding: 13px 26px;
+		background: var(--accent);
+		color: var(--on-accent);
+		font-size: 18px;
+		font-weight: 700;
 		text-decoration: none;
-		color: var(--text-on-dark);
 	}
-	/* .emergency .num {
-		font-size: 5rem;
-		font-weight: 800;
-		color: var(--accent);
-		font-variant-numeric: tabular-nums;
-	} */
-	.emergency .what {
-		font-size: 1.2rem;
-		color: var(--text-on-dark-secondary);
-		max-width: 100ch;
+	.hotline strong {
+		font-size: 34px;
+		line-height: 1;
 	}
-	.arrow {
-		display: inline-block;
-		animation: bob 1.8s ease-in-out infinite;
+	.scope {
+		font-size: 17px;
+		margin-top: 15px;
 	}
-	@keyframes bob {
-		0%,
-		100% {
-			transform: translateY(0);
+	.more {
+		color: var(--text-primary);
+		font-size: 16px;
+		min-height: 44px;
+		display: inline-flex;
+		align-items: center;
+		margin-top: 36px;
+		text-underline-offset: 7px;
+	}
+	@media (max-width: 640px) {
+		.hero {
+			min-height: calc(100svh - 80px);
+			padding-top: 28px;
 		}
-		50% {
-			transform: translateY(6px);
+		h1 {
+			font-size: clamp(47px, 12vw, 68px);
+			line-height: 1.35;
+		}
+		.lead {
+			font-size: 18px;
+			margin: 23px auto;
+		}
+		.eyebrow,
+		.scope {
+			font-size: 16px;
+		}
+		.hotline {
+			gap: 12px;
+			padding: 12px 19px;
+			font-size: 16px;
+		}
+		.more {
+			margin-top: 30px;
 		}
 	}
 	@media (prefers-reduced-motion: reduce) {
 		.hero-video {
 			display: none;
-		}
-		.arrow {
-			animation: none;
-		}
-	}
-	@media (max-width: 640px) {
-		.hero {
-			padding-top: 64px;
-		}
-		h1 {
-			font-size: clamp(3rem, 14vw, 4.5rem);
-		}
-		.hotline {
-			margin-top: 64px;
-			padding: 28px 24px;
 		}
 	}
 </style>

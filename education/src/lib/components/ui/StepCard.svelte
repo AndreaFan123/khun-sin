@@ -5,36 +5,57 @@
 </script>
 
 <article class="step">
-	<div class="n">{index + 1}</div>
-	<h4>{step.title}</h4>
+	<h3><span class="n">{String(index + 1).padStart(2, '0')}</span>{step.title}</h3>
 	<p>{step.description}</p>
 </article>
 
 <style>
 	.step {
 		background: var(--bg-card);
-		/* border: 1px solid var(--border); */
-		border-radius: var(--radius);
-		padding: 24px;
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		padding: 28px 30px 32px;
+	}
+	h3 {
+		display: grid;
+		grid-template-columns: 64px minmax(0, 1fr);
+		align-items: start;
+		gap: 16px;
+		font-size: 25px;
+		margin-bottom: 15px;
 	}
 	.n {
-		width: 36px;
-		height: 36px;
-		border-radius: 50%;
-		background: var(--navy-700);
-		color: var(--text-on-dark);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-weight: 700;
-		margin-bottom: 14px;
-	}
-	h4 {
-		font-size: 1.6rem;
-		margin-bottom: 10px;
+		display: block;
+		white-space: nowrap;
+		overflow-wrap: normal;
+		color: var(--signal);
+		font-size: 44px;
+		font-weight: 800;
+		font-variant-numeric: tabular-nums;
+		line-height: 1;
 	}
 	p {
-		font-size: 1rem;
+		font-size: 19px;
 		color: var(--text-secondary);
+		line-height: 1.9;
+	}
+	@media (max-width: 640px) {
+		.step {
+			padding: 24px;
+		}
+		h3 {
+			font-size: 23px;
+		}
+		p {
+			font-size: 18px;
+		}
+	}
+	@media (max-width: 380px) {
+		h3 {
+			display: block;
+		}
+		.n {
+			margin-bottom: 12px;
+		}
 	}
 </style>

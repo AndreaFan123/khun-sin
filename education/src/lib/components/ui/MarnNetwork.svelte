@@ -97,11 +97,11 @@
 		fill: var(--slate-500);
 	}
 	.entry {
-		fill: var(--accent);
+		fill: var(--accent-on-dark);
 	}
 	.hub {
 		fill: var(--navy-800);
-		stroke: var(--accent);
+		stroke: var(--accent-on-dark);
 		stroke-width: 1.4;
 	}
 	.sat {
@@ -156,7 +156,7 @@
 			background: var(--slate-600);
 		}
 		.m-hub {
-			border-color: var(--accent);
+			border-color: var(--accent-on-dark);
 		}
 		.m-node h4 {
 			color: var(--text-on-dark);

@@ -37,12 +37,20 @@
 	/** The card's own title is the honest description of what the chart shows. */
 	const ariaLabel = $derived(cards.find((c) => c.key === chart)?.title ?? '');
 
-	const unit = $derived(isEn ? '' : ' 隻');
+	const unit = $derived(
+		chart === 'causes' && animalGroup === 'seaTurtle'
+			? isEn
+				? ' reports'
+				: ' 件'
+			: isEn
+				? ''
+				: ' 隻'
+	);
 	const count = (n: number) => `${n}${unit}`;
 	const withShare = (n: number, share: number, decimals: number) =>
 		isEn
-			? `${n} (${(share * 100).toFixed(decimals)}%)`
-			: `${n} 隻（${(share * 100).toFixed(decimals)}%）`;
+			? `${n}${unit} (${(share * 100).toFixed(decimals)}%)`
+			: `${n}${unit}（${(share * 100).toFixed(decimals)}%）`;
 
 	// English names are longer, so they need a wider label gutter.
 	const gutter = $derived({

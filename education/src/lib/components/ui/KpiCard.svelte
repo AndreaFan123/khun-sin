@@ -19,18 +19,18 @@
 	.v {
 		font-size: 5rem;
 		font-weight: 800;
-		color: var(--text-on-dark);
+		color: var(--text-primary);
 		font-variant-numeric: tabular-nums;
 	}
 	.u {
 		font-size: 1rem;
 		font-weight: 600;
 		margin-left: 2px;
-		color: var(--chart-emphasis);
+		color: var(--text-secondary);
 	}
 	.l {
 		font-size: 1rem;
-		color: var(--text-on-dark);
+		color: var(--text-primary);
 		margin-top: 4px;
 	}
 </style>
