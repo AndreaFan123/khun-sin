@@ -2,8 +2,8 @@ import { describe, expect, it } from 'vitest';
 import { socialImage } from './social';
 
 describe('socialImage', () => {
-	it('uses stable public URLs that survive application redeploys', () => {
-		expect(socialImage('zh')).toBe('https://www.khun-sin.com/og/og-image-zh.jpg');
-		expect(socialImage('en')).toBe('https://www.khun-sin.com/og/og-image-en.jpg');
+	it('uses versioned public URLs to refresh cached social previews', () => {
+		expect(socialImage('zh')).toBe('https://www.khun-sin.com/og/og-report-zh-v2.webp');
+		expect(socialImage('en')).toBe('https://www.khun-sin.com/og/og-report-en-v2.webp');
 	});
 });

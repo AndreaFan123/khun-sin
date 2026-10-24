@@ -616,7 +616,8 @@ export const meta = {
 };
 
 /** Alt text for the share card image (#39). */
-export const ogImageAlt: string = 'Khun-Sin 分享卡片：發現擱淺鯨豚或海龜，請撥打 118';
+export const ogImageAlt: string =
+	'Khun-Sin 鯨豚與海龜擱淺通報分享卡：發現擱淺，先撥 118；冷灰藍抽象海浪背景。';
 
 /**
  * Copy used only by structured data (#41, #42). It lives here, mirrored in

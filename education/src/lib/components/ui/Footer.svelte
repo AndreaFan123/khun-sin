@@ -7,6 +7,7 @@
 	import { lastUpdated } from '$lib/data/strandings';
 	import { speciesScopes, speciesLinks } from '$lib/navigation';
 	import Wordmark from '$lib/components/ui/Wordmark.svelte';
+	import OceanWaves from '$lib/components/ui/OceanWaves.svelte';
 
 	const site = useSite();
 	const c = $derived(site().copy);
@@ -21,6 +22,7 @@
 </script>
 
 <footer>
+	<div class="footer-waves"><OceanWaves variant="footer" /></div>
 	<div class="footer-top">
 		<div class="brand">
 			<Wordmark />
@@ -72,8 +74,23 @@
 </footer>
 
 <style>
+	.footer-waves {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		width: min(80%, 1100px);
+		height: 100%;
+		max-height: 360px;
+		z-index: -1;
+		pointer-events: none;
+		--wave-back: color-mix(in srgb, var(--text-primary) 4%, var(--bg-soft));
+		--wave-middle: color-mix(in srgb, var(--text-primary) 7%, var(--bg-soft));
+		--wave-front: color-mix(in srgb, var(--text-primary) 10%, var(--bg-soft));
+	}
 	footer {
-		border-top: 1px solid var(--border);
+		position: relative;
+		isolation: isolate;
+		overflow: hidden;
 		background: var(--bg-soft);
 		color: var(--text-secondary);
 		font-size: 0.875rem;
@@ -163,6 +180,10 @@
 		text-underline-offset: 3px;
 	}
 	@media (max-width: 760px) {
+		.footer-waves {
+			width: 100%;
+			height: 220px;
+		}
 		footer {
 			padding: 20px;
 		}
