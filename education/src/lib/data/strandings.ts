@@ -137,13 +137,10 @@ export const breakdowns: PeriodBreakdown[] = [
 	}
 ];
 
-/** 2025 white dolphin conservation program figures (MARN annual report). */
-export const whiteDolphinProgram2025 = {
-	catalogued: 74, // individuals in the photo-ID catalogue (cumulative)
-	sampled: 62, // individuals scientifically sampled in 2025
-	sightingGroups: 119, // cumulative at-sea sighting groups
-	pathologyCases: 21 // necropsy/pathology analyses in 2025
-};
+/** Official 2025 report p.10. Catalogue is cumulative through end-2025. */
+export const whiteDolphinMonitoring2025 = { catalogued: 74, sightingGroups: 119 };
+/** Official 2025 report p.06. These are general cetacean research figures. */
+export const cetaceanResearch2025 = { sampled: 62, pathologyCases: 21 };
 
 /**
  * When these figures were last reconciled against the published MARN reports.

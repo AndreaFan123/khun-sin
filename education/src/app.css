@@ -1,6 +1,5 @@
 /*
  * Design tokens — single source: docs/design/visual-direction.md
- * Flat minimal system: no box-shadow anywhere; elevation = surface steps + hairline borders.
  */
 
 :root {
@@ -12,7 +11,8 @@
 	--navy-400: #5372a5;
 	--navy-500: #3a548a;
 	--navy-600: #274073;
-	--navy-700: #1a3263; /* brand seed */
+	--navy-700: #1a3263;
+	/* brand seed */
 	--navy-800: #142850;
 	--navy-900: #101f3d;
 
@@ -22,18 +22,20 @@
 	--slate-200: #c9d6e0;
 	--slate-300: #a7bccb;
 	--slate-400: #8fa9bd;
-	--slate-500: #547792; /* brand seed */
+	--slate-500: #547792;
+	/* brand seed */
 	--slate-600: #476885;
 	--slate-700: #3d5a75;
 	--slate-800: #2f4760;
 	--slate-900: #27415c;
 
-	/* ---- Amber ramp — the single attention channel ---- */
+	/* ---- Amber ramp ---- */
 	--amber-50: #fef4e4;
 	--amber-100: #fde6c2;
 	--amber-200: #fcd79e;
 	--amber-300: #fbc87c;
-	--amber-400: #fab95b; /* brand seed; never text on light surfaces */
+	--amber-400: #fab95b;
+	/* brand seed; never text on light surfaces */
 	--amber-500: #e89e36;
 	--amber-600: #c87f1f;
 	--amber-700: #a66618;
@@ -43,7 +45,7 @@
 	/* ---- Paper ramp — warm neutrals: surfaces and ink ---- */
 	--paper-50: #fbf9f6;
 	--paper-100: #f6f2ec;
-	--paper-200: #e8e2db; /* brand seed, page bg */
+	--paper-200: #e8e2db;
 	--paper-300: #d6cec3;
 	--paper-400: #b8aea1;
 	--paper-500: #948a7c;
@@ -57,29 +59,15 @@
 	--green-600: #3e6b54;
 	--green-800: #274437;
 	--rust-100: #f6e3d3;
-	--rust-600: #b25e1f; /* large text only (3.6:1) */
-	--rust-700: #8f4a15; /* body text on light (5.2:1) */
+	--rust-600: #b25e1f;
+	/* large text only (3.6:1) */
+	--rust-700: #8f4a15;
+	/* body text on light (5.2:1) */
 	--rust-800: #7a3f13;
 	--iucn-critically-endangered: #d81e05;
 	--iucn-vulnerable: #f9e814;
 	--iucn-near-threatened: #007f82;
 
-	/* ---- Usage mapping (see visual-direction.md) ---- */
-	--bg: var(--paper-200);
-	--bg-card: var(--paper-100);
-	--bg-band-dark: var(--navy-800);
-	--bg-band-darker: var(--navy-900); /* hero, footer */
-	--text-primary: var(--paper-900);
-	--text-secondary: var(--slate-700); /* 5.5:1 on paper-200 */
-	/* Captions and chart ticks. Clears AA on --bg-card (4.99:1) but NOT on --bg
-	   (4.33:1) — for body text on the page background use --text-secondary, and
-	   on dark bands use --text-on-dark-secondary or --slate-400. */
-	--text-muted: var(--paper-600);
-	--text-on-dark: var(--paper-50);
-	--text-on-dark-secondary: var(--slate-200);
-	--heading: var(--navy-700);
-	--accent: var(--amber-400); /* emphasis on dark; fills on light */
-	--accent-text: var(--amber-800); /* amber-feel text on light (4.6:1) */
 	--chart-baseline: var(--slate-500);
 	--chart-emphasis: var(--amber-400);
 	--chart-seq-1: var(--slate-200);
@@ -88,12 +76,86 @@
 	--chart-seq-4: var(--slate-700);
 	--chart-seq-5: var(--slate-900);
 	--chart-muted: var(--slate-300);
-	--border: var(--paper-300);
 	--border-on-dark: rgba(251, 249, 246, 0.16);
 
 	/* ---- Layout ---- */
-	--maxw: 1120px;
-	--radius: 14px;
+	--maxw: 900px;
+	--radius: 8px;
+	--radius-action: 6px;
+}
+
+:root {
+	color-scheme: light;
+	--bg: #e8f2f4;
+	--bg-card: #f7fbfb;
+	--bg-soft: #d5e6ea;
+	--text-primary: #153b57;
+	--text-secondary: #345267;
+	--text-muted: #345267;
+	--heading: #153b57;
+	--signal: #056a82;
+	--accent: #a84e36;
+	--accent-text: #a84e36;
+	--on-accent: #ffffff;
+	--accent-on-dark: #f0a66a;
+	--chart-emphasis: var(--accent);
+	--map-land: var(--bg-soft);
+	--map-outline: var(--text-secondary);
+	--map-marker: var(--signal);
+	--map-emphasis: var(--accent);
+	--map-label: var(--text-primary);
+	--chart-baseline-ink: #ffffff;
+	--chart-muted: #6b8495;
+	--border: #a9c2c9;
+	--bg-band-dark: #0e4b70;
+	--bg-band-darker: #072b43;
+	--text-on-dark: #f0f8fb;
+	--text-on-dark-secondary: #c2d9e5;
+	--hero-overlay-opacity: 0.84;
+}
+
+:root[data-theme='dark'] {
+	color-scheme: dark;
+	--bg: #0a3a5a;
+	--bg-card: #0e4b70;
+	--bg-soft: #072b43;
+	--map-outline: var(--signal);
+	--text-primary: #f0f8fb;
+	--text-secondary: #c2d9e5;
+	--text-muted: #c2d9e5;
+	--heading: #f0f8fb;
+	--signal: #83d5e7;
+	--accent: #f0a66a;
+	--accent-text: #f0a66a;
+	--on-accent: #173149;
+	--border: #5c8097;
+	--chart-baseline: #8fa9bd;
+	--chart-baseline-ink: #173149;
+	--chart-muted: #a7bccb;
+	--hero-overlay-opacity: 0.8;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme='light']):not([data-theme='dark']) {
+		color-scheme: dark;
+		--bg: #0a3a5a;
+		--bg-card: #0e4b70;
+		--bg-soft: #072b43;
+		--map-outline: var(--signal);
+		--text-primary: #f0f8fb;
+		--text-secondary: #c2d9e5;
+		--text-muted: #c2d9e5;
+		--heading: #f0f8fb;
+		--signal: #83d5e7;
+		--accent: #f0a66a;
+		--accent-text: #f0a66a;
+		--on-accent: #173149;
+		--border: #5c8097;
+		--chart-baseline: #8fa9bd;
+		--chart-baseline-ink: #173149;
+		--chart-muted: #a7bccb;
+		--hero-overlay-opacity: 0.8;
+	}
 }
 
 /* ---- Reset ---- */
@@ -106,6 +168,8 @@
 }
 
 html {
+	font-size: 18px;
+	scroll-padding-top: 100px;
 	scroll-behavior: smooth;
 }
 
@@ -123,7 +187,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
-	font-size: 1rem; /* 16px base; minimums: captions/ticks ≥ 12px, footer ≥ 14px */
+	font-size: 1rem;
 	line-height: 1.75;
 	color: var(--text-primary);
 	background: var(--bg);
@@ -138,26 +202,18 @@ main {
 	flex-direction: column;
 }
 
-/* Mobile: raise the root size so every rem-based size scales up together —
-   no small text on phones (Andrea's rule; overrides the 16px desktop base). */
-@media (max-width: 640px) {
-	html {
-		font-size: 18px;
-	}
-}
-
 h1,
 h2,
 h3,
 h4 {
 	line-height: 1.25;
-	font-weight: 700;
+	font-weight: 800;
 	color: var(--heading);
-	letter-spacing: 0.01em;
+	letter-spacing: -0.025em;
 }
 
 :focus-visible {
-	outline: 2px solid var(--navy-700);
+	outline: 3px solid var(--signal);
 	outline-offset: 2px;
 }
 
@@ -173,19 +229,91 @@ svg .tick {
 	fill: var(--text-muted);
 	font-size: 12px;
 }
+
 svg .barlabel {
 	fill: var(--text-secondary);
 	font-size: 12px;
 }
+
 svg .barvalue {
 	fill: var(--text-primary);
 	font-size: 12px;
 	font-weight: 700;
 }
+
 @media (max-width: 640px) {
 	svg .tick,
 	svg .barlabel,
 	svg .barvalue {
 		font-size: 14px;
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	a:where(:not(.skip-link)),
+	button,
+	summary,
+	.theme-choices label {
+		transition:
+			color 180ms ease,
+			background-color 180ms ease,
+			border-color 180ms ease,
+			text-decoration-color 180ms ease,
+			text-underline-offset 180ms ease,
+			transform 180ms ease;
+	}
+}
+
+@media (hover: hover) and (pointer: fine) {
+	a,
+	summary {
+		text-underline-offset: 0.16em;
+	}
+
+	:root a:hover,
+	:root summary:hover {
+		text-underline-offset: 0.3em;
+	}
+	:root summary:hover {
+		text-decoration-line: underline;
+	}
+
+	:root .theme-choices label:hover {
+		background-color: var(--bg-soft);
+	}
+
+	:root .dialog-actions button:hover {
+		border-color: var(--signal);
+	}
+
+	:root a.brand:hover {
+		color: var(--signal);
+	}
+
+	:root a.resource-card:hover,
+	:root .choices .cards a:hover {
+		border-color: var(--signal);
+	}
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+	:root a.hotline:hover,
+	:root a.support-link:hover,
+	:root a.call:hover,
+	:root #support .card a:hover,
+	:root .actions a:hover,
+	:root .paths a:hover,
+	:root a.resource-card:hover,
+	:root .choices .cards a:hover {
+		transform: translateY(-2px);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	a,
+	button,
+	summary,
+	.theme-choices label {
+		transition: none !important;
 	}
 }

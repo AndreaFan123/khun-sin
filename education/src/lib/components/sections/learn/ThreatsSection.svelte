@@ -10,7 +10,7 @@
 
 <section class="band-dark">
 	<div class="wrap">
-		<SectionHead onDark eyebrow={head.eyebrow} title={head.title} lead={head.lead} />
+		<SectionHead eyebrow={head.eyebrow} title={head.title} lead={head.lead} />
 		<div class="threats">
 			{#each c.threats as threat (threat.title)}
 				<div class="threat">
@@ -32,7 +32,7 @@
 		padding: 92px 0;
 	}
 	.band-dark {
-		background: var(--bg-band-dark);
+		background: var(--bg-soft);
 	}
 	.threats {
 		display: grid;
@@ -40,34 +40,35 @@
 		gap: 18px;
 	}
 	.threat {
-		background: var(--navy-700);
+		border: 1px solid var(--border);
+		background: var(--bg-card);
 		border-radius: var(--radius);
 		padding: 22px;
 	}
 	.threat h3 {
-		color: var(--text-on-dark);
+		color: var(--text-primary);
 		font-size: 1.2rem;
 		margin-bottom: 8px;
 	}
 	.threat p {
 		font-size: 1rem;
-		color: var(--text-on-dark-secondary);
+		color: var(--text-secondary);
 	}
 	.surprise {
 		margin-top: 30px;
-		background: var(--navy-700);
+		background: var(--bg-card);
 		/* border: 1px solid var(--border-on-dark); */
 		border-left: 5px solid var(--accent);
 		/* border-radius: 0 var(--radius) var(--radius) 0; */
 		padding: 26px 28px;
 	}
 	.surprise h3 {
-		color: var(--text-on-dark);
+		color: var(--text-primary);
 		font-size: 1.15rem;
 		margin-bottom: 8px;
 	}
 	.surprise p {
-		color: var(--text-on-dark-secondary);
+		color: var(--text-secondary);
 	}
 	@media (max-width: 860px) {
 		section {

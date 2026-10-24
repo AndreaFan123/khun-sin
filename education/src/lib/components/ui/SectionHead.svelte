@@ -35,16 +35,10 @@
 		font-size: 0.9rem;
 		font-weight: 700;
 		letter-spacing: 0.14em;
-		color: var(--slate-600);
+		color: var(--text-secondary);
 		margin-bottom: 14px;
 	}
-	.eyebrow::before {
-		content: '';
-		width: 26px;
-		height: 2px;
-		background: var(--accent);
-		border-radius: 2px;
-	}
+
 	.title {
 		font-size: clamp(1.8rem, 4vw, 4rem);
 	}
@@ -55,7 +49,7 @@
 		max-width: 62ch;
 	}
 	.on-dark .eyebrow {
-		color: var(--accent);
+		color: var(--accent-on-dark);
 	}
 	.on-dark .title {
 		color: var(--text-on-dark);

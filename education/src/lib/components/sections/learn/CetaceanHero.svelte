@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '$lib/components/ui/Breadcrumbs.svelte';
 	import heroImage from '$lib/assets/dolphins_hero_bg.jpg';
 	import { useSite } from '$lib/copy';
 
@@ -9,6 +10,7 @@
 <section id="know" class="hero">
 	<img class="hero-bg" src={heroImage} alt="" />
 	<div class="wrap hero-content">
+		<Breadcrumbs tone="media" />
 		<div class="copy">
 			<span class="eyebrow">{copy.eyebrow}</span>
 			<h1>{copy.title}</h1>
@@ -32,6 +34,9 @@
 </section>
 
 <style>
+	a:focus-visible {
+		outline-color: var(--accent-on-dark);
+	}
 	.hero {
 		position: relative;
 		overflow: hidden;
@@ -41,7 +46,7 @@
 		content: '';
 		position: absolute;
 		inset: 0;
-		background: rgba(16, 31, 61, 0.66);
+		background: rgba(16, 31, 61, 0.82);
 	}
 	.hero-bg {
 		position: absolute;
@@ -63,7 +68,7 @@
 		align-items: center;
 		gap: 10px;
 		margin-bottom: 18px;
-		color: var(--accent);
+		color: var(--accent-on-dark);
 		font-size: 0.9rem;
 		font-weight: 700;
 		letter-spacing: 0.14em;

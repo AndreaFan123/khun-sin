@@ -72,6 +72,16 @@ describe('localized cetacean routes', () => {
 		expect(routePathFor('/cetaceans')).toBe('/cetaceans');
 		expect(routePathFor('/en/cetaceans/')).toBe('/en/cetaceans');
 	});
+
+	it('registers the Taiwanese white dolphin detail pages as counterparts', () => {
+		const zh = '/cetaceans/sousa-chinensis-taiwanensis';
+		const en = '/en/cetaceans/sousa-chinensis-taiwanensis';
+
+		expect(entryFor(zh).alternate).toBe(en);
+		expect(entryFor(en).alternate).toBe(zh);
+		expect(routePathFor(`${zh}/`)).toBe(zh);
+		expect(routePathFor(`${en}/`)).toBe(en);
+	});
 });
 
 describe('localized support routes', () => {

@@ -1,7 +1,9 @@
 <script lang="ts">
+	import ChevronRight from '@lucide/svelte/icons/chevron-right';
 	// The seven-year trend (#9): dead below, live above, total labelled on top.
 	// The two segments animate as one column so the stack never appears to
 	// separate mid-flight.
+	import { useSite } from '$lib/copy';
 	import { stackedLayout } from '$lib/charts/layout';
 	import { describeChart } from '$lib/charts/describe';
 	import { tooltip } from '$lib/actions/tooltip';
@@ -17,6 +19,8 @@
 
 	let { items, ariaLabel }: { items: StackedItem[]; ariaLabel: string } = $props();
 
+	const site = useSite();
+	const en = $derived(site().locale === 'en');
 	let containerWidth = $state(0);
 	const width = $derived(containerWidth || 560);
 	const layout = $derived(stackedLayout(items, { width }));
@@ -62,6 +66,14 @@
 					rx="4"
 					use:tooltip={item.liveTooltip}
 				/>
+				{#if item.dead > 0 && item.live > 0}<line
+						x1={column.x}
+						x2={column.x + column.width}
+						y1={column.deadY}
+						y2={column.deadY}
+						stroke="var(--bg-card)"
+						stroke-width="3"
+					/>{/if}
 			</g>
 			<text
 				class="barvalue"
@@ -75,9 +87,64 @@
 			>
 		{/each}
 	</svg>
+	<details>
+		<summary
+			><ChevronRight class="summary-chevron" size="1em" aria-hidden="true" />{en
+				? 'Read annual dead and live counts'
+				: '閱讀各年度死亡與活體數量'}</summary
+		>
+		<table>
+			<caption>{ariaLabel}</caption><thead
+				><tr
+					><th scope="col">{en ? 'Year' : '年度'}</th><th scope="col"
+						>{en ? 'Dead' : '死亡（隻）'}</th
+					><th scope="col">{en ? 'Live' : '活體（隻）'}</th></tr
+				></thead
+			><tbody
+				>{#each items as item (item.label)}<tr
+						><th scope="row">{item.label}</th><td>{item.dead}</td><td>{item.live}</td></tr
+					>{/each}</tbody
+			>
+		</table>
+	</details>
 </div>
 
 <style>
+	summary {
+		display: flex;
+		align-items: center;
+		gap: 0.35em;
+		list-style: none;
+		cursor: pointer;
+		min-height: 44px;
+		padding: 0.5rem 0;
+		color: var(--text-primary);
+	}
+	summary::-webkit-details-marker {
+		display: none;
+	}
+	summary::marker {
+		content: '';
+	}
+	summary :global(.summary-chevron) {
+		flex-shrink: 0;
+	}
+	details[open] > summary :global(.summary-chevron) {
+		transform: rotate(90deg);
+	}
+	table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+	caption {
+		text-align: left;
+	}
+	th,
+	td {
+		text-align: left;
+		padding: 0.5rem;
+		border-bottom: 1px solid var(--border);
+	}
 	.chart {
 		min-height: 240px;
 	}

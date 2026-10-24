@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ArrowRight from '@lucide/svelte/icons/arrow-right';
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
 	import { useSite } from '$lib/copy';
@@ -27,8 +28,20 @@
 		<h1 id="error-title">{title}</h1>
 		<p class="description">{description}</p>
 		<nav class="actions" aria-label={copy.linksLabel}>
-			<a class="primary" href={home}>{copy.home}<span aria-hidden="true">→</span></a>
-			<a class="secondary" href={data}>{copy.data}<span aria-hidden="true">→</span></a>
+			<a class="primary" href={home}
+				>{copy.home}<ArrowRight
+					size="1em"
+					aria-hidden="true"
+					style="display: inline-block; vertical-align: -0.125em; flex-shrink: 0"
+				/></a
+			>
+			<a class="secondary" href={data}
+				>{copy.data}<ArrowRight
+					size="1em"
+					aria-hidden="true"
+					style="display: inline-block; vertical-align: -0.125em; flex-shrink: 0"
+				/></a
+			>
 		</nav>
 	</div>
 </section>
@@ -45,7 +58,7 @@
 		padding-block: clamp(72px, 10vw, 144px);
 	}
 	.status {
-		color: var(--navy-700);
+		color: var(--heading);
 		font-size: clamp(7rem, 16vw, 13rem);
 		font-weight: 800;
 		letter-spacing: -0.07em;
@@ -85,19 +98,19 @@
 		padding: 13px 20px;
 		min-height: 48px;
 		border: 1px solid transparent;
-		border-radius: var(--radius);
+		border-radius: var(--radius-action);
 		font-weight: 700;
 		text-decoration: none;
 	}
 	.primary {
 		background: var(--accent);
-		color: var(--navy-900);
+		color: var(--on-accent);
 	}
 	.primary:hover {
-		background: var(--amber-300);
+		background: var(--accent);
 	}
 	.actions .secondary {
-		border-color: var(--slate-500);
+		border: 1.5px solid var(--text-primary);
 		color: var(--heading);
 	}
 	.secondary:hover {

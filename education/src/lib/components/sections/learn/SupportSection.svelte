@@ -1,4 +1,6 @@
 <script lang="ts">
+	import ArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
+	import Breadcrumbs from '$lib/components/ui/Breadcrumbs.svelte';
 	// Referral-first support page (issue #22). External links only — this site
 	// never touches money.
 	import SectionHead from '$lib/components/ui/SectionHead.svelte';
@@ -10,6 +12,7 @@
 
 <section id="support">
 	<div class="wrap">
+		<Breadcrumbs />
 		<SectionHead as="h1" eyebrow={c.head.eyebrow} title={c.head.title} lead={c.head.lead} />
 
 		<div class="cards">
@@ -18,7 +21,14 @@
 					<h3>{org.name}</h3>
 					<p>{org.description}</p>
 					<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL -->
-					<a href={org.url} target="_blank" rel="noopener">{org.linkLabel} ↗</a>
+					<a href={org.url} target="_blank" rel="noopener"
+						>{org.linkLabel}
+						<ArrowUpRight
+							size="1em"
+							aria-hidden="true"
+							style="display: inline-block; vertical-align: -0.125em; flex-shrink: 0"
+						/></a
+					>
 				</article>
 			{/each}
 		</div>
@@ -38,6 +48,7 @@
 		gap: 20px;
 	}
 	.card {
+		border: 1px solid var(--border);
 		background: var(--bg-card);
 		border-radius: var(--radius);
 		padding: 26px;
@@ -54,7 +65,15 @@
 		flex: 1;
 	}
 	a {
-		color: var(--accent-text);
+		display: inline-flex;
+		align-items: center;
+		align-self: flex-start;
+		gap: 8px;
+		min-height: 44px;
+		padding: 10px 16px;
+		border-radius: var(--radius-action);
+		background: var(--accent);
+		color: var(--on-accent);
 		font-weight: 700;
 		text-decoration: none;
 	}

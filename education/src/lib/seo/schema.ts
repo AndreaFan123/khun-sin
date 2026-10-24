@@ -17,7 +17,10 @@
  */
 
 import type { SiteContext } from '$lib/copy';
-import { lastUpdated, totals } from '$lib/data/strandings';
+import { lastUpdated, annualTotals } from '$lib/data/strandings';
+import { turtleTotals } from '$lib/data/turtle-strandings';
+import { turtleStatisticsSource } from '$lib/data/report-sources';
+import { speciesLinks, speciesToolCopy, type SpeciesScope } from '$lib/navigation';
 import { absolute, htmlLangOf, SITE_ORIGIN } from './routes';
 
 export type JsonLd = Record<string, unknown>;
@@ -91,26 +94,30 @@ export const buildFaqPage = ({ copy, locale }: SiteContext): JsonLd => {
 	};
 };
 
-export const buildDataset = ({ copy, locale }: SiteContext): JsonLd => {
-	const years = totals.map((t) => t.period.year);
+export const buildDataset = ({ copy, locale }: SiteContext, scope: SpeciesScope): JsonLd => {
+	const turtle = scope === 'sea-turtles';
+	const meta = speciesToolCopy(locale, scope, 'data');
+	const years = turtle ? turtleTotals.map((t) => t.year) : annualTotals().map((t) => t.period.year);
 	return {
 		'@context': CONTEXT,
 		'@type': 'Dataset',
-		name: copy.schemaCopy.dataset.name,
-		description: copy.schemaCopy.dataset.description,
+		name: meta.title,
+		description: meta.description,
 		inLanguage: htmlLangOf(locale),
-		url: absolute(locale === 'en' ? '/en/data' : '/data'),
+		url: absolute(speciesLinks(locale, scope).data.path),
 		temporalCoverage: `${Math.min(...years)}/${Math.max(...years)}`,
 		dateModified: lastUpdated,
 		spatialCoverage: { '@type': 'Place', name: 'Taiwan' },
 		creator: {
 			'@type': 'GovernmentOrganization',
 			name: copy.schemaCopy.sourceName,
-			url: copy.dataSources.marnUrl
+			url: turtle ? turtleStatisticsSource : copy.dataSources.marnUrl
 		},
 		publisher: { '@id': ORGANIZATION_ID },
 		isAccessibleForFree: true,
-		keywords: ['cetacean stranding', 'Taiwan', 'marine conservation', '鯨豚擱淺', '海洋保育']
+		keywords: turtle
+			? ['sea turtle stranding', 'Taiwan', '海龜擱淺']
+			: ['cetacean stranding', 'Taiwan', 'marine conservation', '鯨豚擱淺', '海洋保育']
 	};
 };
 

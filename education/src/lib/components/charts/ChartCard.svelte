@@ -75,8 +75,8 @@
 		margin-top: 18px;
 		padding: 14px 16px;
 		border-left: 3px solid var(--accent);
-		background: var(--amber-50);
-		border-radius: 0 10px 10px 0;
+		background: var(--bg-soft);
+		border-radius: 0 var(--radius) var(--radius) 0;
 		font-size: 0.92rem;
 		color: var(--text-secondary);
 	}

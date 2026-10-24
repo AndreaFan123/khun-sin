@@ -15,6 +15,9 @@
 </section>
 
 <style>
+	a:focus-visible {
+		outline-color: var(--accent-on-dark);
+	}
 	.cta {
 		background: var(--bg-band-darker);
 		color: var(--text-on-dark);
@@ -48,7 +51,7 @@
 	}
 	.btn.primary {
 		background: var(--accent);
-		color: var(--navy-900);
+		color: var(--on-accent);
 	}
 	.btn.ghost {
 		border: 1.5px solid var(--border-on-dark);

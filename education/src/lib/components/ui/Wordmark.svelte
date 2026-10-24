@@ -21,7 +21,7 @@
 		display: inline-block;
 	}
 	.amber {
-		color: var(--amber-600);
+		color: var(--accent-text);
 	}
 	.on-dark .amber {
 		color: var(--amber-400);

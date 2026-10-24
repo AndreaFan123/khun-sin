@@ -28,8 +28,9 @@
 		position: fixed;
 		z-index: 99;
 		pointer-events: none;
-		background: var(--navy-900);
-		color: var(--paper-50);
+		background: var(--bg-card);
+		border: 1px solid var(--border);
+		color: var(--text-primary);
 		padding: 8px 11px;
 		border-radius: 9px;
 		font-size: 0.82rem;

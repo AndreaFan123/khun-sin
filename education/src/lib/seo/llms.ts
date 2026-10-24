@@ -11,6 +11,7 @@
  * English copy so the page descriptions match.
  */
 
+import { speciesToolFor, speciesToolCopy } from '$lib/navigation';
 import type { SiteContext } from '$lib/copy';
 import type { StrandingTotals } from '$lib/data/strandings';
 import { absolute, routes, SITE_ORIGIN } from './routes';
@@ -21,15 +22,33 @@ export const buildLlmsTxt = ({ copy }: SiteContext, totals: StrandingTotals[]): 
 
 	const pages = routes
 		.map((route) => {
-			const isCetaceans = route.path.endsWith('cetaceans');
-			const isSupport = route.path.endsWith('support');
-			const pageTitle = isCetaceans ? 'Cetaceans' : isSupport ? 'Support' : 'Home';
+			const toolPage = speciesToolFor(route.path);
+			const leaf = route.path.split('/').at(-1);
+			const pageNames: Record<string, string> = {
+				cetaceans: 'Cetaceans',
+				'sea-turtles': 'Sea turtles',
+				'sousa-chinensis-taiwanensis': 'Taiwanese white dolphin',
+				data: 'Stranding data selection',
+				map: 'Stranding map selection',
+				support: 'Support'
+			};
+			const meta = toolPage ? speciesToolCopy('en', toolPage.scope, toolPage.tool) : undefined;
+			const pageTitle = meta?.title ?? pageNames[leaf ?? ''] ?? 'Home';
 			const title = `${pageTitle} (${route.locale === 'en' ? 'English' : 'Chinese'})`;
-			const description = isCetaceans
-				? copy.meta.learn.description
-				: isSupport
-					? copy.meta.support.description
-					: copy.meta.home.description;
+			const description =
+				meta?.description ??
+				(leaf === 'cetaceans'
+					? copy.meta.learn.description
+					: leaf === 'support'
+						? copy.meta.support.description
+						: leaf === 'sea-turtles'
+							? 'Meet Taiwan’s sea turtles, their habitats and conservation.'
+							: leaf === 'data' || leaf === 'map'
+								? 'Choose a species group to view its Taiwan stranding records.'
+								: leaf === 'sousa-chinensis-taiwanensis'
+									? 'Learn about Taiwanese white dolphin conservation and monitoring.'
+									: copy.meta.home.description);
+
 			return `- [${title}](${absolute(route.path)}): ${description}`;
 		})
 		.join('\n');
