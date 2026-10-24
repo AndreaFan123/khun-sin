@@ -3,15 +3,15 @@ import { checkNavigation, checkPage, checkRobots, checkSitemap } from './preflig
 import { absolute, alternatesFor, routes } from './routes';
 import { buildSitemap } from './sitemap';
 
-const route = routes.find((r) => r.path === '/data')!;
-const html = `<html lang="zh-Hant-TW"><head><title>台灣擱淺數據</title>
+const route = routes.find((r) => r.path === '/cetaceans/stranding-data')!;
+const html = `<html lang="zh-Hant-TW"><head><title>台灣擱淺統計</title>
 <meta name="description" content="台灣鯨豚與海龜統計">
 <link rel="canonical" href="${absolute(route.path)}">
 ${alternatesFor(route.path)
 	.map((a) => `<link rel="alternate" hreflang="${a.hreflang}" href="${a.href}">`)
 	.join('')}
 <script type="application/ld+json">${JSON.stringify({ '@type': 'Dataset', url: absolute(route.path), inLanguage: 'zh-Hant-TW', name: '擱淺統計', description: '官方資料整理' })}</script>
-</head><body><main><h1>台灣擱淺統計</h1><p>鯨豚與海龜年度數據。</p></main></body></html>`;
+</head><body><main><nav aria-label="麵包屑"><ol><li>首頁</li><li>認識鯨豚</li><li>擱淺統計</li></ol></nav><section data-species="cetaceans"><div class="chart-card"></div><div class="chart-card"></div><div class="chart-card"></div><div class="chart-card"></div><div class="chart-card"></div></section><h1>台灣擱淺統計</h1><p>鯨豚與海龜年度數據。</p></main></body></html>`;
 
 describe('release SEO checks', () => {
 	it('rejects a page with only a self-link and no path from home', () => {
@@ -29,9 +29,48 @@ describe('release SEO checks', () => {
 		pages.set('/en', '<a href="/en/support">Support</a>');
 		expect(checkNavigation(pages)).toEqual([]);
 	});
+	it('allows compatibility hubs outside navigation while requiring all content routes', () => {
+		const pages = new Map(routes.map((r) => [r.path as string, '']));
+		pages.set(
+			'/',
+			routes
+				.filter((r) => !r.legacy)
+				.map((r) => `<a href="${r.path}">Page</a>`)
+				.join('')
+		);
+		expect(checkNavigation(pages)).toEqual([]);
+		pages.set('/', pages.get('/')!.replace('<a href="/sea-turtles/stranding-map">Page</a>', ''));
+		expect(checkNavigation(pages)).toEqual([
+			'/sea-turtles/stranding-map: not reachable from home through internal links'
+		]);
+	});
 	it('accepts a prerendered data page with matching metadata and Dataset', () => {
 		expect(checkPage(html, route)).toEqual([]);
 	});
+	it('rejects duplicate or missing breadcrumb navigation', () => {
+		const message = 'one breadcrumb navigation required on non-home pages, none on home pages';
+		expect(
+			checkPage(html.replace('</main>', '<nav aria-label="麵包屑"></nav></main>'), route)
+		).toContain(message);
+		expect(checkPage(html.replace(/<nav[\s\S]*?<\/nav>/, ''), route)).toContain(message);
+	});
+	it('rejects opposite animal content and incomplete species breadcrumbs', () => {
+		expect(
+			checkPage(
+				html.replace('</main>', '<article id="sea-turtles">Other animal</article></main>'),
+				route
+			)
+		).toContain('opposite animal content on species page');
+		expect(checkPage(html.replace('<li>認識鯨豚</li>', ''), route)).toContain(
+			'species tool requires three breadcrumb levels'
+		);
+	});
+	it('rejects chart content and Dataset on legacy selection hubs', () => {
+		const hub = routes.find((route) => route.path === '/data')!;
+		expect(checkPage(html, hub)).toContain('Dataset must appear only on data pages, once');
+		expect(checkPage(html, hub)).toContain('choice hub must not render charts');
+	});
+
 	it('does not confuse accessible SVG titles with the document title', () => {
 		expect(
 			checkPage(html.replace('</main>', '<svg><title>地圖說明</title></svg></main>'), route)
@@ -53,7 +92,10 @@ describe('release SEO checks', () => {
 		);
 		expect(
 			checkPage(
-				html.replace('"url":"https://www.khun-sin.com/data"', '"url":"https://www.khun-sin.com/"'),
+				html.replace(
+					'"url":"https://www.khun-sin.com/cetaceans/stranding-data"',
+					'"url":"https://www.khun-sin.com/"'
+				),
 				route
 			).join(' ')
 		).toMatch(/Dataset/);
@@ -67,7 +109,12 @@ describe('release SEO checks', () => {
 		);
 	});
 	it('rejects Dataset on a home page and missing prerendered content', () => {
-		expect(checkPage(html, routes[0]).join(' ')).toMatch(/Dataset/);
+		expect(
+			checkPage(
+				html,
+				routes.find((r) => r.path === '/')!
+			).join(' ')
+		).toMatch(/Dataset/);
 		expect(checkPage(html.replace(/<main[\s\S]*?<\/main>/, ''), route).join(' ')).toMatch(/main/);
 	});
 	it('checks the complete sitemap inventory and per-page alternates', () => {

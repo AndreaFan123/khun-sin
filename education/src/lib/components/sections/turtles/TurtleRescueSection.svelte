@@ -8,7 +8,7 @@
 <section class="rescue band-dark">
 	<div class="wrap rescue-layout">
 		<div>
-			<SectionHead onDark eyebrow={rescue.eyebrow} title={rescue.title} lead={rescue.lead} />
+			<SectionHead eyebrow={rescue.eyebrow} title={rescue.title} lead={rescue.lead} />
 			<div class="hotline">
 				<strong>118</strong>
 				<span>{rescue.callLabel}</span>
@@ -30,7 +30,7 @@
 
 <style>
 	.band-dark {
-		background: var(--bg-band-darker);
+		background: var(--bg);
 	}
 	.rescue {
 		padding: 92px 0;
@@ -43,7 +43,7 @@
 	.hotline {
 		display: grid;
 		gap: 8px;
-		background: var(--navy-700);
+		background: var(--bg-card);
 		border-radius: var(--radius);
 		padding: 30px 34px;
 	}
@@ -56,21 +56,21 @@
 		font-variant-numeric: tabular-nums;
 	}
 	.hotline span {
-		color: var(--text-on-dark-secondary);
+		color: var(--text-secondary);
 		font-size: clamp(1.15rem, 2vw, 1.5rem);
 		font-weight: 600;
 		letter-spacing: 0.08em;
 	}
 	ol {
 		list-style: none;
-		border-top: 1px solid var(--border-on-dark);
+		border-top: 1px solid var(--border);
 	}
 	li {
 		display: grid;
 		grid-template-columns: 48px 1fr;
 		gap: 18px;
 		padding: 22px 0;
-		border-bottom: 1px solid var(--border-on-dark);
+		border-bottom: 1px solid var(--border);
 	}
 	li > span {
 		color: var(--accent);
@@ -79,11 +79,11 @@
 	}
 	li h2 {
 		margin-bottom: 5px;
-		color: var(--text-on-dark);
+		color: var(--text-primary);
 		font-size: 1.12rem;
 	}
 	li p {
-		color: var(--text-on-dark-secondary);
+		color: var(--text-secondary);
 	}
 	@media (max-width: 800px) {
 		.rescue {

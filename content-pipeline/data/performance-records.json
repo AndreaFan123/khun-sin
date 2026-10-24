@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "package_id": "pkg-2026-w43-a",
+      "publication_status": "not_published",
+      "publication_platform": null,
+      "publication_url": null,
+      "publish_date": null,
+      "metrics": {
+        "impressions": null,
+        "saves": null,
+        "shares": null,
+        "meaningful_comments": null,
+        "source_link_clicks": null,
+        "return_visits": null,
+        "conversions": null
+      },
+      "corrections_or_complaints": [],
+      "production_minutes": null
+    },
+    {
+      "package_id": "pkg-2026-w43-b",
+      "publication_status": "not_published",
+      "publication_platform": null,
+      "publication_url": null,
+      "publish_date": null,
+      "metrics": {
+        "impressions": null,
+        "saves": null,
+        "shares": null,
+        "meaningful_comments": null,
+        "source_link_clicks": null,
+        "return_visits": null,
+        "conversions": null
+      },
+      "corrections_or_complaints": [],
+      "production_minutes": null
+    },
+    {
+      "package_id": "pkg-2026-w43-c",
+      "publication_status": "not_published",
+      "publication_platform": null,
+      "publication_url": null,
+      "publish_date": null,
+      "metrics": {
+        "impressions": null,
+        "saves": null,
+        "shares": null,
+        "meaningful_comments": null,
+        "source_link_clicks": null,
+        "return_visits": null,
+        "conversions": null
+      },
+      "corrections_or_complaints": [],
+      "production_minutes": null
+    },
+    {
+      "package_id": "pkg-2026-w44-a",
+      "publication_status": "not_published",
+      "publication_platform": null,
+      "publication_url": null,
+      "publish_date": null,
+      "metrics": {
+        "impressions": null,
+        "saves": null,
+        "shares": null,
+        "meaningful_comments": null,
+        "source_link_clicks": null,
+        "return_visits": null,
+        "conversions": null
+      },
+      "corrections_or_complaints": [],
+      "production_minutes": null
+    },
+    {
+      "package_id": "pkg-2026-w44-b",
+      "publication_status": "not_published",
+      "publication_platform": null,
+      "publication_url": null,
+      "publish_date": null,
+      "metrics": {
+        "impressions": null,
+        "saves": null,
+        "shares": null,
+        "meaningful_comments": null,
+        "source_link_clicks": null,
+        "return_visits": null,
+        "conversions": null
+      },
+      "corrections_or_complaints": [],
+      "production_minutes": null
+    },
+    {
+      "package_id": "pkg-2026-w44-c",
+      "publication_status": "not_published",
+      "publication_platform": null,
+      "publication_url": null,
+      "publish_date": null,
+      "metrics": {
+        "impressions": null,
+        "saves": null,
+        "shares": null,
+        "meaningful_comments": null,
+        "source_link_clicks": null,
+        "return_visits": null,
+        "conversions": null
+      },
+      "corrections_or_complaints": [],
+      "production_minutes": null
+    },
+    {
+      "package_id": "pkg-2026-w45-a",
+      "publication_status": "not_published",
+      "publication_platform": null,
+      "publication_url": null,
+      "publish_date": null,
+      "metrics": {
+        "impressions": null,
+        "saves": null,
+        "shares": null,
+        "meaningful_comments": null,
+        "source_link_clicks": null,
+        "return_visits": null,
+        "conversions": null
+      },
+      "corrections_or_complaints": [],
+      "production_minutes": null
+    },
+    {
+      "package_id": "pkg-2026-w45-b",
+      "publication_status": "not_published",
+      "publication_platform": null,
+      "publication_url": null,
+      "publish_date": null,
+      "metrics": {
+        "impressions": null,
+        "saves": null,
+        "shares": null,
+        "meaningful_comments": null,
+        "source_link_clicks": null,
+        "return_visits": null,
+        "conversions": null
+      },
+      "corrections_or_complaints": [],
+      "production_minutes": null
+    },
+    {
+      "package_id": "pkg-2026-w45-c",
+      "publication_status": "not_published",
+      "publication_platform": null,
+      "publication_url": null,
+      "publish_date": null,
+      "metrics": {
+        "impressions": null,
+        "saves": null,
+        "shares": null,
+        "meaningful_comments": null,
+        "source_link_clicks": null,
+        "return_visits": null,
+        "conversions": null
+      },
+      "corrections_or_complaints": [],
+      "production_minutes": null
+    }
+  ]
+}
+

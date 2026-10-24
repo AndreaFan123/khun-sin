@@ -1,0 +1,5 @@
+timestamp	decision	evidence	result
+2026-10-20T00:00:00+08:00	Keep the prototype outside the production education site	The MVP document says to test three unpublished packages before a custom backend	Use content-pipeline as an isolated operational prototype
+2026-10-20T00:00:00+08:00	Fail closed on source rights	IWC requires prior permission for republication; NOAA and OCA publish explicit reuse policies	Block the IWC package and permit only rights-reviewed source use
+2026-10-20T00:00:00+08:00	Keep source media out of the first cycle	NOAA and OCA pages can contain third-party or specially marked media	Use no source media in all three packages
+2026-10-20T00:00:00+08:00	Delay backend development	The records and validator can exercise all five MVP collections	Run two more weekly cycles and measure production time before choosing automation

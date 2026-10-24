@@ -5,6 +5,9 @@
  * below may mention figures only as part of sourced narrative copy.
  */
 
+export type SpeciesDetailPath =
+	'/cetaceans/sousa-chinensis-taiwanensis' | '/en/cetaceans/sousa-chinensis-taiwanensis';
+
 export interface SpeciesCard {
 	tag: string;
 	tagKind: 'critical' | 'common' | 'info';
@@ -21,6 +24,7 @@ export interface SpeciesCard {
 		| 'pygmySpermWhale'
 		| 'cuviersBeakedWhale';
 	imageAlt: string;
+	detailPath?: SpeciesDetailPath;
 	redList?: {
 		label: string;
 		level: 'critically-endangered' | 'vulnerable' | 'near-threatened';
@@ -37,6 +41,7 @@ export const speciesCards: SpeciesCard[] = [
 			'只生活在台灣西部沿海的特有亞種，粉白身影被稱為「媽祖魚」。學者估計現存不到 50 隻，且族群每年約下滑 3–4%，是台灣最急迫的海洋保育對象。',
 		imageKey: 'taiwaneseHumpback',
 		imageAlt: '台灣白海豚游在近岸海面',
+		detailPath: '/cetaceans/sousa-chinensis-taiwanensis',
 		redList: { label: '極危', level: 'critically-endangered' }
 	},
 	{
@@ -239,21 +244,14 @@ export const noPerfectSolution = {
 };
 
 export interface ConservationKpi {
-	/** Key into strandings.whiteDolphinProgram2025 — the number stays in the data layer. */
-	metric: 'catalogued' | 'sampled' | 'sightingGroups' | 'pathologyCases';
+	metric: 'sampled' | 'pathologyCases';
 	unit: string;
 	label: string;
 }
 
 export const conservationKpis: ConservationKpi[] = [
-	{
-		metric: 'catalogued',
-		unit: '隻',
-		label: '台灣白海豚個體辨識名錄累計數，為每隻粉紅精靈建檔追蹤'
-	},
-	{ metric: 'sampled', unit: '隻', label: '2025 年完成科學採樣的個體數，用於病理與死因分析' },
-	{ metric: 'sightingGroups', unit: '群次', label: '白海豚海上調查累計目擊紀錄，支撐族群監測' },
-	{ metric: 'pathologyCases', unit: '件', label: '2025 年病理解剖分析，把每次死亡轉化為保育知識' }
+	{ metric: 'sampled', unit: '隻', label: '2025 年鯨豚科學採樣個體數' },
+	{ metric: 'pathologyCases', unit: '件', label: '2025 年鯨豚病理解剖分析件數' }
 ];
 
 export interface ChartCardCopy {
@@ -510,7 +508,7 @@ export const sectionHeads = {
 		lead: ''
 	},
 	data: {
-		eyebrow: '擱淺數據',
+		eyebrow: '擱淺統計',
 		title: '同一張救援網，兩種不同的海洋訊號',
 		lead: '鯨豚與海龜都由 118 啟動海保救援網，但擱淺數量、季節與地點並不相同。以下並列海保署官方統計表與 MARN 報告資料，讓兩類動物的差異可以一起閱讀。'
 	},
@@ -548,7 +546,7 @@ export const sectionHeads = {
 
 export const uiCopy = {
 	navReport: '通報',
-	navData: '擱淺數據',
+	navData: '擱淺統計',
 	navMap: '擱淺地圖',
 	navLearn: '認識鯨豚',
 	navTurtles: '認識海龜',
@@ -598,7 +596,7 @@ export const meta = {
 			'發現擱淺或受困的鯨豚、海龜請撥 118。查看通報時需要提供的資訊、現場該做與絕對不要做的事。'
 	},
 	data: {
-		title: '台灣鯨豚與海龜擱淺數據 · Khun-Sin',
+		title: '台灣鯨豚與海龜擱淺統計 · Khun-Sin',
 		description: '整理海保署官方報告中的鯨豚與海龜年度擱淺數量、發現狀態、物種及原因。'
 	},
 	map: {
@@ -631,9 +629,9 @@ export const schemaCopy = {
 	dontQuestion: '發現擱淺鯨豚或海龜時，絕對不要做什麼？',
 	sourceName: '海洋委員會海洋保育署',
 	dataset: {
-		name: '台灣鯨豚與海龜擱淺統計（海保救援網 MARN）',
+		name: '台灣鯨豚與海龜擱淺統計（2019–2025 年度、2025 分項）',
 		description:
-			'台灣周邊海域鯨豚與海龜擱淺統計：擱淺總數、死亡與活體、物種、縣市分布、月份與事件類型。資料來自海洋委員會海洋保育署「海保救援網（MARN）」官方擱淺報告與統計表，由 Khun-Sin 整理呈現。'
+			'2019–2025 完整年度趨勢與 2025 全年度分項統計，涵蓋台灣周邊海域鯨豚與海龜的擱淺總數、死亡與活體、物種、縣市分布、月份與事件類型。資料來自海洋委員會海洋保育署「海保救援網（MARN）」官方擱淺報告與統計表，由 Khun-Sin 整理呈現。'
 	}
 };
 
@@ -656,6 +654,6 @@ export const errorPage = {
 	errorTitle: '目前無法載入頁面',
 	errorDescription: '請稍後再試，或從首頁繼續瀏覽。',
 	home: '返回通報首頁',
-	data: '查看擱淺數據',
+	data: '查看擱淺統計',
 	linksLabel: '繼續瀏覽'
 };

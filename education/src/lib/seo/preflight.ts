@@ -1,3 +1,4 @@
+import { speciesToolFor } from '../navigation.ts';
 import {
 	absolute,
 	alternatesFor,
@@ -42,7 +43,7 @@ export function checkNavigation(pages: Map<string, string>): string[] {
 		}
 	}
 	return routes
-		.filter((r) => !reached.has(r.path))
+		.filter((r) => !r.legacy && !reached.has(r.path))
 		.map((r) => `${r.path}: not reachable from home through internal links`);
 }
 
@@ -85,7 +86,8 @@ export function checkPage(html: string, route: RouteEntry): string[] {
 		}
 	}
 	const datasets = schemas.filter((s) => s?.['@type'] === 'Dataset');
-	const isData = route.path === '/data' || route.path === '/en/data';
+	const toolPage = speciesToolFor(route.path);
+	const isData = toolPage?.tool === 'data';
 	require(datasets.length === (isData ? 1 : 0), 'Dataset must appear only on data pages, once');
 	if (isData && datasets.length === 1) {
 		const dataset = datasets[0];
@@ -95,6 +97,43 @@ export function checkPage(html: string, route: RouteEntry): string[] {
 			Boolean(dataset.name.trim()) &&
 			typeof dataset.description === 'string' &&
 			Boolean(dataset.description.trim()), 'Dataset URL, language or metadata mismatch');
+	}
+
+	const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1] ?? '';
+	const breadcrumbs = tags(main, 'nav').filter((nav) =>
+		/^(?:Breadcrumb|麵包屑)$/.test(nav['aria-label'] ?? '')
+	);
+	require(breadcrumbs.length ===
+		(route.path === '/' || route.path === '/en'
+			? 0
+			: 1), 'one breadcrumb navigation required on non-home pages, none on home pages');
+	if (toolPage) {
+		const opposite = toolPage.scope === 'cetaceans' ? 'sea-turtles' : 'cetaceans';
+		require(tags(main, 'section').some(
+			(section) => section['data-species'] === toolPage.scope
+		), 'species-scoped content required');
+		require(!new RegExp(`id=["']${opposite}["']`).test(
+			main
+		), 'opposite animal content on species page');
+		const crumbs =
+			main.match(
+				/<nav\b[^>]*aria-label=["'](?:Breadcrumb|麵包屑)["'][^>]*>([\s\S]*?)<\/nav>/i
+			)?.[1] ?? '';
+		require(tags(crumbs, 'li').length === 3, 'species tool requires three breadcrumb levels');
+		if (toolPage.tool === 'map')
+			require(tags(main, 'svg').filter((svg) => svg.role === 'img').length ===
+				1, 'species map must render exactly one map');
+		else
+			require(tags(main, 'div').filter((div) => div.class?.split(' ').includes('chart-card'))
+				.length === (toolPage.scope === 'cetaceans' ? 5 : 4), 'species data chart count mismatch');
+	}
+	if (/^\/(?:en\/)?(?:data|map)$/.test(route.path)) {
+		require(!tags(main, 'svg').some(
+			(svg) => svg.role === 'img'
+		), 'choice hub must not render maps or charts');
+		require(!tags(main, 'div').some((div) =>
+			div.class?.split(' ').includes('chart-card')
+		), 'choice hub must not render charts');
 	}
 	return errors;
 }

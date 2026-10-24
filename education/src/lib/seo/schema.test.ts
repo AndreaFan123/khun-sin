@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { SiteContext } from '$lib/copy';
 import * as zh from '$lib/data/site';
 import * as en from '$lib/data/site-en';
-import { lastUpdated, totals } from '$lib/data/strandings';
+import { lastUpdated, annualTotals } from '$lib/data/strandings';
 import { SITE_ORIGIN } from './routes';
 import {
 	buildDataset,
@@ -90,7 +90,7 @@ describe.each(contexts)('FAQPage (%s)', (locale, context) => {
 });
 
 describe.each(contexts)('Dataset (%s)', (locale, context) => {
-	const dataset = buildDataset(context);
+	const dataset = buildDataset(context, 'cetaceans');
 
 	it('is a schema.org Dataset', () => {
 		expect(dataset['@context']).toBe('https://schema.org');
@@ -107,12 +107,16 @@ describe.each(contexts)('Dataset (%s)', (locale, context) => {
 	});
 
 	it('derives temporal coverage from the data, so a new report updates it', () => {
-		const years = totals.map((t) => t.period.year);
+		const years = annualTotals().map((t) => t.period.year);
 		expect(dataset.temporalCoverage).toBe(`${Math.min(...years)}/${Math.max(...years)}`);
 	});
 
 	it('points at the page in its own language', () => {
-		expect(dataset.url).toBe(locale === 'en' ? `${SITE_ORIGIN}/en/data` : `${SITE_ORIGIN}/data`);
+		expect(dataset.url).toBe(
+			locale === 'en'
+				? `${SITE_ORIGIN}/en/cetaceans/stranding-data`
+				: `${SITE_ORIGIN}/cetaceans/stranding-data`
+		);
 	});
 });
 
@@ -164,7 +168,7 @@ describe('serializeJsonLd', () => {
 
 describe('Dataset currency', () => {
 	it('declares when the figures were last reconciled, not just what they cover', () => {
-		const dataset = buildDataset(contexts[0][1]);
+		const dataset = buildDataset(contexts[0][1], 'cetaceans');
 		expect(dataset.dateModified).toBe(lastUpdated);
 		expect(dataset.dateModified).not.toBe(dataset.temporalCoverage);
 	});

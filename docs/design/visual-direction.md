@@ -1,180 +1,55 @@
 # Visual Direction — Education Site
 
-**Status:** Accepted (palette & direction decided 2026-07-21 with Andrea)
-**Applies to:** the SvelteKit rebuild (`education/`); tokens are designed to be promoted to `shared/` for the report system later (ADR-002).
+**Status:** Accepted, 2026-10-24. The approved homepage prototype is `.audit/brand-prototype/landing-current-content.html`. This decision supersedes the earlier navy / paper / amber layout and homepage wave system.
 
-## Direction: quiet editorial
+**Applies to:** all `education/` routes and both locales. Existing source copy, rescue instructions, datasets, metadata, asset provenance, citations, and route relationships remain authoritative.
 
-The subject — strandings, death, rescue — is heavy. The visual language stays restrained and lets typography, a disciplined palette, and the data itself carry the page:
+## Glacier / Pacific
 
-- **No decorative pictograms.** All emoji removed (species cards, threat cards, network nodes, do/don't lists); cards are carried by type hierarchy and semantic color (left-border bands, tags). Amendment (2026-07-22): **functional UI icons are allowed** as inlined Lucide SVGs (ISC license) — currently menu/x/phone in the mobile bottom bar. Inline only; no icon-font or icon package dependency.
-- **One typeface, everywhere.** The whole site — headings, body, wordmark — uses the Noto Sans TC stack (`"Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif`). No webfont is downloaded at all: zero font bytes, zero external requests. Accepted trade-off: minor glyph differences across platforms when Noto Sans TC isn't installed (Windows falls back to Microsoft JhengHei). Serif headings were considered and dropped. Brand wordmark rules live in [brand.md](brand.md).
-- **Flat, minimal surfaces — no shadows anywhere.** Cards are distinguished purely by a half-step lighter surface (`paper-100` on `paper-200`) and a hairline border (`paper-300`); on dark bands, by a slightly lighter navy or a hairline of translucent white. `box-shadow` does not appear in the rebuilt CSS. Depth comes from the light/dark band rhythm, not from simulated elevation.
-- **The species gallery** (future route, see spec P2) is where photographic/media richness will live; the main page stays editorial.
+Use quiet blue surfaces, generous spacing, and the approved restrained brutalist accents. Strong headings, large report-step numbers and decisive action shapes establish hierarchy. Cards use an 8px radius and actions use 6px. Static cards retain soft 1px borders; full-card navigation links use 1.5px primary-text borders. Avoid hard shadows, loud color blocks and extra decorative rules. The homepage centers the large 118 message over the original ocean video with a readable theme-colored overlay. Four report steps form a two-column grid on desktop and one column below 800px. The complete do / don't lists sit in rounded panels. Navigation retains the original Khun-Sin wordmark, visible desktop links, locale switcher, and sticky header that becomes a floating pill after scrolling. Its opaque theme surface preserves text contrast over dark sections. On smaller screens, the original bottom bar keeps menu, language, and 118 access. The modal navigation sheet also contains language and 118 links. One header icon opens device, light, and dark preferences with visible text and native radio controls. Decorative arrows, heading rules, and wave dividers are removed from the shared page composition.
 
-## Palette
+| Role                    | Light: Glacier | Dark: Pacific |
+| ----------------------- | -------------- | ------------- |
+| Page                    | `#E8F2F4`      | `#0A3A5A`     |
+| Card                    | `#F7FBFB`      | `#0E4B70`     |
+| Soft surface / footer   | `#D5E6EA`      | `#072B43`     |
+| Primary text / headings | `#153B57`      | `#F0F8FB`     |
+| Secondary text          | `#345267`      | `#C2D9E5`     |
+| Link / focus            | `#056A82`      | `#83D5E7`     |
+| Attention               | `#A84E36`      | `#F0A66A`     |
+| Text on attention       | `#FFFFFF`      | `#173149`     |
+| Border                  | `#A9C2C9`      | `#5C8097`     |
 
-Brand seed (chosen from Andrea's options — "option 1"): `#1A3263` / `#547792` / `#FAB95B` / `#E8E2DB`. The old mint-green + coral scheme is retired entirely.
+`app.css` owns semantic tokens. Components consume `--bg`, `--bg-card`, `--bg-soft`, `--text-primary`, `--text-secondary`, `--heading`, `--signal`, `--accent`, and `--on-accent`. Ordinary reading sections, data pages, maps, research KPIs, threat cards, rescue instructions, county tables, tooltips and photo-credit panels follow the active theme. Light mode uses light surfaces throughout ordinary content, rather than keeping fixed dark data bands.
 
-### Semantic rules (more important than any hex)
+Fixed legacy ramps remain available for chart series, status chips, and explicitly dark photographic sections; they are not globally inverted with the page theme. Actual photo overlays use `--text-on-dark`, `--text-on-dark-secondary`, and `--accent-on-dark`. Cetacean and turtle photo heroes, the white dolphin photo introduction, the turtle journey photograph and the homepage ocean video keep their existing media treatment. Status chip backgrounds retain matching fixed foregrounds. Chart labels and surrounding surfaces use semantic tokens.
 
-1. **Amber is the single attention channel — "look here".** Outlying-island hotspots, live-stranding counts, hero numbers, map dots. One emphasis color, used sparingly, replaces the old two-channel orange/green system.
-2. **Baseline and mortality data wear slate.** No warm color for death counts — the weight is carried by copy, not colorized.
-3. **High saturation only at small area.** Large fills are always low-saturation (navy bands, paper surfaces); saturated amber appears only in small elements. (This is also a primary "de-AI-look" lever.)
-4. **Amber-400 is never text on light surfaces** (1.4:1). Text that needs an amber feel on light uses `amber-800`.
+Maps use `--map-land`, `--map-outline`, `--map-marker`, `--map-emphasis` and `--map-label`. Their legend uses the same marker and emphasis tokens. In light mode, the land is soft blue, normal markers are deep teal and emphasized markers are rust. In dark mode, the land is deep blue with bright teal outlines and markers. Halos remain decorative. Labels use primary text, and county-table text follows the active mode. Small KPI unit text uses secondary ink because rust on the soft light surface does not meet ordinary-text contrast.
 
-### Ramps
+## Display preference
 
-**Navy** — structure: dark bands, headings, depth
+The root `data-theme` attribute stores `auto`, `light`, or `dark`. CSS follows `prefers-color-scheme` in auto mode, including later system changes. A small guarded script applies a valid saved preference before paint. The icon controls read that root state after mounting and persist changes locally; blocked browser storage leaves the current selection usable. Without JavaScript, auto mode follows the device. Theme state does not belong to route data or the locale context.
 
-| Token | Hex | | Token | Hex |
-|---|---|---|---|---|
-| navy-50 | `#E9EDF5` | | navy-500 | `#3A548A` |
-| navy-100 | `#CBD5E8` | | navy-600 | `#274073` |
-| navy-200 | `#A3B4D4` | | **navy-700** | **`#1A3263`** (seed) |
-| navy-300 | `#7B93BF` | | navy-800 | `#142850` |
-| navy-400 | `#5372A5` | | navy-900 | `#101F3D` |
+## Typography and interaction
 
-**Slate** — data: chart series, borders, secondary text
+Headings default to weight 800 with modest negative letter spacing. Preserve the existing responsive type sizes, paragraph line heights, content widths and section spacing. Photo headings are already large and do not need further enlargement. Navigation labels, metric labels and body text retain their own weights. Keep functional circles and pills for theme controls, status badges, map symbols and the floating Navbar; content buttons use the shared action radius. Lucide supplies interface icons.
 
-| Token | Hex | | Token | Hex |
-|---|---|---|---|---|
-| slate-50 | `#EEF2F5` | | slate-500 | **`#547792`** (seed) |
-| slate-100 | `#D8E1E8` | | slate-600 | `#476885` |
-| slate-200 | `#C9D6E0` | | slate-700 | `#3D5A75` |
-| slate-300 | `#A7BCCB` | | slate-800 | `#2F4760` |
-| slate-400 | `#8FA9BD` | | slate-900 | `#27415C` |
+Interactive elements use explicit 180ms hover transitions for color, background, borders and underline offset. Action buttons and full-card links may move up 2px on devices with a fine pointer and hover support. Static cards remain still. Reduced motion disables these transitions and lifts. The skip link remains immediate, and keyboard focus outlines are not animated. Navbar scrolling, Chevron rotation, chart reveals and tooltip behavior retain their own motion rules.
 
-**Amber** — emphasis: the only warm family
+Keep the existing Noto Sans TC / PingFang TC / Microsoft JhengHei / system stack and the original wordmark identity, including its colored tittle. No font downloads or new dependencies. Root and body text start at 18px on desktop and mobile. Secondary labels remain readable; chart labels retain their dedicated scale. Body line height is at least 1.6. Homepage copy is unchanged in both locales.
 
-| Token | Hex | | Token | Hex |
-|---|---|---|---|---|
-| amber-50 | `#FEF4E4` | | amber-500 | `#E89E36` |
-| amber-100 | `#FDE6C2` | | amber-600 | `#C87F1F` |
-| amber-200 | `#FCD79E` | | amber-700 | `#A66618` |
-| amber-300 | `#FBC87C` | | amber-800 | `#8A5A13` |
-| **amber-400** | **`#FAB95B`** (seed) | | amber-900 | `#6B4109` |
+Use native button keyboard behavior. Escape closes the mobile menu and returns focus to its menu button. Following a link closes it and lets focus move to the destination; crossing the desktop breakpoint returns focus to a visible header control. Keep every navigation destination, locale counterpart, support page, and direct 118 call accessible. A visible direct-call link remains in the homepage hero. Radio arrow keys change the theme while keeping the panel open; pointer selection, Enter, or Space confirms and closes it.
 
-**Paper** — warm neutrals: surfaces and ink
+## Content navigation
 
-| Token | Hex | | Token | Hex |
-|---|---|---|---|---|
-| paper-50 | `#FBF9F6` | | paper-500 | `#948A7C` |
-| paper-100 | `#F6F2EC` (card) | | paper-600 | `#6F675C` |
-| **paper-200** | **`#E8E2DB`** (seed, page bg) | | paper-700 | `#4F4A42` |
-| paper-300 | `#D6CEC3` | | paper-800 | `#35322C` |
-| paper-400 | `#B8AEA1` | | paper-900 | `#211F1B` (body ink) |
+Group stranding data and maps beneath each animal overview in navigation. Each animal label is a disclosure button with an SVG chevron; the first dropdown link opens its overview. Report and disclosure controls share a44px height and vertically centered text. Overview pages place two resource cards after their narrative content, linking directly to their animal's tools.
 
-**Status** — functional, small-area only, never brand
+Each animal has its own `stranding-data` and `stranding-map` child routes in both languages. Child pages render only that animal, with breadcrumbs linking home, the animal overview and the current tool. The old `/data` and `/map` routes are compact animal-selection hubs, retaining `#cetaceans` and `#sea-turtles` targets for old bookmarks. White dolphin detail remains under cetaceans. Language changes preserve the animal and tool destination, plus supported fragments on legacy hubs and detail pages.
 
-| Token | Hex | Use |
-|---|---|---|
-| green-100 | `#DFEAE3` | "do" list tint |
-| green-600 | `#3E6B54` | "do" accents, success text (4.7:1 on paper-200 ✓) |
-| green-800 | `#274437` | dark-surface success text |
-| rust-100 | `#F6E3D3` | "don't" list tint |
-| rust-600 | `#B25E1F` | "don't" accents, large text only (3.6:1) |
-| rust-700 | `#8F4A15` | "don't" body text (5.2:1 on paper-200 ✓) |
-| rust-800 | `#7A3F13` | dark accents |
+Chinese statistics-tool labels use「擱淺統計」across navigation, cards, breadcrumbs, page headings and metadata. Existing `stranding-data` URLs and English labels remain unchanged. Footer navigation provides the two animal overviews, with support access retained separately. Generic statistics and map links are removed from Footer. The four legacy shared hubs remain directly accessible for compatibility and are not required destinations in the home-navigation reachability check; all ordinary content pages retain that check.
 
-No red family: "don't/danger" derives from the amber family (burnt rust) to keep the page's temperature coherent.
+Page components own breadcrumb placement. Photo pages render the shared breadcrumb inside their existing Hero content layer, aligned with the heading and using `tone="media"` for fixed light text and focus outlines. Statistics, maps, compatibility hubs and support pages place `tone="surface"` breadcrumbs above their headings inside the existing content container. The breadcrumb has no separate width or wrap padding, and the global layout no longer adds a strip. Home pages have no breadcrumb; every other registered page has exactly one. Trails can wrap on narrow screens without dropping parent links.
 
-### Usage mapping (CSS custom properties in `app.css`)
+Maps provide expandable HTML county tables. Stacked charts provide a contrasting segment separator and expandable dead/live count tables. Source notes distinguish individuals from event counts and identify the period and original report. Verified white dolphin monitoring belongs in the white dolphin detail; general cetacean research records stay in general conservation content.
 
-| Variable | Token | Notes |
-|---|---|---|
-| `--bg` | paper-200 | page background |
-| `--bg-card` | paper-100 | cards; separation via surface step + border, never shadow |
-| `--border` | paper-300 | hairline card/divider border on light (1px) |
-| `--border-on-dark` | `rgba(251,249,246,.16)` | hairline on navy bands (paper-50 at 16%) |
-| `--bg-band-dark` | navy-800 → navy-900 | dark sections; hero uses navy-900 |
-| `--text-primary` | paper-900 | body ink on light |
-| `--text-secondary` | slate-700 | 5.5:1 on paper-200 ✓ |
-| `--text-muted` | paper-600 | captions, ticks (large/graphic use) |
-| `--text-on-dark` | paper-50 | body on navy bands |
-| `--text-on-dark-secondary` | slate-200 | secondary on navy bands |
-| `--heading` | navy-700 | serif headings on light |
-| `--accent` | amber-400 | emphasis on dark; fills on light |
-| `--accent-text` | amber-800 | amber-feel text on light (4.6:1 ✓) |
-| `--chart-baseline` | slate-500 | default series |
-| `--chart-emphasis` | amber-400 | hotspot/highlight series |
-| `--chart-sequence` | slate-200 → 400 → 500 → 700 → 900 | single-hue magnitude ramp |
-| `--chart-muted` | slate-300 | de-emphasized series (deceased) |
-
-## Wave divider system (fix/tweak_ui)
-
-Band seams site-wide use `WaveDivider` — the topographic/sea motif from the brand exploration, in three flat modes (multi-crest path, sloped edge tangents so wide screens keep curvature):
-
-| Mode | Construction | Used at |
-|---|---|---|
-| Contour-echo | One filled wave + two fading echo strokes above the crest | paper ↔ navy seams |
-| Layered cross-section | Stacked filled waves stepping light→deep (deepest = hero bg) | Hero → report (navy-900 → paper via navy-700/500, slate-400/200) |
-| Stroke-only | Fill invisible (from ≈ to); slate contour lines draw the waterline | dark → dark seams (data → map, map/KPI band → footer) |
-
-Alternate seams are flipped so the wave shape doesn't repeat.
-
-## Motion inventory
-
-All motion honors `prefers-reduced-motion` (disabled → final state shown immediately):
-
-- **Count-up numbers**: hero stats on load; below-the-fold stats (KPI band) start on first intersection.
-- **Hero arrow**: 1.8s translateY bob.
-- **Map dots**: 2.6s breathing halo pulse.
-- **Nav**: 0.25s bar→pill transition on scroll; mobile menu sheet 0.22s slide-up.
-- **Charts**: bar enter transitions (legacy, carried into Sprint 2 rewrites).
-
-## Sanctioned exceptions to the flat rule
-
-Two deliberate exceptions, decided by Andrea during fix/tweak_ui; everything else stays flat (no shadows, no gradients):
-
-1. **Backdrop blur (8px)** on the scrolled nav pill and the mobile menu sheet — `rgba(navy-900, 0.72–0.9)` over content.
-2. **feGaussianBlur glow halos** on the stranding-map county dots (the "glowing dots" concept is the point of that visualization).
-
-## Accessibility — hard rules
-
-Verified pairs (WCAG 2.1, computed):
-
-| Pair | Ratio | Verdict |
-|---|---|---|
-| paper-900 on paper-200 | ~12:1 | AAA body |
-| navy-700 on paper-200 | 9.6:1 | AAA headings |
-| slate-700 on paper-200 | 5.5:1 | AA body ✓ |
-| amber-400 on navy-800/900 | ≥7.2:1 | AA ✓ |
-| amber-800 on paper-200 | 4.6:1 | AA body ✓ |
-| slate-500 on paper-100 | 4.1:1 | graphics ≥3:1 ✓ (not for body text) |
-| amber-400 on paper-* | ~1.4:1 | **forbidden as text** |
-| rust-600 on paper-200 | 3.6:1 | large text only; body uses rust-700 |
-
-Rules:
-
-1. Every text pair ≥ 4.5:1 (AA); large text (≥24px / ≥19px bold) and meaningful graphics ≥ 3:1. Any new pair gets computed before use.
-2. Base font size 16px on desktop, **root 18px at ≤640px** (2026-07-22: every rem-based size scales up on phones — no small mobile text; chart SVG text bumps to 14px). Minimums raised from the legacy page: footer 13px → 14px, chart ticks 11px → 12px (desktop). Line-height ≥ 1.6 body.
-3. Information never encoded by color alone — charts keep text value labels; map dots get text/tooltip equivalents.
-4. `prefers-reduced-motion` disables reveal, pulse, and canvas animations (per architecture doc).
-5. Visible `:focus-visible` styles on all interactive elements, styled with `--accent` on dark and `navy-700` on light.
-
-## Typography
-
-One family for everything — the Noto Sans TC stack; hierarchy comes from size, weight, and color, not from mixing faces:
-
-| Role | Face | Size | Notes |
-|---|---|---|---|
-| H1 (hero) | Noto Sans TC stack, 700 | clamp(2.3rem–4.4rem) | |
-| H2/H3 | Noto Sans TC stack, 600–700 | existing clamp scale | |
-| Body | Noto Sans TC stack, 400 | 16–17px | line-height ≥ 1.6 |
-| Data numbers | 700–800, tabular-nums | — | hero stats, KPI, chart values |
-| Captions/ticks | 400–500 | ≥12px | raised minimums |
-| Brand wordmark | 500 | see [brand.md](brand.md) | amber tittle at native glyph position |
-
-Font loading: **none** — the stack resolves to installed system fonts (`"Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif`). Zero font bytes shipped.
-
-## Intended differences from the current page
-
-The rebuild is *not* pixel-parity; these deltas are deliberate (spec P0-2):
-
-1. Emoji/pictograms removed everywhere.
-2. Unified sans typography (Noto Sans TC stack, no webfont); Khun-Sin wordmark with amber tittle in the masthead/footer (see [brand.md](brand.md)).
-3. New palette (this document) replacing mint/coral/tropical-teal.
-4. Contrast bug fixed: white cards inside dark bands (MARN nodes, steps) get explicit dark text.
-5. Shadows removed entirely — flat surfaces with hairline borders (minimalist direction).
-6. Minimum font sizes raised (footer, ticks).
+Reduced motion hides and pauses the homepage ocean video; changing the preference resumes or pauses playback appropriately. Preserve existing reduced-motion behavior for maps, charts, and other page animations. Visible focus, text labels, status wording, and chart value labels remain required; color alone must not convey information. New color pairs require contrast verification against their actual surfaces, including photo overlays.

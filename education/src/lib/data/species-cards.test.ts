@@ -124,6 +124,27 @@ describe('whale species cards', () => {
 });
 
 describe('cetacean card images and Red List tags', () => {
+	it('links only the Taiwanese white dolphin cards to their localized detail routes', () => {
+		expect(chineseSpeciesCards).toEqual(
+			expect.arrayContaining([
+				expect.objectContaining({
+					scientificName: 'Sousa chinensis taiwanensis',
+					detailPath: '/cetaceans/sousa-chinensis-taiwanensis'
+				})
+			])
+		);
+		expect(englishSpeciesCards).toEqual(
+			expect.arrayContaining([
+				expect.objectContaining({
+					scientificName: 'Sousa chinensis taiwanensis',
+					detailPath: '/en/cetaceans/sousa-chinensis-taiwanensis'
+				})
+			])
+		);
+		expect(chineseSpeciesCards.filter((card) => card.detailPath)).toHaveLength(1);
+		expect(englishSpeciesCards.filter((card) => card.detailPath)).toHaveLength(1);
+	});
+
 	it('assigns an image and accessible alternative text to every species', () => {
 		for (const card of chineseSpeciesCards) {
 			expect(card.imageKey).toBeTruthy();

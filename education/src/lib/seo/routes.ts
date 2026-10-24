@@ -18,35 +18,73 @@ export type RoutePath =
 	| '/data'
 	| '/map'
 	| '/cetaceans'
+	| '/cetaceans/sousa-chinensis-taiwanensis'
 	| '/sea-turtles'
 	| '/support'
 	| '/en'
 	| '/en/data'
 	| '/en/map'
 	| '/en/cetaceans'
+	| '/en/cetaceans/sousa-chinensis-taiwanensis'
 	| '/en/sea-turtles'
-	| '/en/support';
+	| '/en/support'
+	| '/cetaceans/stranding-data'
+	| '/cetaceans/stranding-map'
+	| '/sea-turtles/stranding-data'
+	| '/sea-turtles/stranding-map'
+	| '/en/cetaceans/stranding-data'
+	| '/en/cetaceans/stranding-map'
+	| '/en/sea-turtles/stranding-data'
+	| '/en/sea-turtles/stranding-map';
 
 export interface RouteEntry {
 	path: RoutePath;
 	locale: Locale;
 	/** The same page in the other language. */
 	alternate: RoutePath;
+	/** Compatibility entry retained for existing URLs, outside the primary navigation. */
+	legacy?: true;
 }
 
 export const routes: RouteEntry[] = [
 	{ path: '/', locale: 'zh', alternate: '/en' },
-	{ path: '/data', locale: 'zh', alternate: '/en/data' },
-	{ path: '/map', locale: 'zh', alternate: '/en/map' },
+	{ path: '/data', locale: 'zh', alternate: '/en/data', legacy: true },
+	{ path: '/map', locale: 'zh', alternate: '/en/map', legacy: true },
 	{ path: '/cetaceans', locale: 'zh', alternate: '/en/cetaceans' },
+	{
+		path: '/cetaceans/sousa-chinensis-taiwanensis',
+		locale: 'zh',
+		alternate: '/en/cetaceans/sousa-chinensis-taiwanensis'
+	},
 	{ path: '/sea-turtles', locale: 'zh', alternate: '/en/sea-turtles' },
 	{ path: '/support', locale: 'zh', alternate: '/en/support' },
 	{ path: '/en', locale: 'en', alternate: '/' },
-	{ path: '/en/data', locale: 'en', alternate: '/data' },
-	{ path: '/en/map', locale: 'en', alternate: '/map' },
+	{ path: '/en/data', locale: 'en', alternate: '/data', legacy: true },
+	{ path: '/en/map', locale: 'en', alternate: '/map', legacy: true },
 	{ path: '/en/cetaceans', locale: 'en', alternate: '/cetaceans' },
+	{
+		path: '/en/cetaceans/sousa-chinensis-taiwanensis',
+		locale: 'en',
+		alternate: '/cetaceans/sousa-chinensis-taiwanensis'
+	},
 	{ path: '/en/sea-turtles', locale: 'en', alternate: '/sea-turtles' },
-	{ path: '/en/support', locale: 'en', alternate: '/support' }
+	{ path: '/en/support', locale: 'en', alternate: '/support' },
+	{ path: '/cetaceans/stranding-data', locale: 'zh', alternate: '/en/cetaceans/stranding-data' },
+	{ path: '/cetaceans/stranding-map', locale: 'zh', alternate: '/en/cetaceans/stranding-map' },
+	{
+		path: '/sea-turtles/stranding-data',
+		locale: 'zh',
+		alternate: '/en/sea-turtles/stranding-data'
+	},
+	{ path: '/sea-turtles/stranding-map', locale: 'zh', alternate: '/en/sea-turtles/stranding-map' },
+	{ path: '/en/cetaceans/stranding-data', locale: 'en', alternate: '/cetaceans/stranding-data' },
+	{ path: '/en/cetaceans/stranding-map', locale: 'en', alternate: '/cetaceans/stranding-map' },
+	{
+		path: '/en/sea-turtles/stranding-data',
+		locale: 'en',
+		alternate: '/sea-turtles/stranding-data'
+	},
+	{ path: '/en/sea-turtles/stranding-map', locale: 'en', alternate: '/sea-turtles/stranding-map' }
 ];
 
 /** BCP 47 tags for the `lang` attribute and hreflang annotations. */

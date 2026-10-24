@@ -1,15 +1,30 @@
 <!doctype html>
-<html lang="%lang%">
+<html lang="%lang%" data-theme="auto">
 	<head>
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-VPBKZMECHQ"></script>
 		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
+			try {
+				const theme = localStorage.getItem('khun-sin-theme');
+				if (theme === 'light' || theme === 'dark' || theme === 'auto') {
+					document.documentElement.dataset.theme = theme;
+				}
+			} catch {}
+		</script>
+		<!-- Google tag (gtag.js) -->
+		<script>
+			// Check the actual origin: the same prerendered HTML can be served on preview domains.
+			if (window.location.origin === 'https://www.khun-sin.com') {
+				window.dataLayer = window.dataLayer || [];
+				window.gtag = function () {
+					window.dataLayer.push(arguments);
+				};
+				window.gtag('js', new Date());
+				window.gtag('config', 'G-VPBKZMECHQ');
+
+				const script = document.createElement('script');
+				script.async = true;
+				script.src = 'https://www.googletagmanager.com/gtag/js?id=G-VPBKZMECHQ';
+				document.head.appendChild(script);
 			}
-			gtag('js', new Date());
-			gtag('config', 'G-VPBKZMECHQ');
 		</script>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />

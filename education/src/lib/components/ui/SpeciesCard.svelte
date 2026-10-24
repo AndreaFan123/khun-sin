@@ -1,4 +1,6 @@
 <script lang="ts">
+	import ArrowRight from '@lucide/svelte/icons/arrow-right';
+	import { resolve } from '$app/paths';
 	import commonBottlenose from '$lib/assets/dolphins/Common_Bottlenose_Dolphin.png';
 	import indoPacificBottlenose from '$lib/assets/dolphins/Indo-Pacific_Bottlenose_Dolphin.png';
 	import indoPacificFinless from '$lib/assets/dolphins/Indo-Pacific_finless_porpoise.png';
@@ -26,12 +28,14 @@
 		card,
 		as = 'h3',
 		imageSourceLabel,
-		redListLabel
+		redListLabel,
+		detailLinkLabel
 	}: {
 		card: SpeciesCard;
 		as?: 'h2' | 'h3';
 		imageSourceLabel: string;
 		redListLabel: string;
+		detailLinkLabel: string;
 	} = $props();
 </script>
 
@@ -53,11 +57,21 @@
 		<svelte:element this={as} class="name">{card.name}</svelte:element>
 		<div class="sci">{card.scientificName}</div>
 		<p>{card.description}</p>
+		{#if card.detailPath}
+			<a class="detail-link" href={resolve(card.detailPath)}>
+				{detailLinkLabel}<ArrowRight
+					size="1em"
+					aria-hidden="true"
+					style="display: inline-block; vertical-align: -0.125em; flex-shrink: 0"
+				/>
+			</a>
+		{/if}
 	</div>
 </article>
 
 <style>
 	.card {
+		border: 1px solid var(--border);
 		overflow: hidden;
 		background: var(--bg-card);
 		border-radius: var(--radius);
@@ -65,7 +79,7 @@
 	}
 	figure {
 		margin: 0;
-		background: var(--navy-900);
+		background: var(--bg-soft);
 	}
 	img {
 		display: block;
@@ -75,7 +89,7 @@
 	}
 	figcaption {
 		padding: 7px 12px 8px;
-		color: var(--paper-200);
+		color: var(--text-secondary);
 		font-size: 0.72rem;
 		line-height: 1.4;
 	}
@@ -84,10 +98,10 @@
 		text-underline-offset: 0.18em;
 	}
 	figcaption a:hover {
-		color: white;
+		color: var(--text-primary);
 	}
 	figcaption a:focus-visible {
-		outline: 2px solid white;
+		outline: 2px solid var(--signal);
 		outline-offset: 3px;
 		border-radius: 2px;
 	}
@@ -158,5 +172,24 @@
 	p {
 		font-size: 0.94rem;
 		color: var(--text-secondary);
+	}
+	.detail-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 7px;
+		margin-top: 18px;
+		color: var(--signal);
+		font-size: 0.9rem;
+		font-weight: 700;
+		text-decoration-color: var(--amber-600);
+		text-underline-offset: 0.24em;
+	}
+	.detail-link:hover {
+		color: var(--accent-text);
+	}
+	.detail-link:focus-visible {
+		outline: 2px solid var(--signal);
+		outline-offset: 4px;
+		border-radius: 2px;
 	}
 </style>

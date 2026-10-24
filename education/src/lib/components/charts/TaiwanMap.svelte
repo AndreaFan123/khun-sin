@@ -44,7 +44,7 @@
 
 	{#each dots as d (d.name)}
 		<g class="dot" class:emphasis={d.emphasis}>
-			<circle class="halo" cx={d.x} cy={d.y} r={d.r * 1.9} filter={'url(#' + filterId + ')'} />
+			<circle class="halo" cx={d.x} cy={d.y} r={d.r * 1.45} filter={'url(#' + filterId + ')'} />
 			<circle class="core" cx={d.x} cy={d.y} r={d.r}>
 				<title>{en ? `${d.nameEn}: ${d.count}` : `${d.name}：${d.count} 隻`}</title>
 			</circle>
@@ -61,44 +61,44 @@
 	svg {
 		display: block;
 		width: 100%;
-		max-width: 560px;
+		max-width: 700px;
 		margin: 0 auto;
 		height: auto;
 	}
 	.land {
-		fill: var(--navy-700);
-		stroke: var(--border-on-dark);
-		stroke-width: 0.8;
+		fill: var(--map-land);
+		stroke: var(--map-outline);
+		stroke-width: 2;
 	}
 	.core {
-		fill: var(--slate-300);
+		fill: var(--map-marker);
 	}
 	.halo {
-		fill: var(--slate-300);
-		opacity: 0.4;
+		fill: var(--map-marker);
+		opacity: 0.18;
 		transform-box: fill-box;
 		transform-origin: center;
 		animation: breathe 2.6s ease-in-out infinite;
 	}
 	.emphasis .core {
-		fill: var(--accent);
+		fill: var(--map-emphasis);
 	}
 	.emphasis .halo {
-		fill: var(--accent);
-		opacity: 0.5;
+		fill: var(--map-emphasis);
+		opacity: 0.22;
 	}
 	.lbl {
-		fill: var(--text-on-dark);
+		fill: var(--map-label);
 		font-size: 14px;
 	}
 	@keyframes breathe {
 		0%,
 		100% {
 			transform: scale(1);
-			opacity: 0.45;
+			opacity: 0.22;
 		}
 		50% {
-			transform: scale(1.25);
+			transform: scale(1.12);
 			opacity: 0.2;
 		}
 	}

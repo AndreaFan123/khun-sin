@@ -73,6 +73,7 @@
 		gap: 18px;
 	}
 	article {
+		border: 1px solid var(--border);
 		overflow: hidden;
 		background: var(--bg-card);
 		border-top: 3px solid var(--slate-400);
@@ -86,7 +87,7 @@
 	}
 	figure {
 		margin: 0;
-		background: var(--navy-900);
+		background: var(--bg-soft);
 	}
 	img {
 		display: block;
@@ -96,7 +97,7 @@
 	}
 	figcaption {
 		padding: 7px 12px 8px;
-		color: var(--paper-200);
+		color: var(--text-secondary);
 		font-size: 0.72rem;
 		line-height: 1.4;
 	}
@@ -105,10 +106,10 @@
 		text-underline-offset: 0.18em;
 	}
 	figcaption a:hover {
-		color: white;
+		color: var(--text-primary);
 	}
 	figcaption a:focus-visible {
-		outline: 2px solid white;
+		outline: 2px solid var(--signal);
 		outline-offset: 3px;
 		border-radius: 2px;
 	}
